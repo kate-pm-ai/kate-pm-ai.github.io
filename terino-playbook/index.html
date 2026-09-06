@@ -1,0 +1,400 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Terino: дорожная карта проверки спроса</title>
+<style>:root{
+  --ink:#122338; --ink-soft:#44566c; --paper:#f3f5f7; --white:#fff; --rule:#cdd5df;
+  --red:#b4232c; --red-wash:#fff0f1;
+  --green:#08765d; --green-wash:#eaf8f2;
+  --amber:#9a5b00; --amber-wash:#fff6df;
+  --blue:#175d8f; --blue-wash:#eaf4fb;
+  --mono:ui-monospace,SFMono-Regular,Menlo,monospace;
+  --serif:Georgia,"Times New Roman",serif;
+  --side:290px; --head:58px;
+}
+*{box-sizing:border-box;min-width:0}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper);
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+  font-size:16px;line-height:1.62;-webkit-font-smoothing:antialiased;
+  overflow-x:hidden}
+
+/* ── шапка ── */
+.masthead{position:sticky;top:0;z-index:40;border-bottom:1px solid var(--rule);
+  background:#f3f5f7f2;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px)}
+.mast-inner{display:flex;align-items:center;gap:16px;min-height:var(--head);
+  padding:0 24px}
+.brand{font-family:var(--mono);font-size:.74rem;font-weight:850;letter-spacing:.1em;
+  text-transform:uppercase;margin-right:auto}
+.burger{display:none;background:none;border:1px solid var(--rule);border-radius:8px;
+  width:36px;height:32px;font-size:15px;cursor:pointer;color:var(--ink)}
+.mode-switch{display:flex;border:1px solid var(--ink);border-radius:999px;overflow:hidden}
+.mode-switch button{border:0;background:var(--white);color:var(--ink-soft);cursor:pointer;
+  font-family:var(--mono);font-size:.66rem;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;padding:7px 14px}
+.mode-switch button.on{background:var(--ink);color:var(--white)}
+
+/* ── каркас ── */
+.layout{display:grid;grid-template-columns:var(--side) minmax(0,1fr);
+  max-width:1440px;margin:0 auto;gap:0}
+.sidebar{position:sticky;top:var(--head);align-self:start;
+  height:calc(100vh - var(--head));overflow-y:auto;
+  border-right:1px solid var(--rule);padding:26px 18px 40px}
+.side-title{font-family:var(--serif);font-size:1.16rem;line-height:1.25;
+  margin-bottom:20px;padding-bottom:16px;border-bottom:1px solid var(--ink)}
+.side-nav{display:flex;flex-direction:column;gap:2px}
+.nav-item{display:block;padding:10px 12px;border-radius:8px;text-decoration:none;
+  color:var(--ink);font-size:.9rem;line-height:1.35;border-left:2px solid transparent}
+.nav-item span{font-family:var(--mono);font-size:.7rem;font-weight:850;color:var(--ink-soft)}
+.nav-item:hover{background:var(--white)}
+.nav-item.on{background:var(--white);border-left-color:var(--red);font-weight:650}
+.nav-item.on span{color:var(--red)}
+.scrim{display:none}
+
+.content{padding:40px 40px 90px;max-width:960px}
+
+/* ── режим плейбука: виден один раздел ── */
+body[data-mode="playbook"] .doc-section{display:none}
+body[data-mode="playbook"] .doc-section.active{display:block}
+body[data-mode="full"] .doc-section{display:block;
+  padding-bottom:56px;margin-bottom:56px;border-bottom:1px solid var(--rule)}
+body[data-mode="full"] .doc-section:last-child{border-bottom:0}
+
+/* ── типографика разделов ── */
+.section-kicker{display:grid;grid-template-columns:52px 1fr;align-items:baseline;
+  gap:18px;margin-bottom:26px}
+.section-kicker span{font-family:var(--mono);font-weight:800;color:var(--red)}
+.section-kicker h2{margin:0;font-family:var(--serif);font-weight:500;
+  font-size:clamp(1.7rem,3.2vw,2.7rem);line-height:1.06;letter-spacing:-.02em}
+h3{font-family:var(--serif);font-weight:600;line-height:1.2}
+h4{margin:22px 0 8px;font-family:var(--mono);font-size:.69rem;font-weight:850;
+  letter-spacing:.09em;text-transform:uppercase;color:var(--red)}
+p{margin:0 0 12px}
+ul{margin:0 0 12px;padding-left:20px}
+li{margin:0 0 7px}
+.numbered{list-style:none;padding-left:0}
+a{color:var(--blue)}
+.source-link{font-size:.86rem;font-weight:700;word-break:break-word;
+  text-decoration:underline #8db5ce;text-underline-offset:3px}
+
+.src{color:var(--ink-soft);font-size:.94rem}
+.quote{margin:14px 0;padding:16px 20px;background:var(--white);
+  border-left:3px solid var(--ink);font-family:var(--serif);font-size:1.04rem}
+.fork{margin:12px 0;padding:12px 16px;background:var(--white);
+  border-left:3px solid var(--red);font-size:.93rem}
+.callout{margin:16px 0;padding:20px 24px;background:var(--blue-wash);
+  border-left:5px solid var(--blue)}
+
+/* ── метки ── */
+.statuses{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 14px}
+.status{display:inline-block;padding:5px 9px;border-radius:999px;font-family:var(--mono);
+  font-size:.68rem;font-weight:850;letter-spacing:.06em;text-transform:uppercase}
+.status.red{color:var(--red);background:var(--red-wash)}
+.status.green{color:var(--green);background:var(--green-wash)}
+.status.amber{color:var(--amber);background:var(--amber-wash)}
+.status.blue{color:var(--blue);background:var(--blue-wash)}
+
+/* ── гипотезы ── */
+
+.card-number{font-family:var(--mono);font-size:.72rem;font-weight:850;
+  letter-spacing:.08em;color:var(--red)}
+
+/* ── способы: табы + панель ── */
+/* Все кнопки видны сразу: сетка 3×2 вместо горизонтальной прокрутки.
+   Кейт 06.09: «за этим горизонтальным скролом ещё две-три кнопки скрывается,
+   нихуя не очевидно». */
+.way-tabs{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;
+  padding-bottom:18px;margin-bottom:22px;border-bottom:1px solid var(--rule)}
+.way-tab{text-align:left;cursor:pointer;
+  background:var(--white);border:1px solid var(--rule);border-radius:10px;
+  padding:12px 14px;font-size:.84rem;line-height:1.3;color:var(--ink-soft)}
+.way-tab span{display:block;font-family:var(--mono);font-size:.66rem;font-weight:850;
+  letter-spacing:.07em;color:var(--red);margin-bottom:4px}
+.way-tab:hover{border-color:var(--ink-soft)}
+.way-tab.on{background:var(--ink);border-color:var(--ink);color:var(--white);font-weight:600}
+.way-tab.on span{color:#ff9ba1}
+
+.way-panel{display:none;border:1px solid var(--ink);background:var(--white);padding:28px}
+.way-panel.on{display:block}
+body[data-mode="full"] .way-panel{display:block;margin-bottom:-1px}
+body[data-mode="full"] .way-tabs{display:none}
+.way-top{border-bottom:1px solid var(--rule);padding-bottom:18px;margin-bottom:20px}
+.way-top h3{margin:8px 0 14px;font-size:1.55rem}
+.way-top .statuses{margin:0}
+
+.way-head{display:flex;flex-wrap:wrap;gap:6px;padding:14px 0 18px;
+  margin-bottom:20px;border-bottom:1px solid var(--rule)}
+.wh-chip{font-family:var(--mono);font-size:.63rem;font-weight:800;letter-spacing:.07em;
+  text-transform:uppercase;color:var(--ink-soft);text-decoration:none;
+  border:1px solid var(--rule);border-radius:999px;padding:5px 11px;background:#f7f9fb}
+.wh-chip:hover{border-color:var(--red);color:var(--red)}
+.way-body h4{scroll-margin-top:80px}
+
+/* ── таблицы: прокрутка ТОЛЬКО внутри контейнера ── */
+.table-wrap{overflow-x:auto;-webkit-overflow-scrolling:touch;
+  border:1px solid var(--ink);background:var(--white);max-width:100%}
+table{border-collapse:collapse;width:100%;min-width:520px;font-size:.87rem;line-height:1.45}
+th{background:var(--ink);color:var(--white);font-family:var(--mono);font-size:.66rem;
+  letter-spacing:.06em;text-transform:uppercase;text-align:left;padding:11px 14px}
+td{border-right:1px solid var(--rule);border-bottom:1px solid var(--rule);
+  padding:14px;vertical-align:top}
+td:last-child{border-right:0}
+tr:last-child td{border-bottom:0}
+
+.pagefoot{border-top:1px solid var(--rule);padding:22px 40px 60px;
+  font-family:var(--mono);font-size:.68rem;letter-spacing:.05em;
+  text-transform:uppercase;color:var(--ink-soft);max-width:1440px;margin:0 auto}
+
+/* ── планшет ── */
+@media (max-width:1024px){
+  :root{--side:240px}
+  .content{padding:32px 26px 80px}
+  .hyp-grid{grid-template-columns:1fr}
+}
+
+/* ── телефон ── */
+@media (max-width:760px){
+  .layout{grid-template-columns:1fr}
+  .burger{display:block}
+  .sidebar{position:fixed;top:var(--head);left:0;width:min(300px,86vw);
+    height:calc(100vh - var(--head));background:var(--paper);z-index:35;
+    transform:translateX(-102%);transition:transform .22s ease;
+    border-right:1px solid var(--ink)}
+  body.nav-open .sidebar{transform:none}
+  body.nav-open .scrim{display:block;position:fixed;inset:var(--head) 0 0 0;
+    background:#12233855;z-index:30}
+  .content{padding:24px 18px 70px}
+  .way-panel{padding:20px 16px}
+  .way-head{grid-template-columns:1fr}
+  .callout,.quote,.fork{padding-left:16px;padding-right:16px}
+  .hyp-card{padding:20px 18px}
+  .pagefoot{padding:20px 18px 50px}
+  .mode-switch button{padding:6px 11px;font-size:.62rem}
+}
+
+/* ── экран 1: шаги карточками ── */
+.lead-title{font-family:var(--mono);font-size:.7rem;font-weight:850;letter-spacing:.09em;
+  text-transform:uppercase;color:var(--red);margin-bottom:16px}
+.steps{border-top:1px solid var(--ink);margin-bottom:28px}
+.step{display:grid;grid-template-columns:56px 1fr;gap:20px;padding:20px 0;
+  border-bottom:1px solid var(--rule)}
+.step-n{font-family:var(--mono);font-size:1.15rem;font-weight:850;color:var(--red);line-height:1.3}
+.step-t{font-size:1rem}
+.sub-h{margin:40px 0 18px;padding-top:26px;border-top:1px solid var(--ink);
+  font-family:var(--serif);font-size:1.7rem;font-weight:600;line-height:1.2}
+
+/* ── экран 2: вводный блок и гипотезы в столбик ── */
+
+.hyp-list{border-top:1px solid var(--ink)}
+.hyp-row{display:grid;grid-template-columns:64px 1fr;gap:20px;padding:26px 0;
+  border-bottom:1px solid var(--rule)}
+.hyp-code{font-family:var(--mono);font-size:.95rem;font-weight:850;color:var(--red)}
+.hyp-main h3{margin:0 0 12px;font-size:1.35rem}
+@media (max-width:760px){
+  .step{grid-template-columns:38px 1fr;gap:12px}
+  .hyp-row{grid-template-columns:1fr;gap:6px}
+  .intro-block{padding:22px 18px}
+}
+
+.sub-h.first{margin-top:0;padding-top:0;border-top:0}
+
+@media (max-width:1024px){ .way-tabs{grid-template-columns:repeat(2,minmax(0,1fr))} }
+@media (max-width:560px){ .way-tabs{grid-template-columns:1fr} }
+
+
+/* ── гипотезы: формулировка основным шрифтом ── */
+/* Формулировка гипотезы — крупная и жирная, как было до правки Кодекса.
+   Кейт 06.09: «раньше гипотезы были выделены жирным, их было хорошо видно,
+   сейчас сливается со всем текстом». */
+/* Гипотезы: крупно, жирно, с засечками — так лучше видно (Кейт 06.09,
+   после пробы без засечек: «верни засечки, засечки лучше были»). */
+.hyp-claim{font-family:var(--serif);font-size:1.34rem;font-weight:700;line-height:1.22;
+  margin:0 0 14px;color:var(--ink)}
+.hyp-claim strong{font-weight:700;box-shadow:inset 0 -.42em 0 var(--amber-wash)}
+.hyp-row .fork{border-left-color:var(--rule);background:#f7f9fb}
+.hyp-row .fork strong{color:var(--red)}
+
+/* ── финальный раздел: семь строк ── */
+.res-row{padding:18px 0;border-bottom:1px solid var(--rule);font-size:1rem}
+.res-row:first-of-type{border-top:1px solid var(--ink)}
+.res-row strong{font-weight:750}
+.outcome-h{margin:36px 0 14px;padding-top:26px;border-top:1px solid var(--ink);
+  font-family:var(--serif);font-size:1.7rem;font-weight:600}
+
+/* ── заголовок раздела без служебного номера ── */
+.section-kicker{grid-template-columns:1fr}
+
+/* ── вводные абзацы: чистая типографика, без рамок ── */
+.intro-wrap{margin-bottom:40px;padding-bottom:30px;border-bottom:1px solid var(--ink)}
+.intro-p{font-size:1.06rem;line-height:1.6;margin:0 0 18px}
+.intro-p:last-child{margin-bottom:0}
+.intro-p strong{font-weight:750}
+.intro-mid{color:var(--ink)}
+.intro-goal{background:var(--blue-wash);padding:20px 24px;margin-top:22px}
+
+.li-num{font-family:var(--mono);font-size:.8rem;font-weight:850;color:var(--red);
+  margin-right:4px}
+.intro-h{margin:0 0 8px;font-family:var(--serif);font-size:1.3rem;font-weight:600}
+.intro-goal p{margin:0;font-size:1.04rem}
+
+/* ── ЦВЕТОВАЯ СИСТЕМА, одно правило ──────────────────────────────────────
+   Чернильный  #122338 — весь основной текст И ВСЕ акценты <strong>.
+   Серый       #44566c — только служебное: «Откуда», «Уверенность», подписи.
+   Красный     #b4232c — только навигационные метки: номера, коды Г1-Г5,
+                         подзаголовки внутри способов. Никогда не текст.
+   Зелёный/янтарный/синий — только чипы Impact, Efforts, уверенности.
+   Акцент внутри серого абзаца раньше наследовал серый — исправлено. */
+strong{color:var(--ink)}
+.src strong{color:var(--ink)}
+
+/* номер раздела из документа — приглушённый, не спорит с номерами шагов */
+.h-num{font-family:var(--mono);font-size:.5em;font-weight:800;color:var(--rule);
+  vertical-align:middle;margin-right:.2em}
+.sub-h .h-num,.way-top .h-num{font-size:.62em}
+
+/* 4. телефон: выбор способа — компактный список вместо шести кнопок */
+@media (max-width:760px){
+  .way-tabs{display:none}
+  .way-select{display:block;width:100%;margin-bottom:18px;padding:12px 14px;
+    font-family:var(--mono);font-size:.78rem;font-weight:750;color:var(--ink);
+    background:var(--white);border:1px solid var(--ink);border-radius:10px;
+    -webkit-appearance:none;appearance:none;
+    background-image:linear-gradient(45deg,transparent 50%,var(--red) 50%),
+      linear-gradient(135deg,var(--red) 50%,transparent 50%);
+    background-position:calc(100% - 20px) 50%,calc(100% - 14px) 50%;
+    background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+}
+.way-select{display:none}
+</style>
+</head>
+<body data-mode="playbook">
+<header class="masthead"><div class="mast-inner">
+  <button class="burger" type="button" aria-label="Разделы">☰</button>
+  <div class="brand">Terino</div>
+  <div class="mode-switch" role="group" aria-label="Режим">
+    <button type="button" data-mode-btn="playbook" class="on">Плейбук</button>
+    <button type="button" data-mode-btn="full">Читать всё</button>
+  </div>
+</div></header>
+<div class="layout">
+  <aside class="sidebar" id="sidebar">
+    <div class="side-title">Terino: дорожная карта проверки спроса</div>
+    <nav class="side-nav"><a class="nav-item" href="#plan" data-nav="0">Короткий план и последовательность</a><a class="nav-item" href="#hyp" data-nav="1">Вводная рамка и гипотезы</a><a class="nav-item" href="#ways" data-nav="2">Все способы проверки</a><a class="nav-item" href="#final" data-nav="3">Решение по результатам</a></nav>
+  </aside>
+  <div class="scrim" id="scrim"></div>
+  <main class="content"><section class="doc-section" id="plan" data-section="0"><div class="section-kicker"><h2>Короткий план: что делать</h2></div><div class="steps"><div class="step"><div class="step-n">01</div><div class="step-t"><strong>Собрать людей и контекст.</strong> За 1-2 часа просмотреть сообщества и отзывы о платных альтернативах. Выписать повторяющиеся рабочие ситуации, язык операторов, платные функции и жалобы, собрать 5-10 контактов.</div></div><div class="step"><div class="step-n">02</div><div class="step-t"><strong>Разобрать 3-5 реальных случаев.</strong> Выбрать операторов, которые сами решают, когда лететь. В переписке восстановить последнюю обработку: как выбирали время, что не устраивало, кто решает покупку, конфликтовали ли заказы и какую отчетность готовили.</div></div><div class="step"><div class="step-n">03</div><div class="step-t"><strong>Проверить Terino на работе.</strong> У 2-3 операторов с предстоящей обработкой сравнить обычный способ и Terino на одном поле. Зафиксировать результат: оператор заметил важное условие, принял то же решение быстрее или не получил пользы.</div></div><div class="step"><div class="step-n">04</div><div class="step-t"><strong>Проверить спрос на конкретный платный результат.</strong> Если нынешний Terino уже дает найденную пользу целиком - предложить оплату за доступ к этой функции. Если пользу нельзя получить, просто открыв экран, - собрать результат руками (например, план недели по его полям) и предложить заплатить тем, кому уже помогал на предыдущих шагах. Эти варианты проверять отдельно.</div></div><div class="step"><div class="step-n">05</div><div class="step-t"><strong>Подключить рекламу, если не хватает входящих контактов.</strong> После выбора одного сегмента, одной джобы и одного обещанного результата запустить одно объявление и одну страницу в одном регионе. Кампания проверяет только клики, заявки и долю заявок от нужного сегмента.</div></div></div><h3 class="sub-h">Как понять, что именно продавать:</h3><ul><li><strong>Записать, что именно изменилось благодаря Terino</strong>: решение оператора, время проверки или замеченное ограничение.</li><li><strong>Спросить, захочет ли оператор использовать Terino на следующей похожей работе.</strong></li><li><strong>Выяснить, чем оператор решает эту задачу сейчас и за что уже платит.</strong></li><li><strong>Сравнить несколько случаев и определить, какая польза повторяется у разных операторов.</strong></li><li><strong>После этого сформулировать, что можно продавать</strong>: какой результат, в каком объеме, когда и за сколько. Затем отдельно проверить готовность купить.</li></ul><p class="callout"><strong>Минимальный старт:</strong> один реальный случай, несколько независимых операторов и одно понятное платное предложение. Новые функции до этого не нужны.</p><h3 class="sub-h">2. Последовательность и выбор следующего шага</h3><p>Не обязательно выполнять все способы подряд. Они закрывают разные пробелы.</p><ul><li><strong>Есть действующий оператор</strong> — начать с его последнего случая по способу 3. Знакомый контакт помогает начать; независимые люди нужны для проверки повторяемости.</li><li><strong>Способы 1–2 дают людей, язык и вопросы.</strong> Их можно поручить агенту и делать параллельно первым разговорам.</li><li><strong>После первых разговоров выбрать одну связку «сегмент + джоба + критерий улучшения».</strong> Если ей соответствует нынешний экран, перейти к способу 4. Если обнаружена другая работа, уточнить ее в следующих случаях, а затем решить, что проверять.</li><li><strong>К способу 5 переходить, когда понятны сегмент, джоба и конкретный результат.</strong> Если человек сам просит продать этот результат раньше, цену можно назвать сразу.</li><li><strong>Небольшая реклама</strong> — запасной способ набрать людей. Повторное применение и покупка показывают, стоит ли продолжать после первых денег.</li></ul></section><section class="doc-section" id="hyp" data-section="1"><div class="section-kicker"><h2>1. Гипотезы, от которых зависит проверка</h2></div><div class="intro-block"><p class="intro-p"><strong>Исходный запрос</strong> — получить полезную обратную связь от операторов с небольшими организационными усилиями. Эта дорожная карта описывает, как вместе с проверкой приложения исследовать коммерческую возможность.</p><p class="intro-p intro-mid"><strong>Проверка понятности экрана и поиск оплачиваемой работы отвечают на разные вопросы.</strong> Первая показывает, удобно ли пользоваться приложением. Вторая помогает выяснить, какой результат нужен людям, что мешает его получить, кто готов платить и подходит ли для этого Terino. Хорошие отзывы об экране возможны и тогда, когда коммерческая возможность лежит в другой работе.</p><div class="intro-goal"><h3 class="intro-h">Образ результата</h3><p>В первом приближении найти связку <strong>«работа пользователя + группа людей (сегмент) + потенциально оплачиваемый результат</strong> (сегмент готов регулярно платить за эту джобу)». Понять, какое место в ней занимает Terino: достаточно нынешнего экрана, нужна другая подача, полезна соседняя задача или выбранную версию пока не стоит развивать.</p></div></div><div class="hyp-list"><article class="hyp-row"><div class="hyp-code">Г1</div><div class="hyp-main"><p class="hyp-claim">Предположительно, твоя настоящая джоба - деньги и направление, а не отзывы про интерфейс</p><p class="src"><strong>Откуда:</strong> твои слова - «провалидировать», «рыночек имеется».</p><p class="src"><strong>Уверенность:</strong> высокая.</p></div></article><article class="hyp-row"><div class="hyp-code">Г2</div><div class="hyp-main"><p class="hyp-claim">Предположительно, джоба оператора «выбрать, когда лететь» уже как-то закрывается привычными способами - значит, платить будут за то, что твой экран <strong>добавляет</strong> к ним</p><p class="src"><strong>Откуда:</strong> открытые тарифы и описания конкурентов (на 05.09): UAV Forecast Professional - $9.49/мес: 15 дней прогноза по часам, пороги, полетные зоны; SprayCast Pro - $50/год: окна опрыскивания, почасовой разрез, журнал работ, база гербицидов, отчеты. Привычные способы - обычные прогнозы плюс свой опыт, у части операторов платные приложения.</p><p class="src"><strong>Уверенность:</strong> средняя.</p><p>Кандидат добавленной ценности - например, полет и обработка на одном экране; могут быть и другие, их покажут разговоры и сравнение на реальной работе.</p><p class="fork"><strong>Если это так</strong> - главная проверка не «нужны ли окна» (за них уже платят), а добавленная ценность на реальной работе (способ 4). Если твой экран сам по себе окажется настолько удобнее, что за него готовы платить, - сразу к способу 5.</p></div></article><article class="hyp-row"><div class="hyp-code">Г3</div><div class="hyp-main"><p class="hyp-claim">Предположительно, платящая джоба крупнее: не «знать погоду», а «разложить мои заказы по полям и окнам так, чтобы все сдалось в срок»; рядом отдельная джоба - «подтвердить выполненную обработку»</p><p class="src"><strong>Откуда:</strong> из прайсов конкурентов. Бесплатный уровень SprayCast раздает погодные окна даром - на голой информации в этой нише трудно дифференцироваться. А деньги SprayCast берет за надстройку над информацией: журнал работ, базу препаратов, отчеты. Платная граница у живого конкурента проходит между «узнать» и «управиться с работой». Возможно, планирование и отчетность - разные джобы с разными покупателями, не склеивать.</p><p class="src"><strong>Уверенность:</strong> ниже средней - главный кандидат на проверку.</p><p class="fork"><strong>Если правда</strong> - погодный движок остается ядром, продукт поворачивается в планировщик (штурман, не автопилот: решение и ответственность остаются у оператора). Если неправда - минус красивая идея за ноль потраченных месяцев.</p><p class="fork">Как проверяется: не отдельным тестом, а вопросами 5-6 в способе 3.</p><p class="fork"><strong>Дисклеймер: формулировка крупной джобы</strong> - наша гипотеза со стороны. Ты свою поляну видишь лучше - возможно, крупная джоба вообще другая; тогда теми же способами проверяется она. Мелкую (погода) и крупную можно проверять параллельно; предположительно, в крупной денег больше - это проверяется, а не утверждается.</p></div></article><article class="hyp-row"><div class="hyp-code">Г4</div><div class="hyp-main"><p class="hyp-claim">Предположительно, сегмент этой джобы - люди, которые <strong>сами</strong> выбирают время обработки; платящий подсегмент - те, у кого несколько заказов и привычка платить за инструменты</p><p class="src"><strong>Откуда:</strong> кто не выбирает время сам, тому нечего решать; кто уже платит за похожее, тому не надо продавать саму идею платить. Заранее никого не выкидываем: и у одиночки с одним заказом решение может быть дорогим.</p><p class="src"><strong>Уверенность:</strong> средняя.</p><p class="fork"><strong>Если правда</strong> - заходить в первую очередь к тем, кто уже пользуется платными аналогами. Если неправда - разговоры покажут, у кого джоба реально болит; сегмент пересобираем по фактам.</p></div></article><article class="hyp-row"><div class="hyp-code">Г5</div><div class="hyp-main"><p class="hyp-claim">Предположительно, «дать доступ и повесить форму» - не самый дешевый путь закрыть твою джобу из Г1</p><p class="src"><strong>Откуда:</strong> холодному человеку нужна причина вообще открыть ссылку.</p><p class="src"><strong>Уверенность:</strong> высокая.</p><p class="fork"><strong>Если правда</strong> - способы ниже дешевле и быстрее. Если неправда - твой вариант это быстро покажет. Форма при этом остается в деле - как фиксация фактов применения у тех, кто уже согласился попробовать.</p></div></article></div></section><section class="doc-section" id="ways" data-section="2"><div class="section-kicker"><h2>3. Способы проверки</h2></div><div class="way-tabs" role="tablist"><button class="way-tab" data-target="0" type="button"><span>Способ 1</span>Послушать сообщества и найти первых людей</button><button class="way-tab" data-target="1" type="button"><span>Способ 2</span>Разобрать альтернативы и опыт их покупателей</button><button class="way-tab" data-target="2" type="button"><span>Способ 3</span>Разобрать 3-5 реальных случаев</button><button class="way-tab" data-target="3" type="button"><span>Способ 4</span>Проверить экран на настоящем решении</button><button class="way-tab" data-target="4" type="button"><span>Способ 5</span>Проверить спрос через готовую функцию Terino или микроуслугу</button><button class="way-tab" data-target="5" type="button"><span>Дополнительно</span>4. Если людей не хватает: страница и небольшая реклама</button></div><div class="way-panels"><article class="way-panel" id="way-0" data-way="0"><div class="way-top"><div class="card-number">Способ 1</div><h3>Послушать сообщества и найти первых людей</h3><div class="statuses"><span class="status amber">Impact: средний</span><span class="status green">Efforts: низкие</span><span class="status red">Уверенность в данных: низкая</span></div></div><nav class="way-head"><a class="wh-chip" href="#way-0-h0">Задача проверки</a><a class="wh-chip" href="#way-0-h1">Действия</a><a class="wh-chip" href="#way-0-h2">Результат</a><a class="wh-chip" href="#way-0-h3">Трудозатраты и следующий шаг</a></nav><div class="way-body"><h4 id="way-0-h0">Задача проверки</h4><p>Понять, какие ситуации операторы обсуждают сами, как называют трудности, чем пользуются. Получить людей и вопросы для разговора, а не заранее подтвердить одну выбранную боль. Это подготовка к проверке Г2–Г4.</p><h4 id="way-0-h1">Действия</h4><p>Агент читает доступные ветки, собирает ссылки и короткую выжимку. Ищет не только выбор времени вылета, но и переносы, ожидание, зарядку, заправку, дорогу, согласование и отчеты. Например (или что-то подобное):</p><p>Reddit: оператор о своей технике, работе и клиентах. <a class="source-link" href="https://www.reddit.com/r/drones/comments/1v8fday/ag_drone_rig/" target="_blank" rel="noopener">https://www.reddit.com/r/drones/comments/1v8fday/ag_drone_rig/</a></p><p>Reddit: владелец DJI T100 об обработках. <a class="source-link" href="https://www.reddit.com/r/drones/comments/1vbcb51/agriculture_drone_crop_dusting_the_cornfields/" target="_blank" rel="noopener">https://www.reddit.com/r/drones/comments/1vbcb51/agriculture_drone_crop_dusting_the_cornfields/</a></p><p>Reddit: обсуждение применения Agras, ветра и сноса. <a class="source-link" href="https://www.reddit.com/r/UAVmapping/comments/1vcj8pe/dji_agras_and_dji_mavic/" target="_blank" rel="noopener">https://www.reddit.com/r/UAVmapping/comments/1vcj8pe/dji_agras_and_dji_mavic/</a></p><p>Facebook: группа по опрыскиванию, США. Живость ленты не проверена; посмотреть последние 20-30 постов. <a class="source-link" href="https://www.facebook.com/groups/123803228100698" target="_blank" rel="noopener">https://www.facebook.com/groups/123803228100698</a></p><p>FPVAG, Австралия: публичный форум малоактивен, организатор может стать источником знакомств. <a class="source-link" href="https://fpvag.au/operator-hub/" target="_blank" rel="noopener">https://fpvag.au/operator-hub/</a></p><p>В подходящей ветке можно задать открытый вопрос: «Как вы выбирали время последней обработки? Чем проверяли условия?» Сначала прочитать правила; предложение попробовать продукт давать там, где это уместно и человеку интересно.</p><h4 id="way-0-h2">Результат</h4><p>Несколько конкретных ситуаций внутри выборки, формулировки для первого обращения и список до 5-10 кандидатов.</p><h4 id="way-0-h3">Трудозатраты и следующий шаг</h4><p><strong>Трудозатраты:</strong> 1-2 часа на первый проход, без рекламного бюджета. Сигнал слабый, но пригодный для подготовки.</p><p class="fork"><strong>Найдены люди и ситуации</strong> → перейти к способу 3.</p><p class="fork"><strong>Жалоб нет</strong> → спросить напрямую. Нет подходящих людей → сменить место поиска; это не основание закрывать идею.</p></div></article><article class="way-panel" id="way-1" data-way="1"><div class="way-top"><div class="card-number">Способ 2</div><h3>Разобрать альтернативы и опыт их покупателей</h3><div class="statuses"><span class="status amber">Impact: средний</span><span class="status green">Efforts: низкие</span><span class="status amber">Уверенность в данных: средняя</span></div></div><nav class="way-head"><a class="wh-chip" href="#way-1-h0">Задача проверки</a><a class="wh-chip" href="#way-1-h1">Действия</a><a class="wh-chip" href="#way-1-h2">Результат</a><a class="wh-chip" href="#way-1-h3">Вопросы для разговоров с операторами</a><a class="wh-chip" href="#way-1-h4">Трудозатраты и следующий шаг</a></nav><div class="way-body"><h4 id="way-1-h0">Задача проверки</h4><p>Узнать, с чем покупатели будут сравнивать Terino, за что уже предлагают платить и какие гэпы не закрыты. Это проверка предположений из Г2 и подготовка к поиску сегмента из Г4.</p><h4 id="way-1-h1">Действия</h4><p>Начальная сводка тарифов есть в Г2. Следующий проход можно поручить агенту: отзывы о UAV Forecast, SprayCast и других названных операторами инструментах в сторах и на форумах. Выписать, за что хвалят, на что жалуются и в какой рабочей ситуации это возникло. Если отзывов о продукте нет, так и отметить.</p><p>Особенно полезны рассказы о реальной оплате и продлении. Общие оценки вроде «дорого» или «классно» мало объясняют без ситуации.</p><h4 id="way-1-h2">Результат</h4><p>Ориентиры цен и список наблюдений из отзывов: за что хвалят, что не устраивает, в какой ситуации возникла проблема и что приходится делать дополнительно.</p><h4 id="way-1-h3">Вопросы для разговоров с операторами</h4><ul><li><strong>Используете ли вы UAV Forecast, SprayCast или другой инструмент для этой работы?</strong></li><li><strong>Если платите, за что сохраняете подписку?</strong></li><li><strong>Что в инструменте не устраивает и что приходится перепроверять или делать дополнительно?</strong></li></ul><h4 id="way-1-h4">Трудозатраты и следующий шаг</h4><p><strong>Трудозатраты:</strong> ограничить первым вечером агентной работы. Сигнал средний, когда есть конкретный опыт покупателей; одна тарифная страница слабее.</p><p class="fork"><strong>Следующий шаг</strong> → проверить находки у собеседников. Разговоры можно начинать до завершения каталога конкурентов.</p></div></article><article class="way-panel" id="way-2" data-way="2"><div class="way-top"><div class="card-number">Способ 3</div><h3>Разобрать 3-5 реальных случаев</h3><div class="statuses"><span class="status blue">Impact: высокий</span><span class="status amber">Efforts: средние</span><span class="status amber">Уверенность в данных: средняя</span></div></div><nav class="way-head"><a class="wh-chip" href="#way-2-h0">Задача проверки</a><a class="wh-chip" href="#way-2-h1">Поиск участников</a><a class="wh-chip" href="#way-2-h2">Холодное обращение</a><a class="wh-chip" href="#way-2-h3">Пример обращения</a><a class="wh-chip" href="#way-2-h4">Запасной способ найти собеседников</a><a class="wh-chip" href="#way-2-h5">Вопросы по реальному случаю</a><a class="wh-chip" href="#way-2-h6">Результат</a><a class="wh-chip" href="#way-2-h7">Трудозатраты и следующий шаг</a></nav><div class="way-body"><h4 id="way-2-h0">Задача проверки</h4><p>Проверить, какую работу человек действительно выполняет, чего ему не хватает и где возникает ценность, за которую может заплатить. Здесь можно обнаружить, что погода - только один шаг, а трудность находится в другом месте: основной способ уточнить Г2–Г4.</p><h4 id="way-2-h1">Поиск участников</h4><p>Знакомый пилотный пользователь подходит для первого случая. Еще несколько независимых людей помогут проверить повторяемость. Агент может подготовить список и черновики сообщений.</p><ul class="numbered"><li><span class="li-num">1. </span><strong>В ветках из способа 1 выбрать авторов, описывающих свои операции</strong>: «my T100», «we sprayed», «my clients» (агент подбирает релевантные ключи)</li><li><span class="li-num">2. </span><strong>Открыть карту Spray Drone Network, выбрать один регион и посмотреть до 10 подрядчиков.</strong> По описанию сервиса, просмотр карты бесплатный. Для каждого найти сайт компании или другой публичный канал связи. Карта подрядчиков: <a class="source-link" href="https://www.spraydronenetwork.com/" target="_blank" rel="noopener">https://www.spraydronenetwork.com/</a></li><li><span class="li-num">3. </span><strong>Дополнить поиск запросами agricultural drone spraying</strong>, Agras operator, spray drone service + регион. В LinkedIn искать owner, chief pilot, operations в соответствующих компаниях.</li><li><span class="li-num">4. </span><strong>Уточнить</strong>, выбирает ли человек время обработки, участвует ли в планировании и кто решает покупку инструментов. Если это не его роль, попросить подсказать нужного человека.</li><li><span class="li-num">5. </span><strong>Выход агента</strong>: до 10 строк - кто, где найден, признаки реальной работы, предполагаемая роль, канал связи и черновик обращения.</li></ul><h4 id="way-2-h2">Холодное обращение</h4><p>Для обращения взять конкретный факт из поста или сайта: регион, модель дрона, культура или описанная обработка. В 3-4 строках объяснить, почему выбран этот человек, назвать исследуемую рабочую ситуацию и задать один простой вопрос о последнем реальном случае. Не начинать с функций Terino: на этом шаге нужно понять существующий процесс и трудность.</p><h4 id="way-2-h3">Пример обращения</h4><p>«Вижу, вы работаете на [модель дрона] в [регионе]. Делаю Terino и перед следующей разработкой разбираю, как операторы выбирают время обработки. В последнем таком случае на что вы смотрели и что оказалось самым сложным? Можно ответить здесь коротко».</p><h4 id="way-2-h4">Запасной способ найти собеседников</h4><p>Если личное обращение неуместно или не получает ответа, задать открытый вопрос в активной ветке из способа 1, где операторы обсуждают погоду, окна или переносы: «Как вы выбирали время последней обработки? Чем проверяли условия?» Ответы дают реальные случаи и кандидатов для продолжения, но не заменяют тест Terino.</p><h4 id="way-2-h5">Вопросы по реальному случаю</h4><p>Начать с последней законченной обработки и восстановить ход решения.</p><ul class="numbered"><li><span class="li-num">1. </span><strong>Как вы выбирали время</strong>: что открыли, с кем сверились, какой результат получили?</li><li><span class="li-num">2. </span><strong>Что заняло больше всего времени или не устроило?</strong> Если все устраивало, почему этого способа хватает?</li><li><span class="li-num">3. </span><strong>Кто мог поменять план и кто решает покупку таких инструментов?</strong></li><li><span class="li-num">4. </span><strong>Когда следующая похожая работа?</strong> Как часто она возникает в вашем рабочем сезоне?</li><li><span class="li-num">5. </span><strong>Бывало, что несколько обработок не помещались в доступные окна?</strong> Можно разобрать последний конфликт: сроки, дорога, люди, техника? Что пришлось менять?</li><li><span class="li-num">6. </span><strong>Что после обработки нужно кому-то подтвердить?</strong> Можно посмотреть последний отчет или запись: кому и зачем они понадобились?</li></ul><p>Если была потеря времени или денег, уточнить размер и причину, не предполагая заранее крупного инцидента. Разовый убыток не равен цене приложения: важны частота, предотвращаемая часть потерь и преимущество перед привычным способом.</p><h4 id="way-2-h6">Результат</h4><p><strong>По каждому собеседнику:</strong> ситуация → нужный результат → текущий способ → что в нем не устраивает → критерий улучшения → покупатель. Похожие случаи образуют кандидатный сегмент. Например, «сам планирует несколько обработок, переносы требуют пересогласования, важнее всего быстро получить выполнимый порядок работ».</p><h4 id="way-2-h7">Трудозатраты и следующий шаг</h4><p><strong>Трудозатраты:</strong> несколько вечеров переписки; ответы могут растянуться на дни. Сигнал средний: это рассказ, но конкретный случай информативнее общего мнения.</p><p class="fork">После 3-5 разговоров сопоставить реальные случаи с тем, что найдено в сообществах и отзывах на конкурентов. Для следующей проверки выбрать одну гипотезу «сегмент + джоба + критерий улучшения», которая встречается в нескольких источниках. Различающиеся случаи сохранить как отдельные гипотезы.</p></div></article><article class="way-panel" id="way-3" data-way="3"><div class="way-top"><div class="card-number">Способ 4</div><h3>Проверить экран на настоящем решении</h3><div class="statuses"><span class="status blue">Impact: высокий</span><span class="status amber">Efforts: средние</span><span class="status green">Уверенность в данных: высокая</span></div></div><nav class="way-head"><a class="wh-chip" href="#way-3-h0">Задача проверки</a><a class="wh-chip" href="#way-3-h1">Действия</a><a class="wh-chip" href="#way-3-h2">Результат</a><a class="wh-chip" href="#way-3-h3">Трудозатраты и следующий шаг</a><a class="wh-chip" href="#way-3-h4">Что делать с результатами нескольких проверок</a></nav><div class="way-body"><h4 id="way-3-h0">Задача проверки</h4><p>Увидеть, какую часть обнаруженной работы уже выполняет Terino и что добавляет к привычному способу. Это проверка Г2. Она уместна, когда у собеседника действительно есть задача, которой соответствует экран.</p><h4 id="way-3-h1">Действия</h4><p>Договориться с 2-3 людьми, у которых предстоит обработка. Сначала каждый фиксирует обычный выбор: какие данные использовал, что решил и сколько времени это заняло. Затем открывает Terino для того же поля и той же работы.</p><ul><li><strong>Увидел значимое условие</strong>: «Нужно перепроверить этот период или выбрать другой».</li><li><strong>Получил тот же результат быстрее или с меньшим числом отдельных проверок.</strong></li><li><strong>Не получил ничего полезного либо потратил больше усилий, чтобы понять и проверить выдачу.</strong></li></ul><p>После теста записать три факта: какое время оператор выбрал до Terino; изменил ли выбор после просмотра экрана; какое конкретное показание повлияло. Если выбор не изменился, записать, сократилось ли время проверки.</p><p>Если Terino предупреждает об условии, которого оператор не заметил обычным способом, оператор перепроверяет его по привычным источникам. Пользой считать только подтвержденное предупреждение. Во время теста Terino дополняет обычную проверку погоды и местных ограничений, а не заменяет ее.</p><h4 id="way-3-h2">Результат</h4><p>По каждому случаю зафиксировать один из трех исходов: экран изменил решение, помог принять прежнее решение быстрее или не добавил пользы. Затем сопоставить случаи с остальными данными. Проверка на 2-3 операторах дает первые наблюдения о нынешнем экране, а не окончательный вывод о продукте.</p><h4 id="way-3-h3">Трудозатраты и следующий шаг</h4><p><strong>Трудозатраты:</strong> сопровождение нескольких рабочих случаев без новой разработки; календарь зависит от операторов и погоды. Сигнал сильнее интервью, если видно действие, а не только обещание.</p><h4 id="way-3-h4">Что делать с результатами нескольких проверок</h4><ul><li><strong>Спросить, захочет ли оператор использовать Terino на следующей похожей работе.</strong></li><li><strong>Понять, чем оператор решает эту задачу сейчас и за что уже платит.</strong></li><li><strong>Сравнить несколько случаев и определить, какая польза повторяется у разных операторов.</strong></li><li><strong>После этого сформулировать, что можно продавать</strong>: какой результат, в каком объеме, когда и за сколько. Проверку покупки проводить уже для этого конкретного предложения.</li></ul><p class="fork">Если в конкретном случае Terino ничего не изменил, записать причину со слов оператора: привычного способа хватило, нужного критерия не было на экране или выдачу оказалось трудно использовать. Следующий тест выбирать после сравнения нескольких случаев.</p></div></article><article class="way-panel" id="way-4" data-way="4"><div class="way-top"><div class="card-number">Способ 5</div><h3>Проверить спрос через готовую функцию Terino или микроуслугу</h3><div class="statuses"><span class="status blue">Impact: максимальный</span><span class="status red">Efforts: высокие</span><span class="status blue">Уверенность в данных: максимальная</span></div></div><nav class="way-head"><a class="wh-chip" href="#way-4-h0">Когда этот способ нужен</a><a class="wh-chip" href="#way-4-h1">Что именно проверять</a><a class="wh-chip" href="#way-4-h2">Последовательность</a><a class="wh-chip" href="#way-4-h3">Как трактовать результат</a><a class="wh-chip" href="#way-4-h4">Трудозатраты</a></nav><div class="way-body"><h4 id="way-4-h0">Когда этот способ нужен</h4><p>Перейти сюда после проверки Terino на реальной обработке. К этому моменту должны быть сформулированы сегмент, работа, замеченная польза и возможный платный результат. Пока этого нет, проверять оплату нечего.</p><h4 id="way-4-h1">Что именно проверять</h4><p class="fork">Если нынешний Terino уже целиком дает найденную пользу без участия автора - проверить готовность платить за конкретную функцию. В предложении назвать эту функцию, срок и цену; не продавать «Terino вообще».</p><p class="fork"><strong>Если Terino дает только исходные данные</strong> - проверить микроуслугу. Автор использует расчеты Terino и сам собирает из них готовый материал для оператора. Это не ручной расчет погоды: вручную собирается конечный материал, состав которого найден на предыдущих шагах.</p><p>Если для разных джоб нужны разные функции или микроуслуги, проверять их раздельно. Одна проверка - одна связка «сегмент + джоба + платный результат».</p><h4 id="way-4-h2">Последовательность</h4><ul><li><strong>Выбрать одного оператора из тех</strong>, чью реальную обработку уже разобрали и у кого обнаружили выбранную джобу.</li><li><strong>До выполнения назвать оператору конкретный состав результата, срок и цену.</strong> Согласие заплатить проверяет спрос; похвала идее - нет.</li><li><strong>После согласия предоставить обещанное</strong>: открыть доступ к существующей функции Terino либо собрать готовый материал на основе расчетов Terino.</li><li><strong>После применения спросить оператора</strong>: воспользовался ли он полученным, что изменил в работе и заказал бы то же самое для следующей обработки по той же цене.</li></ul><h4 id="way-4-h3">Как трактовать результат</h4><ul><li><strong>Оплата доступа подтверждает спрос только на названную</strong> существующую функцию Terino при предложенных сроке и цене.</li><li><strong>Оплата микроуслуги подтверждает спрос на конкретный</strong> готовый материал и способ его получения, но еще не подтверждает спрос на приложение.</li><li><strong>Один платный заказ показывает, что спрос возможен.</strong> Повторный заказ тем же оператором или независимая покупка вторым оператором дает более сильный сигнал.</li></ul><h4 id="way-4-h4">Трудозатраты</h4><p>Начать с одного предложения одному оператору и одного выполнения.</p></div></article><article class="way-panel" id="way-5" data-way="5"><div class="way-top"><div class="card-number">Дополнительно</div><h3>4. Если людей не хватает: страница и небольшая реклама</h3><div class="statuses"><span class="status amber">Impact: средний</span><span class="status amber">Efforts: низкие-средние</span><span class="status amber">Уверенность в данных: низкая-средняя</span></div></div><nav class="way-head"><a class="wh-chip" href="#way-5-h0">Последовательность</a><a class="wh-chip" href="#way-5-h1">Что определить до сборки страницы</a><a class="wh-chip" href="#way-5-h2">Канал и география</a><a class="wh-chip" href="#way-5-h3">Результат и трудозатраты</a><a class="wh-chip" href="#way-5-h4">Как читать результат</a></nav><div class="way-body"><p>Этот способ нужен, если адресные приглашения не дали достаточно собеседников или нужно проверить отклик холодной аудитории на уже выбранную гипотезу.</p><h4 id="way-5-h0">Последовательность</h4><p>Выбрать одну гипотезу «сегмент + джоба + обещанный результат». Запустить одно объявление, которое ведет на одну страницу с короткой формой. Человек видит предложение и либо уходит, либо оставляет контакт. На этом рекламный тест заканчивается.</p><h4 id="way-5-h1">Что определить до сборки страницы</h4><p>До сборки страницы зафиксировать: кого привлекаем, какую джобу предполагаем, какой результат обещаем и какое действие просим совершить - оставить контакт. Объявление, страница и форма должны передавать одну и ту же связку.</p><p>Из гипотезы следуют настройки аудитории, текст и изображение объявления, заголовок страницы и 1-2 отборочных вопроса в форме. Эти вопросы должны показывать, относится ли заявка к выбранному сегменту.</p><h4 id="way-5-h2">Канал и география</h4><p>Первый канал выбирать по тому, где можно найти выбранный сегмент. Facebook - кандидат, поскольку там найдены профильные группы. Для одного теста взять один регион США или Австралии; перед запуском проверить доступные настройки аудитории.</p><p><strong>Минимальная техническая схема:</strong> рекламная ссылка с UTM-метками ведет на одну страницу с одной формой. После отправки заявка приходит на указанную почту, записывается в Google Таблицу.</p><h4 id="way-5-h3">Результат и трудозатраты</h4><p>Ориентир - вечер на сборку и отдельное время на запуск. В кабинете Meta смотреть показы, расходы, клики, CTR, цену клика и Lead. В Google Таблице - заявки и ответы на отборочные вопросы. Вручную отметить, сколько заявок относится к выбранному сегменту.</p><h4 id="way-5-h4">Как читать результат</h4><p class="fork"><strong>Есть заявки от выбранного сегмента</strong> → получены контакты людей, которые заинтересовались конкретным обещанием настолько, чтобы заполнить форму. Затем каждого можно пригласить на разговор; сама заявка еще не подтверждает джобу или готовность платить.</p><p class="fork"><strong>Есть клики, но нет заявок</strong> → зафиксирован интерес к объявлению без продолжения на странице. По этим данным нельзя определить причину: проблема может быть в аудитории, обещании, объявлении, странице или форме. Для следующего запуска изменить один элемент.</p><p class="fork">Бюджет закончился без заявок от выбранного сегмента → этот запуск не дал подходящих контактов. Сопоставить результат с другими проверками и решить, что менять: аудиторию, связку «джоба + результат», объявление, страницу или канал.</p></div></article></div></section><section class="doc-section" id="final" data-section="3"><div class="section-kicker"><h2>5. Решение по результатам проверки</h2></div><p>До каждой проверки зафиксировать, какие данные нужно получить, лимит рабочих часов и денежный бюджет. Если условия изменились после запуска, считать полученный результат отдельным тестом.</p><h4>Что должно быть понятно после всех проверок</h4><p>Свести данные из сообществ, отзывов на конкурентов, разговоров, проверок на реальной работе и рекламы в одну картину. Отдельная проверка не выносит приговор продукту; вывод строится по всем полученным данным.</p><div class="res-row"><strong>Кому нужен Terino в текущем виде</strong>: кто заинтересовался, кто применил его на реальной работе и что именно изменилось.</div><div class="res-row"><strong>Какие реальные боли обнаружены</strong>: в каких рабочих ситуациях они возникают, как люди решают их сейчас и за что уже платят.</div><div class="res-row"><strong>Какие сегменты и джобы повторяются</strong> в собранных данных и какая связка выглядит наиболее перспективной для следующей проверки.</div><div class="res-row"><strong>Где найдены подходящие люди</strong> и можно ли тем же способом найти следующих.</div><div class="res-row"><strong>Где могут лежать деньги</strong>: какой сегмент предположительно готов платить, за какую джобу и за какой конкретный результат.</div><div class="res-row"><strong>Куда двигать Terino</strong>: оставить нынешний экран, изменить подачу, достроить решение под найденную джобу, проверить соседнюю джобу или пока остановить разработку.</div><div class="res-row"><strong>Какого знания еще не хватает</strong> для решения и каким одним дешевым тестом его получить.</div><h3 class="outcome-h">Аутпут</h3><p>Одна приоритетная гипотеза «сегмент + джоба + платный результат», подтверждающие ее факты, оставшиеся пробелы и один следующий шаг.</p><p class="fork">Если собранных данных недостаточно для выбора такой связки, это тоже результат: не строить дальше, пока следующий тест не закроет главный пробел.</p></section></main>
+</div>
+<footer class="pagefoot">Дорожная карта · сентябрь 2026 · рабочий материал, страница не индексируется</footer>
+<script>(function () {
+  'use strict';
+  var body = document.body;
+  var sections = Array.prototype.slice.call(document.querySelectorAll('.doc-section'));
+  var navItems = Array.prototype.slice.call(document.querySelectorAll('.nav-item'));
+
+  /* ── разделы ── */
+  function showSection(idx, push) {
+    idx = String(idx);
+    var found = false;
+    sections.forEach(function (s) {
+      var on = s.dataset.section === idx;
+      s.classList.toggle('active', on);
+      if (on) found = true;
+    });
+    if (!found) { showSection('0', push); return; }
+    navItems.forEach(function (a) { a.classList.toggle('on', a.dataset.nav === idx); });
+    if (push) history.pushState({ s: idx }, '', '#' + (sections[+idx] ? sections[+idx].id : 's' + idx));
+    body.classList.remove('nav-open');
+    window.scrollTo({ top: 0, behavior: 'instant' in document.documentElement.style ? 'instant' : 'auto' });
+  }
+
+  /* ── способы ── */
+  function showWay(wayIdx, push) {
+    document.querySelectorAll('.way-panel').forEach(function (p) {
+      p.classList.toggle('on', p.dataset.way === String(wayIdx));
+    });
+    document.querySelectorAll('.way-tab').forEach(function (t) {
+      t.classList.toggle('on', t.dataset.target === String(wayIdx));
+    });
+    if (push) history.pushState({ w: wayIdx }, '', '#way-' + wayIdx);
+  }
+
+  document.querySelectorAll('.way-tab').forEach(function (tab) {
+    tab.addEventListener('click', function () { showWay(tab.dataset.target, true); });
+  });
+
+  navItems.forEach(function (a) {
+    a.addEventListener('click', function (e) {
+      e.preventDefault();
+      showSection(a.dataset.nav, false);
+      history.pushState({ s: a.dataset.nav }, '', a.getAttribute('href'));
+    });
+  });
+
+  /* ── режимы чтения ── */
+  document.querySelectorAll('[data-mode-btn]').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      var mode = btn.dataset.modeBtn;
+      body.dataset.mode = mode;
+      document.querySelectorAll('[data-mode-btn]').forEach(function (b) {
+        b.classList.toggle('on', b === btn);
+      });
+      try { localStorage.setItem('terino-mode', mode); } catch (e) {}
+      if (mode === 'playbook') {
+        var cur = document.querySelector('.nav-item.on');
+        showSection(cur ? cur.dataset.nav : '0', false);
+      }
+    });
+  });
+
+  /* ── мобильная навигация ── */
+  var burger = document.querySelector('.burger');
+  var scrim = document.getElementById('scrim');
+  if (burger) burger.addEventListener('click', function () { body.classList.toggle('nav-open'); });
+  if (scrim) scrim.addEventListener('click', function () { body.classList.remove('nav-open'); });
+
+  /* ── роутинг ── */
+  function applyHash(push) {
+    var h = (location.hash || '').replace('#', '');
+    var mw = h.match(/^way-(\d+)$/);
+    if (mw) {
+      var host = document.querySelector('.way-panel[data-way="' + mw[1] + '"]');
+      var sec = host && host.closest('.doc-section');
+      showSection(sec ? sec.dataset.section : '2', false);
+      showWay(mw[1], false);
+      return;
+    }
+    var byId = h && document.getElementById(h);
+    if (byId && byId.classList.contains('doc-section')) {
+      showSection(byId.dataset.section, false); return;
+    }
+    showSection('0', false);
+  }
+  window.addEventListener('popstate', function () { applyHash(false); });
+
+  /* якорь раздела/способа не должен оставлять страницу прокрученной вниз:
+     браузер сам скроллит к id, возвращаем наверх после разбора хэша */
+  function resetScroll() {
+    window.scrollTo(0, 0);
+    requestAnimationFrame(function () { window.scrollTo(0, 0); });
+  }
+
+  /* ── старт ── */
+  try {
+    var saved = localStorage.getItem('terino-mode');
+    if (saved === 'full') {
+      body.dataset.mode = 'full';
+      document.querySelectorAll('[data-mode-btn]').forEach(function (b) {
+        b.classList.toggle('on', b.dataset.modeBtn === 'full');
+      });
+    }
+  } catch (e) {}
+
+  if (document.querySelector('.way-panel')) showWay(0, false);
+  applyHash(false);
+  if (location.hash) resetScroll();
+})();
+</script>
+</body></html>
