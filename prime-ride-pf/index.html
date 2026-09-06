@@ -1,0 +1,294 @@
+<!doctype html>
+<html lang="ru"><head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>ПОИСК: УСКОРИТЬ РОСТ, НЕ ЛОМАЯ ИМИДЖ — PRIME RIDE</title>
+<style>/* Дизайн-система снята с prime-ride.ru (Tilda: Manrope, #1e1c1a, #898681, #e9e5de)
+   плюс золото и форма карточек — с фирменной инфографики внутри КП (#c09c60). */
+
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap');
+
+:root {
+  --ink:      #1e1c1a;
+  --muted:    #898681;
+  --line:     #e9e5de;
+  --gold:     #c09c60;
+  --gold-dk:  #b48430;
+  --paper:    #fdfdfc;
+  --card:     #ffffff;
+  --serif:    'Playfair Display', Georgia, 'Times New Roman', serif;
+  --sans:     'Manrope', -apple-system, BlinkMacSystemFont, 'Helvetica Neue', Arial, sans-serif;
+}
+
+* { box-sizing: border-box; min-width: 0; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/1.65 var(--sans);
+  letter-spacing: .002em;
+}
+
+.shell {
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 72px 40px 110px;
+}
+
+/* ── шапка ───────────────────────────────────────────────────────────────── */
+
+.brand {
+  font: 500 15px/1 var(--serif);
+  letter-spacing: .42em;
+  text-transform: uppercase;
+  color: var(--ink);
+  text-align: center;
+}
+
+.brand::after {
+  content: "";
+  display: block;
+  width: 210px;
+  height: 1px;
+  margin: 18px auto 0;
+  background: var(--gold);
+  opacity: .55;
+}
+
+h1 {
+  margin: 30px 0 0;
+  font: 500 clamp(30px, 4.4vw, 50px)/1.2 var(--serif);
+  letter-spacing: -.012em;
+  text-align: center;
+  text-transform: none;
+}
+
+.subtitle {
+  margin: 16px auto 0;
+  max-width: 640px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 17px;
+  font-weight: 300;
+}
+
+.lead {
+  margin: 46px auto 0;
+  max-width: 880px;
+  font-size: 18.5px;
+  line-height: 1.72;
+}
+
+/* ── разделы: ромб-разделитель как на инфографике ─────────────────────────── */
+
+h2 {
+  margin: 78px 0 30px;
+  padding-top: 44px;
+  font: 500 clamp(19px, 2.1vw, 25px)/1.3 var(--serif);
+  letter-spacing: .075em;
+  text-transform: uppercase;
+  color: var(--ink);
+  position: relative;
+  text-align: center;
+}
+
+h2::before {
+  content: "";
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: min(100%, 620px);
+  height: 11px;
+  background:
+    linear-gradient(var(--gold), var(--gold)) left  center / calc(50% - 14px) 1px no-repeat,
+    linear-gradient(var(--gold), var(--gold)) right center / calc(50% - 14px) 1px no-repeat;
+  opacity: .5;
+}
+
+h2::after {
+  content: "";
+  position: absolute;
+  top: 2px; left: 50%;
+  width: 7px; height: 7px;
+  margin-left: -3.5px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+/* текстовые абзацы держим в читаемой колонке, сетки и картинки — во всю ширину */
+.shell > p {
+  max-width: 880px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+p { margin: 0 0 18px; }
+p:last-child { margin-bottom: 0; }
+
+strong { color: var(--ink); font-weight: 600; }
+
+/* ── цифры ────────────────────────────────────────────────────────────────── */
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 20px;
+  margin: 34px 0 8px;
+}
+
+.stat {
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 32px 26px 28px;
+  text-align: center;
+  box-shadow: 0 1px 2px rgba(30, 28, 26, .03);
+}
+
+.stat-n {
+  font: 400 46px/1 var(--serif);
+  color: var(--ink);
+  letter-spacing: -.01em;
+}
+
+.stat-t {
+  margin-top: 14px;
+  padding-top: 14px;
+  border-top: 1px solid var(--line);
+  color: var(--muted);
+  font-size: 14.5px;
+  line-height: 1.5;
+}
+
+/* ── инфографика из документа ─────────────────────────────────────────────── */
+
+figure.shot {
+  margin: 40px 0;
+  padding: 0;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--card);
+}
+
+figure.shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+/* ── шаги ─────────────────────────────────────────────────────────────────── */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 22px;
+  margin-top: 34px;
+}
+
+.step {
+  display: flex;
+  gap: 20px;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 28px 26px;
+}
+
+.step-n {
+  flex: 0 0 auto;
+  font: 400 26px/1 var(--serif);
+  color: var(--gold-dk);
+  padding-top: 2px;
+}
+
+.step-b h3 {
+  margin: 0 0 10px;
+  font: 600 16.5px/1.35 var(--sans);
+  letter-spacing: .01em;
+}
+
+.step-b p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 15.5px;
+  line-height: 1.62;
+}
+
+/* ── списки ───────────────────────────────────────────────────────────────── */
+
+ul {
+  list-style: none;
+  margin: 30px 0 0;
+  padding: 0;
+}
+
+li {
+  position: relative;
+  padding: 20px 0 20px 34px;
+  border-bottom: 1px solid var(--line);
+}
+
+li:first-child { border-top: 1px solid var(--line); }
+
+li::before {
+  content: "";
+  position: absolute;
+  left: 6px; top: 30px;
+  width: 6px; height: 6px;
+  border: 1px solid var(--gold);
+  transform: rotate(45deg);
+}
+
+/* ── цена ─────────────────────────────────────────────────────────────────── */
+
+.price {
+  margin: 40px auto 0;
+  max-width: 520px;
+  background: var(--ink);
+  color: var(--paper);
+  border-radius: 12px;
+  padding: 40px 32px;
+  text-align: center;
+  font: 400 clamp(26px, 3.4vw, 38px)/1.25 var(--serif);
+  letter-spacing: .01em;
+}
+
+.price-note {
+  margin: 18px auto 0;
+  max-width: 640px;
+  text-align: center;
+  color: var(--muted);
+  font-size: 15px;
+}
+
+.outcome {
+  margin: 36px auto 0;
+  max-width: 880px;
+  padding: 30px 34px;
+  background: var(--card);
+  border: 1px solid var(--gold);
+  border-radius: 12px;
+  font-size: 18px;
+}
+
+/* ── узкие экраны ─────────────────────────────────────────────────────────── */
+
+@media (max-width: 760px) {
+  body { font-size: 16px; }
+  .shell { padding: 46px 20px 72px; }
+  .brand { letter-spacing: .3em; font-size: 13px; }
+  .brand::after { width: 150px; }
+  h2 { margin-top: 56px; }
+  .stat { padding: 26px 20px 22px; }
+  .stat-n { font-size: 38px; }
+  .step { flex-direction: column; gap: 12px; padding: 24px 20px; }
+  .outcome, .price { padding: 26px 22px; }
+  li { padding-left: 28px; }
+}
+</style>
+</head><body><main class="shell"><div class="brand">PRIME RIDE</div><h1>ПОИСК: УСКОРИТЬ РОСТ, НЕ ЛОМАЯ ИМИДЖ</h1><p class="subtitle">Программа ускорения на базе действующего SEO</p><p class="lead"><strong>Поиск для Prime Ride</strong> — стратегический канал роста, с отдельным фокусом на Google. SEO с марта уже сформировало рабочую базу и в Яндексе, и в Google: 252 запроса находятся в TOP-10 Яндекса, 98 — в TOP-10 Google. При этом именно в Google сейчас особенно сильный резерв: еще 237 коммерческих запросов стоят на позициях 4–30. Часть классических изменений на сайте мы сознательно не внедряем, потому что они могут противоречить премиальному образу бренда.</p><h2>ЧТО ПРЕДЛАГАЕМ</h2><p><strong>На базе уже созданного SEO-фундамента подключить</strong> работу с поведенческими факторами по запросам, где Яндекс и Google уже ранжируют Prime Ride. Приоритет — Google, где сейчас больше пространства для роста. Цель — ускорить движение подготовленных SEO-запросов к высоким позициям и расширить поисковую видимость.</p><div class="stats"><div class="stat"><div class="stat-n">237</div><div class="stat-t">запросов Google в зоне 4–30</div></div><div class="stat"><div class="stat-n">142</div><div class="stat-t">из них уже на позициях 4–10</div></div><div class="stat"><div class="stat-n">98</div><div class="stat-t">запросов Google уже в TOP-10</div></div></div><figure class="shot"><img src="images/growth.webp" alt=""></figure><p><strong>SEO остается фундаментом программы</strong>: оно формирует релевантность, страницы и позиции, а работа с поведенческими факторами подключается к тем зонам, которые SEO уже подготовило для ускорения.</p><h2>ГДЕ УЖЕ ЕСТЬ ПОТЕНЦИАЛ</h2><p><strong>Google уже показывает Prime Ride по коммерческим</strong> запросам — рядом с TOP есть заметный резерв роста</p><figure class="shot"><img src="images/zone.webp" alt=""></figure><p><strong>По данным Search Console</strong>, 237 запросов находятся в зоне 4–30.</p><p><strong>Особенно интересны коммерческие запросы с уже сформированным</strong> спросом и позициями рядом с TOP:</p><figure class="shot"><img src="images/queries.webp" alt=""></figure><h2>ПОЧЕМУ ЭТО ХОРОШАЯ ЗОНА ДЛЯ ДОЖИМА</h2><p><strong>142 запроса уже находятся на позициях 4–10; еще 95 — на 11–30.</strong> Google уже считает страницы Prime Ride подходящими под эти запросы. Задача — усилить именно те точки, где до ТОП осталось несколько позиций.</p><p><strong>Яндекс подтверждает, что SEO-фундамент работает</strong>: «такси мерседес майбах москва» — 4 место, «премиум такси в москве» — 6, «аренда бизнес авто с водителем» — 8. Для клиента это одна программа, но основной дополнительный фокус сейчас логично дать Google.</p><h2>КАК РАБОТАЕМ</h2><p><strong>Дополнительный рычаг на готовом SEO-фундаменте —</strong> без превращения сайта в SEO-шаблон</p><div class="steps"><div class="step"><div class="step-n">01</div><div class="step-b"><h3>Отбираем пул</h3><p>Берем не все ядро, а коммерческие запросы из зоны 4–30: спрос, текущая позиция, релевантная страница и ценность направления для бизнеса.</p></div></div><div class="step"><div class="step-n">02</div><div class="step-b"><h3>Фиксируем стартовую точку</h3><p>Для выбранных запросов фиксируем позиции, показы, клики и органический трафик по посадочным страницам.</p></div></div><div class="step"><div class="step-n">03</div><div class="step-b"><h3>Подключаем усиление</h3><p>По согласованному пулу подключаем технологию работы с поведенческими факторами: усиливаем качественные взаимодействия с сайтом по приоритетным поисковым сценариям. Задача — поднять позиции по выбранным коммерческим запросам и расширить долю целевой аудитории, которая встречает Prime Ride в поиске.</p></div></div><div class="step"><div class="step-n">04</div><div class="step-b"><h3>Пересобираем приоритеты</h3><p>Каждый месяц смотрим позиции и органический трафик; раз в квартал пересматриваем пул и подключаем новые запросы, которые обычное SEO вывело в рабочую зону.</p></div></div></div><h2>ЧТО ПРОДОЛЖАЕМ ДЕЛАТЬ НА САЙТЕ</h2><p><strong>Техническое SEO</strong>, индексация, структура, релевантные страницы, внутренняя связность, UX и коммерческие факторы — все изменения, которые помогают поиску и не ломают образ PRIME RIDE. Работу с поведенческими факторами подключаем только к запросам, для которых SEO уже создало релевантность и позиции. Новые зоны сначала выводим в рабочий диапазон через SEO, после чего можем дополнительно ускорять их.</p><p><strong>Горизонт</strong> — 12 месяцев. По мере роста обычного SEO в программу можно подключать новые зоны, поэтому она работает как постоянный ускоритель, а не как разовая акция.</p><h2>РЕЗУЛЬТАТ И СТОИМОСТЬ</h2><p><strong>Смотрим на долю поискового спроса Prime Ride</strong>, а не на саму технологию</p><h2>КОНТРОЛИРУЕМЫЕ KPI</h2><ul><li><strong>Рост позиций по согласованным коммерческим</strong> запросам.</li><li><strong>Рост доли запросов в TOP-10 / TOP-5 /</strong> TOP-3.</li><li><strong>Рост органических кликов и трафика на приоритетные</strong> страницы.</li></ul><h2>ПОЧЕМУ ЭТО ИМЕЕТ СМЫСЛ ДЛЯ БИЗНЕСА</h2><p><strong>Поисковый канал показывает качество визита</strong>: отказы около 17%, глубина — 2,3 страницы.</p><p><strong>Качественный канал занимает пока еще сравнительно</strong> небольшую долю — рост видимости позволяет забирать больше целевого спроса конкурентов по нише.</p><div class="price">80 000 ₽ / месяц</div><p class="price-note">Дополнительно к текущему SEO · горизонт 12 месяцев</p><h2>ЧТО ПОКУПАЕТ PRIME RIDE</h2><ul><li><strong>Находим коммерческие запросы с реальным потенциалом</strong> ТОПа в Google / Яндексе; отдельный приоритет даем Google и сценариям, которые нельзя агрессивно раскрывать на сайте без ущерба премиальному образу бренда.</li><li><strong>По выбранному пулу подключаем технологию работы с</strong> поведенческими факторами и усиливаем качественные взаимодействия с приоритетными страницами.</li><li><strong>Дожимаем целевые запросы к высоким позициям</strong>, чтобы Prime Ride чаще встречался аудитории в поиске и занимал большую долю выдачи относительно конкурентов.</li><li><strong>По мере роста обычного SEO подключаем новые запросы</strong>: задача программы — последовательно расширять поисковую видимость, узнаваемость бренда и число качественных контактов с целевой аудиторией.</li></ul><h2>ДЛЯ СТАРТА</h2><ul><li><strong>Согласовать бюджет и подключение</strong> программы.</li><li><strong>Подтвердить приоритетные направления бизнеса и бренд-ограничения</strong> для сайта.</li><li><strong>Зафиксировать первый пул запросов и стартовую</strong> точку.</li></ul><p class="outcome"><strong>Итог: SEO остается фундаментом поискового роста Prime Ride.</strong> Именно благодаря уже созданной релевантности и позициям мы можем подключить работу с поведенческими факторами как следующий инструмент ускорения — в первую очередь по Google-запросам, где сейчас особенно большой резерв роста и где имидж бренда ограничивает часть классических изменений на сайте.</p></main></body></html>
