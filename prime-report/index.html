@@ -156,14 +156,14 @@
     .engine-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0 8px; }
     .engine-stat { padding-right: 8px; border-right: 1px solid var(--line); }
     .engine-stat:last-child { border-right: 0; }
-    .engine-stat small { color: var(--muted); font-size: 9px; }
-    .engine-stat b { display: block; margin-top: 2px; font-size: 22px; }
-    .engine-stat em { color: var(--green); font-style: normal; font-size: 10px; font-weight: 800; }
+    .engine-stat small { color: var(--muted); font-size: 11px; }
+    .engine-stat b { display: block; margin-top: 2px; font-size: 28px; }
+    .engine-stat em { color: var(--green); font-style: normal; font-size: 11px; font-weight: 800; }
     .engine-stat.na b { color: #aaa79f; font-size: 16px; padding-top: 5px; }
     .engine-stat.na em { color: var(--muted); font-weight: 500; }
-    .mini-chart { width: 100%; height: 132px; display: block; overflow: visible; }
+    .mini-chart { width: 100%; height: 164px; display: block; overflow: visible; }
     .mini-chart .grid { stroke: #d9d5ca; stroke-width: 1; }
-    .mini-chart .axis-text { fill: #777870; font-size: 8px; }
+    .mini-chart .axis-text { fill: #777870; font-size: 10px; }
     .mini-chart .line-top3 { fill: none; stroke: var(--gold); stroke-width: 3; }
     .mini-chart .line-top10 { fill: none; stroke: var(--green); stroke-width: 3; }
     .mini-chart .line-top20 { fill: none; stroke: var(--graph); stroke-width: 2.3; opacity: .72; }
@@ -184,11 +184,61 @@
     .proof-button { display: inline-block; color: var(--ink); font-size: 10px; font-weight: 800; text-decoration: none; border-bottom: 1px solid var(--gold); }
     .proof-placeholder { margin-top: 6px; padding: 8px; color: #8a5d25; font-size: 8px; line-height: 1.3; background: #eee5d5; }
     .compact-footer { margin-top: 14px; border-top: 1px solid var(--line); }
+    .annual-screen { min-height: 720px; display: flex; flex-direction: column; justify-content: center; padding: 34px 0 38px; }
+    .annual-kicker { color: var(--gold); font-size: 12px; font-weight: 850; letter-spacing: .1em; text-transform: uppercase; }
+    .annual-screen h1 { margin-top: 13px; max-width: 1050px; }
+    .annual-screen .lead { max-width: 880px; margin-bottom: 28px; }
+    .annual-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
+    .annual-card { padding: 20px 22px 18px; background: rgba(255,255,255,.42); border: 1px solid var(--line); }
+    .annual-card-head { display: flex; align-items: baseline; justify-content: space-between; gap: 18px; }
+    .annual-engine { font-size: 20px; font-weight: 850; }
+    .annual-range { color: var(--muted); font-size: 10px; }
+    .annual-main { display: flex; align-items: center; justify-content: space-between; gap: 20px; margin-top: 10px; }
+    .annual-number { display: flex; align-items: flex-end; gap: 15px; white-space: nowrap; }
+    .annual-from { color: #aaa79f; font-size: 68px; line-height: .86; letter-spacing: -.055em; }
+    .annual-arrow { color: var(--gold); font-size: 34px; padding-bottom: 8px; }
+    .annual-to { font-size: 96px; line-height: .82; letter-spacing: -.06em; font-weight: 800; }
+    .annual-ring { --pct: 0%; width: 116px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(var(--green) 0 var(--pct), #dedbd2 var(--pct) 100%); position: relative; flex: 0 0 auto; }
+    .annual-ring::after { content: ""; position: absolute; inset: 15px; border-radius: 50%; background: var(--paper); }
+    .annual-ring b { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; font-size: 27px; }
+    .annual-label { margin-top: 13px; font-size: 14px; }
+    .annual-label strong { color: var(--green); }
+    .annual-details { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line); }
+    .annual-detail small { color: var(--muted); font-size: 9px; }
+    .annual-detail b { display: block; margin-top: 2px; font-size: 21px; }
+    .annual-detail.muted b { color: #aaa79f; font-size: 14px; padding-top: 5px; }
+    .annual-conclusion { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; margin-top: 18px; padding: 14px 16px; color: var(--ink); background: #ece7da; font-size: 13px; line-height: 1.4; }
+    .annual-conclusion b { font-size: 16px; }
+    .scroll-cue { color: var(--muted); font-size: 10px; white-space: nowrap; }
+    .recent-screen { padding-top: 26px; border-top: 1px solid var(--ink); }
+    .recent-title { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
+    .recent-title h2 { margin: 0; font-family: Georgia, serif; font-size: 34px; font-weight: 500; }
+    .recent-title p { margin: 0; max-width: 520px; color: var(--muted); text-align: right; font-size: 11px; line-height: 1.35; }
+    .recent-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 20px; }
+    .recent-kpi { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 16px; padding: 14px 16px; background: rgba(255,255,255,.42); border: 1px solid var(--line); }
+    .recent-kpi small { color: var(--muted); font-size: 10px; }
+    .recent-kpi b { display: block; margin-top: 5px; font-size: 27px; }
+    .recent-kpi em { color: var(--green); font-size: 13px; font-style: normal; font-weight: 850; }
+    .recent-kpi .sequence { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .kpi-section-title { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin: 22px 0 12px; }
+    .kpi-section-title h3 { margin: 0; font-family: Georgia, serif; font-size: 25px; font-weight: 500; }
+    .kpi-section-title span { color: var(--muted); font-size: 11px; }
+    .cluster-section { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--ink); }
+    .cluster-section .groups { grid-template-columns: repeat(6, 1fr); gap: 16px; }
+    .cluster-section .cluster-card strong { min-height: 34px; font-size: 13px; }
+    .cluster-section .mini-donut { width: 92px; }
+    .cluster-section .mini-donut b { font-size: 24px; }
+    .cluster-section .cluster-before { font-size: 11px; }
+    .proof-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
+    .proof-strip .proof-card + .proof-card { margin-top: 0; }
     @media (max-width: 900px) {
       .page { padding: 22px; }
       .hero, .content-grid { grid-template-columns: 1fr; }
       .summary-grid { grid-template-columns: 1fr 1fr; }
       .engine-grid, .lower-grid { grid-template-columns: 1fr; }
+      .annual-grid { grid-template-columns: 1fr; }
+      .annual-screen { min-height: 0; }
+      .cluster-section .groups { grid-template-columns: repeat(3, 1fr); }
       .donut-side { max-width: 520px; }
       .business { grid-template-columns: 1fr 1fr; }
       .meaning { grid-column: 1 / -1; padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--line); }
@@ -207,6 +257,15 @@
       .summary-grid { grid-template-columns: 1fr; }
       .positions-head { align-items: flex-start; flex-direction: column; }
       .positions-head p { text-align: left; }
+      .recent-title { align-items: flex-start; flex-direction: column; }
+      .recent-title p { text-align: left; }
+      .kpi-section-title { align-items: flex-start; flex-direction: column; }
+      .recent-kpis { grid-template-columns: 1fr; }
+      .annual-main { align-items: flex-end; }
+      .annual-to { font-size: 74px; }
+      .annual-from { font-size: 52px; }
+      .annual-ring { width: 92px; }
+      .cluster-section .groups, .proof-strip { grid-template-columns: 1fr 1fr; }
     }
     @media print {
       body { background: white; }
@@ -218,86 +277,107 @@
   <main class="page">
     <header class="topline">
       <div class="brand">РЕЗУЛЬТАТЫ SEO</div>
-      <div class="period">Яндекс и Google, Москва · март - сентябрь</div>
+      <div class="period">Яндекс и Google, Москва · 15 января - 14 сентября</div>
     </header>
 
-    <div class="report-title">
-      <h1>Сайт стал заметнее в поиске</h1>
-      <p class="lead">Позиции растут и в Яндексе, и в Google. Ниже - результат, его влияние на переходы и источники для проверки.</p>
-    </div>
+    <section class="annual-screen" aria-label="Результат с начала продвижения">
+      <div class="annual-kicker">Динамика с начала продвижения · 15 января - 14 сентября</div>
+      <h1>С нуля до первой страницы поиска</h1>
+      <p class="lead">На первом съеме запросов в топ-10 не было. Сейчас сайт находится на первой странице Яндекса по 281 запросу и Google по 121 запросу.</p>
 
-    <section class="summary-grid" aria-label="Главные результаты">
-      <div class="summary-card">
-        <small>Запросов на первой странице Яндекса<br>август → сентябрь</small>
-        <div class="summary-value"><b>281</b><em>+59</em></div>
-        <div class="summary-trend">222 → 281</div>
+      <div class="annual-grid">
+        <article class="annual-card">
+          <div class="annual-card-head"><div class="annual-engine">Яндекс</div><div class="annual-range">15 января → 14 сентября</div></div>
+          <div class="annual-main">
+            <div>
+              <div class="annual-number"><span class="annual-from">0</span><span class="annual-arrow">→</span><span class="annual-to">281</span></div>
+              <div class="annual-label">запрос на первой странице поиска</div>
+            </div>
+            <div class="annual-ring" style="--pct:29%"><b>29%</b></div>
+          </div>
+          <div class="annual-details">
+            <div class="annual-detail"><small>В первой тройке</small><b>139 запросов</b></div>
+            <div class="annual-detail"><small>На первых двух страницах</small><b>364 запроса</b></div>
+          </div>
+        </article>
+
+        <article class="annual-card">
+          <div class="annual-card-head"><div class="annual-engine">Google</div><div class="annual-range">15 января → 14 сентября</div></div>
+          <div class="annual-main">
+            <div>
+              <div class="annual-number"><span class="annual-from">0</span><span class="annual-arrow">→</span><span class="annual-to">121</span></div>
+              <div class="annual-label">запрос на первой странице поиска</div>
+            </div>
+            <div class="annual-ring" style="--pct:12%"><b>12%</b></div>
+          </div>
+          <div class="annual-details">
+            <div class="annual-detail"><small>В первой тройке</small><b>42 запроса</b></div>
+            <div class="annual-detail muted"><small>На первых двух страницах</small><b>съем настроен до топ-10</b></div>
+          </div>
+        </article>
       </div>
-      <div class="summary-card">
-        <small>Запросов на первой странице Google<br>август → сентябрь</small>
-        <div class="summary-value"><b>121</b><em>+57</em></div>
-        <div class="summary-trend">64 → 121</div>
-      </div>
-      <div class="summary-card">
-        <small>Переходы на сайт из поиска<br>июнь → июль → август</small>
-        <div class="summary-value"><b>1 186</b><em>+23%</em></div>
-        <div class="summary-trend">934 → 964 → 1 186</div>
-      </div>
-      <div class="summary-card">
-        <small>Переходы на страницу приложения<br>июнь → июль → август</small>
-        <div class="summary-value"><b>212</b><em>+74%</em></div>
-        <div class="summary-trend">101 → 122 → 212</div>
+
+      <div class="annual-conclusion">
+        <div><b>Главный результат:</b> с начала продвижения сайт вышел на первую страницу сразу в двух поисковых системах.</div>
+        <div class="scroll-cue">Ниже - три полных месяца ↓</div>
       </div>
     </section>
 
-    <section aria-label="Динамика позиций">
-      <div class="positions-head">
-        <h2>Как росли позиции</h2>
-        <p>Каждая линия показывает, сколько запросов находится в первой тройке, первой десятке и на первых двух страницах поиска.</p>
+    <section class="recent-screen" aria-label="Динамика за три полных месяца">
+      <div class="recent-title">
+        <h2>Последние результаты подробнее</h2>
+        <p>Позиции показаны до последнего съема 14 сентября. Трафик и цели - за три последних полных месяца.</p>
       </div>
 
       <div class="engine-grid">
         <article class="engine-card">
-          <div class="engine-top"><div class="engine-name">Яндекс</div><div class="engine-period">март - сентябрь</div></div>
+          <div class="engine-top"><div class="engine-name">Яндекс: позиции</div><div class="engine-period">июль → август → 14 сентября</div></div>
           <div class="engine-stats">
-            <div class="engine-stat"><small>ТОП-3</small><b>139</b><em>+21 за месяц</em></div>
-            <div class="engine-stat"><small>ТОП-10</small><b>281</b><em>+59 за месяц</em></div>
-            <div class="engine-stat"><small>ТОП-20</small><b>364</b><em>+78 за месяц</em></div>
+            <div class="engine-stat"><small>ТОП-3</small><b>139</b><em>было 118</em></div>
+            <div class="engine-stat"><small>ТОП-10</small><b>281</b><em>было 222</em></div>
+            <div class="engine-stat"><small>ТОП-20</small><b>364</b><em>было 286</em></div>
           </div>
-          <svg class="mini-chart" viewBox="0 0 500 135" role="img" aria-label="Рост позиций в Яндексе с марта по сентябрь">
-            <line class="grid" x1="36" y1="20" x2="480" y2="20"/><line class="grid" x1="36" y1="68" x2="480" y2="68"/><line class="grid" x1="36" y1="116" x2="480" y2="116"/>
-            <text class="axis-text" x="8" y="23">400</text><text class="axis-text" x="8" y="71">200</text><text class="axis-text" x="25" y="119">0</text>
-            <polyline class="line-top20" points="40,74 112,28 184,28 256,59 328,47 400,39 472,29"/>
-            <polyline class="line-top10" points="40,87 112,73 184,77 256,80 328,63 400,55 472,48"/>
-            <polyline class="line-top3" points="40,114 112,110 184,110 256,106 328,87 400,86 472,82"/>
-            <text class="axis-text" x="31" y="132">Мар</text><text class="axis-text" x="103" y="132">Апр</text><text class="axis-text" x="175" y="132">Май</text><text class="axis-text" x="247" y="132">Июн</text><text class="axis-text" x="319" y="132">Июл</text><text class="axis-text" x="391" y="132">Авг</text><text class="axis-text" x="463" y="132">Сен</text>
+          <svg class="mini-chart" viewBox="0 0 500 150" role="img" aria-label="Позиции в Яндексе за июль, август и на 14 сентября">
+            <line class="grid" x1="45" y1="24" x2="460" y2="24"/><line class="grid" x1="45" y1="72" x2="460" y2="72"/><line class="grid" x1="45" y1="120" x2="460" y2="120"/>
+            <text class="axis-text" x="9" y="28">400</text><text class="axis-text" x="15" y="76">200</text><text class="axis-text" x="31" y="124">0</text>
+            <polyline class="line-top20" points="80,51 250,43 420,33"/>
+            <polyline class="line-top10" points="80,67 250,60 420,53"/>
+            <polyline class="line-top3" points="80,92 250,91 420,87"/>
+            <text class="axis-text" x="62" y="144">Июль</text><text class="axis-text" x="230" y="144">Август</text><text class="axis-text" x="392" y="144">14 сен</text>
           </svg>
           <div class="legend"><span class="l3">ТОП-3</span><span class="l10">ТОП-10</span><span>ТОП-20</span></div>
         </article>
 
         <article class="engine-card">
-          <div class="engine-top"><div class="engine-name">Google</div><div class="engine-period">март - сентябрь</div></div>
+          <div class="engine-top"><div class="engine-name">Google: позиции</div><div class="engine-period">июль → август → 14 сентября</div></div>
           <div class="engine-stats">
-            <div class="engine-stat"><small>ТОП-3</small><b>42</b><em>+24 за месяц</em></div>
-            <div class="engine-stat"><small>ТОП-10</small><b>121</b><em>+57 за месяц</em></div>
-            <div class="engine-stat na"><small>ТОП-20</small><b>нет данных</b><em>глубина съема до ТОП-10</em></div>
+            <div class="engine-stat"><small>ТОП-3</small><b>42</b><em>было 18</em></div>
+            <div class="engine-stat"><small>ТОП-10</small><b>121</b><em>было 64</em></div>
+            <div class="engine-stat na"><small>ТОП-20</small><b>нет данных</b><em>глубина съема до топ-10</em></div>
           </div>
-          <svg class="mini-chart" viewBox="0 0 500 135" role="img" aria-label="Рост позиций в Google с марта по сентябрь">
-            <line class="grid" x1="36" y1="20" x2="480" y2="20"/><line class="grid" x1="36" y1="68" x2="480" y2="68"/><line class="grid" x1="36" y1="116" x2="480" y2="116"/>
-            <text class="axis-text" x="8" y="23">140</text><text class="axis-text" x="14" y="71">70</text><text class="axis-text" x="25" y="119">0</text>
-            <polyline class="line-top10" points="40,116 112,110 184,92 256,109 328,72 400,49 472,33"/>
-            <polyline class="line-top3" points="40,116 112,115 184,114 256,112 328,104 400,98 472,87"/>
-            <text class="axis-text" x="31" y="132">Мар</text><text class="axis-text" x="103" y="132">Апр</text><text class="axis-text" x="175" y="132">Май</text><text class="axis-text" x="247" y="132">Июн</text><text class="axis-text" x="319" y="132">Июл</text><text class="axis-text" x="391" y="132">Авг</text><text class="axis-text" x="463" y="132">Сен</text>
+          <svg class="mini-chart" viewBox="0 0 500 150" role="img" aria-label="Позиции в Google за июль, август и на 14 сентября">
+            <line class="grid" x1="45" y1="24" x2="460" y2="24"/><line class="grid" x1="45" y1="72" x2="460" y2="72"/><line class="grid" x1="45" y1="120" x2="460" y2="120"/>
+            <text class="axis-text" x="9" y="28">140</text><text class="axis-text" x="20" y="76">70</text><text class="axis-text" x="31" y="124">0</text>
+            <polyline class="line-top10" points="80,76 250,53 420,37"/>
+            <polyline class="line-top3" points="80,108 250,102 420,91"/>
+            <text class="axis-text" x="62" y="144">Июль</text><text class="axis-text" x="230" y="144">Август</text><text class="axis-text" x="392" y="144">14 сен</text>
           </svg>
           <div class="legend"><span class="l3">ТОП-3</span><span class="l10">ТОП-10</span></div>
-          <div class="google-note">Топвизор сейчас хранит позиции Google только в пределах первой десятки.</div>
+          <div class="google-note">Позиции Google ниже десятой сейчас не сохраняются в выгрузке.</div>
         </article>
       </div>
-    </section>
 
-    <div class="lower-grid">
-      <section>
-        <div class="section-title"><h2>Где сайт уже виден</h2><span>Яндекс, 14 сентября</span></div>
-        <p class="cluster-explain">Процент запросов по теме на первой странице Яндекса. Под кругом - результат месяц назад.</p>
+      <div class="kpi-section-title"><h3>Трафик и действия пользователей</h3><span>три полных месяца: июнь → июль → август</span></div>
+      <div class="recent-kpis">
+        <div class="recent-kpi"><div><small>Органический трафик</small><b>1 186 переходов</b><em>+27% за три месяца</em></div><div class="sequence">934 → 964 → 1 186</div></div>
+        <div class="recent-kpi"><div><small>Переход на страницу «Скачать приложение»</small><b>212 переходов</b><em>более чем в 2 раза</em></div><div class="sequence">101 → 122 → 212</div></div>
+        <div class="recent-kpi"><div><small>Переход в App Store</small><b>127 переходов</b><em>рост каждый месяц</em></div><div class="sequence">5 → 62 → 127</div></div>
+        <div class="recent-kpi"><div><small>Переход в Google Play</small><b>77 переходов</b><em>рост каждый месяц</em></div><div class="sequence">5 → 52 → 77</div></div>
+      </div>
+
+      <section class="cluster-section">
+        <div class="section-title"><h2>Какие направления уже видны</h2><span>Яндекс, съем 14 сентября</span></div>
+        <p class="cluster-explain">Процент запросов по теме на первой странице. Под кругом - результат предыдущего съема.</p>
         <div class="groups">
           <div class="cluster-card history"><strong>Такси*</strong><div class="mini-donut" style="--pct:75%"><b>75%</b></div><div class="cluster-before">было <b>78%</b></div></div>
           <div class="cluster-card"><strong>Maybach</strong><div class="mini-donut" style="--pct:59%"><b>59%</b></div><div class="cluster-before">было <b>35%</b></div></div>
@@ -309,25 +389,14 @@
         <p class="cluster-footnote">*Такси показано как исторический результат. Коммерческие страницы удалены по юридическим причинам; сейчас осталась одна согласованная инфостатья.</p>
       </section>
 
-      <aside class="proof-panel">
-        <h2>Проверить цифры</h2>
-        <p>Скриншот показывает, где искать показатель. Живая ссылка дает проверить все даты самостоятельно.</p>
-        <div class="proof-card">
-          <strong>Топвизор: позиции</strong>
-          <span>Смотреть количество запросов в ТОП-3, ТОП-10 и ТОП-20 и переключать даты.</span>
-          <span class="proof-button">Открыть все месяцы ↗</span>
-          <div class="proof-placeholder">Добавить скриншот Топвизора с одной выделенной зоной.</div>
-        </div>
-        <div class="proof-card">
-          <strong>Метрика: реальные переходы</strong>
-          <span>Смотреть поисковый трафик и переходы на страницу приложения.</span>
-          <div class="proof-placeholder">Добавить скриншот Метрики с пояснением «смотреть сюда».</div>
-        </div>
-      </aside>
-    </div>
+      <div class="proof-strip">
+        <div class="proof-card"><strong>Топвизор: проверить позиции</strong><span>Гостевая ссылка должна открывать все даты и оба поисковика.</span><span class="proof-button">Открыть все съемы ↗</span><div class="proof-placeholder">Добавить один крупный скриншот и выделить, на что смотреть.</div></div>
+        <div class="proof-card"><strong>Яндекс Метрика: проверить действия</strong><span>Органический трафик, переход на скачивание приложения, App Store и Google Play.</span><div class="proof-placeholder">Добавить один крупный скриншот и выделить четыре показателя.</div></div>
+      </div>
+    </section>
 
     <footer class="compact-footer">
-      <div class="source">Источники: Топвизор и Яндекс Метрика. Регион позиций - Москва. Отслеживается 972 запроса.</div>
+      <div class="source">Источники: Топвизор и Яндекс Метрика. Регион позиций - Москва.</div>
       <div class="draft">Черновик для оценки формата</div>
     </footer>
   </main>
