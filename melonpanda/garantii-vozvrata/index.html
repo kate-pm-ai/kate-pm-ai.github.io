@@ -1,0 +1,587 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <title>Возврат, обмен и гарантии на заказы - Melon Panda</title>
+  <meta name="description" content="Что делать, если товар поврежден, не подошел или в заказе ошибка. Условия возврата, обмена, отмены заказа и возврата денег в Melon Panda.">
+  <style>
+    :root{
+      --ink:#39465b;
+      --ink-2:#566276;
+      --muted:#788396;
+      --pink:#ff008c;
+      --pink-dark:#dc0079;
+      --pink-soft:#fff0f7;
+      --blue:#2a5eac;
+      --blue-soft:#f0f3fa;
+      --green:#267a5c;
+      --green-soft:#eef8f4;
+      --amber:#9a6815;
+      --amber-soft:#fff9e9;
+      --red:#a72756;
+      --red-soft:#fff3f7;
+      --line:#e6e9ef;
+      --panel:#f7f8fa;
+      --white:#fff;
+      --max:1180px;
+      --r:18px;
+      --shadow:0 14px 40px rgba(57,70,91,.08);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;overflow-x:hidden}
+    body{margin:0;font-family:Jost,"Avenir Next",Montserrat,Arial,sans-serif;color:var(--ink);background:#fff;font-size:17px;line-height:1.58;overflow-x:hidden}
+    a{color:inherit}
+    button,input,textarea{font:inherit}
+    button{cursor:pointer}
+    .wrap{width:min(var(--max),calc(100% - 44px));margin:0 auto}
+    .ribbon{padding:8px 20px;background:var(--ink);color:#fff;text-align:center;font-size:13px;letter-spacing:.02em}
+    .ribbon a{color:#ffc2e4}
+    .prototype-bar{border-bottom:1px solid #f1d39b;background:#fffaf0;color:#6c501b}
+    .prototype-bar .wrap{min-height:46px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+    .prototype-label{display:flex;align-items:center;gap:10px;font-size:13px;font-weight:650}
+    .prototype-label:before{content:"";width:9px;height:9px;border-radius:50%;background:#e8a21a;box-shadow:0 0 0 5px rgba(232,162,26,.14)}
+    .toggle-notes{min-height:44px;border:1px solid #d9b86d;border-radius:999px;background:#fff;padding:7px 13px;color:#735313;font-size:12px;font-weight:700}
+    .site-header{border-bottom:1px solid var(--line);background:#fff}
+    .header-top{padding:10px 0 7px;display:flex;gap:20px;align-items:center;font-size:12px;font-weight:650}
+    .header-top a{text-decoration:underline;text-underline-offset:3px}
+    .header-main{padding:15px 0 18px;display:grid;grid-template-columns:240px minmax(240px,1fr) auto;gap:28px;align-items:center}
+    .wordmark{min-height:44px;display:flex;flex-direction:column;justify-content:center;font-size:28px;line-height:1;font-weight:800;letter-spacing:.13em;text-decoration:none;color:var(--ink)}
+    .wordmark small{display:block;margin-top:7px;font-size:8px;font-weight:650;letter-spacing:.22em;color:var(--muted)}
+    .search{height:46px;border:1px solid #cfd5df;border-radius:9px;display:flex;align-items:center;padding:0 14px;color:var(--muted);font-size:14px}
+    .search:before{content:"";width:13px;height:13px;border:2px solid var(--muted);border-radius:50%;margin-right:12px}
+    .header-actions{display:flex;align-items:center;gap:18px;font-size:12px;font-weight:650}
+    .cart{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:8px;background:#dd4293;color:#fff;text-decoration:none}
+    .nav{border-top:1px solid var(--line)}
+    .nav .wrap{min-height:46px;display:flex;align-items:center;gap:28px;overflow:auto;scrollbar-width:none}
+    .nav a{min-height:44px;display:flex;align-items:center;white-space:nowrap;text-decoration:none;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.025em}
+    .nav a:first-child{color:var(--pink)}
+    .crumbs{padding:22px 0 0;font-size:13px;color:var(--muted)}
+    .crumbs a{text-decoration:none}
+    .crumbs span{color:var(--pink)}
+
+    .hero{padding:30px 0 54px}
+    .hero-grid{display:grid;grid-template-columns:minmax(0,1.12fr) minmax(330px,.88fr);gap:58px;align-items:center}
+    .eyebrow{margin:0 0 13px;color:var(--pink);font-size:12px;font-weight:750;letter-spacing:.14em;text-transform:uppercase}
+    h1{max-width:750px;margin:0;font-size:clamp(38px,5.2vw,66px);line-height:1.04;letter-spacing:-.045em;color:var(--ink)}
+    .hero-lead{max-width:700px;margin:22px 0 0;color:var(--ink-2);font-size:20px;line-height:1.48}
+    .hero-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:48px;padding:11px 20px;border:1px solid transparent;border-radius:999px;font-weight:700;font-size:14px;text-decoration:none;transition:.18s}
+    .btn-primary{background:var(--pink);color:#fff;box-shadow:0 10px 26px rgba(255,0,140,.2)}
+    .btn-primary:hover{background:var(--pink-dark);transform:translateY(-1px)}
+    .btn-secondary{border-color:#cfd5df;background:#fff;color:var(--ink)}
+    .btn-secondary:hover{border-color:var(--pink);color:var(--pink)}
+    .hero-proof{display:flex;flex-wrap:wrap;gap:18px;margin-top:25px;color:var(--muted);font-size:13px}
+    .hero-proof span{display:flex;align-items:center;gap:7px}
+    .hero-proof span:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pink)}
+
+    .hero-card{position:relative;min-height:420px;border-radius:28px;background:linear-gradient(145deg,#fff2f8 0%,#f3f5fb 100%);overflow:hidden;box-shadow:var(--shadow);padding:30px}
+    .parcel{position:absolute;right:36px;bottom:40px;width:218px;height:170px;border-radius:12px;background:#e6bb84;box-shadow:0 24px 34px rgba(79,58,35,.18);transform:rotate(-3deg)}
+    .parcel:before{content:"";position:absolute;left:91px;top:0;width:38px;height:100%;background:#f2d6ad;border-left:1px solid rgba(105,71,31,.14);border-right:1px solid rgba(105,71,31,.14)}
+    .parcel:after{content:"MELON PANDA";position:absolute;right:22px;top:68px;font-size:11px;font-weight:800;letter-spacing:.12em;color:#67503a;transform:rotate(2deg)}
+    .parcel-label{position:absolute;right:54px;bottom:75px;width:86px;height:52px;background:#fff;border:1px solid #ccd2db;transform:rotate(2deg);z-index:2}
+    .parcel-label:before,.parcel-label:after{content:"";position:absolute;left:10px;right:10px;height:5px;background:repeating-linear-gradient(90deg,#3f4653 0 2px,transparent 2px 5px)}
+    .parcel-label:before{top:12px}.parcel-label:after{top:25px}
+    .orbit{position:absolute;border:1px dashed rgba(255,0,140,.28);border-radius:50%}
+    .orbit.o1{width:300px;height:300px;right:-34px;bottom:-52px}
+    .orbit.o2{width:170px;height:170px;left:-28px;top:30px}
+    .hero-card-copy{position:relative;z-index:3;max-width:245px}
+    .hero-card-copy b{display:block;font-size:28px;line-height:1.12;letter-spacing:-.03em}
+    .hero-card-copy p{margin:14px 0 0;color:var(--ink-2);font-size:14px}
+    .mini-chip{position:absolute;z-index:4;display:flex;align-items:center;gap:8px;padding:9px 12px;border-radius:999px;background:#fff;box-shadow:0 8px 22px rgba(57,70,91,.12);font-size:12px;font-weight:700}
+    .mini-chip:before{content:"";width:9px;height:9px;border-radius:50%;background:var(--pink)}
+    .chip-one{right:22px;top:38px}.chip-two{left:24px;bottom:32px}.chip-three{right:20px;bottom:175px}
+
+    section{padding:68px 0}
+    .section-soft{background:var(--panel)}
+    .section-pink{background:linear-gradient(180deg,#fff5fa 0%,#fff 100%)}
+    .section-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(260px,430px);gap:40px;align-items:end;margin-bottom:30px}
+    .section-head h2,.simple-head h2{margin:0;font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.035em}
+    .section-head p,.simple-head p{margin:0;color:var(--ink-2)}
+    .simple-head{max-width:800px;margin-bottom:30px}
+    .simple-head p{margin-top:14px}
+
+    .route-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+    .route-card{min-height:168px;padding:20px;border:1px solid var(--line);border-radius:16px;background:#fff;text-decoration:none;transition:.18s;box-shadow:0 7px 22px rgba(57,70,91,.04)}
+    .route-card:hover{transform:translateY(-3px);border-color:#ffc0df;box-shadow:0 14px 30px rgba(255,0,140,.1)}
+    .route-num{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--pink-soft);color:var(--pink);font-size:13px;font-weight:800}
+    .route-card h3{margin:17px 0 5px;font-size:17px;line-height:1.25}
+    .route-card p{margin:0;color:var(--muted);font-size:13px;line-height:1.42}
+
+    .editor-alert{margin-top:22px;padding:18px 20px;border:1px solid #e5c069;border-radius:15px;background:var(--amber-soft);display:grid;grid-template-columns:auto 1fr;gap:14px;align-items:start}
+    .editor-alert .mark{display:flex;align-items:center;justify-content:center;width:30px;height:30px;border-radius:50%;background:#e2a72f;color:#fff;font-weight:800}
+    .editor-alert strong{display:block;margin-bottom:4px;font-size:15px}
+    .editor-alert p{margin:0;color:#72571f;font-size:14px}
+
+    .case-list{display:grid;gap:18px}
+    .case{border:1px solid var(--line);border-radius:20px;background:#fff;overflow:hidden;box-shadow:0 8px 24px rgba(57,70,91,.045);scroll-margin-top:20px}
+    .case summary{list-style:none;display:grid;grid-template-columns:auto 1fr auto;gap:17px;align-items:center;padding:23px 25px;cursor:pointer}
+    .case summary::-webkit-details-marker{display:none}
+    .case summary:hover{background:#fffafd}
+    .case-icon{display:flex;align-items:center;justify-content:center;width:47px;height:47px;border-radius:14px;background:var(--pink-soft);color:var(--pink);font-size:16px;font-weight:850}
+    .case-title h3{margin:0;font-size:20px;line-height:1.25}
+    .case-title p{margin:4px 0 0;color:var(--muted);font-size:14px}
+    .case-arrow{position:relative;width:28px;height:28px;border-radius:50%;background:var(--blue-soft)}
+    .case-arrow:before,.case-arrow:after{content:"";position:absolute;left:8px;top:13px;width:12px;height:2px;border-radius:2px;background:var(--blue);transition:.18s}
+    .case-arrow:after{transform:rotate(90deg)}
+    .case[open] .case-arrow:after{transform:rotate(0);opacity:0}
+    .case-body{border-top:1px solid var(--line);padding:25px;display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.62fr);gap:28px;background:#fdfdfe}
+    .steps{counter-reset:item;margin:0;padding:0;list-style:none}
+    .steps li{position:relative;min-height:45px;padding:0 0 19px 45px;color:var(--ink-2);font-size:15px}
+    .steps li:last-child{padding-bottom:0}
+    .steps li:before{counter-increment:item;content:counter(item);position:absolute;left:0;top:-2px;display:flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:var(--ink);color:#fff;font-size:12px;font-weight:800}
+    .steps li:not(:last-child):after{content:"";position:absolute;left:13px;top:28px;bottom:1px;width:1px;background:#cfd5df}
+    .steps b{color:var(--ink)}
+    .fact-strip{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:17px}
+    .status{display:inline-flex;align-items:center;gap:7px;padding:6px 10px;border-radius:999px;font-size:11px;font-weight:800;letter-spacing:.04em;text-transform:uppercase}
+    .status:before{content:"";width:7px;height:7px;border-radius:50%;background:currentColor}
+    .status.fact{background:var(--green-soft);color:var(--green)}
+    .status.conflict{background:var(--amber-soft);color:var(--amber)}
+    .status.draft{background:var(--blue-soft);color:var(--blue)}
+    .source-note{padding:15px 17px;border-radius:13px;background:var(--blue-soft);color:#465a78;font-size:13px}
+    .source-note b{display:block;margin-bottom:4px;color:var(--blue)}
+
+    .client-question{position:relative;margin:0 0 20px;padding:18px 19px 20px;border:2px solid #f4a4ce;border-radius:18px;background:var(--red-soft);color:#6f2949;box-shadow:0 9px 24px rgba(167,39,86,.08)}
+    .client-question:after{content:"";position:absolute;left:25px;bottom:-10px;width:17px;height:17px;background:var(--red-soft);border-right:2px solid #f4a4ce;border-bottom:2px solid #f4a4ce;transform:rotate(45deg)}
+    .client-question .q-label{display:inline-flex;align-items:center;gap:8px;margin-bottom:8px;color:var(--red);font-size:11px;font-weight:850;letter-spacing:.1em;text-transform:uppercase}
+    .client-question .q-label:before{content:"?";display:flex;align-items:center;justify-content:center;width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:12px}
+    .client-question p{margin:0;font-size:14px;line-height:1.48}
+    .client-question ul{margin:8px 0 0;padding-left:18px;font-size:13px}
+    .client-question li+li{margin-top:4px}
+    body.hide-notes .client-question,body.hide-notes .editor-alert{display:none}
+
+    .rules-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+    .rule{padding:24px;border:1px solid var(--line);border-radius:18px;background:#fff}
+    .rule-kicker{font-size:11px;font-weight:850;letter-spacing:.11em;text-transform:uppercase;color:var(--pink)}
+    .rule h3{margin:10px 0 7px;font-size:19px;line-height:1.28}
+    .rule p{margin:0;color:var(--ink-2);font-size:14px}
+    .rule strong{color:var(--ink)}
+
+    .policy-box{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .policy-card{padding:26px;border:1px solid var(--line);border-radius:20px;background:#fff}
+    .policy-card h3{margin:0 0 12px;font-size:22px}
+    .policy-card p{margin:0;color:var(--ink-2);font-size:15px}
+    .policy-card p+p{margin-top:10px}
+    .policy-card.is-conflict{border-color:#e5c069;background:var(--amber-soft)}
+    .policy-card.is-conflict h3{color:#745316}
+    .versus{display:flex;align-items:center;justify-content:center;margin:-5px auto;width:44px;height:44px;border-radius:50%;background:var(--ink);color:#fff;font-size:11px;font-weight:850;letter-spacing:.08em;position:relative;z-index:2}
+
+    .trust-layout{display:grid;grid-template-columns:minmax(0,.82fr) minmax(0,1.18fr);gap:50px;align-items:center}
+    .trust-visual{min-height:420px;border-radius:28px;background:#f3f5fa;padding:28px;position:relative;overflow:hidden}
+    .warehouse{position:absolute;left:40px;right:40px;bottom:37px;height:220px;border:2px solid #dce1ea;border-radius:20px 20px 8px 8px;background:#fff}
+    .warehouse:before{content:"";position:absolute;left:-18px;right:-18px;top:-70px;height:110px;background:#fff;border:2px solid #dce1ea;clip-path:polygon(50% 0,100% 66%,100% 100%,0 100%,0 66%)}
+    .shelf{position:absolute;left:20px;right:20px;height:2px;background:#cfd5df}
+    .s1{top:62px}.s2{top:127px}
+    .box-row{position:absolute;left:30px;display:flex;gap:15px}.b1{top:22px}.b2{top:88px}.b3{top:153px}
+    .box-row i{display:block;width:48px;height:32px;border-radius:4px;background:linear-gradient(135deg,#ffd1e8,#f1a8cf);border:1px solid #eb91c1}
+    .box-row i:nth-child(2){background:linear-gradient(135deg,#d9e4f7,#afc3e4);border-color:#9cb4dc}
+    .box-row i:nth-child(3){background:linear-gradient(135deg,#eee3d6,#d8c2a7);border-color:#cfb18c}
+    .thermo{position:absolute;right:24px;top:25px;width:40px;height:125px;border-radius:999px;background:#fff;border:2px solid #dce1ea}
+    .thermo:before{content:"";position:absolute;left:14px;bottom:15px;width:8px;height:75px;border-radius:99px;background:linear-gradient(0deg,var(--pink) 0 43%,#e9edf3 43%)}
+    .trust-copy h2{margin:0;font-size:clamp(31px,4vw,46px);line-height:1.1;letter-spacing:-.035em}
+    .trust-copy>p{margin:17px 0 24px;color:var(--ink-2)}
+    .trust-points{display:grid;gap:13px}
+    .trust-point{display:grid;grid-template-columns:38px 1fr;gap:13px;align-items:start;padding:16px 17px;border:1px solid var(--line);border-radius:14px;background:#fff}
+    .check{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:10px;background:var(--green-soft);color:var(--green);font-weight:900}
+    .trust-point b{display:block;font-size:15px}
+    .trust-point span{display:block;margin-top:3px;color:var(--muted);font-size:13px}
+
+    .contact-card{display:grid;grid-template-columns:minmax(0,1fr) minmax(320px,.78fr);gap:40px;padding:34px;border-radius:26px;background:var(--ink);color:#fff;box-shadow:0 18px 46px rgba(57,70,91,.2)}
+    .contact-card .eyebrow{color:#ff92ca}
+    .contact-card h2{margin:0;font-size:clamp(30px,4vw,44px);line-height:1.12;letter-spacing:-.035em}
+    .contact-card p{margin:15px 0 0;color:#d8dce4}
+    .email-box{margin-top:23px;display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+    .email-link{min-height:44px;display:inline-flex;align-items:center;font-size:20px;font-weight:800;color:#fff;text-underline-offset:5px}
+    .copy-btn{min-height:44px;padding:7px 13px;border:1px solid #8d96a6;border-radius:999px;background:transparent;color:#fff;font-size:12px;font-weight:700}
+    .contact-checklist{padding:21px;border-radius:17px;background:#fff;color:var(--ink)}
+    .contact-checklist h3{margin:0 0 12px;font-size:18px}
+    .contact-checklist ul{margin:0;padding:0;list-style:none}
+    .contact-checklist li{position:relative;padding:9px 0 9px 27px;border-top:1px solid var(--line);font-size:14px}
+    .contact-checklist li:first-child{border-top:0}
+    .contact-checklist li:before{content:"";position:absolute;left:1px;top:15px;width:10px;height:6px;border-left:2px solid var(--pink);border-bottom:2px solid var(--pink);transform:rotate(-45deg)}
+
+    .source-links{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:12px}
+    .source-link{padding:17px;border:1px solid var(--line);border-radius:13px;text-decoration:none;background:#fff;color:var(--ink-2);font-size:13px;transition:.18s}
+    .source-link:hover{border-color:#f1a0cc;color:var(--pink)}
+    .source-link b{display:block;margin-bottom:4px;color:var(--ink);font-size:14px}
+    .footer{padding:34px 0 100px;border-top:1px solid var(--line);color:var(--muted);font-size:13px}
+    .footer .wrap{display:flex;justify-content:space-between;gap:22px;flex-wrap:wrap}
+    .footer b{color:var(--ink)}
+    .mobile-cta{display:none}
+
+    @media(max-width:960px){
+      .header-main{grid-template-columns:1fr auto}.search{grid-column:1/-1;grid-row:2}.header-actions a:not(.cart){display:none}
+      .hero-grid,.trust-layout,.contact-card{grid-template-columns:1fr}
+      .hero-card{min-height:360px}.section-head{grid-template-columns:1fr;gap:14px}.route-grid{grid-template-columns:repeat(2,1fr)}
+      .case-body{grid-template-columns:1fr}.rules-grid{grid-template-columns:1fr 1fr}.source-links{grid-template-columns:repeat(2,1fr)}
+    }
+    @media(max-width:640px){
+      body{font-size:16px}.wrap{width:min(100% - 28px,var(--max))}.ribbon{font-size:11px}.prototype-bar .wrap{padding:8px 0}.prototype-label{font-size:11px}.prototype-label span{max-width:180px}.toggle-notes{padding:6px 10px}
+      .header-top{gap:10px;overflow:auto;white-space:nowrap}.header-main{padding:14px 0}.wordmark{font-size:23px}.header-actions{gap:8px}.cart{padding:0 13px}.search{height:42px}.nav .wrap{gap:20px}
+      .hero{padding:24px 0 42px}.hero-grid{gap:28px}h1{font-size:40px}.hero-lead{font-size:17px}.hero-actions{display:grid}.btn{width:100%}.hero-proof{gap:9px 18px}
+      .hero-card{min-height:330px;padding:23px}.hero-card-copy b{font-size:24px}.parcel{width:180px;height:142px;right:26px}.parcel:before{left:76px;width:31px}.parcel-label{right:42px;bottom:67px}.chip-three{display:none}.chip-one{right:12px}.chip-two{left:14px}
+      section{padding:48px 0}.section-head h2,.simple-head h2,.trust-copy h2,.contact-card h2{font-size:31px}.route-grid{grid-template-columns:1fr 1fr;gap:10px}.route-card{min-height:150px;padding:16px}.route-card p{font-size:12px}
+      .case summary{grid-template-columns:auto 1fr;padding:18px}.case-arrow{display:none}.case-icon{width:40px;height:40px;border-radius:12px}.case-title h3{font-size:17px}.case-title p{font-size:12px}.case-body{padding:18px;gap:21px}.steps li{padding-left:40px;font-size:14px}
+      .rules-grid,.policy-box,.source-links{grid-template-columns:1fr}.versus{margin:-5px auto}.trust-layout{gap:28px}.trust-visual{min-height:330px}.warehouse{left:24px;right:24px;bottom:26px;height:180px}.warehouse:before{top:-58px;height:92px}.s1{top:50px}.s2{top:104px}.b1{top:17px}.b2{top:71px}.b3{top:126px}.box-row i{width:39px;height:26px}.thermo{height:110px}
+      .contact-card{padding:25px;gap:26px}.email-link{font-size:17px}.footer{padding-bottom:98px}
+      .mobile-cta{position:fixed;z-index:50;left:12px;right:12px;bottom:12px;display:none;align-items:center;justify-content:space-between;gap:10px;padding:10px 11px 10px 16px;border-radius:16px;background:rgba(57,70,91,.96);box-shadow:0 12px 34px rgba(35,42,55,.3);color:#fff;backdrop-filter:blur(12px)}
+      body.sticky-visible .mobile-cta{display:flex}
+      .mobile-cta span{font-size:12px;font-weight:700}.mobile-cta a{min-height:44px;display:inline-flex;align-items:center;padding:9px 14px;border-radius:999px;background:var(--pink);color:#fff;text-decoration:none;font-size:12px;font-weight:800;white-space:nowrap}
+      .header-top a{min-height:44px;display:flex;align-items:center}
+    }
+    @media(max-width:390px){.route-grid{grid-template-columns:1fr}.hero-card{min-height:310px}.parcel{right:14px}.source-link{overflow-wrap:anywhere}}
+    @media(prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <div class="ribbon">Отправляем заказы напрямую из Японии · <a href="https://melonpanda.com/delivery">условия доставки</a></div>
+  <div class="prototype-bar">
+    <div class="wrap">
+      <div class="prototype-label"><span>Рабочий макет: розовые облачка требуют ответа клиента</span></div>
+      <button class="toggle-notes" type="button" id="notesToggle">Скрыть вопросы</button>
+    </div>
+  </div>
+
+  <header class="site-header">
+    <div class="wrap header-top">
+      <a href="https://melonpanda.com/delivery">Способы и страны доставки</a>
+      <a href="https://melonpanda.com/how-to-pay">Способы оплаты</a>
+      <a href="https://melonpanda.com/about">О нас</a>
+      <a href="https://melonpanda.com/chasto-zadavaemye-voprosy-faq">FAQ</a>
+    </div>
+    <div class="wrap header-main">
+      <a class="wordmark" href="https://melonpanda.com">МЕЛОН ПАНДА<small>ЯПОНСКАЯ КОСМЕТИКА</small></a>
+      <div class="search">Поиск: товар, категория или бренд</div>
+      <div class="header-actions"><a href="https://melonpanda.com/profile/orders">Мои заказы</a><a class="cart" href="https://melonpanda.com/cart">Корзина</a></div>
+    </div>
+    <nav class="nav" aria-label="Каталог">
+      <div class="wrap">
+        <a href="https://melonpanda.com/catalog/sales">Скидки</a><a href="https://melonpanda.com/catalog/uxod-za-kozhej">Уход за кожей</a><a href="https://melonpanda.com/catalog/massazhery-i-apparaty">Массажеры и аппараты</a><a href="https://melonpanda.com/catalog/makiyazh">Макияж</a><a href="https://melonpanda.com/catalog/uxod-za-telom">Уход за телом</a><a href="https://melonpanda.com/catalog/uxod-za-volosami">Уход за волосами</a><a href="https://melonpanda.com/catalog/brands">Бренды</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="wrap crumbs"><a href="https://melonpanda.com">Главная</a> / <span>Возврат, обмен и гарантии</span></div>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Помощь с заказом</p>
+          <h1>Если с заказом что-то не так</h1>
+          <p class="hero-lead">Выберите свою ситуацию и сразу увидите, что можно сделать, какие материалы подготовить и куда обратиться.</p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#situations">Найти свою ситуацию</a>
+            <a class="btn btn-secondary" href="mailto:order@melon-panda.com?subject=Вопрос по заказу">Написать в поддержку</a>
+          </div>
+          <div class="hero-proof"><span>Отправка из Японии</span><span>Трек и статус возврата в профиле</span><span>Поддержка по email</span></div>
+        </div>
+        <div class="hero-card" aria-hidden="true">
+          <div class="orbit o1"></div><div class="orbit o2"></div>
+          <div class="hero-card-copy"><b>Понятный маршрут вместо поиска по оферте</b><p>От проблемы до следующего шага - на одной странице.</p></div>
+          <div class="mini-chip chip-one">Заказ отслеживается</div><div class="mini-chip chip-two">Фото помогут разобраться</div><div class="mini-chip chip-three">Ответит поддержка</div>
+          <div class="parcel"></div><div class="parcel-label"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft" id="situations">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Выберите сценарий</p><h2>Что произошло с заказом?</h2></div>
+          <p>Не нужно разбираться в юридических формулировках. Откройте подходящий случай и двигайтесь по шагам.</p>
+        </div>
+        <div class="route-grid">
+          <a class="route-card" href="#damage"><span class="route-num">01</span><h3>Товар поврежден</h3><p>Разбился, протек или помялась упаковка</p></a>
+          <a class="route-card" href="#wrong"><span class="route-num">02</span><h3>Ошибка в заказе</h3><p>Не тот товар или чего-то не хватает</p></a>
+          <a class="route-card" href="#defect"><span class="route-num">03</span><h3>Обнаружен дефект</h3><p>Товар не работает или имеет недостаток</p></a>
+          <a class="route-card" href="#quality-return"><span class="route-num">04</span><h3>Хочу вернуть товар</h3><p>Товар качественный, но не подошел</p></a>
+          <a class="route-card" href="#expiry"><span class="route-num">05</span><h3>Вопрос к сроку годности</h3><p>Маркировка непонятна или срок вызывает сомнение</p></a>
+          <a class="route-card" href="#lost"><span class="route-num">06</span><h3>Посылка задержалась</h3><p>Трек долго не обновляется или заказ потерян</p></a>
+          <a class="route-card" href="#cancel"><span class="route-num">07</span><h3>Изменить или отменить</h3><p>Адрес, доставка, добавление товара или отмена</p></a>
+          <a class="route-card" href="#warranty"><span class="route-num">08</span><h3>Гарантия на прибор</h3><p>Массажер или аппарат перестал работать</p></a>
+        </div>
+        <div class="editor-alert">
+          <div class="mark">!</div>
+          <div><strong>На сайте сейчас есть противоречие</strong><p>Русская оферта допускает обмен или возврат в течение 7 дней при сохранности товара и упаковки. Японская юридическая страница говорит, что после отправки возврат не принимается, а дефект нужно заявить в течение 5 дней. До публикации страницы клиенту нужно утвердить единое правило.</p></div>
+        </div>
+        <div class="client-question" style="margin-top:22px"><div class="q-label">Вопрос клиенту</div><p>Для каких стран должна действовать эта страница? Условия одинаковы для покупателей из России и других стран или нужны отдельные правила по географии?</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="simple-head"><p class="eyebrow">Пошаговая помощь</p><h2>Что делать в каждом случае</h2><p>Зеленым отмечена информация, которая уже есть на сайте. Синим - предложенный текст страницы. Розовые облачка - вопросы, без которых нельзя обещать покупателю конкретный результат.</p></div>
+        <div class="case-list">
+          <details class="case" id="damage" open>
+            <summary><span class="case-icon">01</span><span class="case-title"><h3>Товар поврежден при доставке</h3><p>Повреждена коробка, флакон разбит или средство протекло</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status fact">Есть на сайте</span><span class="status draft">Черновик шага</span></div>
+                <ol class="steps">
+                  <li><b>Не выбрасывайте упаковку и содержимое посылки.</b> Условия российского экспресс-перевозчика требуют представить их для осмотра при претензии о повреждении.</li>
+                  <li><b>Сфотографируйте повреждение.</b> Предлагаем запросить общий вид посылки, транспортную этикетку, упаковку внутри и сам товар.</li>
+                  <li><b>Напишите на order@melon-panda.com сразу после получения.</b> Укажите номер заказа и приложите фотографии.</li>
+                  <li><b>Дождитесь решения поддержки.</b> Возможный результат и срок ответа нужно подтвердить у клиента.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Что именно получает покупатель при подтвержденном повреждении: замену, повторную отправку, полный или частичный возврат денег? За сколько рабочих дней принимается решение?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Условия «СЭЛ Логистик» требуют отметить повреждение в доставочном листе. Эта инструкция действует для всех заказов по России или только для отправлений этого перевозчика? Можно ли отказаться от явно поврежденной посылки при получении? Какие фотографии обязательны?</p></div>
+                <div class="source-note"><b>Основание</b>FAQ просит связаться сразу после получения и сообщает, что поддержка запросит фотографии. Условия «СЭЛ Логистик» отдельно требуют сохранить содержимое и оригинальную упаковку.</div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="wrong">
+            <summary><span class="case-icon">02</span><span class="case-title"><h3>Пришел не тот товар или чего-то не хватает</h3><p>Ошибка комплектации заказа</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status draft">Предложенный маршрут</span></div>
+                <ol class="steps">
+                  <li><b>Сверьте содержимое с заказом в личном кабинете.</b></li>
+                  <li><b>Сохраните коробку, этикетку и упаковочные материалы.</b></li>
+                  <li><b>Напишите в поддержку.</b> Укажите номер заказа и приложите фото всего содержимого одной съемкой.</li>
+                  <li><b>Поддержка проверит комплектацию</b> и сообщит дальнейшие действия.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Как магазин решает подтвержденную ошибку: досылает товар или возвращает деньги? Нужно ли возвращать ошибочно вложенный товар и кто оплачивает пересылку?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>В какой срок после получения нужно сообщить о недостаче или неверной комплектации?</p></div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="defect">
+            <summary><span class="case-icon">03</span><span class="case-title"><h3>У товара обнаружен дефект</h3><p>Недостаток самого товара, а не повреждение посылки</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status conflict">Правила расходятся</span></div>
+                <ol class="steps">
+                  <li><b>Прекратите использование товара</b> и сохраните упаковку.</li>
+                  <li><b>Зафиксируйте недостаток</b> на фото или видео.</li>
+                  <li><b>Напишите в поддержку</b> и укажите номер заказа, название товара и когда обнаружился дефект.</li>
+                  <li><b>Не отправляйте товар самостоятельно</b> до инструкции магазина.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Какой срок обращения действует: 5 или 7 дней? С какого момента он считается? Возможен только обмен или покупатель может выбрать возврат денег?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>При подтвержденном браке магазин оплачивает пересылку. Как технически компенсируются эти расходы покупателю из России?</p></div>
+                <div class="source-note"><b>Сейчас на сайте</b>Японская страница: только обмен дефектного товара, обращение в течение 5 дней, пересылку оплачивает магазин. Русская оферта: возврат или обмен в течение 7 дней.</div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="quality-return">
+            <summary><span class="case-icon">04</span><span class="case-title"><h3>Качественный товар не подошел</h3><p>Товар не использовался, упаковка сохранена</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status fact">Русская оферта</span><span class="status conflict">Есть конфликт</span></div>
+                <ol class="steps">
+                  <li><b>Не вскрывайте и не используйте товар.</b> Сохраните потребительские свойства, целую упаковку и подтверждение покупки.</li>
+                  <li><b>Сообщите о возврате в течение 7 дней после получения.</b> Это условие указано в русской оферте.</li>
+                  <li><b>Согласуйте адрес и способ отправки</b> с поддержкой до передачи посылки.</li>
+                  <li><b>Транспортные расходы оплачивает покупатель.</b> Это прямо указано в русской оферте.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>На какие категории распространяется возврат качественного товара? Можно ли вернуть косметику, пищевые добавки, приборы? Что считается ненарушенной упаковкой? Что происходит, если товар уже вскрыли, но оттенок, аромат, эффект или индивидуальная реакция не подошли? Достаточно ли заказа в личном кабинете как подтверждения покупки или нужен отдельный документ?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Куда физически отправлять возврат, в Россию или Японию? Какая сумма удерживается, каким способом и в какой валюте возвращаются деньги? Какой курс применяется, если заказ оплачен не в рублях?</p></div>
+                <div class="source-note"><b>Противоречие</b>Японская юридическая страница сообщает, что возвраты после отправки товара не принимаются. Нужно одно правило для покупателя.</div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="expiry">
+            <summary><span class="case-icon">05</span><span class="case-title"><h3>Есть вопрос к сроку годности</h3><p>Нет привычной даты или товар кажется просроченным</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status fact">Есть на сайте</span><span class="status draft">Нет процедуры претензии</span></div>
+                <ol class="steps">
+                  <li><b>Проверьте маркировку.</b> В Японии срок часто не указывают, если он превышает 3 года.</li>
+                  <li><b>Не используйте товар, если срок вызывает сомнение.</b></li>
+                  <li><b>Сфотографируйте маркировку и упаковку</b> и отправьте материалы с номером заказа в поддержку.</li>
+                  <li><b>Дождитесь расшифровки или решения</b> по конкретному товару.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Что происходит, если магазин подтверждает истекший или слишком короткий остаточный срок: замена, возврат денег, компенсация? Какой минимальный остаточный срок считается допустимым?</p></div>
+                <div class="source-note"><b>Что уже можно обещать</b>Сайт сообщает, что сроки проверяются вручную перед отправкой, а залежалые товары не отправляются.</div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="lost">
+            <summary><span class="case-icon">06</span><span class="case-title"><h3>Посылка задержалась или перестала отслеживаться</h3><p>Трек долго не меняется или заказ не доставлен</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status fact">Порядок отслеживания есть</span><span class="status draft">Решение при утрате не описано</span></div>
+                <ol class="steps">
+                  <li><b>Для заказа в Россию сначала приходит письмо об отправке из Японии без трек-номера.</b> Это нормальный этап, который описан на сайте.</li>
+                  <li><b>Трек-номер появится после таможенного оформления</b> и передачи посылки российской курьерской службе. Его пришлют отдельным письмом и покажут в разделе «Мои заказы».</li>
+                  <li><b>Сверьте срок доставки.</b> Для России на странице доставки указан ориентир 35-50 дней. Отдельное временное уведомление предупреждает: обработка и отправка некоторых позиций может занимать 10-14 дней.</li>
+                  <li><b>Если ожидаемый срок прошел или трек перестал обновляться, напишите в поддержку</b> с номером заказа и трек-номером, если он уже появился.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Входят ли временные 10-14 дней обработки в ориентир 35-50 дней или прибавляются к нему? С какого дня покупатель должен считать срок доставки?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>После какого срока магазин начинает розыск? Кто подает заявление перевозчику? Условия «СЭЛ Логистик» требуют письменного уведомления в течение 21 дня - должен ли покупатель обращаться к перевозчику сам или это делает магазин?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Что получает покупатель при подтвержденной утрате: повторную отправку или возврат денег? Есть ли страховка заказа и ограничение компенсации?</p></div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="cancel">
+            <summary><span class="case-icon">07</span><span class="case-title"><h3>Нужно изменить или отменить заказ</h3><p>Адрес, способ доставки, добавление товара или отмена</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status fact">Частично описано</span></div>
+                <ol class="steps">
+                  <li><b>Напишите в поддержку как можно раньше.</b></li>
+                  <li><b>До упаковки и отправки</b> сайт разрешает изменить адрес, способ доставки или добавить товары.</li>
+                  <li><b>После передачи перевозчику отменить заказ нельзя.</b> Это указано в оферте.</li>
+                  <li><b>Укажите номер заказа и нужное изменение</b> и дождитесь подтверждения поддержки, прежде чем считать заказ измененным.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Можно ли полностью отменить оплаченный заказ до передачи перевозчику? Есть ли сбор за отмену? Когда и каким способом возвращаются деньги?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Что именно считается моментом, после которого изменения уже невозможны: начало сборки, упаковка или создание отправления?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Что происходит, если покупатель ошибся в адресе: можно ли перенаправить посылку и кто оплачивает повторную доставку?</p></div>
+                <div class="source-note"><b>Что еще есть в оферте</b>Магазин снимает с себя ответственность за доставку при неверном адресе покупателя. Продавец также оставляет за собой право отменить заказ и вернуть деньги, если товара нет, заказ невозможно выполнить или доставить выбранным способом. Срок возврата денег не указан.</div>
+              </aside>
+            </div>
+          </details>
+
+          <details class="case" id="warranty">
+            <summary><span class="case-icon">08</span><span class="case-title"><h3>Гарантия на массажеры и аппараты</h3><p>Устройство не включается или перестало работать</p></span><span class="case-arrow"></span></summary>
+            <div class="case-body">
+              <div>
+                <div class="fact-strip"><span class="status draft">На сайте нет условий</span></div>
+                <ol class="steps">
+                  <li><b>Прекратите использование устройства.</b></li>
+                  <li><b>Сохраните прибор, комплектацию и упаковку.</b></li>
+                  <li><b>Запишите короткое видео</b>, на котором видна неисправность.</li>
+                  <li><b>Напишите в поддержку</b> с номером заказа и названием модели.</li>
+                </ol>
+              </div>
+              <aside>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Есть ли гарантийный срок на устройства? Кто проводит диагностику и где? Возможны ремонт, замена или возврат денег? Кто оплачивает международную пересылку?</p></div>
+                <div class="client-question"><div class="q-label">Вопрос клиенту</div><p>Влияет ли использование прибора с неподходящим напряжением или адаптером на гарантию? Нужно ли заранее предупреждать об этом в карточке товара?</p></div>
+              </aside>
+            </div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-pink">
+      <div class="wrap">
+        <div class="section-head">
+          <div><p class="eyebrow">Условия до покупки</p><h2>Что уже известно о возврате</h2></div>
+          <p>Короткая версия действующей русской оферты. Публиковать как единое правило можно после устранения противоречия с японской страницей.</p>
+        </div>
+        <div class="rules-grid">
+          <article class="rule"><div class="rule-kicker">Срок</div><h3>7 дней после получения</h3><p>Такой срок требования о возврате или обмене указан в русской оферте.</p></article>
+          <article class="rule"><div class="rule-kicker">Состояние</div><h3>Товар не использовался</h3><p>Нужно сохранить потребительские свойства, целую упаковку и документы о покупке.</p></article>
+          <article class="rule"><div class="rule-kicker">Пересылка</div><h3>Расходы несет покупатель</h3><p>Русская оферта относит необходимые транспортные расходы на покупателя.</p></article>
+        </div>
+        <div class="client-question" style="margin-top:22px"><div class="q-label">Главный вопрос клиенту</div><p>Подтвердите единые условия для всех покупателей: какие товары возвращаются, в какой срок, куда отправлять возврат, кто оплачивает доставку в каждом сценарии, какие решения доступны и за сколько дней возвращаются деньги.</p></div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="simple-head"><p class="eyebrow">Почему требуется согласование</p><h2>Два документа сейчас обещают разное</h2></div>
+        <div class="policy-box">
+          <article class="policy-card"><span class="status fact">Русская оферта</span><h3>Возврат или обмен</h3><p>В течение 7 дней после получения, если товар не использовался, свойства и упаковка сохранены.</p><p><strong>Транспортные расходы:</strong> за счет покупателя.</p></article>
+          <article class="policy-card is-conflict"><span class="status conflict">Японская страница</span><h3>После отправки возврата нет</h3><p>Допускается обмен только дефектного товара при обращении в течение 5 дней.</p><p><strong>Транспортные расходы:</strong> при дефекте за счет магазина, иначе за счет покупателя.</p></article>
+        </div>
+        <div class="versus">VS</div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="wrap trust-layout">
+        <div class="trust-visual" aria-hidden="true">
+          <div class="warehouse"><span class="shelf s1"></span><span class="shelf s2"></span><span class="box-row b1"><i></i><i></i><i></i></span><span class="box-row b2"><i></i><i></i><i></i></span><span class="box-row b3"><i></i><i></i><i></i></span><span class="thermo"></span></div>
+        </div>
+        <div class="trust-copy">
+          <p class="eyebrow">До того, как посылка уедет</p>
+          <h2>Как магазин снижает риск проблемы</h2>
+          <p>Здесь не нужны общие слова о заботе. Пользователю важны конкретные действия до отправки.</p>
+          <div class="trust-points">
+            <div class="trust-point"><span class="check">✓</span><div><b>Товары отправляются напрямую из Японии</b><span>Склад и офис находятся в префектуре Тояма.</span></div></div>
+            <div class="trust-point"><span class="check">✓</span><div><b>Сроки годности проверяют вручную</b><span>Магазин сообщает, что не отправляет залежалые товары.</span></div></div>
+            <div class="trust-point"><span class="check">✓</span><div><b>На складе поддерживается температурный режим</b><span>Климатическое оборудование работает в течение года.</span></div></div>
+            <div class="trust-point"><span class="check">✓</span><div><b>Каждую позицию упаковывают отдельно</b><span>В коробку добавляют изолирующий слой и уплотнитель, чтобы снизить риск повреждений.</span></div></div>
+            <div class="trust-point"><span class="check">✓</span><div><b>У некоторых японских товаров нет заводской пленки</b><span>Отсутствие внешней мембраны само по себе не означает, что товар вскрывали. Магазин отдельно упаковывает такие позиции.</span></div></div>
+            <div class="trust-point"><span class="check">✓</span><div><b>Оригинальная продукция от проверенных поставщиков</b><span>Если редкий товар произведен не в Японии, страна производства указывается в его описании.</span></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="wrap">
+        <div class="contact-card">
+          <div>
+            <p class="eyebrow">Связаться с поддержкой</p>
+            <h2>Опишите ситуацию и укажите номер заказа</h2>
+            <p>По вопросам заказа сайт направляет покупателей на электронную почту. Для повреждений поддержка запрашивает фотографии.</p>
+            <div class="email-box"><a class="email-link" href="mailto:order@melon-panda.com?subject=Вопрос по заказу">order@melon-panda.com</a><button class="copy-btn" type="button" id="copyEmail">Скопировать адрес</button></div>
+          </div>
+          <div>
+            <div class="contact-checklist"><h3>Предлагаем приложить</h3><ul><li>номер заказа и трек-номер;</li><li>краткое описание ситуации;</li><li>фото товара и упаковки;</li><li>видео, если дефект проявляется в работе.</li></ul></div>
+            <div class="client-question" style="margin-top:18px"><div class="q-label">Вопрос клиенту</div><p>За сколько рабочих дней поддержка отвечает на первичное обращение? Получает ли покупатель подтверждение, что письмо принято? Есть ли форма в личном кабинете или все обращения принимаются только по email?</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-soft">
+      <div class="wrap">
+        <div class="simple-head"><p class="eyebrow">Документы и подробности</p><h2>Официальная информация на сайте</h2><p>Ссылки открывают действующие страницы Melon Panda. После согласования единых условий они должны говорить одно и то же.</p></div>
+        <div class="source-links">
+          <a class="source-link" href="https://melonpanda.com/dogovor-oferta"><b>Договор-оферта</b>Возврат, обмен, оплата и отмена после отправки</a>
+          <a class="source-link" href="https://melonpanda.com/chasto-zadavaemye-voprosy-faq"><b>Частые вопросы</b>Повреждения, изменение заказа и статус доставки</a>
+          <a class="source-link" href="https://melonpanda.com/delivery"><b>Доставка</b>Доступные способы и сроки по странам</a>
+          <a class="source-link" href="https://melonpanda.com/how-to-pay"><b>Оплата</b>Карты, СБП, валюта и банковское резервирование</a>
+          <a class="source-link" href="https://melonpanda.com/kak-my-xranim-pakuem-i-otpravlyaem-posylki"><b>Хранение и упаковка</b>Условия склада, упаковка и отслеживание заказов</a>
+          <a class="source-link" href="https://melonpanda.com/about"><b>MPC CO., LTD.</b>Тояма, Япония · регистрационный номер 230001015135</a>
+          <a class="source-link" href="https://melonpanda.com/news/vremenno-uvelicheny-sroki-obrabotki-i-otpravki-zakazov"><b>Временные сроки обработки</b>До 10-14 дней для некоторых позиций</a>
+          <a class="source-link" href="https://melonpanda.com/generalnye-usloviya-perevozki-i-tamozhennogo-soprovozhdeniya-ekspress-perevozchika-tamozhennogo-predstavitelya-ooo-sel-logistik"><b>Условия перевозчика</b>Претензии при повреждении, задержке или утрате</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer"><div class="wrap"><span><b>МЕЛОН ПАНДА</b> · японская косметика с отправкой из Японии</span><span>Рабочий макет страницы возврата, обмена и гарантий</span></div></footer>
+  <div class="mobile-cta"><span>Нужна помощь с заказом?</span><a href="mailto:order@melon-panda.com?subject=Вопрос по заказу">Написать</a></div>
+
+  <script>
+    const notesToggle=document.getElementById('notesToggle');
+    notesToggle.addEventListener('click',()=>{
+      document.body.classList.toggle('hide-notes');
+      notesToggle.textContent=document.body.classList.contains('hide-notes')?'Показать вопросы':'Скрыть вопросы';
+    });
+    document.getElementById('copyEmail').addEventListener('click',async(e)=>{
+      try{await navigator.clipboard.writeText('order@melon-panda.com');e.currentTarget.textContent='Адрес скопирован';}
+      catch{e.currentTarget.textContent='order@melon-panda.com';}
+    });
+    document.querySelectorAll('.route-card').forEach(link=>link.addEventListener('click',()=>{
+      const target=document.querySelector(link.getAttribute('href'));
+      if(target?.tagName==='DETAILS') target.open=true;
+    }));
+    const updateSticky=()=>document.body.classList.toggle('sticky-visible',scrollY>560);
+    addEventListener('scroll',updateSticky,{passive:true});
+    updateSticky();
+    if(new URLSearchParams(location.search).has('qa')){
+      const metrics=document.createElement('pre');
+      metrics.id='qa-metrics';
+      metrics.hidden=true;
+      metrics.textContent=JSON.stringify({innerWidth,clientWidth:document.documentElement.clientWidth,scrollWidth:document.documentElement.scrollWidth,scrollHeight:document.documentElement.scrollHeight});
+      document.body.appendChild(metrics);
+    }
+  </script>
+</body>
+</html>
