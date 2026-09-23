@@ -99,13 +99,21 @@
     .bar { width: min(48px, 70%); background: var(--graph); min-height: 3px; }
     .bar.gold { background: var(--gold); }
     .month-name { text-align: center; font-size: 11px; color: var(--muted); padding-top: 8px; }
-    .groups { display: grid; gap: 15px; padding-top: 3px; }
-    .group-head { display: flex; justify-content: space-between; gap: 18px; align-items: baseline; margin-bottom: 6px; }
-    .group-head strong { font-size: 14px; }
-    .group-head span { font-size: 12px; color: var(--muted); }
-    .track { height: 13px; background: #ddd9cf; overflow: hidden; }
+    .groups { display: grid; gap: 9px; padding-top: 1px; }
+    .group { padding-bottom: 7px; border-bottom: 1px solid var(--line); }
+    .group-head { display: flex; justify-content: space-between; gap: 14px; align-items: baseline; margin-bottom: 5px; }
+    .group-head strong { font-size: 13px; }
+    .demand { white-space: nowrap; font-size: 10px; color: var(--muted); }
+    .group-middle { display: grid; grid-template-columns: 74px 1fr; gap: 10px; align-items: center; }
+    .shift { font-size: 13px; font-weight: 800; color: var(--green); }
+    .shift.down { color: #a24d43; }
+    .track { height: 8px; background: #ddd9cf; overflow: hidden; }
     .fill { height: 100%; background: var(--green); }
-    .group-note { margin-top: 5px; font-size: 11px; color: var(--muted); }
+    .fill.down { background: #a24d43; }
+    .shift.history { color: #8a5d25; }
+    .fill.history { background: var(--gold); }
+    .group-note { margin-top: 4px; font-size: 9px; color: var(--muted); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+    .cluster-footnote { margin: 8px 0 0; color: var(--muted); font-size: 9px; line-height: 1.25; }
     .business {
       margin-top: 20px;
       padding: 16px 0 14px;
@@ -187,31 +195,47 @@
       </section>
 
       <section>
-        <div class="section-title"><h2>Что ищут клиенты</h2><span>Март → сентябрь</span></div>
+        <div class="section-title"><h2>6 групп спроса</h2><span>Доля запросов в топ-10</span></div>
         <div class="groups">
           <div class="group">
-            <div class="group-head"><strong>Такси премиум-класса</strong><span>1 → 134</span></div>
-            <div class="track"><div class="fill" style="width:75%"></div></div>
-            <div class="group-note">134 из 178 запросов в топ-10</div>
+            <div class="group-head"><strong>Такси · историческая динамика*</strong><span class="demand">спрос 1 023</span></div>
+            <div class="group-middle"><span class="shift history">0% → 79%</span><div class="track"><div class="fill history" style="width:79%"></div></div></div>
+            <div class="group-note">Сейчас оставлена одна согласованная инфостатья</div>
           </div>
           <div class="group">
-            <div class="group-head"><strong>Mercedes-Maybach</strong><span>20 → 41</span></div>
-            <div class="track"><div class="fill" style="width:61%"></div></div>
-            <div class="group-note">41 из 67 запросов в топ-10</div>
+            <div class="group-head"><strong>Аренда авто с водителем</strong><span class="demand">спрос 585</span></div>
+            <div class="group-middle"><span class="shift down">29% → 2%</span><div class="track"><div class="fill down" style="width:2%"></div></div></div>
+            <div class="group-note">Главная страница · /</div>
           </div>
           <div class="group">
-            <div class="group-head"><strong>Трансферы и аэропорты</strong><span>0 → 31</span></div>
-            <div class="track"><div class="fill" style="width:36%"></div></div>
-            <div class="group-note">31 из 87 запросов в топ-10</div>
+            <div class="group-head"><strong>Трансферы и аэропорты</strong><span class="demand">спрос 291</span></div>
+            <div class="group-middle"><span class="shift">0% → 30%</span><div class="track"><div class="fill" style="width:30%"></div></div></div>
+            <div class="group-note">Страница трансферов · /transfer/airport-transfer</div>
+          </div>
+          <div class="group">
+            <div class="group-head"><strong>Mercedes с водителем</strong><span class="demand">спрос 160</span></div>
+            <div class="group-middle"><span class="shift">0% → 15%</span><div class="track"><div class="fill" style="width:15%"></div></div></div>
+            <div class="group-note">Страница Mercedes · /mersedes</div>
+          </div>
+          <div class="group">
+            <div class="group-head"><strong>Maybach с водителем</strong><span class="demand">спрос 154</span></div>
+            <div class="group-middle"><span class="shift">31% → 59%</span><div class="track"><div class="fill" style="width:59%"></div></div></div>
+            <div class="group-note">Страница Maybach · /mersedes/majbah</div>
+          </div>
+          <div class="group">
+            <div class="group-head"><strong>Премиум- и бизнес-класс</strong><span class="demand">спрос 140</span></div>
+            <div class="group-middle"><span class="shift down">31% → 25%</span><div class="track"><div class="fill down" style="width:25%"></div></div></div>
+            <div class="group-note">Страницы классов · /classes/premium + /classes/business</div>
           </div>
         </div>
+        <p class="cluster-footnote">*Коммерческие страницы такси удалены по юридическим причинам. Показанный рост сформирован до их удаления; сейчас кластер поддерживает одна инфостатья. Спрос = суммарная точная частотность ядра, не прогноз трафика.</p>
       </section>
     </div>
 
     <section class="business" aria-label="Бизнес-показатели">
       <div class="signal"><small>Переходы на сайт из поиска<br>февраль → август</small><b>868 → 1 186 <em>+37%</em></b></div>
       <div class="signal"><small>Переходы на страницу приложения<br>февраль → август</small><b>150 → 212 <em>+41%</em></b></div>
-      <div class="meaning"><strong>Что это значит для бизнеса</strong><br>Сайт чаще появляется там, где потенциальные клиенты ищут премиальное такси, Maybach и трансферы. Рост виден и в независимом источнике, и в переходах из поиска.</div>
+      <div class="meaning"><strong>Что это значит для бизнеса</strong><br>Сейчас рост дают Maybach, трансферы и Mercedes. Часть общей динамики обеспечили страницы такси, но этот коммерческий кластер больше нельзя развивать. Аренда и классы авто требуют отдельного дожима.</div>
     </section>
 
     <footer>
