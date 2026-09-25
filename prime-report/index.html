@@ -244,6 +244,9 @@
     .cluster-card.down .cluster-donut.new { --color: var(--gold); }
     .cluster-card.flat .cluster-donut.new { --color: #8d8e87; }
     .cluster-arrow { color: var(--gold); font-size: 27px; font-weight: 700; }
+    .cluster-summary { margin: -5px 0 15px; color: var(--muted); font-size: 15px; line-height: 1.4; }
+    .cluster-summary strong { color: var(--ink); }
+    .cluster-count { margin-top: 11px; font-size: 15px; font-weight: 800; }
     .proof-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
     .proof-strip .proof-card + .proof-card { margin-top: 0; }
     .brand, .period, .annual-kicker, .annual-range,
@@ -425,7 +428,7 @@
       </div>
 
       <section class="cluster-section">
-        <div class="section-title"><h2>Направления в Яндексе</h2><span>10 августа → 14 сентября</span></div>
+        <div class="section-title"><h2>Кластеры, которые хорошо видны в Яндексе</h2><span>10 августа → 14 сентября</span></div>
         <div class="groups">
           <div class="cluster-card history down"><strong>Такси · исторический результат</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:78%"><b>78%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:75%"><b>75%</b></div></div></div>
           <div class="cluster-card"><strong>Maybach</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:35%"><b>35%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:59%"><b>59%</b></div></div></div>
@@ -437,14 +440,15 @@
       </section>
 
       <section class="cluster-section">
-        <div class="section-title"><h2>Направления в Google</h2><span>11 августа → 14 сентября</span></div>
+        <div class="section-title"><h2>Кластеры, которые хорошо видны в Google</h2><span>11 августа → 14 сентября</span></div>
+        <p class="cluster-summary"><strong>99 из 121 запроса в ТОП-10</strong> относятся к шести направлениям ниже. Каждый запрос учтен только в одном направлении.</p>
         <div class="groups">
-          <div class="cluster-card history"><strong>Такси · исторический результат</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:1%"><b>1%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:8%"><b>8%</b></div></div></div>
-          <div class="cluster-card"><strong>Maybach</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:62%"><b>62%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:67%"><b>67%</b></div></div></div>
-          <div class="cluster-card"><strong>Трансферы</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:6%"><b>6%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:12%"><b>12%</b></div></div></div>
-          <div class="cluster-card flat"><strong>Водитель на день</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:1%"><b>1%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:1%"><b>1%</b></div></div></div>
-          <div class="cluster-card"><strong>Mercedes V-Class</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:0%"><b>0%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:17%"><b>17%</b></div></div></div>
-          <div class="cluster-card"><strong>Премиум и бизнес-класс</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:2%"><b>2%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:11%"><b>11%</b></div></div></div>
+          <div class="cluster-card"><strong>Maybach</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:60%"><b>60%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:66%"><b>66%</b></div></div><div class="cluster-count">44 из 67 запросов в ТОП-10</div></div>
+          <div class="cluster-card"><strong>Аренда авто с водителем</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:2%"><b>2%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:7%"><b>7%</b></div></div><div class="cluster-count">21 из 320 запросов в ТОП-10</div></div>
+          <div class="cluster-card"><strong>Другие модели Mercedes</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:5%"><b>5%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:12%"><b>12%</b></div></div><div class="cluster-count">16 из 135 запросов в ТОП-10</div></div>
+          <div class="cluster-card"><strong>Трансферы и аэропорты</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:2%"><b>2%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:8%"><b>8%</b></div></div><div class="cluster-count">7 из 84 запросов в ТОП-10</div></div>
+          <div class="cluster-card"><strong>Aurus</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:71%"><b>71%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:86%"><b>86%</b></div></div><div class="cluster-count">6 из 7 запросов в ТОП-10</div></div>
+          <div class="cluster-card"><strong>Премиум-такси в приложении</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:1%"><b>1%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:4%"><b>4%</b></div></div><div class="cluster-count">5 из 135 запросов в ТОП-10</div></div>
         </div>
       </section>
     </section>
