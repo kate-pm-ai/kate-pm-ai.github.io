@@ -154,6 +154,7 @@
     .engine-name { font-size: 18px; font-weight: 850; }
     .engine-period { color: var(--muted); font-size: 12px; }
     .engine-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 12px 0 8px; }
+    .engine-stats.two { grid-template-columns: repeat(2, 1fr); }
     .engine-stat { padding-right: 8px; border-right: 1px solid var(--line); }
     .engine-stat:last-child { border-right: 0; }
     .engine-stat small { color: var(--muted); font-size: 11px; }
@@ -208,6 +209,7 @@
     .annual-detail strong { display: block; font-size: 19px; line-height: 1.1; }
     .annual-detail b { display: block; margin-top: 7px; font-size: 27px; }
     .annual-detail.muted b { color: #777870; font-size: 18px; padding-top: 2px; }
+    .annual-depth-note { margin-top: 12px; color: var(--muted); font-size: 14px; font-weight: 650; }
     .annual-conclusion { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; margin-top: 18px; padding: 14px 16px; color: var(--ink); background: #ece7da; font-size: 13px; line-height: 1.4; }
     .annual-conclusion b { font-size: 16px; }
     .scroll-cue { color: var(--muted); font-size: 10px; white-space: nowrap; }
@@ -239,7 +241,8 @@
     .cluster-donut::after { content: ""; position: absolute; inset: 11px; border-radius: 50%; background: var(--paper); }
     .cluster-donut b { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; font-size: 20px; }
     .cluster-donut.old { --color: #aaa79f; }
-    .cluster-card.history .cluster-donut.new { --color: var(--gold); }
+    .cluster-card.down .cluster-donut.new { --color: var(--gold); }
+    .cluster-card.flat .cluster-donut.new { --color: #8d8e87; }
     .cluster-arrow { color: var(--gold); font-size: 27px; font-weight: 700; }
     .proof-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
     .proof-strip .proof-card + .proof-card { margin-top: 0; }
@@ -330,8 +333,9 @@
           </div>
           <div class="annual-details">
             <div class="annual-detail"><strong>ТОП-3</strong><b>42 запроса</b></div>
-            <div class="annual-detail muted"><strong>ТОП-20</strong><b>нет данных: съем до ТОП-10</b></div>
+            <div class="annual-detail"><strong>ТОП-10</strong><b>121 запрос</b></div>
           </div>
+          <div class="annual-depth-note">Позиции ниже ТОП-10 в выгрузке Google не сохраняются.</div>
         </article>
       </div>
 
@@ -368,10 +372,9 @@
 
         <article class="engine-card">
           <div class="engine-top"><div class="engine-name">Google: позиции</div><div class="engine-period">июль → август → 14 сентября</div></div>
-          <div class="engine-stats">
+          <div class="engine-stats two">
             <div class="engine-stat"><small>ТОП-3</small><b>42</b><em>было 18</em><span class="engine-change">↑ +24</span></div>
             <div class="engine-stat"><small>ТОП-10</small><b>121</b><em>было 64</em><span class="engine-change">↑ +57</span></div>
-            <div class="engine-stat na"><small>ТОП-20</small><b>нет данных</b><em>глубина съема до топ-10</em></div>
           </div>
           <svg class="mini-chart" viewBox="0 0 500 150" role="img" aria-label="Позиции в Google за июль, август и на 14 сентября">
             <line class="grid" x1="45" y1="24" x2="460" y2="24"/><line class="grid" x1="45" y1="72" x2="460" y2="72"/><line class="grid" x1="45" y1="120" x2="460" y2="120"/>
@@ -422,14 +425,26 @@
       </div>
 
       <section class="cluster-section">
-        <div class="section-title"><h2>Направления в Яндексе</h2><span>Предыдущий съем → 14 сентября</span></div>
+        <div class="section-title"><h2>Направления в Яндексе</h2><span>10 августа → 14 сентября</span></div>
         <div class="groups">
-          <div class="cluster-card history"><strong>Такси · исторический результат</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:78%"><b>78%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:75%"><b>75%</b></div></div></div>
+          <div class="cluster-card history down"><strong>Такси · исторический результат</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:78%"><b>78%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:75%"><b>75%</b></div></div></div>
           <div class="cluster-card"><strong>Maybach</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:35%"><b>35%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:59%"><b>59%</b></div></div></div>
           <div class="cluster-card"><strong>Трансферы</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:8%"><b>8%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:31%"><b>31%</b></div></div></div>
           <div class="cluster-card"><strong>Водитель на день</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:9%"><b>9%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:21%"><b>21%</b></div></div></div>
-          <div class="cluster-card"><strong>Mercedes V-Class</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:63%"><b>63%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:63%"><b>63%</b></div></div></div>
+          <div class="cluster-card flat"><strong>Mercedes V-Class</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:63%"><b>63%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:63%"><b>63%</b></div></div></div>
           <div class="cluster-card"><strong>Премиум и бизнес-класс</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:22%"><b>22%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:27%"><b>27%</b></div></div></div>
+        </div>
+      </section>
+
+      <section class="cluster-section">
+        <div class="section-title"><h2>Направления в Google</h2><span>11 августа → 14 сентября</span></div>
+        <div class="groups">
+          <div class="cluster-card history"><strong>Такси · исторический результат</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:1%"><b>1%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:8%"><b>8%</b></div></div></div>
+          <div class="cluster-card"><strong>Maybach</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:62%"><b>62%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:67%"><b>67%</b></div></div></div>
+          <div class="cluster-card"><strong>Трансферы</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:6%"><b>6%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:12%"><b>12%</b></div></div></div>
+          <div class="cluster-card flat"><strong>Водитель на день</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:1%"><b>1%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:1%"><b>1%</b></div></div></div>
+          <div class="cluster-card"><strong>Mercedes V-Class</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:0%"><b>0%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:17%"><b>17%</b></div></div></div>
+          <div class="cluster-card"><strong>Премиум и бизнес-класс</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:2%"><b>2%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:11%"><b>11%</b></div></div></div>
         </div>
       </section>
     </section>
