@@ -201,12 +201,12 @@
     .annual-ring { --pct: 0%; width: 116px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(var(--green) 0 var(--pct), #dedbd2 var(--pct) 100%); position: relative; flex: 0 0 auto; }
     .annual-ring::after { content: ""; position: absolute; inset: 15px; border-radius: 50%; background: var(--paper); }
     .annual-ring b { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; font-size: 27px; }
-    .annual-label { margin-top: 13px; font-size: 14px; }
+    .annual-label { margin-top: 13px; font-size: 18px; font-weight: 850; letter-spacing: .01em; }
     .annual-label strong { color: var(--green); }
     .annual-details { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 15px; padding-top: 12px; border-top: 1px solid var(--line); }
-    .annual-detail small { color: var(--muted); font-size: 9px; }
-    .annual-detail b { display: block; margin-top: 2px; font-size: 21px; }
-    .annual-detail.muted b { color: #aaa79f; font-size: 14px; padding-top: 5px; }
+    .annual-detail strong { display: block; font-size: 19px; line-height: 1.1; }
+    .annual-detail b { display: block; margin-top: 7px; font-size: 27px; }
+    .annual-detail.muted b { color: #777870; font-size: 18px; padding-top: 2px; }
     .annual-conclusion { display: grid; grid-template-columns: 1fr auto; align-items: center; gap: 24px; margin-top: 18px; padding: 14px 16px; color: var(--ink); background: #ece7da; font-size: 13px; line-height: 1.4; }
     .annual-conclusion b { font-size: 16px; }
     .scroll-cue { color: var(--muted); font-size: 10px; white-space: nowrap; }
@@ -240,7 +240,7 @@
     .cluster-arrow { color: var(--gold); font-size: 27px; font-weight: 700; }
     .proof-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
     .proof-strip .proof-card + .proof-card { margin-top: 0; }
-    .brand, .period, .annual-kicker, .annual-range, .annual-detail small,
+    .brand, .period, .annual-kicker, .annual-range,
     .annual-conclusion, .scroll-cue, .engine-period, .engine-stat small,
     .engine-stat em, .mini-chart .axis-text, .legend, .google-note,
     .kpi-section-title span, .cluster-explain, .cluster-card strong,
@@ -306,13 +306,13 @@
           <div class="annual-main">
             <div>
               <div class="annual-number"><span class="annual-from">0</span><span class="annual-arrow">→</span><span class="annual-to">281</span></div>
-              <div class="annual-label">запрос на первой странице поиска</div>
+              <div class="annual-label">ЗАПРОСОВ В <strong>ТОП-10</strong></div>
             </div>
             <div class="annual-ring" style="--pct:29%"><b>29%</b></div>
           </div>
           <div class="annual-details">
-            <div class="annual-detail"><small>В первой тройке</small><b>139 запросов</b></div>
-            <div class="annual-detail"><small>На первых двух страницах</small><b>364 запроса</b></div>
+            <div class="annual-detail"><strong>ТОП-3</strong><b>139 запросов</b></div>
+            <div class="annual-detail"><strong>ТОП-20</strong><b>364 запроса</b></div>
           </div>
         </article>
 
@@ -321,13 +321,13 @@
           <div class="annual-main">
             <div>
               <div class="annual-number"><span class="annual-from">0</span><span class="annual-arrow">→</span><span class="annual-to">121</span></div>
-              <div class="annual-label">запрос на первой странице поиска</div>
+              <div class="annual-label">ЗАПРОСОВ В <strong>ТОП-10</strong></div>
             </div>
             <div class="annual-ring" style="--pct:12%"><b>12%</b></div>
           </div>
           <div class="annual-details">
-            <div class="annual-detail"><small>В первой тройке</small><b>42 запроса</b></div>
-            <div class="annual-detail muted"><small>На первых двух страницах</small><b>съем настроен до топ-10</b></div>
+            <div class="annual-detail"><strong>ТОП-3</strong><b>42 запроса</b></div>
+            <div class="annual-detail muted"><strong>ТОП-20</strong><b>нет данных: съем до ТОП-10</b></div>
           </div>
         </article>
       </div>
