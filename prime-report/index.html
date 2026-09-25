@@ -259,6 +259,19 @@
     .cluster-note { margin: 15px 0 0; padding: 14px 16px; background: #ece7da; font-size: 15px; line-height: 1.45; }
     .proof-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
     .proof-strip .proof-card + .proof-card { margin-top: 0; }
+    .topvisor-proof { margin-top: 28px; padding-top: 24px; border-top: 1px solid var(--ink); }
+    .topvisor-proof-head { display: flex; align-items: end; justify-content: space-between; gap: 24px; margin-bottom: 16px; }
+    .topvisor-proof-head h2 { margin: 0; max-width: 760px; font-family: Georgia, serif; font-size: 30px; line-height: 1.08; font-weight: 500; }
+    .topvisor-proof-head p { margin: 0; max-width: 510px; color: var(--muted); font-size: 16px; line-height: 1.4; text-align: right; }
+    .topvisor-shot { overflow: hidden; margin-top: 18px; border: 1px solid var(--line); background: rgba(255,255,255,.42); }
+    .topvisor-image-link { display: block; background: #e8e5dd; }
+    .topvisor-image-link img { display: block; width: 100%; height: auto; }
+    .topvisor-copy { padding: 18px 20px 20px; }
+    .topvisor-copy h3 { margin: 0 0 8px; font-size: 22px; line-height: 1.2; }
+    .topvisor-copy p { margin: 0; font-size: 17px; line-height: 1.48; }
+    .topvisor-copy strong { color: var(--green); }
+    .topvisor-key { margin-top: 13px; padding: 13px 15px; background: #ece7da; font-size: 16px; line-height: 1.42; }
+    .topvisor-open { display: inline-block; margin-top: 13px; color: var(--ink); font-size: 15px; font-weight: 800; text-decoration: none; border-bottom: 1px solid var(--gold); }
     .brand, .period, .annual-kicker, .annual-range,
     .annual-conclusion, .scroll-cue, .engine-period, .engine-stat small,
     .engine-stat em, .mini-chart .axis-text, .legend, .google-note,
@@ -328,6 +341,12 @@
       .section-title { align-items: flex-start; flex-direction: column; gap: 5px; }
       .section-title h2 { font-size: 27px; }
       .cluster-section .groups, .proof-strip { grid-template-columns: 1fr; }
+      .topvisor-proof-head { align-items: flex-start; flex-direction: column; gap: 8px; }
+      .topvisor-proof-head h2 { font-size: 28px; }
+      .topvisor-proof-head p { text-align: left; }
+      .topvisor-copy { padding: 16px 14px 18px; }
+      .topvisor-copy h3 { font-size: 21px; }
+      .topvisor-copy p, .topvisor-key { font-size: 16px; }
     }
     @media print {
       body { background: white; }
@@ -385,6 +404,37 @@
         <div><b>Главный результат:</b> с начала продвижения сайт вышел на первую страницу сразу в двух поисковых системах.</div>
         <div class="scroll-cue">Ниже - три полных месяца ↓</div>
       </div>
+
+      <section class="topvisor-proof" aria-label="Данные Топвизора с начала продвижения">
+        <div class="topvisor-proof-head">
+          <h2>Так рост выглядит в Топвизоре</h2>
+          <p>Зеленая линия - сайт. Остальные линии - сайты для сравнения. Видимость - сводный показатель: чем выше позиции запросов, тем выше процент.</p>
+        </div>
+
+        <article class="topvisor-shot">
+          <a class="topvisor-image-link" href="report-assets/topvisor-yandex-since-start.png" target="_blank" rel="noopener">
+            <img src="report-assets/topvisor-yandex-since-start.png" alt="Топвизор: динамика видимости сайта в Яндексе с 15 января до 14 сентября" loading="eager" decoding="sync">
+          </a>
+          <div class="topvisor-copy">
+            <h3>Яндекс: с 15 января до 14 сентября</h3>
+            <p>В январе новый сайт вообще не находился по отслеживаемым запросам. К 14 сентября видимость выросла с 0% до <strong>25%</strong>: <strong>139 запросов</strong> вошли в ТОП-3, <strong>281 запрос</strong> - в ТОП-10.</p>
+            <div class="topvisor-key"><b>Что смотреть:</b> зеленая линия поднялась с нуля. 802 из 972 запросов улучшили позиции, ухудшившихся запросов нет.</div>
+            <a class="topvisor-open" href="report-assets/topvisor-yandex-since-start.png" target="_blank" rel="noopener">Открыть скриншот крупно ↗</a>
+          </div>
+        </article>
+
+        <article class="topvisor-shot">
+          <a class="topvisor-image-link" href="report-assets/topvisor-google-since-start.png" target="_blank" rel="noopener">
+            <img src="report-assets/topvisor-google-since-start.png" alt="Топвизор: динамика видимости сайта в Google с 15 января до 14 сентября" loading="eager" decoding="sync">
+          </a>
+          <div class="topvisor-copy">
+            <h3>Google: с 15 января до 14 сентября</h3>
+            <p>В январе сайт также не находился по отслеживаемым запросам. К 14 сентября видимость выросла с 0% до <strong>16%</strong>: <strong>42 запроса</strong> вошли в ТОП-3, <strong>121 запрос</strong> - в ТОП-10.</p>
+            <div class="topvisor-key"><b>Что смотреть:</b> зеленая линия поднялась с нуля. 121 запрос улучшил позиции, ухудшившихся запросов нет.</div>
+            <a class="topvisor-open" href="report-assets/topvisor-google-since-start.png" target="_blank" rel="noopener">Открыть скриншот крупно ↗</a>
+          </div>
+        </article>
+      </section>
     </section>
 
     <section class="recent-screen" aria-label="Динамика за три полных месяца">
@@ -412,6 +462,37 @@
           <p class="position-note">Выгрузка Google сохраняет только запросы в ТОП-10, поэтому данных по ТОП-20 здесь нет.</p>
         </article>
       </div>
+
+      <section class="topvisor-proof" aria-label="Данные Топвизора за последний период">
+        <div class="topvisor-proof-head">
+          <h2>Что изменилось с августа до 14 сентября</h2>
+          <p>Зеленая линия - сайт. Цифры внизу показывают, сколько запросов находится в каждом диапазоне позиций.</p>
+        </div>
+
+        <article class="topvisor-shot">
+          <a class="topvisor-image-link" href="report-assets/topvisor-yandex-recent.png" target="_blank" rel="noopener">
+            <img src="report-assets/topvisor-yandex-recent.png" alt="Топвизор: сравнение позиций сайта в Яндексе 10 августа и 14 сентября" loading="eager" decoding="sync">
+          </a>
+          <div class="topvisor-copy">
+            <h3>Яндекс: 10 августа → 14 сентября</h3>
+            <p>Видимость выросла еще на <strong>7 пунктов</strong> и достигла 25%. Запросов в ТОП-3 стало <strong>139 (+21)</strong>, в ТОП-10 - <strong>281 (+59)</strong>.</p>
+            <div class="topvisor-key"><b>Что смотреть:</b> запросов на первых позициях стало больше. Одновременно запросов на 51-100 местах и за пределами ТОП-100 стало меньше - часть из них перешла выше.</div>
+            <a class="topvisor-open" href="report-assets/topvisor-yandex-recent.png" target="_blank" rel="noopener">Открыть скриншот крупно ↗</a>
+          </div>
+        </article>
+
+        <article class="topvisor-shot">
+          <a class="topvisor-image-link" href="report-assets/topvisor-google-recent.png" target="_blank" rel="noopener">
+            <img src="report-assets/topvisor-google-recent.png" alt="Топвизор: сравнение позиций сайта в Google в августе и 14 сентября" loading="eager" decoding="sync">
+          </a>
+          <div class="topvisor-copy">
+            <h3>Google: август → 14 сентября</h3>
+            <p>Видимость выросла еще на <strong>5 пунктов</strong> и достигла 16%. Запросов в ТОП-3 стало <strong>42 (+24)</strong>, в ТОП-10 - <strong>121 (+57)</strong>.</p>
+            <div class="topvisor-key"><b>Почему ниже стоят нули:</b> в этом съеме по Google сохраняются только позиции в ТОП-10. Это ограничение глубины сбора, а не отсутствие остальных запросов.</div>
+            <a class="topvisor-open" href="report-assets/topvisor-google-recent.png" target="_blank" rel="noopener">Открыть скриншот крупно ↗</a>
+          </div>
+        </article>
+      </section>
 
       <div class="kpi-section-title"><div><h3>Трафик и действия: июнь, июль и август</h3><p>Три полных месяца. Сентябрь не сравниваем, потому что он еще не завершен.</p></div></div>
       <div class="recent-kpis">
