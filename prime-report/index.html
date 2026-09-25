@@ -81,7 +81,7 @@
     .donut-copy p { margin: 0; color: var(--muted); line-height: 1.42; font-size: 14px; }
     .section-title { display: flex; justify-content: space-between; align-items: end; gap: 20px; margin: 22px 0 15px; }
     .section-title h2 { margin: 0; font-family: Georgia, serif; font-size: 26px; font-weight: 500; }
-    .section-title span { color: var(--muted); font-size: 12px; }
+    .section-title span { color: var(--muted); font-size: 14px; }
     .content-grid { display: grid; grid-template-columns: 1.28fr .72fr; gap: 30px; }
     .chart {
       height: 202px;
@@ -214,23 +214,38 @@
     .recent-title { display: flex; align-items: end; justify-content: space-between; gap: 20px; }
     .recent-title h2 { margin: 0; font-family: Georgia, serif; font-size: 34px; font-weight: 500; }
     .recent-title p { margin: 0; max-width: 560px; color: var(--muted); text-align: right; font-size: 14px; line-height: 1.4; }
-    .recent-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 16px 0 20px; }
-    .recent-kpi { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 16px; padding: 14px 16px; background: rgba(255,255,255,.42); border: 1px solid var(--line); }
-    .recent-kpi small { color: var(--muted); font-size: 10px; }
-    .recent-kpi b { display: block; margin-top: 5px; font-size: 27px; }
-    .recent-kpi em { color: var(--green); font-size: 13px; font-style: normal; font-weight: 850; }
-    .recent-kpi .sequence { color: var(--muted); font-size: 12px; white-space: nowrap; }
+    .recent-kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 16px 0 24px; }
+    .recent-kpi { padding: 18px 20px 16px; background: rgba(255,255,255,.42); border: 1px solid var(--line); }
+    .recent-kpi-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
+    .recent-kpi-head strong { font-size: 19px; line-height: 1.2; }
+    .recent-kpi-head span { color: var(--green); font-size: 14px; font-weight: 800; text-align: right; }
+    .metric-bars { height: 175px; display: flex; align-items: flex-end; gap: 28px; margin-top: 16px; padding: 0 8px; border-bottom: 1px solid var(--ink); }
+    .metric-month { height: 100%; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
+    .metric-value { margin-bottom: 7px; font-size: 18px; font-weight: 850; }
+    .metric-column { width: min(72px, 70%); min-height: 7px; height: var(--h); background: var(--green); }
+    .metric-label { padding: 8px 0 9px; color: var(--muted); font-size: 14px; }
     .kpi-section-title { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin: 22px 0 12px; }
     .kpi-section-title h3 { margin: 0; font-family: Georgia, serif; font-size: 25px; font-weight: 500; }
     .kpi-section-title span { color: var(--muted); font-size: 11px; }
     .cluster-section { margin-top: 24px; padding-top: 20px; border-top: 1px solid var(--ink); }
-    .cluster-section .groups { grid-template-columns: repeat(6, 1fr); gap: 16px; }
-    .cluster-section .cluster-card strong { min-height: 34px; font-size: 13px; }
-    .cluster-section .mini-donut { width: 92px; }
-    .cluster-section .mini-donut b { font-size: 24px; }
-    .cluster-section .cluster-before { font-size: 11px; }
+    .cluster-section .groups { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .cluster-section .cluster-card { padding: 17px 16px 15px; border: 1px solid var(--line); background: rgba(255,255,255,.38); }
+    .cluster-section .cluster-card strong { min-height: 0; font-size: 17px; }
+    .cluster-shift { display: flex; align-items: center; justify-content: center; gap: 12px; margin-top: 14px; }
+    .cluster-donut { --pct: 0%; --color: var(--green); width: 84px; aspect-ratio: 1; border-radius: 50%; background: conic-gradient(var(--color) 0 var(--pct), #dedbd2 var(--pct) 100%); position: relative; }
+    .cluster-donut::after { content: ""; position: absolute; inset: 11px; border-radius: 50%; background: var(--paper); }
+    .cluster-donut b { position: absolute; z-index: 1; inset: 0; display: grid; place-items: center; font-size: 20px; }
+    .cluster-donut.old { --color: #aaa79f; }
+    .cluster-card.history .cluster-donut.new { --color: var(--gold); }
+    .cluster-arrow { color: var(--gold); font-size: 27px; font-weight: 700; }
     .proof-strip { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 20px; padding-top: 18px; border-top: 1px solid var(--line); }
     .proof-strip .proof-card + .proof-card { margin-top: 0; }
+    .brand, .period, .annual-kicker, .annual-range, .annual-detail small,
+    .annual-conclusion, .scroll-cue, .engine-period, .engine-stat small,
+    .engine-stat em, .mini-chart .axis-text, .legend, .google-note,
+    .kpi-section-title span, .cluster-explain, .cluster-card strong,
+    .cluster-before, .cluster-footnote, .proof-card strong, .proof-card span,
+    .proof-button, .proof-placeholder, footer { font-size: 14px; }
     @media (max-width: 900px) {
       .page { padding: 22px; }
       .hero, .content-grid { grid-template-columns: 1fr; }
@@ -238,7 +253,7 @@
       .engine-grid, .lower-grid { grid-template-columns: 1fr; }
       .annual-grid { grid-template-columns: 1fr; }
       .annual-screen { min-height: 0; }
-      .cluster-section .groups { grid-template-columns: repeat(3, 1fr); }
+      .cluster-section .groups { grid-template-columns: repeat(2, 1fr); }
       .donut-side { max-width: 520px; }
       .business { grid-template-columns: 1fr 1fr; }
       .meaning { grid-column: 1 / -1; padding: 12px 0 0; border-left: 0; border-top: 1px solid var(--line); }
@@ -265,7 +280,7 @@
       .annual-to { font-size: 74px; }
       .annual-from { font-size: 52px; }
       .annual-ring { width: 92px; }
-      .cluster-section .groups, .proof-strip { grid-template-columns: 1fr 1fr; }
+      .cluster-section .groups, .proof-strip { grid-template-columns: 1fr; }
     }
     @media print {
       body { background: white; }
@@ -369,30 +384,51 @@
 
       <div class="kpi-section-title"><h3>Трафик и действия пользователей</h3><span>три полных месяца: июнь → июль → август</span></div>
       <div class="recent-kpis">
-        <div class="recent-kpi"><div><small>Органический трафик</small><b>1 186 переходов</b><em>+27% за три месяца</em></div><div class="sequence">934 → 964 → 1 186</div></div>
-        <div class="recent-kpi"><div><small>Переход на страницу «Скачать приложение»</small><b>212 переходов</b><em>более чем в 2 раза</em></div><div class="sequence">101 → 122 → 212</div></div>
-        <div class="recent-kpi"><div><small>Переход в App Store</small><b>127 переходов</b><em>рост каждый месяц</em></div><div class="sequence">5 → 62 → 127</div></div>
-        <div class="recent-kpi"><div><small>Переход в Google Play</small><b>77 переходов</b><em>рост каждый месяц</em></div><div class="sequence">5 → 52 → 77</div></div>
+        <div class="recent-kpi">
+          <div class="recent-kpi-head"><strong>Органический трафик</strong><span>август к июню: +27%</span></div>
+          <div class="metric-bars" aria-label="Органический трафик: июнь 934, июль 964, август 1186">
+            <div class="metric-month"><div class="metric-value">934</div><div class="metric-column" style="--h:79%"></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month"><div class="metric-value">964</div><div class="metric-column" style="--h:81%"></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month"><div class="metric-value">1 186</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+          </div>
+        </div>
+        <div class="recent-kpi">
+          <div class="recent-kpi-head"><strong>Переход на страницу «Скачать приложение»</strong><span>август к июню: в 2,1 раза</span></div>
+          <div class="metric-bars" aria-label="Переходы на страницу скачать приложение: июнь 101, июль 122, август 212">
+            <div class="metric-month"><div class="metric-value">101</div><div class="metric-column" style="--h:48%"></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month"><div class="metric-value">122</div><div class="metric-column" style="--h:58%"></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month"><div class="metric-value">212</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+          </div>
+        </div>
+        <div class="recent-kpi">
+          <div class="recent-kpi-head"><strong>Переход в App Store</strong><span>рост каждый месяц</span></div>
+          <div class="metric-bars" aria-label="Переходы в App Store: июнь 5, июль 62, август 127">
+            <div class="metric-month"><div class="metric-value">5</div><div class="metric-column" style="--h:6%"></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month"><div class="metric-value">62</div><div class="metric-column" style="--h:49%"></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month"><div class="metric-value">127</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+          </div>
+        </div>
+        <div class="recent-kpi">
+          <div class="recent-kpi-head"><strong>Переход в Google Play</strong><span>рост каждый месяц</span></div>
+          <div class="metric-bars" aria-label="Переходы в Google Play: июнь 5, июль 52, август 77">
+            <div class="metric-month"><div class="metric-value">5</div><div class="metric-column" style="--h:7%"></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month"><div class="metric-value">52</div><div class="metric-column" style="--h:68%"></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month"><div class="metric-value">77</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+          </div>
+        </div>
       </div>
 
       <section class="cluster-section">
-        <div class="section-title"><h2>Какие направления уже видны</h2><span>Яндекс, съем 14 сентября</span></div>
-        <p class="cluster-explain">Процент запросов по теме на первой странице. Под кругом - результат предыдущего съема.</p>
+        <div class="section-title"><h2>Направления в Яндексе</h2><span>Предыдущий съем → 14 сентября</span></div>
         <div class="groups">
-          <div class="cluster-card history"><strong>Такси*</strong><div class="mini-donut" style="--pct:75%"><b>75%</b></div><div class="cluster-before">было <b>78%</b></div></div>
-          <div class="cluster-card"><strong>Maybach</strong><div class="mini-donut" style="--pct:59%"><b>59%</b></div><div class="cluster-before">было <b>35%</b></div></div>
-          <div class="cluster-card"><strong>Трансферы</strong><div class="mini-donut" style="--pct:31%"><b>31%</b></div><div class="cluster-before">было <b>8%</b></div></div>
-          <div class="cluster-card"><strong>Водитель на день</strong><div class="mini-donut" style="--pct:21%"><b>21%</b></div><div class="cluster-before">было <b>9%</b></div></div>
-          <div class="cluster-card"><strong>Mercedes V-Class</strong><div class="mini-donut" style="--pct:63%"><b>63%</b></div><div class="cluster-before">было <b>63%</b></div></div>
-          <div class="cluster-card"><strong>Премиум и бизнес-класс</strong><div class="mini-donut" style="--pct:27%"><b>27%</b></div><div class="cluster-before">было <b>22%</b></div></div>
+          <div class="cluster-card history"><strong>Такси · исторический результат</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:78%"><b>78%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:75%"><b>75%</b></div></div></div>
+          <div class="cluster-card"><strong>Maybach</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:35%"><b>35%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:59%"><b>59%</b></div></div></div>
+          <div class="cluster-card"><strong>Трансферы</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:8%"><b>8%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:31%"><b>31%</b></div></div></div>
+          <div class="cluster-card"><strong>Водитель на день</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:9%"><b>9%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:21%"><b>21%</b></div></div></div>
+          <div class="cluster-card"><strong>Mercedes V-Class</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:63%"><b>63%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:63%"><b>63%</b></div></div></div>
+          <div class="cluster-card"><strong>Премиум и бизнес-класс</strong><div class="cluster-shift"><div class="cluster-donut old" style="--pct:22%"><b>22%</b></div><span class="cluster-arrow">→</span><div class="cluster-donut new" style="--pct:27%"><b>27%</b></div></div></div>
         </div>
-        <p class="cluster-footnote">*Такси показано как исторический результат. Коммерческие страницы удалены по юридическим причинам; сейчас осталась одна согласованная инфостатья.</p>
       </section>
-
-      <div class="proof-strip">
-        <div class="proof-card"><strong>Топвизор: проверить позиции</strong><span>Гостевая ссылка должна открывать все даты и оба поисковика.</span><span class="proof-button">Открыть все съемы ↗</span><div class="proof-placeholder">Добавить один крупный скриншот и выделить, на что смотреть.</div></div>
-        <div class="proof-card"><strong>Яндекс Метрика: проверить действия</strong><span>Органический трафик, переход на скачивание приложения, App Store и Google Play.</span><div class="proof-placeholder">Добавить один крупный скриншот и выделить четыре показателя.</div></div>
-      </div>
     </section>
 
     <footer class="compact-footer">
