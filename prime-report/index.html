@@ -158,7 +158,8 @@
     .engine-stat:last-child { border-right: 0; }
     .engine-stat small { color: var(--muted); font-size: 11px; }
     .engine-stat b { display: block; margin-top: 2px; font-size: 28px; }
-    .engine-stat em { color: var(--green); font-style: normal; font-size: 11px; font-weight: 800; }
+    .engine-stat em { color: var(--muted); font-style: normal; font-size: 14px; font-weight: 650; }
+    .engine-change { display: inline-block; margin-left: 7px; color: var(--green); font-size: 14px; font-weight: 850; }
     .engine-stat.na b { color: #aaa79f; font-size: 16px; padding-top: 5px; }
     .engine-stat.na em { color: var(--muted); font-weight: 500; }
     .mini-chart { width: 100%; height: 164px; display: block; overflow: visible; }
@@ -219,11 +220,13 @@
     .recent-kpi-head { display: flex; align-items: baseline; justify-content: space-between; gap: 16px; }
     .recent-kpi-head strong { font-size: 19px; line-height: 1.2; }
     .recent-kpi-head span { color: var(--green); font-size: 14px; font-weight: 800; text-align: right; }
-    .metric-bars { height: 175px; display: flex; align-items: flex-end; gap: 28px; margin-top: 16px; padding: 0 8px; border-bottom: 1px solid var(--ink); }
-    .metric-month { height: 100%; flex: 1; display: flex; flex-direction: column; justify-content: flex-end; align-items: center; }
-    .metric-value { margin-bottom: 7px; font-size: 18px; font-weight: 850; }
-    .metric-column { width: min(72px, 70%); min-height: 7px; height: var(--h); background: var(--green); }
-    .metric-label { padding: 8px 0 9px; color: var(--muted); font-size: 14px; }
+    .metric-bars { height: 190px; display: flex; align-items: flex-end; gap: 28px; margin-top: 16px; padding: 0 8px; border-bottom: 1px solid var(--ink); }
+    .metric-month { height: 100%; flex: 1; display: grid; grid-template-rows: 1fr 34px; align-items: end; text-align: center; }
+    .metric-bar-stack { position: relative; width: 100%; height: 100%; }
+    .metric-value { position: absolute; left: 0; right: 0; bottom: calc(var(--h) + 7px); font-size: 18px; font-weight: 850; }
+    .metric-column { position: absolute; left: 50%; bottom: 0; width: min(72px, 70%); min-height: 7px; height: var(--h); transform: translateX(-50%); background: var(--green); }
+    .metric-label { align-self: center; color: var(--muted); font-size: 14px; }
+    .recent-kpi-head span::before { content: "↑ "; }
     .kpi-section-title { display: flex; justify-content: space-between; align-items: end; gap: 18px; margin: 22px 0 12px; }
     .kpi-section-title h3 { margin: 0; font-family: Georgia, serif; font-size: 25px; font-weight: 500; }
     .kpi-section-title span { color: var(--muted); font-size: 11px; }
@@ -348,9 +351,9 @@
         <article class="engine-card">
           <div class="engine-top"><div class="engine-name">Яндекс: позиции</div><div class="engine-period">июль → август → 14 сентября</div></div>
           <div class="engine-stats">
-            <div class="engine-stat"><small>ТОП-3</small><b>139</b><em>было 118</em></div>
-            <div class="engine-stat"><small>ТОП-10</small><b>281</b><em>было 222</em></div>
-            <div class="engine-stat"><small>ТОП-20</small><b>364</b><em>было 286</em></div>
+            <div class="engine-stat"><small>ТОП-3</small><b>139</b><em>было 118</em><span class="engine-change">↑ +21</span></div>
+            <div class="engine-stat"><small>ТОП-10</small><b>281</b><em>было 222</em><span class="engine-change">↑ +59</span></div>
+            <div class="engine-stat"><small>ТОП-20</small><b>364</b><em>было 286</em><span class="engine-change">↑ +78</span></div>
           </div>
           <svg class="mini-chart" viewBox="0 0 500 150" role="img" aria-label="Позиции в Яндексе за июль, август и на 14 сентября">
             <line class="grid" x1="45" y1="24" x2="460" y2="24"/><line class="grid" x1="45" y1="72" x2="460" y2="72"/><line class="grid" x1="45" y1="120" x2="460" y2="120"/>
@@ -366,8 +369,8 @@
         <article class="engine-card">
           <div class="engine-top"><div class="engine-name">Google: позиции</div><div class="engine-period">июль → август → 14 сентября</div></div>
           <div class="engine-stats">
-            <div class="engine-stat"><small>ТОП-3</small><b>42</b><em>было 18</em></div>
-            <div class="engine-stat"><small>ТОП-10</small><b>121</b><em>было 64</em></div>
+            <div class="engine-stat"><small>ТОП-3</small><b>42</b><em>было 18</em><span class="engine-change">↑ +24</span></div>
+            <div class="engine-stat"><small>ТОП-10</small><b>121</b><em>было 64</em><span class="engine-change">↑ +57</span></div>
             <div class="engine-stat na"><small>ТОП-20</small><b>нет данных</b><em>глубина съема до топ-10</em></div>
           </div>
           <svg class="mini-chart" viewBox="0 0 500 150" role="img" aria-label="Позиции в Google за июль, август и на 14 сентября">
@@ -387,33 +390,33 @@
         <div class="recent-kpi">
           <div class="recent-kpi-head"><strong>Органический трафик</strong><span>август к июню: +27%</span></div>
           <div class="metric-bars" aria-label="Органический трафик: июнь 934, июль 964, август 1186">
-            <div class="metric-month"><div class="metric-value">934</div><div class="metric-column" style="--h:79%"></div><div class="metric-label">Июнь</div></div>
-            <div class="metric-month"><div class="metric-value">964</div><div class="metric-column" style="--h:81%"></div><div class="metric-label">Июль</div></div>
-            <div class="metric-month"><div class="metric-value">1 186</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+            <div class="metric-month" style="--h:68%"><div class="metric-bar-stack"><div class="metric-value">934</div><div class="metric-column"></div></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month" style="--h:70%"><div class="metric-bar-stack"><div class="metric-value">964</div><div class="metric-column"></div></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month" style="--h:86%"><div class="metric-bar-stack"><div class="metric-value">1 186</div><div class="metric-column"></div></div><div class="metric-label">Август</div></div>
           </div>
         </div>
         <div class="recent-kpi">
           <div class="recent-kpi-head"><strong>Переход на страницу «Скачать приложение»</strong><span>август к июню: в 2,1 раза</span></div>
           <div class="metric-bars" aria-label="Переходы на страницу скачать приложение: июнь 101, июль 122, август 212">
-            <div class="metric-month"><div class="metric-value">101</div><div class="metric-column" style="--h:48%"></div><div class="metric-label">Июнь</div></div>
-            <div class="metric-month"><div class="metric-value">122</div><div class="metric-column" style="--h:58%"></div><div class="metric-label">Июль</div></div>
-            <div class="metric-month"><div class="metric-value">212</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+            <div class="metric-month" style="--h:41%"><div class="metric-bar-stack"><div class="metric-value">101</div><div class="metric-column"></div></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month" style="--h:50%"><div class="metric-bar-stack"><div class="metric-value">122</div><div class="metric-column"></div></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month" style="--h:86%"><div class="metric-bar-stack"><div class="metric-value">212</div><div class="metric-column"></div></div><div class="metric-label">Август</div></div>
           </div>
         </div>
         <div class="recent-kpi">
           <div class="recent-kpi-head"><strong>Переход в App Store</strong><span>рост каждый месяц</span></div>
           <div class="metric-bars" aria-label="Переходы в App Store: июнь 5, июль 62, август 127">
-            <div class="metric-month"><div class="metric-value">5</div><div class="metric-column" style="--h:6%"></div><div class="metric-label">Июнь</div></div>
-            <div class="metric-month"><div class="metric-value">62</div><div class="metric-column" style="--h:49%"></div><div class="metric-label">Июль</div></div>
-            <div class="metric-month"><div class="metric-value">127</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+            <div class="metric-month" style="--h:5%"><div class="metric-bar-stack"><div class="metric-value">5</div><div class="metric-column"></div></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month" style="--h:42%"><div class="metric-bar-stack"><div class="metric-value">62</div><div class="metric-column"></div></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month" style="--h:86%"><div class="metric-bar-stack"><div class="metric-value">127</div><div class="metric-column"></div></div><div class="metric-label">Август</div></div>
           </div>
         </div>
         <div class="recent-kpi">
           <div class="recent-kpi-head"><strong>Переход в Google Play</strong><span>рост каждый месяц</span></div>
           <div class="metric-bars" aria-label="Переходы в Google Play: июнь 5, июль 52, август 77">
-            <div class="metric-month"><div class="metric-value">5</div><div class="metric-column" style="--h:7%"></div><div class="metric-label">Июнь</div></div>
-            <div class="metric-month"><div class="metric-value">52</div><div class="metric-column" style="--h:68%"></div><div class="metric-label">Июль</div></div>
-            <div class="metric-month"><div class="metric-value">77</div><div class="metric-column" style="--h:100%"></div><div class="metric-label">Август</div></div>
+            <div class="metric-month" style="--h:6%"><div class="metric-bar-stack"><div class="metric-value">5</div><div class="metric-column"></div></div><div class="metric-label">Июнь</div></div>
+            <div class="metric-month" style="--h:58%"><div class="metric-bar-stack"><div class="metric-value">52</div><div class="metric-column"></div></div><div class="metric-label">Июль</div></div>
+            <div class="metric-month" style="--h:86%"><div class="metric-bar-stack"><div class="metric-value">77</div><div class="metric-column"></div></div><div class="metric-label">Август</div></div>
           </div>
         </div>
       </div>
