@@ -1971,6 +1971,109 @@ section{padding:96px 0}
   .coaches-section .coach-card{flex-basis:84vw!important}
 }
 
+/* Focused conversion and clarity patch */
+.coaches-section .coach-filters{
+  display:flex;
+  align-items:center;
+  gap:30px;
+  margin:28px 0 34px;
+  padding:0;
+  border:0;
+  border-bottom:1px solid #d8d8dc;
+}
+.coaches-section .coach-filters button{
+  min-height:48px;
+  margin-bottom:-1px;
+  padding:0 0 13px;
+  border:0;
+  border-bottom:3px solid transparent;
+  border-radius:0;
+  background:transparent;
+  color:#666970;
+  font:700 14px/1.25 "ZT Martian Std",sans-serif;
+  cursor:pointer;
+}
+.coaches-section .coach-filters button:hover{color:#121212}
+.coaches-section .coach-filters button[aria-pressed="true"]{border-bottom-color:#DD2C2C;background:transparent;color:#DD2C2C}
+.coaches-section .coach-card[hidden]{display:none!important}
+.coaches-section .coach-card{border:1px solid #dfe0e3;border-radius:0!important;background:#fff}
+.coaches-section .coach-photo-wrap{height:330px!important;background:#ececee}
+.coaches-section .coach-body{min-height:316px;padding:24px;border-top:5px solid #DD2C2C}
+.coaches-section .coach-role{order:-1;margin:0 0 13px;padding:0;border-radius:0;background:transparent;color:#DD2C2C;font:800 12px/1.35 "ZT Martian Std",sans-serif;text-transform:uppercase;letter-spacing:.055em}
+.coaches-section .coach-name{margin:0 0 18px;color:#121212;font-size:clamp(22px,1.45vw,27px);line-height:1.08;text-wrap:balance}
+.coaches-section .coach-exp{margin:0 0 14px;padding:0;color:#121212;font-size:15px;text-transform:none}
+.coaches-section .coach-info-p{color:#55585f;font-size:14px;line-height:1.5}
+.coaches-section .coach-more{padding-top:18px;text-decoration:underline;text-underline-offset:4px}
+
+.map-layout{grid-template-columns:minmax(400px,.7fr) minmax(0,1.3fr);border:1px solid #d5d6da;border-radius:0;overflow:hidden}
+.map-form-col{padding:40px;background:#fff}
+.branch-form{margin:0;padding:0;border:0}
+.branch-choice{display:grid;gap:0;margin:0;padding:0;border:0}
+.branch-choice legend{width:100%;margin:0 0 14px;color:#121212;font:900 28px/1.08 var(--display);text-transform:uppercase}
+.branch-option{position:relative;display:grid;grid-template-columns:22px minmax(0,1fr);gap:14px;align-items:start;padding:18px 16px;border-top:1px solid #d9dade;cursor:pointer;transition:background .18s ease,box-shadow .18s ease}
+.branch-option:last-child{border-bottom:1px solid #d9dade}
+.branch-option:hover{background:#f7f7f8}
+.branch-option:has(input:checked){background:#fff5f5;box-shadow:inset 4px 0 #DD2C2C}
+.branch-option input{width:18px;height:18px;margin-top:3px;accent-color:#DD2C2C}
+.branch-option span{display:grid;gap:5px}
+.branch-option strong{color:#121212;font:800 18px/1.25 "ZT Martian Std",sans-serif}
+.branch-option small{color:#65676d;font-size:13px;line-height:1.45}
+.branch-form-title{margin:30px 0 14px;font-size:17px}
+.branch-form-row{grid-template-columns:minmax(0,1fr);gap:10px}
+.branch-form .btn{width:100%}
+.form-legal{margin:8px 2px 0;color:#8a8c92;font-size:10px;line-height:1.35}
+.form-legal a{color:inherit;text-decoration:underline;text-underline-offset:2px}
+
+.pricing-section .price-path{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px;margin:34px 0 0;border:0}
+.pricing-section .price-path>div{display:flex;min-height:290px;flex-direction:column;padding:26px;border:0;border-radius:16px;background:#fff;color:#121212}
+.pricing-section .price-path .step-number{display:grid;place-items:center;width:34px;height:34px;margin:0 0 24px;border:1px solid #DD2C2C;border-radius:50%;background:transparent;color:#DD2C2C;font-size:13px}
+.pricing-section .price-path h3{margin:0 0 14px;color:#121212;font:800 clamp(21px,1.5vw,27px)/1.15 "ZT Martian Std",sans-serif;text-wrap:balance}
+.pricing-section .price-path p{margin:0 0 24px;color:#5c5e64;font-size:15px;line-height:1.55}
+.pricing-section .price-path a,.pricing-section .price-path button{display:inline-flex;min-height:48px;align-items:center;justify-content:center;margin-top:auto;padding:12px 16px;border:0;border-radius:100px;background:#121212;color:#fff;font:800 14px/1.2 "ZT Martian Std",sans-serif;text-align:center;text-decoration:none}
+.pricing-section .price-path a:hover,.pricing-section .price-path button:hover{background:#DD2C2C;color:#fff}
+
+.training-video-block{margin-top:10px;padding:22px;border:1px solid #cfd0d4;background:#fff}
+.training-video-callout{display:flex;align-items:flex-end;justify-content:space-between;gap:40px;padding:4px 4px 22px}
+.training-video-callout span{color:#DD2C2C;font:800 12px/1.3 "ZT Martian Std",sans-serif;text-transform:uppercase;letter-spacing:.07em}
+.training-video-callout strong{max-width:680px;color:#121212;font:800 clamp(18px,1.35vw,25px)/1.35 "ZT Martian Std",sans-serif;text-wrap:balance}
+.gallery-section .training-video-full{width:100%;height:auto!important;aspect-ratio:16/9;margin:0;border-radius:0;background:#121212}
+.gallery-section .training-video-full video{width:100%;height:100%;object-fit:cover}
+
+.complex-section .complex-card{position:relative;min-height:180px;overflow:hidden;isolation:isolate}
+.complex-section .complex-tooltip,.complex-section .complex-card:nth-child(n+3) .complex-tooltip,.complex-section .complex-card:nth-child(n+5) .complex-tooltip{
+  position:absolute;
+  inset:0;
+  width:auto;
+  margin:0;
+  padding:22px;
+  border:0;
+  border-radius:16px;
+  background:#fff;
+  color:#121212;
+  opacity:0;
+  visibility:hidden;
+  transform:none;
+  box-shadow:none;
+}
+.complex-section .complex-card:hover .complex-tooltip,.complex-section .complex-card:focus-visible .complex-tooltip,.complex-section .complex-card:focus-within .complex-tooltip{opacity:1;visibility:visible}
+.complex-section .complex-tooltip strong{color:#DD2C2C;font-size:15px;line-height:1.35}
+.complex-section .complex-tooltip ul{color:#36383e;font-size:13px;line-height:1.5}
+
+@media(max-width:700px){
+  .coaches-section .coach-filters{width:calc(100% + 18px);gap:22px;overflow-x:auto;white-space:nowrap}
+  .coaches-section .coach-filters button{flex:0 0 auto}
+  .map-layout{grid-template-columns:1fr}
+  .map-form-col{padding:26px 20px}
+  .branch-choice legend{font-size:25px}
+  .pricing-section .price-path{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory}
+  .pricing-section .price-path>div{flex:0 0 84vw;min-height:300px;scroll-snap-align:center}
+  .training-video-block{padding:12px}
+  .training-video-callout{align-items:flex-start;flex-direction:column;gap:8px;padding:6px 6px 16px}
+  .gallery-section .training-video-full{min-height:0;aspect-ratio:9/14}
+  .complex-section .complex-card{min-height:230px;overflow:visible}
+  .complex-section .complex-tooltip,.complex-section .complex-card:nth-child(n+3) .complex-tooltip,.complex-section .complex-card:nth-child(n+5) .complex-tooltip{position:static;width:auto;margin-top:18px;padding:16px;opacity:1;visibility:visible;border-radius:12px;background:rgba(255,255,255,.94)}
+}
+
 </style>
 </head>
 <body>
@@ -1986,7 +2089,7 @@ section{padding:96px 0}
                 <a href="#faq">Вопросы</a>
             </nav>
             <a class="header-phone" href="tel:+74951474707">+7 (495) 147-47-07</a>
-            <a class="btn btn--primary header-cta" href="#feedback">Записаться</a>
+            <a class="btn btn--primary header-cta" href="#feedback">Бесплатная тренировка</a>
             <button class="mobile-menu-btn" type="button" aria-label="Открыть меню" aria-expanded="false"></button>
         </div>
     </header>
@@ -2010,7 +2113,7 @@ section{padding:96px 0}
                     <form class="hero-quick-form" id="quick-signup" action="#" method="POST">
                         <input id="hero-phone" aria-label="Телефон для записи" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
                         <button type="submit" class="btn btn--primary">Записаться на тренировку</button>
-                        <p class="form-legal">Нажимая кнопку, вы соглашаетесь на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
+                        <p class="form-legal">Нажимая «Записаться на тренировку», вы даете согласие на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
                     </form>
                 </div>
             </div>
@@ -2139,9 +2242,15 @@ section{padding:96px 0}
     <section class="coaches-section" id="coaches">
         <div class="container">
             <h2 class="section-title">Тренеры нашей школы футбола для детей</h2>
-            
+
+            <div class="coach-filters" aria-label="Специализация тренеров">
+                <button type="button" data-coach-filter="all" aria-pressed="true">Все тренеры</button>
+                <button type="button" data-coach-filter="football" aria-pressed="false">Футбольная подготовка</button>
+                <button type="button" data-coach-filter="keeper" aria-pressed="false">Вратарская подготовка</button>
+                <button type="button" data-coach-filter="fitness" aria-pressed="false">Физическая подготовка</button>
+            </div>
             <div class="coaches-row" aria-label="Тренеры Zobnin Team">
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="football">
                     <div class="coach-photo-wrap"><img src="assets/coach-0.jpg" alt="Дяденькин Никита Сергеевич"></div>
                     <div class="coach-body">
                         <div class="coach-name">Дяденькин Никита Сергеевич</div><div class="coach-role">Футбольная подготовка</div>
@@ -2152,7 +2261,7 @@ section{padding:96px 0}
                     </div>
                 </div>
 
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="football">
                     <div class="coach-photo-wrap"><img src="assets/coach-1.jpg" alt="Кузнецов Владимир Владимирович"></div>
                     <div class="coach-body">
                         <div class="coach-name">Кузнецов Владимир Владимирович</div><div class="coach-role">Футбольная подготовка</div>
@@ -2163,7 +2272,7 @@ section{padding:96px 0}
                     </div>
                 </div>
 
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="football">
                     <div class="coach-photo-wrap"><img src="assets/coach-2.jpg" alt="Болотов Алексей Юрьевич"></div>
                     <div class="coach-body">
                         <div class="coach-name">Болотов Алексей Юрьевич</div><div class="coach-role">Футбольная подготовка</div>
@@ -2173,7 +2282,7 @@ section{padding:96px 0}
                     </div>
                 </div>
 
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="football">
                     <div class="coach-photo-wrap"><img src="assets/coach-3.jpg" alt="Афанасьев Никита Павлович"></div>
                     <div class="coach-body">
                         <div class="coach-name">Афанасьев Никита Павлович</div><div class="coach-role">Футбольная подготовка</div>
@@ -2183,7 +2292,7 @@ section{padding:96px 0}
                     </div>
                 </div>
 
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="keeper">
                     <div class="coach-photo-wrap"><img src="assets/coach-4.jpg" alt="Кузьменко Богдан Станиславович"></div>
                     <div class="coach-body">
                         <div class="coach-name">Кузьменко Богдан Станиславович</div><div class="coach-role">Вратарская подготовка</div>
@@ -2193,7 +2302,7 @@ section{padding:96px 0}
                     </div>
                 </div>
 
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="fitness">
                     <div class="coach-photo-wrap"><img src="assets/coach-5.jpg" alt="Дмитриевцев Павел Сергеевич"></div>
                     <div class="coach-body">
                         <div class="coach-name">Дмитриевцев Павел Сергеевич</div><div class="coach-role">Физическая подготовка</div>
@@ -2203,7 +2312,7 @@ section{padding:96px 0}
                     </div>
                 </div>
 
-                <div class="coach-card">
+                <div class="coach-card" data-specialty="football">
                     <div class="coach-photo-wrap"><img src="assets/coach-6.jpg" alt="Локтинов Сергей Эдуардович"></div>
                     <div class="coach-body">
                         <div class="coach-name">Локтинов Сергей Эдуардович</div><div class="coach-role">Футбольная подготовка</div>
@@ -2225,18 +2334,24 @@ section{padding:96px 0}
             
             <div class="map-layout">
                 <div class="map-form-col">
-                    <p class="branch-intro">Выберите ближайшую площадку. Сейчас занятия проходят в двух филиалах.</p>
-                    <div class="branch-list" aria-label="Филиалы академии">
-                        <article class="branch-card"><span>Москва</span><h3>Измайлово</h3><p>Измайловское шоссе, 73В, строение 1</p></article>
-                        <article class="branch-card"><span>Московская область</span><h3>Новые Вешки</h3><p>Зеленый бульвар, владение 86, строение 1</p></article>
-                    </div>
                     <form id="branch-form" class="branch-form" action="#" method="POST">
-                        <p class="branch-form-title">Записаться на бесплатную тренировку</p>
+                        <fieldset class="branch-choice">
+                            <legend>Выберите филиал</legend>
+                            <label class="branch-option">
+                                <input type="radio" name="branch" value="Измайлово" checked>
+                                <span><strong>Измайлово</strong><small>Москва, Измайловское шоссе, 73В, строение 1</small></span>
+                            </label>
+                            <label class="branch-option">
+                                <input type="radio" name="branch" value="Новые Вешки">
+                                <span><strong>Новые Вешки</strong><small>Московская область, Зеленый бульвар, владение 86, строение 1</small></span>
+                            </label>
+                        </fieldset>
+                        <p class="branch-form-title">Записаться на бесплатную тренировку в выбранном филиале</p>
                         <div class="branch-form-row">
                             <input aria-label="Номер телефона" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="+7 999 123-45-67" required>
-                            <button type="submit" class="btn btn--primary">Записаться</button>
+                            <button type="submit" class="btn btn--primary">Записаться в филиал</button>
                         </div>
-                        <p class="form-legal">Нажимая кнопку «Записаться», вы соглашаетесь на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
+                        <p class="form-legal">Нажимая «Записаться в филиал», вы даете согласие на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
                     </form>
                 </div>
 
@@ -2308,21 +2423,21 @@ section{padding:96px 0}
             <div class="price-path">
                 <div>
                     <span class="step-number">01</span>
-                    <h3>Попробовать</h3>
-                    <p>Первая тренировка бесплатно. Начните со знакомства с форматом и оценки подготовки.</p>
-                    <button type="button" data-open-quick data-context="Первая бесплатная тренировка">Записаться на бесплатную тренировку →</button>
+                    <h3>Хочу попробовать</h3>
+                    <p>Первая тренировка бесплатная. Ребенок познакомится с тренером, а вы поймете, подходит ли ему формат.</p>
+                    <button type="button" data-open-quick data-context="Первая бесплатная тренировка">Записать ребенка</button>
                 </div>
                 <div>
                     <span class="step-number">02</span>
-                    <h3>Выбрать нагрузку</h3>
-                    <p>Сравните разовые занятия и абонементы выше. Цены сохранены из исходного макета.</p>
-                    <a href="#subscription-options">Посмотреть абонементы →</a>
+                    <h3>Хочу выбрать абонемент</h3>
+                    <p>Сравните количество занятий и стоимость, чтобы выбрать подходящую нагрузку.</p>
+                    <a href="#subscription-options">Смотреть абонементы</a>
                 </div>
                 <div>
                     <span class="step-number">03</span>
-                    <h3>Уточнить состав</h3>
-                    <p>До оплаты проверьте расписание, дополнительные занятия и условия пропусков.</p>
-                    <button type="button" data-open-quick data-context="Подбор абонемента и уточнение условий">Подобрать абонемент →</button>
+                    <h3>Нужна помощь с выбором</h3>
+                    <p>Оставьте телефон. Администратор уточнит возраст ребенка, удобный филиал и расписание.</p>
+                    <button type="button" data-open-quick data-context="Помощь с выбором формата занятий">Получить консультацию</button>
                 </div>
             </div>
         </div>
@@ -2360,12 +2475,15 @@ section{padding:96px 0}
                 <div class="training-point"><span class="num">2</span><strong>Работа с мячом</strong><p>Ведение, прием, передачи и удары.</p></div>
                 <div class="training-point"><span class="num">3</span><strong>Игровые решения</strong><p>От знакомства с правилами до тактики и анализа матчей.</p></div>
             </div>
-        </div>
-        <div class="training-video-full">
-            <video controls playsinline preload="metadata" poster="assets/live-system/hero-poster.webp">
-                <source src="https://zobninteam.ru/upload/iblock/d21/ehnha3fffgs2fu72f4kxlyzc5uijt2on.mp4" type="video/mp4">
-                Ваш браузер не поддерживает видео.
-            </video>
+            <div class="training-video-block">
+                <div class="training-video-callout"><span>Тренировка глазами родителя</span><strong>Посмотрите, как дети работают с мячом, общаются с командой и включаются в игру.</strong></div>
+                <div class="training-video-full">
+                    <video controls playsinline preload="metadata" poster="assets/live-system/hero-poster.webp">
+                        <source src="https://zobninteam.ru/upload/iblock/d21/ehnha3fffgs2fu72f4kxlyzc5uijt2on.mp4" type="video/mp4">
+                        Ваш браузер не поддерживает видео.
+                    </video>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -2377,7 +2495,7 @@ section{padding:96px 0}
             <h2 class="section-title">Комплексный подход академии Зобнина</h2>
             <p class="section-lead">Наша футбольная секция — это всестороннее развитие юных футболистов:</p>
 
-            <p class="decision-note">Здесь разные задачи: подготовка игрока, поддержка его психологического состояния и развитие публичного профиля. Откройте направление, чтобы узнать подробности.</p><div class="complex-grid">
+            <div class="complex-grid">
                 <a href="https://zobninteam.ru/services/futbolnoe-testirovanie/" class="complex-card">
                     <span>Тестирование игроков</span>
                     <div class="complex-tooltip"><strong>Игрокам: оценить подготовку</strong><ul><li>Измерить скорость, выносливость и гибкость</li><li>Выявить сильные стороны и зоны роста</li></ul></div>
@@ -2421,7 +2539,7 @@ section{padding:96px 0}
             </div>
 
             <div style="text-align: center;">
-                <button class="btn btn--primary" data-open-quick>Записаться</button>
+                <button class="btn btn--primary" data-open-quick data-context="Бесплатная тренировка">Записаться на бесплатную тренировку</button>
             </div>
         </div>
     </section>
@@ -2556,8 +2674,8 @@ section{padding:96px 0}
                     <div class="form-group">
                         <input aria-label="Номер телефона" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="Номер телефона" required>
                     </div>
-                    <label class="form-consent"><input type="checkbox" required><span>Я соглашаюсь на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a></span></label>
                     <button type="submit" class="btn btn--primary btn--full">Отправить заявку</button>
+                    <p class="form-legal">Нажимая «Отправить заявку», вы даете согласие на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
                 </form>
             </div>
         </div>
@@ -2570,7 +2688,7 @@ section{padding:96px 0}
         <a class="conversion-dock__messenger conversion-dock__messenger--tg" href="https://t.me/zobninteam" target="_blank" rel="noopener" aria-label="Написать Zobnin Team в Telegram" title="Telegram">
             <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.94 3.32 18.6 19.05c-.25 1.11-.91 1.38-1.84.86l-5.08-3.74-2.45 2.36c-.27.27-.5.5-1.02.5l.36-5.17 9.4-8.49c.41-.36-.09-.57-.63-.21L5.72 12.48.7 10.91c-1.09-.34-1.11-1.09.23-1.61L20.55 1.74c.91-.34 1.71.21 1.39 1.58z"/></svg>
         </a>
-        <a class="btn btn--primary conversion-dock__primary" href="#quick-signup">Записаться →</a>
+        <a class="btn btn--primary conversion-dock__primary" href="#quick-signup">Бесплатная тренировка →</a>
     </nav>
 
     <div class="quick-modal" id="quickModal" role="dialog" aria-modal="true" aria-labelledby="quickModalTitle">
@@ -2580,8 +2698,8 @@ section{padding:96px 0}
             <p>Оставьте только телефон. Администратор перезвонит, узнает возраст ребенка и подберет филиал.</p>
             <form action="#">
                 <div class="form-group"><input aria-label="Номер телефона" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="Номер телефона" required></div>
-                <label class="form-consent"><input type="checkbox" required><span>Я соглашаюсь на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a></span></label>
                 <button type="submit" class="btn btn--primary btn--full">Записаться бесплатно</button>
+                <p class="form-legal">Нажимая «Записаться бесплатно», вы даете согласие на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
             </form>
         </div>
     </div>
@@ -2695,7 +2813,8 @@ section{padding:96px 0}
 
 document.querySelectorAll('[data-coach-filter]').forEach(button=>button.addEventListener('click',()=>{
 document.querySelectorAll('[data-coach-filter]').forEach(b=>b.setAttribute('aria-pressed',String(b===button)));
-document.querySelectorAll('.coach-card').forEach(card=>{const t=card.textContent;card.hidden=button.dataset.coachFilter==='keeper'?!t.includes('подготовка вратарей'):button.dataset.coachFilter==='fitness'?!t.includes('физическая подготовка'):false;});
+document.querySelectorAll('.coach-card').forEach(card=>{card.hidden=button.dataset.coachFilter!=='all'&&card.dataset.specialty!==button.dataset.coachFilter;});
+document.querySelector('.coaches-row')?.scrollTo({left:0,behavior:'smooth'});
 }));
 document.querySelectorAll('[data-faq-index]').forEach(b=>b.addEventListener('click',()=>{const d=document.querySelectorAll('.faq-grid-v2 details')[Number(b.dataset.faqIndex)];d.open=true;d.scrollIntoView({behavior:'smooth',block:'center'});}));
     </script>
