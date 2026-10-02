@@ -2257,6 +2257,7 @@ section{padding:96px 0}
 .branch-card .branch-option:hover,.branch-card .branch-option:has(input:checked){background:transparent;box-shadow:none}
 .branch-meta{color:#34363d!important;font-weight:750}
 .branch-hours{color:#34363d!important}
+.branch-region{display:inline!important}
 .branch-route{display:inline-flex;margin:0 16px 16px 52px;color:#DD2C2C;font:800 12px/1.35 "ZT Martian Std",sans-serif;text-decoration:underline;text-underline-offset:3px}
 .branch-route:hover{color:#121212}
 
@@ -2292,6 +2293,662 @@ section{padding:96px 0}
   .gallery-section .training-point:last-child{border-bottom:0}
 }
 
+/* Mobile composition: one clear action, safe widths and touch-first spacing. */
+@media(max-width:700px){
+  html,body{width:100%;max-width:100%;overflow-x:clip}
+  body{padding-bottom:76px}
+  .site-header,.site-header__inner,.hero-section,.hero-container,.hero-grid,.hero-left,.hero-right{max-width:100%;min-width:0}
+  .site-header__inner{padding-inline:12px}
+  .brand{width:112px;flex:0 0 112px}
+  .brand img{width:112px}
+  .header-phone{margin-left:auto;padding:10px 0;white-space:nowrap}
+  .mobile-menu-btn{width:44px;height:44px}
+
+  .hero-container{padding-inline:12px}
+  .hero-left h1{font-size:clamp(39px,10.8vw,43px);line-height:.92;text-wrap:balance}
+  .hero-intro{
+    display:grid;
+    gap:9px;
+    margin-bottom:16px;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    line-height:1.45;
+  }
+  .hero-intro-main{color:#fff;font-size:15px;font-weight:800}
+  .hero-intro-extra{color:rgba(255,255,255,.76);font-size:13px;font-weight:650}
+  .hero-intro-free{
+    display:block;
+    margin-top:2px;
+    padding-left:12px;
+    border-left:3px solid #EF2D31;
+    color:#ff4247;
+    font-size:15px;
+    line-height:1.4;
+    font-weight:900;
+  }
+  .hero-selection{
+    margin-bottom:18px;
+    padding:12px 14px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:10px;
+    background:rgba(8,8,9,.58);
+    color:rgba(255,255,255,.88);
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:12px;
+    line-height:1.5;
+    font-weight:700;
+    -webkit-backdrop-filter:blur(5px);
+    backdrop-filter:blur(5px);
+  }
+  .hero-quick-action .btn{font-size:13px;line-height:1.25}
+
+  .conversion-dock{left:12px;right:12px;bottom:max(10px,env(safe-area-inset-bottom));min-height:60px;justify-content:stretch;padding:6px}
+  .conversion-dock__messenger{display:none}
+  .conversion-dock__primary{order:0;width:100%;min-width:0;min-height:48px;flex:1 1 auto;padding:11px 16px;white-space:normal;font-size:14px;line-height:1.2}
+
+  .hero-proof-section .hero-photo-reel figcaption{bottom:118px}
+  .proof-slider-ui{bottom:54px}
+  .ages-section .section-title{font-size:40px}
+  .tabs-nav,.coach-filters,.coaches-row,.price-path,.complex-grid,.fields-grid,.faq-shortcuts{-webkit-overflow-scrolling:touch;overscroll-behavior-inline:contain}
+  .tab-btn,.coach-filters button,.faq-shortcuts button{min-height:48px}
+  .map-frame-col iframe{min-height:420px}
+  .quick-modal{align-items:end;padding:12px}
+  .quick-modal-card{width:100%;max-height:calc(100svh - 24px);overflow-y:auto;padding:28px 20px 22px;border-radius:20px 20px 0 0}
+  .quick-modal-card h3{margin-right:42px;font-size:34px}
+  .quick-close{top:14px;right:14px;width:44px;height:44px}
+}
+
+@media(max-width:380px){
+  .header-phone::after{content:'Звонок';font-size:12px}
+  .hero-left h1{font-size:39px}
+  .hero-intro{font-size:14px}
+  .hero-quick-action .btn{padding-inline:14px;font-size:12px}
+  .proof-heading h2,.academy-benefits h2{font-size:37px}
+  .ages-section .section-title{font-size:40px}
+}
+
+/* Mobile feedback pass: restore hierarchy instead of squeezing desktop components. */
+@media(max-width:700px){
+  .ages-section>.container{padding-inline:14px}
+  .ages-section .tabs-nav{margin-bottom:28px}
+  .ages-section .tab-panel{padding:0}
+  .ages-section .tab-lead{gap:16px;margin-bottom:26px}
+  .ages-section .age-job-lead{
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+    align-items:flex-start;
+    width:100%;
+    background:none;
+    color:#DD2C2C;
+    -webkit-background-clip:border-box;
+    background-clip:border-box;
+    -webkit-text-fill-color:#DD2C2C;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:clamp(22px,6.2vw,25px);
+    line-height:1.12;
+    font-weight:850;
+    letter-spacing:-.015em;
+    text-transform:none;
+    overflow-wrap:anywhere;
+  }
+  .ages-section .age-child-icon{width:54px;height:54px;flex-basis:54px}
+  .ages-section .age-job-rest{font-size:15px;line-height:1.55}
+  .ages-section .tab-skills{gap:0;margin-bottom:28px;border-top:1px solid rgba(255,255,255,.34)}
+  .ages-section .tab-skills li{
+    min-width:0;
+    padding:16px 4px 16px 36px;
+    border-bottom:1px solid rgba(255,255,255,.34)!important;
+    font-size:15px;
+    line-height:1.45;
+  }
+  .ages-section .tab-skills li::before{top:16px;width:22px;height:22px}
+  .ages-section .age-offer{
+    grid-template-columns:1fr;
+    margin-top:24px;
+    border:1px solid rgba(255,255,255,.55);
+    background:#fff;
+  }
+  .ages-section .age-offer>div,
+  .ages-section .age-offer>div:last-child{
+    display:grid;
+    grid-column:auto;
+    grid-template-columns:minmax(0,1fr) auto;
+    align-items:center;
+    gap:14px;
+    padding:15px 16px;
+    border:0;
+    border-bottom:1px solid #dedfe3;
+  }
+  .ages-section .age-offer>div:last-child{
+    grid-template-columns:1fr;
+    gap:6px;
+    align-items:start;
+    border-bottom:0;
+  }
+  .ages-section .age-offer span{margin:0;font-size:11px;line-height:1.35}
+  .ages-section .age-offer strong{font-size:16px;line-height:1.3;text-align:right;white-space:nowrap}
+  .ages-section .age-offer>div:last-child strong{text-align:left;white-space:normal}
+
+  .coaches-section .coach-filters{
+    flex-wrap:nowrap;
+    width:calc(100% + 12px);
+    gap:7px;
+    margin:22px -12px 24px 0;
+    padding:6px 12px 6px 6px;
+    border:1px solid #c9cbd0;
+    border-radius:14px;
+    background:#d7d7da;
+    overflow-x:auto;
+    scroll-snap-type:x proximity;
+    scrollbar-width:none;
+  }
+  .coaches-section .coach-filters::-webkit-scrollbar{display:none}
+  .coaches-section .coach-filters button{
+    flex:0 0 auto;
+    min-height:44px;
+    padding:10px 14px;
+    border:1px solid #c9cbd0;
+    border-radius:10px;
+    background:#fff;
+    color:#34363d;
+    font-size:12px;
+    line-height:1.25;
+    scroll-snap-align:start;
+  }
+  .coaches-section .coach-filters button[aria-pressed=true]{border-color:#121212;background:#121212;color:#fff}
+  .coaches-section .coaches-row{align-items:flex-start}
+  .coaches-section .coach-body{min-height:0;padding:22px 20px 24px}
+  .coaches-section .coach-role{
+    order:-1;
+    align-self:flex-start;
+    margin:0 0 12px;
+    padding:7px 10px;
+    border:1px solid #f0b6ba;
+    border-radius:100px;
+    background:#fff0f1;
+    color:#DD2C2C;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:11px;
+    line-height:1.25;
+    font-weight:850;
+    letter-spacing:0;
+    text-transform:none;
+  }
+  .coaches-section .coach-name{
+    margin:0 0 20px;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:24px;
+    line-height:1.08;
+    font-weight:900;
+    letter-spacing:-.025em;
+    text-transform:none;
+  }
+  .coaches-section .coach-facts{display:grid;gap:0;width:100%;border:0}
+  .coaches-section .coach-fact{display:grid;gap:5px;padding:14px 0;border:0;border-bottom:1px solid #dedfe3}
+  .coaches-section .coach-fact dt{
+    color:#777a82;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:11px;
+    line-height:1.3;
+    font-weight:750;
+    letter-spacing:0;
+    text-transform:none;
+  }
+  .coaches-section .coach-fact dd{color:#303238;font-size:14px;line-height:1.45}
+  .coaches-section .coach-fact:nth-child(1){
+    margin-bottom:4px;
+    padding:14px 16px;
+    border:0;
+    border-radius:10px;
+    background:#121212;
+  }
+  .coaches-section .coach-fact:nth-child(1) dt{color:rgba(255,255,255,.62)}
+  .coaches-section .coach-fact:nth-child(1) dd{color:#fff;font-size:18px;line-height:1.3;font-weight:850}
+  .coaches-section .coach-fact:nth-child(3){
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:12px;
+  }
+  .coaches-section .coach-fact:nth-child(3) dd{
+    flex:0 1 auto;
+    padding:6px 9px;
+    border:1px solid #efc2c5;
+    border-radius:8px;
+    background:#fff2f3;
+    color:#b51f30;
+    font-size:13px;
+    line-height:1.25;
+    font-weight:850;
+    text-align:right;
+  }
+  .coaches-section .coach-fact:nth-child(4){
+    margin-top:12px;
+    padding:14px 16px;
+    border:0;
+    border-radius:10px;
+    background:#f1f1f3;
+  }
+  .coaches-section .coach-fact:nth-child(4) dt{color:#DD2C2C;font-weight:850}
+  .coaches-section .coach-fact:nth-child(4) dd{font-weight:750}
+  .coaches-section .coach-fact .is-pending{color:#8f1723;font-size:12px;font-weight:800}
+  .coaches-section .coach-more{margin-top:18px;padding-top:0;font-size:14px;line-height:1.35}
+
+  .map-section .map-form-col{padding:26px 18px}
+  .map-section .branch-choice legend{margin-bottom:18px;font-size:26px;line-height:1.02}
+  .map-section .branch-card{padding:0}
+  .map-section .branch-option{grid-template-columns:20px minmax(0,1fr);gap:12px;padding:18px 14px 10px}
+  .map-section .branch-option input{width:18px;height:18px;margin-top:4px}
+  .map-section .branch-option span{gap:6px}
+  .map-section .branch-option strong{
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:21px;
+    line-height:1.2;
+    font-weight:850;
+    letter-spacing:-.01em;
+    text-transform:none;
+  }
+  .map-section .branch-option small{
+    color:#6c6f76;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:13px;
+    line-height:1.42;
+    font-weight:550;
+    letter-spacing:0;
+    text-transform:none;
+  }
+  .map-section .branch-meta{color:#25272c!important;font-size:14px!important;font-weight:750!important}
+  .map-section .branch-hours{margin-top:4px;color:#34363d!important;font-weight:750!important}
+  .map-section .branch-hours::before{content:"Расписание: ";color:#777a82;font-weight:650}
+  .map-section .branch-region{display:none!important}
+  .map-section .branch-route{
+    display:inline-flex;
+    align-items:center;
+    margin:2px 14px 18px 46px;
+    font-family:"ZT Manrope",Manrope,Arial,sans-serif;
+    font-size:13px;
+    line-height:1.3;
+    font-weight:800;
+    white-space:nowrap;
+  }
+
+  .pricing-section .pricing-col{padding:24px 18px 20px}
+  .pricing-section .pricing-col-title{font-size:clamp(28px,9vw,36px);line-height:1.08}
+  .pricing-section .pricing-table-row{
+    display:grid;
+    grid-template-columns:1fr;
+    align-items:start;
+    gap:8px;
+    padding:17px 0;
+  }
+  .pricing-section .pricing-table-row>span:first-child{max-width:none;font-size:14px;line-height:1.48}
+  .pricing-section .pricing-price{justify-self:start;font-size:18px;line-height:1.25;white-space:nowrap;word-break:keep-all}
+
+  .hero-proof-section .hero-photo-reel figure::after{
+    inset:20% 0 0;
+    background:linear-gradient(transparent 0%,rgba(0,0,0,.2) 18%,rgba(0,0,0,.88) 100%);
+  }
+  .hero-proof-section .hero-photo-reel figcaption{
+    left:16px;
+    right:16px;
+    bottom:122px;
+    width:auto;
+    padding:16px 17px 17px;
+    border:1px solid rgba(255,255,255,.2);
+    border-radius:12px;
+    background:rgba(9,9,10,.68);
+    box-shadow:0 12px 32px rgba(0,0,0,.2);
+    -webkit-backdrop-filter:blur(6px);
+    backdrop-filter:blur(6px);
+    font-size:clamp(22px,6.5vw,28px);
+    line-height:1.08;
+  }
+}
+
+@media(max-width:380px){
+  .ages-section .age-job-lead{font-size:21px}
+  .ages-section .age-child-icon{width:48px;height:48px}
+  .map-section .branch-route{margin-left:44px;font-size:12px}
+  .hero-proof-section .hero-photo-reel figcaption{font-size:22px}
+}
+
+/* Mobile grid pass: essential choices stay visible without horizontal swiping. */
+@media(max-width:700px){
+  .ages-section .tabs-nav{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:100%;
+    gap:8px;
+    margin-right:0;
+    overflow:visible;
+  }
+  .ages-section .tab-btn{
+    width:100%;
+    min-width:0;
+    flex:none;
+  }
+
+  .academy-benefits .hero-triggers-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:100%;
+    gap:10px;
+    padding:0;
+    overflow:visible;
+    scroll-snap-type:none;
+  }
+  .academy-benefits .hero-trigger-card{
+    min-width:0;
+    min-height:210px;
+    padding:18px;
+    flex:none;
+    border:1px solid rgba(255,255,255,.5)!important;
+    scroll-snap-align:none;
+  }
+  .academy-benefits .hero-trigger-card img{
+    width:58px;
+    height:58px;
+    padding:9px;
+  }
+  .academy-benefits .hero-trigger-card span{
+    max-width:none;
+    font-size:16px;
+    line-height:1.3;
+    overflow-wrap:anywhere;
+  }
+
+  .complex-section .complex-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:100%;
+    gap:10px;
+    margin:32px 0 48px;
+    padding:0;
+    overflow:visible;
+    scroll-snap-type:none;
+  }
+  .complex-section .complex-card{
+    min-width:0;
+    min-height:148px;
+    padding:16px;
+    flex:none;
+    flex-direction:row;
+    align-items:flex-end;
+    justify-content:space-between;
+    gap:0;
+    font-size:14px;
+    line-height:1.3;
+    scroll-snap-align:none;
+  }
+  .complex-section .complex-card>span{
+    display:block;
+    width:100%;
+    min-width:0;
+    padding-right:0;
+    overflow-wrap:normal;
+    word-break:normal;
+    hyphens:none;
+  }
+  .complex-section .complex-grid{grid-template-columns:minmax(0,1fr)}
+  .complex-section .complex-card{min-height:0;flex-direction:column;align-items:stretch;justify-content:flex-start;padding-bottom:38px;font-size:15px}
+  .complex-section .complex-card:last-child{font-size:15px}
+  .complex-section .complex-tooltip,
+  .complex-section .complex-card:nth-child(n+3) .complex-tooltip,
+  .complex-section .complex-card:nth-child(n+5) .complex-tooltip,
+  .complex-section .complex-card--smm .complex-tooltip{
+    display:block;
+    position:static;
+    inset:auto;
+    width:auto;
+    max-width:100%;
+    margin-top:12px;
+    padding:10px;
+    opacity:1;
+    visibility:visible;
+    transform:none;
+    border-radius:10px;
+    background:rgba(255,255,255,.94);
+    box-shadow:none;
+    pointer-events:auto;
+  }
+  .complex-section .complex-tooltip strong,
+  .complex-section .complex-card--smm .complex-tooltip strong{font-size:14px;line-height:1.3}
+  .complex-section .complex-tooltip ul,
+  .complex-section .complex-card--smm .complex-tooltip ul{padding-left:16px;font-size:13px;line-height:1.45}
+  .complex-section .complex-card>svg{
+    position:absolute;
+    right:12px;
+    bottom:12px;
+    width:18px;
+    height:18px;
+    flex-basis:18px;
+  }
+  .complex-section .complex-card:last-child{font-size:12px}
+
+  .fields-section .fields-grid{
+    display:grid;
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    width:100%;
+    gap:8px;
+    overflow:visible;
+    scroll-snap-type:none;
+  }
+  .fields-section .field-card{
+    min-width:0;
+    min-height:210px;
+    flex:none;
+    scroll-snap-align:none;
+  }
+  .fields-section .field-card-img{height:100%}
+  .fields-section .field-card-body{padding:12px}
+  .fields-section .field-card-title{font-size:16px;line-height:1.15}
+}
+
+@media(max-width:340px){
+  .academy-benefits .hero-trigger-card{min-height:196px;padding:14px}
+  .academy-benefits .hero-trigger-card img{width:52px;height:52px;padding:8px}
+  .academy-benefits .hero-trigger-card span{font-size:14px}
+  .complex-section .complex-card{display:block;min-height:136px;padding:11px 10px;font-size:11.5px;line-height:1.25}
+  .complex-section .complex-card>span{padding-right:0;overflow-wrap:normal;hyphens:none}
+  .complex-section .complex-card:last-child{font-size:10px}
+  .complex-section .complex-card>svg{position:absolute;top:auto;right:9px;bottom:9px;width:13px;height:13px;flex-basis:13px}
+  .fields-section .field-card{min-height:184px}
+  .fields-section .field-card-body{padding:10px}
+  .fields-section .field-card-title{font-size:14px}
+}
+
+/* Mobile hero: one decision per screen, with the complete brief directly below. */
+.mobile-hero-copy,.coach-carousel-nav{display:none}
+
+@media(max-width:700px){
+  .hero-section{
+    min-height:max(640px,100svh);
+    padding:118px 0 30px;
+    background-position:58% center;
+  }
+  .hero-video-shade{
+    background:
+      linear-gradient(180deg,rgba(10,10,11,.18) 0%,rgba(10,10,11,.44) 42%,rgba(10,10,11,.94) 100%),
+      linear-gradient(90deg,rgba(10,10,11,.44),rgba(10,10,11,.08));
+  }
+  .hero-container{
+    min-height:calc(max(640px,100svh) - 148px);
+    align-items:flex-end;
+    padding-inline:18px;
+  }
+  .hero-grid{gap:24px;align-content:end}
+  .hero-subtitle{
+    display:block;
+    width:max-content;
+    max-width:100%;
+    margin:0 0 16px;
+    padding:0;
+    border:0;
+    border-radius:0;
+    color:#ff4146;
+    font:850 12px/1.35 "ZT Manrope",Manrope,Arial,sans-serif;
+    letter-spacing:.055em;
+    text-transform:uppercase;
+  }
+  .hero-left h1{
+    max-width:560px;
+    margin:0;
+    font-size:clamp(39px,11.7vw,50px);
+    line-height:.91;
+    letter-spacing:-.035em;
+    text-wrap:balance;
+  }
+  .hero-right{padding:0 0 2px}
+  .hero-intro,.hero-selection{display:none!important}
+  .hero-quick-action{width:100%;max-width:520px}
+  .hero-quick-action .btn{
+    min-height:58px;
+    padding:14px 18px;
+    border-radius:100px;
+    font-size:13px;
+    line-height:1.3;
+  }
+  .hero-cta-note{
+    margin:13px 8px 0;
+    color:rgba(255,255,255,.72);
+    font-size:12px;
+    line-height:1.5;
+  }
+
+  .mobile-hero-copy{
+    display:block;
+    padding:34px 0 42px;
+    background:#fff;
+    color:#121212;
+  }
+  .mobile-hero-copy .container{padding-inline:18px}
+  .mobile-hero-copy__lead{
+    margin:0;
+    color:#202228;
+    font:750 18px/1.48 "ZT Manrope",Manrope,Arial,sans-serif;
+    letter-spacing:-.012em;
+  }
+  .mobile-hero-copy__lead span{display:block;margin-top:9px;color:#5d6067;font-size:15px;font-weight:650}
+  .mobile-hero-copy__free{
+    margin:24px 0 0;
+    padding:0 0 0 15px;
+    border-left:4px solid #DD2C2C;
+    color:#DD2C2C;
+    font:900 19px/1.35 "ZT Manrope",Manrope,Arial,sans-serif;
+  }
+  .mobile-hero-copy__selection{
+    margin:24px 0 0;
+    padding:18px;
+    border-radius:14px;
+    background:#121212;
+    color:#fff;
+    font:750 15px/1.5 "ZT Manrope",Manrope,Arial,sans-serif;
+  }
+
+  .coach-carousel-nav{
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:14px;
+    margin:-4px 0 16px;
+  }
+  .coach-carousel-nav__status{
+    display:flex;
+    align-items:baseline;
+    gap:9px;
+    color:#696c73;
+    font:750 12px/1.3 "ZT Manrope",Manrope,Arial,sans-serif;
+  }
+  .coach-carousel-nav__status strong{color:#121212;font-size:14px}
+  .coach-carousel-next{
+    display:grid;
+    place-items:center;
+    width:50px;
+    height:50px;
+    flex:0 0 50px;
+    border:0;
+    border-radius:50%;
+    background:#DD2C2C;
+    color:#fff;
+    font-size:24px;
+    line-height:1;
+    cursor:pointer;
+  }
+  .coach-carousel-next:focus-visible{outline:3px solid #121212;outline-offset:3px}
+}
+
+@media(max-width:380px){
+  .hero-section{padding-top:112px}
+  .hero-container{padding-inline:14px}
+  .hero-left h1{font-size:38px}
+  .hero-quick-action .btn{font-size:12px}
+  .mobile-hero-copy .container{padding-inline:16px}
+}
+
+@media(max-width:700px){
+  .site-header,.site-header__inner{width:100vw!important;max-width:100vw!important}
+  .site-header__inner{margin:0!important;padding-inline:14px;overflow:hidden}
+  .brand{width:78px;flex:0 0 78px}
+  .brand img{width:78px;max-width:100%}
+  .header-phone{width:54px;min-width:54px;margin-left:auto;overflow:hidden}
+  .mobile-menu-btn{display:block!important;flex:0 0 44px}
+  .hero-container{
+    width:100vw!important;
+    max-width:100vw!important;
+    margin:0!important;
+  }
+  .hero-grid,.hero-left,.hero-right,.hero-quick-action{
+    width:calc(100vw - 36px)!important;
+    max-width:calc(100vw - 36px)!important;
+    min-width:0!important;
+  }
+  .hero-grid{display:block!important}
+  .hero-right{margin-top:24px}
+  .hero-subtitle{width:auto;white-space:normal;letter-spacing:.035em}
+  .hero-left h1{
+    width:100%;
+    white-space:normal!important;
+    overflow-wrap:anywhere;
+    word-break:normal;
+    text-wrap:wrap;
+  }
+  .hero-quick-action .btn{width:100%;max-width:100%;white-space:normal}
+  .hero-right{display:flex!important;flex-direction:column;margin-top:24px}
+  .hero-quick-action{order:1}
+  .hero-cta-note{display:none!important}
+  .hero-selection{
+    display:block!important;
+    order:2;
+    max-width:100%;
+    margin:15px 6px 0;
+    padding:0;
+    border:0;
+    border-radius:0;
+    background:transparent;
+    color:rgba(255,255,255,.8);
+    font:700 13px/1.5 "ZT Manrope",Manrope,Arial,sans-serif;
+    -webkit-backdrop-filter:none;
+    backdrop-filter:none;
+  }
+}
+
+
+/* Mobile first screen 02.10: header, compact photo, subtitle, H1, CTA, trainer note. */
+.hero-mobile-photo,.quick-modal-note--mobile{display:none}
+@media(max-width:700px){
+  .header-phone{width:auto!important;min-width:0!important;overflow:visible!important;flex:0 0 auto;white-space:nowrap}
+  .hero-section{min-height:0!important;height:auto!important;padding:96px 0 32px!important;background:#121212!important}
+  .hero-section .hero-bg-video,.hero-section .hero-video-shade{display:none!important}
+  .hero-mobile-photo{display:block;width:calc(100vw - 36px);max-width:calc(100vw - 36px);aspect-ratio:16/10;height:auto;margin:0 0 22px;object-fit:cover;border-radius:14px}
+  .hero-container{display:block!important;min-height:0!important;height:auto!important;padding-inline:18px!important}
+  .hero-grid{min-height:0!important;align-items:start!important}
+  .hero-right{margin-top:20px!important}
+  .mobile-hero-copy__lead--second{margin-top:12px;color:#5d6067;font-size:15px;font-weight:650}
+  .quick-modal-note{display:none}
+  .quick-modal-note--mobile{display:block}
+}
+.proof-slide-copy--second{margin-top:10px;font-weight:700;opacity:.9}
+@media(max-width:700px){.complex-section .complex-card,.complex-section .complex-card:last-child{min-height:0;padding:16px 16px 38px;font-size:15px;line-height:1.3}}
 </style>
 </head>
 <body>
@@ -2321,22 +2978,24 @@ section{padding:96px 0}
         </video>
         <div class="hero-video-shade"></div>
         <div class="container hero-container">
+            <img class="hero-mobile-photo" src="assets/live-system/academy-1.jpg" alt="Юные футболисты на тренировке в Zobnin Team" width="1200" height="800">
             <div class="hero-grid">
                 <div class="hero-left">
                     <div class="hero-subtitle">Академия Романа Зобнина · для мальчиков 3–16 лет</div>
                     <h1>Школа футбола для детей в Москве</h1>
                 </div>
                 <div class="hero-right">
-                    <p class="hero-intro">Тренируем юных футболистов: техника работы с мячом, координация, физическая форма и игровое мышление. Помимо футбола — ОФП, спортивный психолог и хореография. Первая тренировка бесплатная — запишите ребенка!</p>
+                    <p class="hero-intro"><span class="hero-intro-main">Тренируем юных футболистов: техника работы с мячом, координация, физическая форма и игровое мышление.</span> <span class="hero-intro-extra">Помимо футбола — ОФП, спортивный психолог и хореография.</span> <span class="hero-intro-free">Первая тренировка бесплатная — запишите ребенка!</span></p>
                     <p class="hero-selection">На пробном занятии тренер посмотрит ребенка и скажет, готов ли он к зачислению в группу.</p>
                     <div class="hero-quick-action" id="quick-signup">
-                        <button type="button" class="btn btn--primary" data-open-quick data-context="Бесплатная пробная тренировка">Записаться на бесплатную тренировку</button>
+                        <button type="button" class="btn btn--primary" data-open-quick data-context="Бесплатная пробная тренировка">Запишись на бесплатную тренировку</button>
                         <p class="hero-cta-note">После заявки администратор перезвонит, уточнит возраст ребенка и подберет удобный филиал.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
 
     <section class="hero-proof-section" id="academy-gallery" aria-label="Атмосфера и преимущества академии">
         <div class="container">
@@ -2345,12 +3004,13 @@ section{padding:96px 0}
                 <p class="proof-heading-note">Листайте фотографии и посмотрите, как проходят занятия в академии.</p>
             </div>
             <div class="hero-photo-reel" aria-label="Фотографии детской академии" aria-live="polite">
-                <figure class="is-active" data-proof-slide><img src="assets/live-system/academy-1.jpg" alt="Юные футболисты на тренировке"><figcaption><span class="proof-slide-label">Тренировки с мячом</span><p class="proof-slide-copy">Организм ребенка меняется каждые два года: связки, скорость восприятия и координация в 4 года и в 11 лет требуют совершенно разной нагрузки.</p></figcaption></figure>
+                <figure class="is-active" data-proof-slide><img src="assets/individual-003.webp" alt="Вратарская тренировка в манеже Zobnin Team"><figcaption><p class="proof-slide-copy">Тренируем юных футболистов: техника работы с мячом, координация, физическая форма и игровое мышление.</p><p class="proof-slide-copy proof-slide-copy--second">Помимо футбола – ОФП, спортивный психолог и хореография.</p></figcaption></figure>
+                <figure data-proof-slide><img src="assets/live-system/academy-1.jpg" alt="Юные футболисты на тренировке"><figcaption><span class="proof-slide-label">Тренировки с мячом</span><p class="proof-slide-copy">Организм ребенка меняется каждые два года: связки, скорость восприятия и координация в 4 года и в 11 лет требуют совершенно разной нагрузки.</p></figcaption></figure>
                 <figure data-proof-slide><img src="assets/live-system/academy-2.jpg" alt="Дети занимаются футболом в Zobnin Team"><figcaption><span class="proof-slide-label">Игровые задания</span><p class="proof-slide-copy">Давать малышам тяжелый кросс или требовать от первоклассника сложной тактики — прямой путь к травмам и потере интереса к футболу.</p></figcaption></figure>
                 <figure data-proof-slide><img src="assets/live-system/academy-3.jpg" alt="Командная тренировка детей"><figcaption><span class="proof-slide-label">Команда и общение</span><p class="proof-slide-copy">В академии Zobnin Team группы строго разделены по возрастам и физиологии: малыши развивают моторику через игру, школьники ставят технику владения мячом, а подростки готовятся к выходу на проф.уровень.</p></figcaption></figure>
                 <figure data-proof-slide><img src="assets/live-system/academy-4.jpg" alt="Тренировка юных футболистов"><figcaption><span class="proof-slide-label">Прогресс шаг за шагом</span><p class="proof-slide-copy">Нагрузка дозируется безопасно, а мяч достается каждому.</p></figcaption></figure>
                 <div class="proof-slider-ui">
-                    <span class="proof-slider-count"><b data-proof-current>01</b> / 04</span>
+                    <span class="proof-slider-count"><b data-proof-current>01</b> / 05</span>
                     <button class="proof-slider-btn" type="button" data-proof-prev aria-label="Предыдущая фотография">←</button>
                     <button class="proof-slider-btn" type="button" data-proof-next aria-label="Следующая фотография">→</button>
                 </div>
@@ -2499,6 +3159,10 @@ section{padding:96px 0}
                 <button type="button" data-coach-filter="keeper" aria-pressed="false">Вратарская подготовка</button>
                 <button type="button" data-coach-filter="fitness" aria-pressed="false">Физическая подготовка</button>
             </div>
+            <div class="coach-carousel-nav" aria-label="Управление каруселью тренеров">
+                <span class="coach-carousel-nav__status">Листайте тренеров <strong><span data-coach-current>1</span> / <span data-coach-total>7</span></strong></span>
+                <button class="coach-carousel-next" type="button" data-coach-next aria-label="Показать следующего тренера">→</button>
+            </div>
             <div class="coaches-row" aria-label="Тренеры Zobnin Team">
                 <div class="coach-card" data-specialty="football">
                     <div class="coach-photo-wrap"><img src="assets/coach-0.jpg" alt="Дяденькин Никита Сергеевич"></div>
@@ -2616,14 +3280,14 @@ section{padding:96px 0}
                             <div class="branch-card">
                                 <label class="branch-option">
                                     <input type="radio" name="branch" value="Измайлово" data-map-src="https://yandex.ru/map-widget/v1/?um=constructor%3A2bb40eaa38e3a8e8a00930d95c137a3d0d55e25e34f9fce2729aad172ea13e03&amp;source=constructor" data-map-title="Филиал Zobnin Team в Измайлово" checked>
-                                    <span><strong>Измайлово</strong><small class="branch-meta">м. Партизанская, МЦК Измайлово</small><small>Москва, Измайловское шоссе, 73В, строение 1</small><small class="branch-hours">Пн–Пт 16:00–21:00 · Сб 10:00–13:00</small></span>
+                                    <span><strong>Измайлово</strong><small class="branch-meta">м. Партизанская, МЦК Измайлово</small><small><span class="branch-region">Москва, </span>Измайловское шоссе, 73В, строение 1</small><small class="branch-hours">Пн–Пт 16:00–21:00 · Сб 10:00–13:00</small></span>
                                 </label>
                                 <a class="branch-route" href="https://yandex.ru/maps/?text=Москва%2C%20Измайловское%20шоссе%2C%2073В%2C%20строение%201" target="_blank" rel="noopener">Маршрут в Яндекс Картах ↗</a>
                             </div>
                             <div class="branch-card">
                                 <label class="branch-option">
                                     <input type="radio" name="branch" value="Новые Вешки" data-map-src="https://yandex.ru/map-widget/v1/?um=constructor%3A66b9c48c692c8371f2fcc913ea89015a417aa69d11ee03c1d1854d6ab2abca61&amp;source=constructor" data-map-title="Филиал Zobnin Team в Новых Вешках">
-                                    <span><strong>Новые Вешки</strong><small class="branch-meta">м. Алтуфьево, далее автобус №303</small><small>Московская область, Зеленый бульвар, владение 86, строение 1</small><small class="branch-hours">Вт и Чт 17:00–19:00 · Сб 11:00–13:00</small></span>
+                                    <span><strong>Новые Вешки</strong><small class="branch-meta">м. Алтуфьево, далее автобус №303</small><small><span class="branch-region">Московская область, </span>Зеленый бульвар, владение 86, строение 1</small><small class="branch-hours">Вт и Чт 17:00–19:00 · Сб 11:00–13:00</small></span>
                                 </label>
                                 <a class="branch-route" href="https://yandex.ru/maps/?text=Московская%20область%2C%20Зеленый%20бульвар%2C%20владение%2086%2C%20строение%201" target="_blank" rel="noopener">Маршрут в Яндекс Картах ↗</a>
                             </div>
@@ -2981,7 +3645,8 @@ section{padding:96px 0}
         <div class="quick-modal-card">
             <button class="quick-close" type="button" aria-label="Закрыть">×</button>
             <p class="modal-context" id="modalContext"></p><h3 id="quickModalTitle">Первая тренировка бесплатно</h3>
-            <p>Оставьте только телефон. Администратор перезвонит, узнает возраст ребенка и подберет филиал.</p>
+            <p class="quick-modal-note">Оставьте только телефон. Администратор перезвонит, узнает возраст ребенка и подберет филиал.</p>
+            <p class="quick-modal-note--mobile">После заявки администратор перезвонит, уточнит возраст ребенка и подберет удобный филиал.</p>
             <form action="#">
                 <div class="form-group"><input aria-label="Номер телефона" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="Номер телефона" required></div>
                 <button type="submit" class="btn btn--primary btn--full">Записаться бесплатно</button>
@@ -3075,11 +3740,27 @@ section{padding:96px 0}
 
         const conversionDock = document.querySelector('.conversion-dock');
         const heroSection = document.querySelector('.hero-section');
+        const feedbackSection = document.querySelector('.feedback-section');
         if (conversionDock && heroSection && 'IntersectionObserver' in window) {
+            const dockVisibility = { hero: true, feedback: false };
+            const updateDockVisibility = () => {
+                const isMobile = window.matchMedia('(max-width: 700px)').matches;
+                const feedbackBlocksDock = isMobile && dockVisibility.feedback;
+                conversionDock.classList.toggle('is-hero-hidden', (dockVisibility.hero && !isMobile) || feedbackBlocksDock);
+            };
             const heroObserver = new IntersectionObserver(([entry]) => {
-                conversionDock.classList.toggle('is-hero-hidden', entry.isIntersecting);
+                dockVisibility.hero = entry.isIntersecting;
+                updateDockVisibility();
             }, { threshold: 0.12 });
             heroObserver.observe(heroSection);
+            if (feedbackSection) {
+                const feedbackObserver = new IntersectionObserver(([entry]) => {
+                    dockVisibility.feedback = entry.isIntersecting;
+                    updateDockVisibility();
+                }, { threshold: 0.08 });
+                feedbackObserver.observe(feedbackSection);
+            }
+            window.addEventListener('resize', updateDockVisibility, { passive: true });
         } else {
             conversionDock?.classList.remove('is-hero-hidden');
         }
@@ -3113,6 +3794,29 @@ document.querySelectorAll('[data-coach-filter]').forEach(b=>b.setAttribute('aria
 document.querySelectorAll('.coach-card').forEach(card=>{card.hidden=button.dataset.coachFilter!=='all'&&card.dataset.specialty!==button.dataset.coachFilter;});
 document.querySelector('.coaches-row')?.scrollTo({left:0,behavior:'smooth'});
 }));
+const coachRow=document.querySelector('.coaches-row');
+const coachCurrent=document.querySelector('[data-coach-current]');
+const coachTotal=document.querySelector('[data-coach-total]');
+const visibleCoachCards=()=>[...document.querySelectorAll('.coach-card')].filter(card=>!card.hidden);
+const updateCoachPosition=()=>{
+if(!coachRow)return;
+const cards=visibleCoachCards();
+if(coachTotal)coachTotal.textContent=String(cards.length);
+if(!cards.length){if(coachCurrent)coachCurrent.textContent='0';return;}
+const index=cards.reduce((best,card,i)=>Math.abs(card.offsetLeft-coachRow.scrollLeft)<Math.abs(cards[best].offsetLeft-coachRow.scrollLeft)?i:best,0);
+if(coachCurrent)coachCurrent.textContent=String(index+1);
+};
+document.querySelector('[data-coach-next]')?.addEventListener('click',()=>{
+if(!coachRow)return;
+const cards=visibleCoachCards();
+if(!cards.length)return;
+const index=cards.reduce((best,card,i)=>Math.abs(card.offsetLeft-coachRow.scrollLeft)<Math.abs(cards[best].offsetLeft-coachRow.scrollLeft)?i:best,0);
+const next=cards[(index+1)%cards.length];
+coachRow.scrollTo({left:next.offsetLeft-coachRow.offsetLeft,behavior:'smooth'});
+});
+coachRow?.addEventListener('scroll',()=>requestAnimationFrame(updateCoachPosition),{passive:true});
+document.querySelectorAll('[data-coach-filter]').forEach(button=>button.addEventListener('click',()=>requestAnimationFrame(updateCoachPosition)));
+updateCoachPosition();
 const branchMapFrame=document.getElementById('branch-map-frame');
 document.querySelectorAll('input[name="branch"][data-map-src]').forEach(input=>input.addEventListener('change',()=>{
 if(!input.checked||!branchMapFrame)return;
