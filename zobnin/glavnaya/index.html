@@ -2931,6 +2931,11 @@ section{padding:96px 0}
 }
 
 
+/* Prototype note: desktop keeps client video in production; preview uses a stable photo. */
+.hero-section{background:#121212 url("assets/live-system/academy-1.jpg") center 42%/cover no-repeat!important}
+.hero-bg-video{display:none!important}
+.hero-client-note{position:absolute;z-index:4;top:112px;right:max(24px,calc((100vw - 1320px)/2));max-width:430px;padding:10px 14px;border:1px solid rgba(255,255,255,.72);border-radius:12px;background:rgba(255,255,255,.94);color:#121212;font-size:13px;font-weight:700;line-height:1.4;box-shadow:0 10px 28px rgba(0,0,0,.18)}
+
 /* Mobile first screen 02.10: header, compact photo, subtitle, H1, CTA, trainer note. */
 .hero-mobile-photo{display:none}
 .hero-quick-action .hero-selection{margin:14px 0 0;max-width:520px;color:rgba(255,255,255,.85);font-size:15px;line-height:1.5}
@@ -2938,6 +2943,7 @@ section{padding:96px 0}
   .header-phone{width:auto!important;min-width:0!important;overflow:visible!important;flex:0 0 auto;white-space:nowrap}
   .hero-section{min-height:0!important;height:auto!important;padding:96px 0 32px!important;background:#121212!important}
   .hero-section .hero-bg-video,.hero-section .hero-video-shade{display:none!important}
+  .hero-client-note{display:none!important}
   .hero-mobile-photo{display:block;width:calc(100vw - 36px);max-width:calc(100vw - 36px);aspect-ratio:16/10;height:auto;margin:0 0 22px;object-fit:cover;border-radius:14px}
   .hero-container{display:block!important;min-height:0!important;height:auto!important;padding-inline:18px!important}
   .hero-grid{min-height:0!important;align-items:start!important}
@@ -2985,6 +2991,7 @@ section{padding:96px 0}
             <source src="https://zobninteam.ru/upload/iblock/d21/ehnha3fffgs2fu72f4kxlyzc5uijt2on.mp4" type="video/mp4">
         </video>
         <div class="hero-video-shade"></div>
+        <p class="hero-client-note">Для клиента: на десктопе здесь останется видео. На мобильной версии вместо видео будет фото, чтобы не занимать ценное место первого экрана.</p>
         <div class="container hero-container">
             <img class="hero-mobile-photo" src="assets/live-system/academy-1.jpg" alt="Юные футболисты на тренировке в Zobnin Team" width="1200" height="800">
             <div class="hero-grid">
