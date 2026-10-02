@@ -2948,6 +2948,9 @@ section{padding:96px 0}
 }
 .proof-slide-copy--second{margin-top:10px;font-weight:700;opacity:.9}
 @media(max-width:700px){.complex-section .complex-card.is-tip-open .complex-tooltip,.complex-section .complex-card:hover .complex-tooltip,.complex-section .complex-card:focus-visible .complex-tooltip{display:block!important}.complex-section .complex-card.is-tip-open,.complex-section .complex-card:hover,.complex-section .complex-card:focus-visible{grid-column:1/-1}}
+.hero-quick-action .hero-selection{margin:0 0 16px!important;order:0!important}
+.hero-quick-action .hero-quick-form .form-legal{margin:2px 8px 0;color:rgba(255,255,255,.45);font-size:10px;line-height:1.35}
+@media(max-width:700px){.hero-quick-action{display:block!important}.hero-quick-action .hero-quick-form{grid-template-columns:1fr}.hero-quick-action .hero-quick-form .btn{width:100%;white-space:normal}}
 </style>
 </head>
 <body>
@@ -2985,8 +2988,12 @@ section{padding:96px 0}
                 </div>
                 <div class="hero-right">
                     <div class="hero-quick-action" id="quick-signup">
-                        <button type="button" class="btn btn--primary" data-open-quick data-context="Бесплатная пробная тренировка">Запишись на бесплатную тренировку</button>
                         <p class="hero-selection">На пробном занятии тренер посмотрит ребенка и скажет, готов ли он к зачислению в группу.</p>
+                        <form class="hero-quick-form" action="#" method="POST">
+                            <input aria-label="Телефон для записи" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="+7 (___) ___-__-__" required>
+                            <button type="submit" class="btn btn--primary">Запишись на бесплатную тренировку</button>
+                            <p class="form-legal">Нажимая «Запишись на бесплатную тренировку», вы даете согласие на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
+                        </form>
                     </div>
                 </div>
             </div>
