@@ -2689,14 +2689,12 @@ section{padding:96px 0}
     word-break:normal;
     hyphens:none;
   }
-  .complex-section .complex-grid{grid-template-columns:minmax(0,1fr)}
-  .complex-section .complex-card{min-height:0;flex-direction:column;align-items:stretch;justify-content:flex-start;padding-bottom:38px;font-size:15px}
-  .complex-section .complex-card:last-child{font-size:15px}
+  .complex-section .complex-card{flex-direction:column;align-items:stretch;justify-content:flex-start;padding-bottom:34px}
   .complex-section .complex-tooltip,
   .complex-section .complex-card:nth-child(n+3) .complex-tooltip,
   .complex-section .complex-card:nth-child(n+5) .complex-tooltip,
   .complex-section .complex-card--smm .complex-tooltip{
-    display:block;
+    display:none;
     position:static;
     inset:auto;
     width:auto;
@@ -2934,7 +2932,8 @@ section{padding:96px 0}
 
 
 /* Mobile first screen 02.10: header, compact photo, subtitle, H1, CTA, trainer note. */
-.hero-mobile-photo,.quick-modal-note--mobile{display:none}
+.hero-mobile-photo{display:none}
+.hero-quick-action .hero-selection{margin:14px 0 0;max-width:520px;color:rgba(255,255,255,.85);font-size:15px;line-height:1.5}
 @media(max-width:700px){
   .header-phone{width:auto!important;min-width:0!important;overflow:visible!important;flex:0 0 auto;white-space:nowrap}
   .hero-section{min-height:0!important;height:auto!important;padding:96px 0 32px!important;background:#121212!important}
@@ -2948,7 +2947,7 @@ section{padding:96px 0}
   .quick-modal-note--mobile{display:block}
 }
 .proof-slide-copy--second{margin-top:10px;font-weight:700;opacity:.9}
-@media(max-width:700px){.complex-section .complex-card,.complex-section .complex-card:last-child{min-height:0;padding:16px 16px 38px;font-size:15px;line-height:1.3}}
+@media(max-width:700px){.complex-section .complex-card.is-tip-open .complex-tooltip{display:block!important}.complex-section .complex-card.is-tip-open{grid-column:1/-1}}
 </style>
 </head>
 <body>
@@ -2985,11 +2984,9 @@ section{padding:96px 0}
                     <h1>Школа футбола для детей в Москве</h1>
                 </div>
                 <div class="hero-right">
-                    <p class="hero-intro"><span class="hero-intro-main">Тренируем юных футболистов: техника работы с мячом, координация, физическая форма и игровое мышление.</span> <span class="hero-intro-extra">Помимо футбола — ОФП, спортивный психолог и хореография.</span> <span class="hero-intro-free">Первая тренировка бесплатная — запишите ребенка!</span></p>
-                    <p class="hero-selection">На пробном занятии тренер посмотрит ребенка и скажет, готов ли он к зачислению в группу.</p>
                     <div class="hero-quick-action" id="quick-signup">
                         <button type="button" class="btn btn--primary" data-open-quick data-context="Бесплатная пробная тренировка">Запишись на бесплатную тренировку</button>
-                        <p class="hero-cta-note">После заявки администратор перезвонит, уточнит возраст ребенка и подберет удобный филиал.</p>
+                        <p class="hero-selection">На пробном занятии тренер посмотрит ребенка и скажет, готов ли он к зачислению в группу.</p>
                     </div>
                 </div>
             </div>
@@ -3645,7 +3642,6 @@ section{padding:96px 0}
         <div class="quick-modal-card">
             <button class="quick-close" type="button" aria-label="Закрыть">×</button>
             <p class="modal-context" id="modalContext"></p><h3 id="quickModalTitle">Первая тренировка бесплатно</h3>
-            <p class="quick-modal-note">Оставьте только телефон. Администратор перезвонит, узнает возраст ребенка и подберет филиал.</p>
             <p class="quick-modal-note--mobile">После заявки администратор перезвонит, уточнит возраст ребенка и подберет удобный филиал.</p>
             <form action="#">
                 <div class="form-group"><input aria-label="Номер телефона" name="phone" autocomplete="tel" inputmode="tel" type="tel" class="form-input" placeholder="Номер телефона" required></div>
@@ -3824,6 +3820,13 @@ branchMapFrame.src=input.dataset.mapSrc;
 branchMapFrame.title=input.dataset.mapTitle;
 }));
 document.querySelectorAll('[data-faq-index]').forEach(b=>b.addEventListener('click',()=>{const d=document.querySelectorAll('.faq-grid-v2 details')[Number(b.dataset.faqIndex)];d.open=true;d.scrollIntoView({behavior:'smooth',block:'center'});}));
-    </script>
+    
+        document.querySelectorAll('.complex-section .complex-card').forEach(card => card.addEventListener('click', event => {
+            if (!window.matchMedia('(max-width: 700px)').matches || card.classList.contains('is-tip-open')) return;
+            event.preventDefault();
+            document.querySelectorAll('.complex-section .complex-card.is-tip-open').forEach(open => open.classList.remove('is-tip-open'));
+            card.classList.add('is-tip-open');
+        }));
+</script>
 </body>
 </html>
