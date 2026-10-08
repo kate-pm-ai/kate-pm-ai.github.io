@@ -149,7 +149,10 @@ ul,ol{list-style:none}
 .model-name{position:absolute;left:0;right:0;bottom:0;padding-top:var(--s6);padding-bottom:var(--s3);background:linear-gradient(0deg,var(--c-scrim-strong) 0%,transparent 100%)}
 .model-name .latin-xl{margin-bottom:0}
 .model-body{padding-top:var(--s3)}
-.rail-bar{border-top:1px solid var(--c-night-line);margin-top:var(--s2);position:relative}
+.rail-meta{display:flex;align-items:center;gap:var(--s2);margin-top:var(--s3)}
+.rail-bar{flex:1;border-top:1px solid var(--c-night-line);position:relative}
+.rail-count{font-family:var(--font-display-family);font-weight:var(--w-bold);font-size:var(--t-label);line-height:var(--lh-label);letter-spacing:var(--tracking-label);color:var(--c-sand);white-space:nowrap}
+.sec-light .rail-count{color:var(--c-ink)}
 .rail-bar span{position:absolute;left:0;right:0;top:-1px;display:block;border-top:1px solid var(--c-sand);transform-origin:left;transform:scaleX(0.2);transition:transform .2s}
 .num-list{display:grid;counter-reset:n}
 .num-item{counter-increment:n;padding:var(--s3) 0;border-top:1px solid var(--c-night-line)}
@@ -190,7 +193,7 @@ ul,ol{list-style:none}
   .model{display:grid;grid-template-columns:7fr 5fr;align-items:end}
   .model-ph{aspect-ratio:16/10}
   .model-body{padding-bottom:0}
-  .rail-bar{display:none}
+  .rail-meta{display:none}
   .frame-sec{min-height:100vh}
   .frame-in{max-width:calc(var(--measure) + var(--gutter) * 2);margin:0}
   .frame-in .wide{width:auto}
@@ -267,7 +270,7 @@ ul,ol{list-style:none}
       <div class="slide-ph"><img class="cover" src="img2/sc4.jpg?v=55014861" alt=""></div>
       <div class="card-in"><h3 class="h-s">Мероприятия</h3><p class="muted-p">Подача и внешний вид. Впечатление начинается до входа.</p><a class="link" href="/goapp">Заказать в приложении</a></div></article><article class="slide card">
       <div class="slide-ph"><img class="cover" src="img2/sc5.jpg?v=686c0a84" alt=""></div>
-      <div class="card-in"><h3 class="h-s">Поездки для бизнеса</h3><p class="muted-p">Гибкие условия оплаты и прозрачная отчетность, поездки с особыми корпоративными привилегиями</p><a class="link" href="/companies">Подробнее</a></div></article></div><div class="box"><div class="rail-bar"><span></span></div></div>
+      <div class="card-in"><h3 class="h-s">Поездки для бизнеса</h3><p class="muted-p">Гибкие условия оплаты и прозрачная отчетность, поездки с особыми корпоративными привилегиями</p><a class="link" href="/companies">Подробнее</a></div></article></div><div class="box rail-meta"><div class="rail-bar"><span></span></div><span class="rail-count"></span></div>
 </section>
 <section class="sec" id="ask" data-block="form"><div class="box"><div class="card form-card">
   <div class="form-ph"><img class="cover" src="img2/form.jpg?v=05185d4f" alt=""></div>
@@ -290,7 +293,7 @@ ul,ol{list-style:none}
 </section>
 <section class="sec sec-light" data-block="standards">
   <div class="box head"><h2 class="h-l">Стандарты наших водителей</h2><p class="muted-p">Наши пассажиры ожидают безупречного сервиса и внимательного отношения к деталям. Эти ожидания лежат в основе стандартов PRIME RIDE и обязательны для каждого водителя без исключений.</p></div>
-  <div class="rail"><figure class="slide card std"><img class="cover" src="img2/st1.jpg?v=c442a0c7" alt=""><figcaption class="std-cap"><span class="h-s">Статус</span><span class="std-p">Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st2.jpg?v=5c259117" alt=""><figcaption class="std-cap"><span class="h-s">Знания</span><span class="std-p">Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st3.jpg?v=016f1667" alt=""><figcaption class="std-cap"><span class="h-s">Сервис</span><span class="std-p">Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st4.jpg?v=5c259117" alt=""><figcaption class="std-cap"><span class="h-s">Навыки</span><span class="std-p">Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</span></figcaption></figure></div><div class="box"><div class="rail-bar"><span></span></div></div>
+  <div class="rail"><figure class="slide card std"><img class="cover" src="img2/st1.jpg?v=c442a0c7" alt=""><figcaption class="std-cap"><span class="h-s">Статус</span><span class="std-p">Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st2.jpg?v=5c259117" alt=""><figcaption class="std-cap"><span class="h-s">Знания</span><span class="std-p">Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st3.jpg?v=016f1667" alt=""><figcaption class="std-cap"><span class="h-s">Сервис</span><span class="std-p">Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st4.jpg?v=5c259117" alt=""><figcaption class="std-cap"><span class="h-s">Навыки</span><span class="std-p">Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</span></figcaption></figure></div><div class="box rail-meta"><div class="rail-bar"><span></span></div><span class="rail-count"></span></div>
 </section>
 <section class="frame-sec" data-block="corporate"><img class="cover" src="img2/corp.jpg?v=f4923f7c" alt=""><div class="shade"></div>
   <div class="box frame-in"><h2 class="h-l">Условия консьерж-сервиса для корпоративных клиентов</h2><p class="frame-p">PRIME RIDE предлагает компаниям выверенный формат деловых поездок для сотрудников и гостей. Аэропортные трансферы, поездки на встречи и сопровождение в течение дня — сервис объединяет технологичность, комфорт и гибкость как для срочных, так и для запланированных поездок.</p><a class="pill pill-white wide" href="/companies">Подробнее</a></div>
@@ -331,8 +334,10 @@ ul,ol{list-style:none}
   var solid=function(){nav.classList.toggle('solid',window.scrollY>40);};
   window.addEventListener('scroll',solid,{passive:true});solid();
   document.querySelectorAll('.rail').forEach(function(r){
-    var bar=r.nextElementSibling&&r.nextElementSibling.querySelector('.rail-bar span');if(!bar)return;
-    var upd=function(){var m=r.scrollWidth-r.clientWidth;var p=m>0?(r.scrollLeft+r.clientWidth)/r.scrollWidth:1;bar.style.transform='scaleX('+p+')';};
+    var meta=r.nextElementSibling;if(!meta||!meta.querySelector('.rail-bar'))return;
+    var bar=meta.querySelector('.rail-bar span'),cnt=meta.querySelector('.rail-count'),n=r.children.length;
+    var upd=function(){var m=r.scrollWidth-r.clientWidth;var p=m>0?(r.scrollLeft+r.clientWidth)/r.scrollWidth:1;bar.style.transform='scaleX('+p+')';
+      var w=r.children[0].getBoundingClientRect().width||1;var i=Math.min(n,Math.round(r.scrollLeft/w)+1);cnt.textContent=i+' / '+n;};
     r.addEventListener('scroll',upd,{passive:true});upd();
   });
   var f=document.querySelector('.ask-form');
