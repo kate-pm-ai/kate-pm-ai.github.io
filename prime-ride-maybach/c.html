@@ -86,6 +86,7 @@ ul,ol{list-style:none}
 
 .calc{padding:var(--s4) var(--s2);text-align:left}
 .app-icon{width:var(--icon);height:var(--icon);border-radius:var(--r-card);margin-bottom:var(--s3)}
+.calc-ph{display:none}
 
 /* форма */
 .form-ph{position:relative;aspect-ratio:16/10}
@@ -348,12 +349,12 @@ ul,ol{list-style:none}
 }
 /* Вариант C «лучшее из двух» (Кейт 08.10.2026): основа «Как Wheely», чередование черный / белый / бежевый.
    Черные: модели, глава качества, корпоративный блок, «почему выбирают», подвал, меню. Бежевые: форма, приложение. */
-.c [data-block=models],.c [data-block=quality],.c [data-block=corporate],.c [data-block=why]{background:var(--c-night);color:var(--c-on-night);padding-bottom:var(--s6)}
-.c [data-block=form],.c [data-block=app]{background:var(--c-tone);padding-bottom:var(--s6)}
+.c [data-block=models],.c [data-block=quality],.c [data-block=corporate]{background:var(--c-night);color:var(--c-on-night);padding-bottom:var(--s6)}
+.c [data-block=form],.c [data-block=app],.c [data-block=why]{background:var(--c-tone);padding-bottom:var(--s6)}
 
 /* текст и ссылки на черном */
-.c [data-block=models] .h-l,.c [data-block=quality] .h-l,.c [data-block=corporate] .h-l,.c [data-block=why] .h-l{color:var(--c-on-night)}
-.c [data-block=models] .muted-p,.c [data-block=quality] .fold-text,.c [data-block=corporate] .frame-p,.c [data-block=why] .muted-p{color:var(--c-grey)}
+.c [data-block=models] .h-l,.c [data-block=quality] .h-l,.c [data-block=corporate] .h-l{color:var(--c-on-night)}
+.c [data-block=models] .muted-p,.c [data-block=quality] .fold-text,.c [data-block=corporate] .frame-p{color:var(--c-grey)}
 .c [data-block=models] .link,.c [data-block=quality] .fold-btn,.c [data-block=corporate] .frame-in .pill{color:var(--c-on-night);border-color:var(--c-glass-line)}
 
 /* модели на черном */
@@ -375,9 +376,9 @@ ul,ol{list-style:none}
 /* «почему выбирают»: редакционный список без иконок */
 .c .pict{display:none}
 .c .why{grid-template-columns:1fr;gap:0;text-align:left;max-width:var(--col-narrow)}
-.c .why-c{align-items:flex-start;border-top:1px solid var(--c-night-line);padding:var(--s3) 0}
-.c .why-c:last-child{border-bottom:1px solid var(--c-night-line)}
-.c .why .h-s{color:var(--c-on-night);font-size:var(--t-item);line-height:var(--lh-item);font-weight:var(--w-light);text-transform:none;letter-spacing:var(--tracking-tight)}
+.c .why-c{align-items:flex-start;border-top:1px solid var(--c-line);padding:var(--s3) 0}
+.c .why-c:last-child{border-bottom:1px solid var(--c-line)}
+.c .why .h-s{color:var(--c-ink);font-size:var(--t-item);line-height:var(--lh-item);font-weight:var(--w-light);text-transform:none;letter-spacing:var(--tracking-tight)}
 .c .why .muted-p{font-size:var(--t-b-body);line-height:var(--lh-b-body)}
 .c [data-block=why] .head{text-align:left;margin-left:auto;margin-right:auto}
 .c [data-block=why] .h-l{text-align:left}
@@ -410,6 +411,27 @@ ul,ol{list-style:none}
 .c [data-block=form] .card-in{text-align:left;align-items:stretch}
 .c [data-block=form] .h-l{text-align:left}
 .c .ask-form .pill{align-self:flex-start}
+
+/* второй проход (Кейт 08.10) */
+/* 1 иерархия: заголовки секций крупно заглавными, заголовки карточек и тезисов обычными буквами */
+.c .h-l{font-size:calc(var(--t-chapter) * 0.8);line-height:calc(var(--lh-chapter) * 0.85)}
+.c .h-s,.c .h-m,.c .std-cap .h-s{text-transform:none;letter-spacing:var(--tracking-tight);font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-semi)}
+.c .why .h-s{font-size:var(--t-item);line-height:var(--lh-item);font-weight:var(--w-light)}
+/* 2 вступление как заявление */
+.c .statement{font-size:var(--t-statement);line-height:var(--lh-statement);font-weight:var(--w-light);color:var(--c-ink)}
+.c .intro .fold-text,.c .intro .quiet{font-size:var(--t-small);line-height:var(--lh-small)}
+/* 3 светлые фоны: только белый и бежевый */
+.c .sec-light{background:var(--c-paper)}
+/* 5 закрепленная кнопка на темном - белая */
+.c .nav-cta.on-dark{background:var(--c-paper);color:var(--c-ink);border-color:var(--c-paper)}
+/* 6 «Читать полностью» в главе качества тише */
+.c [data-block=quality] .fold-btn{border-bottom:0;padding-bottom:0;color:var(--c-grey);font-weight:var(--w-semi)}
+/* 7 форма: фото целиком, кнопка по размеру слова */
+.c .form-ph{aspect-ratio:auto}
+.c .form-ph .cover{position:static;height:auto}
+.c .ask-form .pill{width:auto;padding:0 var(--s5)}
+/* 8 расчет: кадр над заголовком */
+.c .calc-ph{display:block;position:relative;width:100%;aspect-ratio:4/3;border-radius:var(--r-card);overflow:hidden;margin-bottom:var(--s4)}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -460,6 +482,7 @@ ul,ol{list-style:none}
       <div class="box model-body"><ul class="specs"><li>Проверенный временем престиж</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Термо-подстаканники с нагревом и охлаждением</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
       <div class="stack"><a class="pill pill-line wide" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div></article></section>
 <section class="sec" data-block="calc"><div class="box"><div class="card calc">
+  <div class="calc-ph"><img class="cover" src="img2/q4.jpg?v=537fecb4" alt=""></div>
   <h2 class="h-l">Рассчитайте стоимость<br>поездки в приложении</h2>
   <p class="muted-p">Заказ оформляется в несколько касаний через удобное приложение: от выбора модели до настройки времени подачи, маршрута или температуры в салоне.</p>
   <div class="row2"><a class="pill pill-line" href="/goapp">AppStore</a><a class="pill pill-line" href="/goapp">Google Play</a></div>
@@ -557,6 +580,14 @@ ul,ol{list-style:none}
     var a=ev.target.closest('a[href^="/"]');
     if(a&&location.hostname!=='prime-ride.ru'){ev.preventDefault();window.open('https://prime-ride.ru'+a.getAttribute('href'),'_blank');}
   });
+  // закрепленная кнопка знает, на темном ли она фоне
+  var tone=function(){var c=document.querySelector('.nav-cta');if(!c)return;var r=c.getBoundingClientRect();
+    var els=document.elementsFromPoint(r.left+r.width/2,r.top+r.height/2).filter(function(x){return !c.contains(x);});
+    var dark=false;for(var i=0;i<els.length;i++){var bg=getComputedStyle(els[i]).backgroundColor;var m=bg.match(/[\d.]+/g);
+      if(m&&(m.length<4||+m[3]>0.5)){dark=(0.2126*m[0]+0.7152*m[1]+0.0722*m[2])<110;break;}
+      if(els[i].tagName==='IMG'){dark=true;break;}}
+    c.classList.toggle('on-dark',dark);};
+  window.addEventListener('scroll',tone,{passive:true});tone();
   var cta=document.querySelector('.nav-cta'),hero=document.querySelector('.hero'),hide=[].slice.call(document.querySelectorAll('[data-block=form],.footer'));
   if('IntersectionObserver' in window){var st={hero:true};
     var io=new IntersectionObserver(function(es){es.forEach(function(x){st[x.target===hero?'hero':x.target.dataset.block||'footer']=x.isIntersecting;});

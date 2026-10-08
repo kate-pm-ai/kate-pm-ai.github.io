@@ -86,6 +86,7 @@ ul,ol{list-style:none}
 
 .calc{padding:var(--s4) var(--s2);text-align:left}
 .app-icon{width:var(--icon);height:var(--icon);border-radius:var(--r-card);margin-bottom:var(--s3)}
+.calc-ph{display:none}
 
 /* форма */
 .form-ph{position:relative;aspect-ratio:16/10}
@@ -396,6 +397,7 @@ ul,ol{list-style:none}
       <div class="box model-body"><ul class="specs"><li>Проверенный временем престиж</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Термо-подстаканники с нагревом и охлаждением</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
       <div class="stack"><a class="pill pill-line wide" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div></article></section>
 <section class="sec" data-block="calc"><div class="box"><div class="card calc">
+  <div class="calc-ph"><img class="cover" src="img2/q4.jpg?v=537fecb4" alt=""></div>
   <h2 class="h-l">Рассчитайте стоимость<br>поездки в приложении</h2>
   <p class="muted-p">Заказ оформляется в несколько касаний через удобное приложение: от выбора модели до настройки времени подачи, маршрута или температуры в салоне.</p>
   <div class="row2"><a class="pill pill-line" href="/goapp">AppStore</a><a class="pill pill-line" href="/goapp">Google Play</a></div>
@@ -493,6 +495,14 @@ ul,ol{list-style:none}
     var a=ev.target.closest('a[href^="/"]');
     if(a&&location.hostname!=='prime-ride.ru'){ev.preventDefault();window.open('https://prime-ride.ru'+a.getAttribute('href'),'_blank');}
   });
+  // закрепленная кнопка знает, на темном ли она фоне
+  var tone=function(){var c=document.querySelector('.nav-cta');if(!c)return;var r=c.getBoundingClientRect();
+    var els=document.elementsFromPoint(r.left+r.width/2,r.top+r.height/2).filter(function(x){return !c.contains(x);});
+    var dark=false;for(var i=0;i<els.length;i++){var bg=getComputedStyle(els[i]).backgroundColor;var m=bg.match(/[\d.]+/g);
+      if(m&&(m.length<4||+m[3]>0.5)){dark=(0.2126*m[0]+0.7152*m[1]+0.0722*m[2])<110;break;}
+      if(els[i].tagName==='IMG'){dark=true;break;}}
+    c.classList.toggle('on-dark',dark);};
+  window.addEventListener('scroll',tone,{passive:true});tone();
   var cta=document.querySelector('.nav-cta'),hero=document.querySelector('.hero'),hide=[].slice.call(document.querySelectorAll('[data-block=form],.footer'));
   if('IntersectionObserver' in window){var st={hero:true};
     var io=new IntersectionObserver(function(es){es.forEach(function(x){st[x.target===hero?'hero':x.target.dataset.block||'footer']=x.isIntersecting;});
