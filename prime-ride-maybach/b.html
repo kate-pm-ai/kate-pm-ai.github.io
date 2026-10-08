@@ -290,12 +290,12 @@ ul,ol{list-style:none}
 .b .calc,.b .card-in{text-align:center;align-items:center}
 .b .row2{margin-left:auto;margin-right:auto}
 
-/* карусели становятся списком с миниатюрами по центру */
-.b .rail{display:grid;grid-template-columns:1fr;gap:var(--s5);overflow:visible;max-width:var(--col-narrow);margin:0 auto}
-.b .slide{flex:none}
-.b .slide-ph,.b .std-ph{width:var(--thumb);aspect-ratio:3/2;margin:0 auto;border-radius:var(--r-card);overflow:hidden}
+/* карусели: крупные карточки, фото во всю ширину карточки, текст по центру под кадром, точки */
+.b .slide-ph,.b .std-ph{border-radius:var(--r-card);overflow:hidden}
+.b .std-ph{aspect-ratio:4/5}
 .b .std-cap{align-items:center;text-align:center}
-.b .rail-dots{display:none}
+.b .rail-dots i{background:var(--c-line)}
+.b .rail-dots i.on{background:var(--c-ink)}
 .b .sec-light{background:var(--c-mist);color:var(--c-ink)}
 
 /* форма на теплой полосе */
@@ -338,7 +338,7 @@ ul,ol{list-style:none}
 .b .logo-xl{max-width:var(--col-narrow);margin-left:auto;margin-right:auto}
 
 @media(min-width:900px){
-  .b .rail{grid-template-columns:repeat(3,1fr);max-width:var(--wrap)}
+  .b .rail{grid-template-columns:repeat(3,1fr);gap:var(--s3)}
   .b .model{grid-template-columns:1fr}
   .b .why{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
   .b .num-list{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
