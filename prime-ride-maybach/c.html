@@ -397,6 +397,19 @@ ul,ol{list-style:none}
   .c .why{grid-template-columns:1fr 1fr;column-gap:var(--s6);max-width:var(--wrap)}
   .c .why-c:last-child{border-bottom:0}
 }
+
+/* выравнивание (Кейт 08.10): центр только там, где выигрывает - первый кадр, заголовки секций,
+   вступление-заявление, название модели, короткие призывы со сторами. Списки и многострочный текст - по левому краю. */
+.c .specs li{text-align:left}
+.c .model-body .stack{align-items:stretch}
+.c .model-body .link{align-self:flex-start}
+.c .slide .card-in,.c .std-cap{text-align:left;align-items:flex-start}
+.c .slide .link{align-self:flex-start}
+.c .num-list{text-align:left}
+.c .num-item .fold-btn{align-self:flex-start}
+.c [data-block=form] .card-in{text-align:left;align-items:stretch}
+.c [data-block=form] .h-l{text-align:left}
+.c .ask-form .pill{align-self:flex-start}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
