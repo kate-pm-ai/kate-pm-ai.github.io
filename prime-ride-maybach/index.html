@@ -68,8 +68,6 @@ ul,ol{list-style:none}
 .card-in{padding:var(--s3) var(--s2) var(--s3);display:flex;flex-direction:column}
 .card-photo{min-height:var(--model-h)}
 
-.intro{display:grid;gap:var(--s3)}
-.intro-ph{aspect-ratio:4/5;min-height:0}
 
 /* карусели: свайп вбок, кадр с подписью под ним */
 .rail{display:flex;gap:var(--s1);overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--gutter);scroll-padding:0 var(--gutter);scrollbar-width:none;-webkit-overflow-scrolling:touch}
@@ -114,8 +112,6 @@ ul,ol{list-style:none}
 
 .corp-ph,.app-ph{position:relative;aspect-ratio:16/10}
 .corp .pill{margin-top:var(--s3)}
-.why .why-c{padding:var(--s3) var(--s2)}
-.why .h-s{color:var(--c-sand)}
 
 /* вопросы */
 .qa-list{padding:0 var(--s2)}
@@ -141,6 +137,36 @@ ul,ol{list-style:none}
 .sk-img{width:var(--sk-w)}
 .f-bottom{display:flex;flex-wrap:wrap;gap:var(--s1) var(--s3);margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--c-night-line)}
 
+
+/* v5: моменты разного типа вместо ленты одинаковых карточек */
+.hero-cta{display:flex;gap:var(--s1);margin-top:var(--s3)}
+.intro{display:grid;gap:var(--s3)}
+.statement{font-size:var(--t-statement);line-height:var(--lh-statement);font-weight:var(--w-regular);letter-spacing:var(--tracking-tight)}
+.bleed{position:relative;width:100%;overflow:hidden}
+.bleed-tall{aspect-ratio:4/5;margin-top:var(--s5)}
+.models{display:flex;flex-direction:column;gap:var(--s6)}
+.model-ph{aspect-ratio:4/5}
+.model-name{position:absolute;left:0;right:0;bottom:0;padding-top:var(--s6);padding-bottom:var(--s3);background:linear-gradient(0deg,var(--c-scrim-strong) 0%,transparent 100%)}
+.model-name .latin-xl{margin-bottom:0}
+.model-body{padding-top:var(--s3)}
+.rail-bar{border-top:1px solid var(--c-night-line);margin-top:var(--s2);position:relative}
+.rail-bar span{position:absolute;left:0;right:0;top:-1px;display:block;border-top:1px solid var(--c-sand);transform-origin:left;transform:scaleX(0.2);transition:transform .2s}
+.num-list{display:grid;counter-reset:n}
+.num-item{counter-increment:n;padding:var(--s3) 0;border-top:1px solid var(--c-night-line)}
+.num-item::before{content:counter(n,decimal-leading-zero);display:block;font-family:var(--font-display-family);font-weight:var(--w-bold);font-size:var(--t-label);line-height:var(--lh-label);letter-spacing:var(--tracking-label);color:var(--c-sand);margin-bottom:var(--s2)}
+.h-m{font-size:var(--t-item);line-height:var(--lh-item);font-weight:var(--w-semi);letter-spacing:var(--tracking-tight)}
+.sec-light{background:var(--c-tone);color:var(--c-ink);padding-bottom:var(--s5);margin-top:var(--s5)}
+.sec-light .muted-p{color:var(--c-ink-soft)}
+.sec-light .rail-bar{border-color:var(--c-line)}
+.sec-light .rail-bar span{border-color:var(--c-ink)}
+.frame-sec{position:relative;min-height:var(--frame-mid);display:flex;align-items:flex-end;overflow:hidden;margin-top:var(--s5)}
+.frame-in{position:relative;z-index:2;padding-bottom:var(--s5)}
+.frame-sec .shade{background:linear-gradient(180deg,var(--c-scrim) 0%,var(--c-scrim-strong) 45%,var(--c-scrim-strong) 100%)}
+.frame-p{margin:var(--s2) 0 var(--s3);color:var(--c-on-night);opacity:.9}
+.why{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3) var(--s2);counter-reset:w}
+.why-c{counter-increment:w;padding-top:var(--s2);border-top:1px solid var(--c-sand)}
+.why .h-s{color:var(--c-on-night)}
+
 /* компьютер: те же карточки, карусели раскрываются в ряд */
 @media(min-width:900px){
   body{padding-bottom:0}
@@ -156,13 +182,21 @@ ul,ol{list-style:none}
   .wide{width:auto}
   .hero-in{padding-bottom:var(--s6)}
   .hero .h-xl{max-width:calc(var(--measure) * 1.4)}
-  .intro{grid-template-columns:5fr 7fr;align-items:end;gap:var(--s5)}
+  .intro{grid-template-columns:7fr 5fr;align-items:end;gap:var(--s6)}
   .rail{max-width:calc(var(--wrap) + var(--gutter) * 2);margin:0 auto;overflow:visible;display:grid;grid-auto-flow:column;grid-auto-columns:1fr}
-  .rail-2 .model{display:grid;grid-template-rows:auto 1fr}
   .grid2{grid-template-columns:1fr 1fr}
   .why{grid-template-columns:repeat(4,1fr)}
-  .form-card,.corp,.app{display:grid;grid-template-columns:1fr 1fr}
-  .form-ph,.corp-ph,.app-ph{aspect-ratio:auto;min-height:var(--model-h)}
+  .num-list{grid-template-columns:1fr 1fr;column-gap:var(--s6)}
+  .model{display:grid;grid-template-columns:7fr 5fr;align-items:end}
+  .model-ph{aspect-ratio:16/10}
+  .model-body{padding-bottom:0}
+  .rail-bar{display:none}
+  .frame-sec{min-height:100vh}
+  .frame-in{max-width:calc(var(--measure) + var(--gutter) * 2);margin:0}
+  .frame-in .wide{width:auto}
+  .bleed-tall{aspect-ratio:21/9}
+  .form-card,.app{display:grid;grid-template-columns:1fr 1fr}
+  .form-ph,.app-ph{aspect-ratio:auto;min-height:var(--model-h)}
   .card-in{padding:var(--s5) var(--s4)}
   .row2{max-width:var(--measure)}
   .pause{height:100vh}
@@ -200,22 +234,21 @@ ul,ol{list-style:none}
     <div class="crumbs"><a class="crumb" href="/">Главная</a><span class="crumb">/</span><a class="crumb" href="/mersedes">Аренда Mercedes</a><span class="crumb">/</span><span class="crumb">Maybach</span></div>
     <h1 class="h-xl">Аренда Майбах с водителем в Москве</h1>
     <p class="hero-sub">Подача вовремя, тишина в салоне, деликатная коммуникация.<br>Сервис, не требующий внимания.</p>
-    <div class="stack"><a class="pill pill-white only-wide" href="/goapp">Скачать в AppStore</a><a class="pill pill-ghost only-wide" href="/goapp">Скачать в Google Play</a><a class="pill pill-white wide only-narrow" href="/goapp">Скачать приложение</a></div>
+    <div class="hero-cta"><a class="pill pill-ghost only-wide" href="/goapp">Скачать в AppStore</a><a class="pill pill-ghost only-wide" href="/goapp">Скачать в Google Play</a><a class="link only-narrow" href="/goapp">Скачать приложение</a></div>
   </div>
 </section>
 <section class="sec" data-block="intro"><div class="box intro">
-  <div class="card card-photo intro-ph"><img class="cover" src="img2/emblem.jpg" alt=""></div>
-  <div><p class="lead">Mercedes-Benz Maybach S-Class — абсолют роскоши и технологий. Автомобиль, в котором каждая деталь существует ровно для одного: чтобы вы ни на секунду не отвлекались от главного.</p><div class="fold"><p class="fold-text" id="fold-1">Аренда Майбаха в Москве — это выбор пространства для важных решений, а не просто автомобиля. Удлиненная база, тишина, изолирующая от города, атмосфера, в которой переговоры ведутся естественно. Аренда Мерседес Майбах с водителем PRIME RIDE — подача вовремя, сервис по умолчанию.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-1">Подробнее</button></div><p class="quiet">Заказать Майбах с водителем — через приложение PRIME RIDE, круглосуточно.</p></div>
-</div></section>
-<section class="sec" data-block="models"><div class="rail rail-2"><article class="slide card model">
-      <div class="model-ph"><img class="cover" src="img2/lux.jpg" alt=""></div>
-      <div class="card-in"><div class="latin-s">Mercedes-Benz Maybach S (Z223)</div><h2 class="latin-xl">Luxury</h2>
-      <ul class="specs"><li>Вершина комфорта и технологий</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Задние кресла с отклонением спинки до 43,5°</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
-      <div class="stack"><a class="pill pill-white wide" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/majbah/z223">Подробнее</a></div></div></article><article class="slide card model">
-      <div class="model-ph"><img class="cover" src="img2/prem.jpg" alt=""></div>
-      <div class="card-in"><div class="latin-s">Mercedes-Benz Maybach (W222)</div><h2 class="latin-xl">Premium</h2>
-      <ul class="specs"><li>Проверенный временем престиж</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Термо-подстаканники с нагревом и охлаждением</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
-      <div class="stack"><a class="pill pill-white wide" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div></article></div></section>
+  <p class="statement">Mercedes-Benz Maybach S-Class — абсолют роскоши и технологий. Автомобиль, в котором каждая деталь существует ровно для одного: чтобы вы ни на секунду не отвлекались от главного.</p>
+  <div class="intro-side"><div class="fold"><p class="fold-text" id="fold-1">Аренда Майбаха в Москве — это выбор пространства для важных решений, а не просто автомобиля. Удлиненная база, тишина, изолирующая от города, атмосфера, в которой переговоры ведутся естественно. Аренда Мерседес Майбах с водителем PRIME RIDE — подача вовремя, сервис по умолчанию.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-1">Подробнее</button></div><p class="quiet">Заказать Майбах с водителем — через приложение PRIME RIDE, круглосуточно.</p></div>
+</div>
+<div class="bleed bleed-tall"><img class="cover" src="img2/emblem.jpg" alt=""></div></section>
+<section class="sec models" data-block="models"><article class="model">
+      <div class="bleed model-ph"><img class="cover" src="img2/lux.jpg" alt=""><div class="model-name box"><div class="latin-s">Mercedes-Benz Maybach S (Z223)</div><h2 class="latin-xl">Luxury</h2></div></div>
+      <div class="box model-body"><ul class="specs"><li>Вершина комфорта и технологий</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Задние кресла с отклонением спинки до 43,5°</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
+      <div class="stack"><a class="pill pill-white wide" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/majbah/z223">Подробнее</a></div></div></article><article class="model">
+      <div class="bleed model-ph"><img class="cover" src="img2/prem.jpg" alt=""><div class="model-name box"><div class="latin-s">Mercedes-Benz Maybach (W222)</div><h2 class="latin-xl">Premium</h2></div></div>
+      <div class="box model-body"><ul class="specs"><li>Проверенный временем престиж</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Термо-подстаканники с нагревом и охлаждением</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
+      <div class="stack"><a class="pill pill-white wide" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div></article></section>
 <section class="sec" data-block="calc"><div class="box"><div class="card calc">
   <img class="app-icon" src="img/icon.jpg" alt="">
   <h2 class="h-l">Рассчитайте стоимость<br>поездки в приложении</h2>
@@ -234,7 +267,7 @@ ul,ol{list-style:none}
       <div class="slide-ph"><img class="cover" src="img2/sc4.jpg" alt=""></div>
       <div class="card-in"><h3 class="h-s">Мероприятия</h3><p class="muted-p">Подача и внешний вид. Впечатление начинается до входа.</p><a class="link" href="/goapp">Заказать в приложении</a></div></article><article class="slide card">
       <div class="slide-ph"><img class="cover" src="img2/sc5.jpg" alt=""></div>
-      <div class="card-in"><h3 class="h-s">Поездки для бизнеса</h3><p class="muted-p">Гибкие условия оплаты и прозрачная отчетность, поездки с особыми корпоративными привилегиями</p><a class="link" href="/companies">Подробнее</a></div></article></div>
+      <div class="card-in"><h3 class="h-s">Поездки для бизнеса</h3><p class="muted-p">Гибкие условия оплаты и прозрачная отчетность, поездки с особыми корпоративными привилегиями</p><a class="link" href="/companies">Подробнее</a></div></article></div><div class="box"><div class="rail-bar"><span></span></div></div>
 </section>
 <section class="sec" id="ask" data-block="form"><div class="box"><div class="card form-card">
   <div class="form-ph"><img class="cover" src="img2/form.jpg" alt=""></div>
@@ -253,19 +286,18 @@ ul,ol{list-style:none}
 <section class="pause" data-block="pause"><img class="cover" src="img2/pause.jpg" alt=""></section>
 <section class="sec" data-block="quality">
   <div class="box head"><h2 class="h-l">PRIME RIDE это качество сервиса, которое вы ожидаете:</h2></div>
-  <div class="box grid2"><article class="card qcard"><div class="q-ph"><img class="cover" src="img2/q1.jpg" alt=""></div><div class="card-in"><h3 class="h-s">Флагман Mercedes-Benz</h3><div class="fold"><p class="fold-text" id="fold-2">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-2">Подробнее</button></div></div></article><article class="card qcard"><div class="q-ph"><img class="cover" src="img2/q2.jpg" alt=""></div><div class="card-in"><h3 class="h-s">Водители высшей категории</h3><div class="fold"><p class="fold-text" id="fold-3">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-3">Подробнее</button></div></div></article><article class="card qcard"><div class="q-ph"><img class="cover" src="img2/q3.jpg" alt=""></div><div class="card-in"><h3 class="h-s">Для любых<br>сценариев</h3><div class="fold"><p class="fold-text" id="fold-4">Майбах в аренду с водителем для деловых встреч, частных мероприятий, междугородних поездок. Межгород — маршрут согласовывается заранее. Для мероприятий — появление, которое создает атмосферу до того, как вы вошли. Бронирование круглосуточно.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-4">Подробнее</button></div></div></article><article class="card qcard"><div class="q-ph"><img class="cover" src="img2/q4.jpg" alt=""></div><div class="card-in"><h3 class="h-s">Пространство власти и тишины</h3><div class="fold"><p class="fold-text" id="fold-5">Мерседес Майбах с водителем от PRIME RIDE — среда, в которой внешнего мира не существует. Переговоры в пути, звонки, тишина перед важным решением. Аренда Maybach с водителем: вы сосредоточены на важном — все остальное уже решено.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-5">Подробнее</button></div></div></article></div>
+  <ol class="box num-list"><li class="num-item"><h3 class="h-m">Флагман Mercedes-Benz</h3><div class="fold"><p class="fold-text" id="fold-2">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-2">Подробнее</button></div></li><li class="num-item"><h3 class="h-m">Водители высшей категории</h3><div class="fold"><p class="fold-text" id="fold-3">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-3">Подробнее</button></div></li><li class="num-item"><h3 class="h-m">Для любых<br>сценариев</h3><div class="fold"><p class="fold-text" id="fold-4">Майбах в аренду с водителем для деловых встреч, частных мероприятий, междугородних поездок. Межгород — маршрут согласовывается заранее. Для мероприятий — появление, которое создает атмосферу до того, как вы вошли. Бронирование круглосуточно.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-4">Подробнее</button></div></li><li class="num-item"><h3 class="h-m">Пространство власти и тишины</h3><div class="fold"><p class="fold-text" id="fold-5">Мерседес Майбах с водителем от PRIME RIDE — среда, в которой внешнего мира не существует. Переговоры в пути, звонки, тишина перед важным решением. Аренда Maybach с водителем: вы сосредоточены на важном — все остальное уже решено.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-5">Подробнее</button></div></li></ol>
 </section>
-<section class="sec" data-block="standards">
+<section class="sec sec-light" data-block="standards">
   <div class="box head"><h2 class="h-l">Стандарты наших водителей</h2><p class="muted-p">Наши пассажиры ожидают безупречного сервиса и внимательного отношения к деталям. Эти ожидания лежат в основе стандартов PRIME RIDE и обязательны для каждого водителя без исключений.</p></div>
-  <div class="rail"><figure class="slide card std"><img class="cover" src="img2/st1.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Статус</span><span class="std-p">Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st2.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Знания</span><span class="std-p">Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st3.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Сервис</span><span class="std-p">Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st4.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Навыки</span><span class="std-p">Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</span></figcaption></figure></div>
+  <div class="rail"><figure class="slide card std"><img class="cover" src="img2/st1.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Статус</span><span class="std-p">Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st2.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Знания</span><span class="std-p">Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st3.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Сервис</span><span class="std-p">Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</span></figcaption></figure><figure class="slide card std"><img class="cover" src="img2/st4.jpg" alt=""><figcaption class="std-cap"><span class="h-s">Навыки</span><span class="std-p">Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</span></figcaption></figure></div><div class="box"><div class="rail-bar"><span></span></div></div>
 </section>
-<section class="sec" data-block="corporate"><div class="box"><div class="card corp">
-  <div class="corp-ph"><img class="cover" src="img2/corp.jpg" alt=""></div>
-  <div class="card-in"><h2 class="h-l">Условия консьерж-сервиса для корпоративных клиентов</h2><p class="muted-p">PRIME RIDE предлагает компаниям выверенный формат деловых поездок для сотрудников и гостей. Аэропортные трансферы, поездки на встречи и сопровождение в течение дня — сервис объединяет технологичность, комфорт и гибкость как для срочных, так и для запланированных поездок.</p><a class="pill pill-white wide" href="/companies">Подробнее</a></div>
-</div></div></section>
+<section class="frame-sec" data-block="corporate"><img class="cover" src="img2/corp.jpg" alt=""><div class="shade"></div>
+  <div class="box frame-in"><h2 class="h-l">Условия консьерж-сервиса для корпоративных клиентов</h2><p class="frame-p">PRIME RIDE предлагает компаниям выверенный формат деловых поездок для сотрудников и гостей. Аэропортные трансферы, поездки на встречи и сопровождение в течение дня — сервис объединяет технологичность, комфорт и гибкость как для срочных, так и для запланированных поездок.</p><a class="pill pill-white wide" href="/companies">Подробнее</a></div>
+</section>
 <section class="sec" data-block="why">
   <div class="box head"><h2 class="h-l">Почему клиенты выбирают PRIME RIDE</h2></div>
-  <div class="box grid2 why"><div class="card why-c"><h3 class="h-s">Собственный учебный центр</h3><p class="muted-p">Единый стандарт качества, без случайных водителей из агрегатора</p></div><div class="card why-c"><h3 class="h-s">NDA с каждым водителем</h3><p class="muted-p">Юридическая гарантия конфиденциальности</p></div><div class="card why-c"><h3 class="h-s">Предсказуемая стоимость</h3><p class="muted-p">никаких сюрпризов с коэффициентами и «повышенным спросом»</p></div><div class="card why-c"><h3 class="h-s">Надежный<br>автопарк</h3><p class="muted-p">Каждая машина проходит ежедневный контроль</p></div></div>
+  <ol class="box why"><li class="why-c"><h3 class="h-s">Собственный учебный центр</h3><p class="muted-p">Единый стандарт качества, без случайных водителей из агрегатора</p></li><li class="why-c"><h3 class="h-s">NDA с каждым водителем</h3><p class="muted-p">Юридическая гарантия конфиденциальности</p></li><li class="why-c"><h3 class="h-s">Предсказуемая стоимость</h3><p class="muted-p">никаких сюрпризов с коэффициентами и «повышенным спросом»</p></li><li class="why-c"><h3 class="h-s">Надежный<br>автопарк</h3><p class="muted-p">Каждая машина проходит ежедневный контроль</p></li></ol>
 </section>
 <section class="sec" data-block="faq"><div class="box">
   <h2 class="h-l head">Вопросы и ответы</h2>
@@ -298,6 +330,11 @@ ul,ol{list-style:none}
   burger.addEventListener('click',function(){var o=nav.classList.toggle('open');burger.setAttribute('aria-expanded',String(o));});
   var solid=function(){nav.classList.toggle('solid',window.scrollY>40);};
   window.addEventListener('scroll',solid,{passive:true});solid();
+  document.querySelectorAll('.rail').forEach(function(r){
+    var bar=r.nextElementSibling&&r.nextElementSibling.querySelector('.rail-bar span');if(!bar)return;
+    var upd=function(){var m=r.scrollWidth-r.clientWidth;var p=m>0?(r.scrollLeft+r.clientWidth)/r.scrollWidth:1;bar.style.transform='scaleX('+p+')';};
+    r.addEventListener('scroll',upd,{passive:true});upd();
+  });
   var f=document.querySelector('.ask-form');
   f.addEventListener('submit',function(ev){ev.preventDefault();f.querySelector('.form-ok').hidden=false;});
 })();</script>
