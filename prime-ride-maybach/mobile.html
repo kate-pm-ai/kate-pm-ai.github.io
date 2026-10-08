@@ -1,16 +1,16 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="robots" content="noindex,nofollow"><title>PRIME RIDE Maybach - телефон</title>
 <style>html,body{margin:0;min-height:100%;background:#E5E0D8;font-family:Manrope,Arial,sans-serif}
 .wrap{min-height:100vh;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;padding:24px 0}
-.sw{display:flex;gap:8px}.sw button{font:600 12px/1 Manrope,Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:100px;border:1px solid #141416;background:transparent;color:#141416;cursor:pointer}
+.sw{display:flex;gap:8px;flex-wrap:wrap;justify-content:center}.sw button{font:600 12px/1 Manrope,Arial,sans-serif;letter-spacing:2px;text-transform:uppercase;padding:12px 20px;border-radius:100px;border:1px solid #141416;background:transparent;color:#141416;cursor:pointer}
 .sw button[aria-pressed=true]{background:#141416;color:#F8F8F8}
 .phone{width:390px;height:844px;border-radius:48px;padding:12px;background:#141416;box-shadow:0 30px 80px rgba(20,20,22,.35)}
 iframe{border:0;border-radius:38px;display:block;width:100%;height:100%;background:#141416}
 @media(max-width:500px){.wrap{padding:0}.phone{width:100vw;height:100vh;border-radius:0;padding:0}iframe{border-radius:0}}</style></head>
 <body><div class="wrap">
-<div class="sw"><button type="button" data-src="index.html" aria-pressed="true">Нынешний</button><button type="button" data-src="b.html" aria-pressed="false">Как Wheely</button></div>
-<div class="phone"><iframe id="f" src="index.html?v=m14" title="Мобильная версия"></iframe></div></div>
-<script>var V='m14';document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){
+<div class="sw"><button type="button" data-src="index.html" aria-pressed="true">Нынешний</button><button type="button" data-src="b.html" aria-pressed="false">Как Wheely</button><button type="button" data-src="c.html" aria-pressed="false">Лучшее из двух</button></div>
+<div class="phone"><iframe id="f" src="index.html?v=m15" title="Мобильная версия"></iframe></div></div>
+<script>var V='m15';document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){
 document.querySelectorAll('.sw button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
-document.getElementById('f').src=b.dataset.src+'?v='+V;try{history.replaceState(null,'','#'+(b.dataset.src==='b.html'?'b':'a'));}catch(e){}});});
-if(location.hash==='#b'){document.querySelectorAll('.sw button')[1].click();}</script>
+document.getElementById('f').src=b.dataset.src+'?v='+V;try{history.replaceState(null,'','#'+b.dataset.src.replace('.html','').replace('index','a'));}catch(e){}});});
+var H={'#b':1,'#c':2};if(H[location.hash]){document.querySelectorAll('.sw button')[H[location.hash]].click();}</script>
 </body></html>
