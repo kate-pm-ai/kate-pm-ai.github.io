@@ -49,6 +49,7 @@ ul,ol{list-style:none}
 .nav.solid,.nav.open{background:var(--c-night)}
 .logo-img{width:var(--logo-w)}
 .logo-on-light{display:none}
+.pict{display:none}
 .nav nav{display:none}
 .nav-cta{position:fixed;left:var(--gutter);right:var(--gutter);bottom:var(--s2);z-index:11;opacity:0;transform:translateY(var(--s3));pointer-events:none;transition:opacity .3s,transform .3s}
 .nav-cta.show{opacity:1;transform:none;pointer-events:auto}
@@ -311,15 +312,19 @@ ul,ol{list-style:none}
 .b .num-list{max-width:var(--col-narrow);text-align:center}
 .b .num-item{border-color:var(--c-line)}
 .b .num-item::before{color:var(--c-b-link)}
-.b .why{max-width:var(--col-narrow);text-align:center}
-.b .why-c{border-color:var(--c-line)}
-.b .why .h-s{color:var(--c-ink)}
+.b .why{max-width:var(--col-narrow);grid-template-columns:1fr 1fr;gap:var(--s5) var(--s3);text-align:center}
+.b .why-c{border-top:0;padding-top:0;display:flex;flex-direction:column;align-items:center}
+.b .pict{display:block;width:var(--s5);height:var(--s5);color:var(--c-b-link);margin-bottom:var(--s2)}
+.b .why .h-s{color:var(--c-ink);font-size:var(--t-small);line-height:var(--lh-small)}
+.b .why .muted-p{font-size:var(--t-small);line-height:var(--lh-small)}
 
 /* корпоративный блок: кадр, под ним текст, без надписей на фото */
 .b .frame-sec{display:block;min-height:0;background:var(--c-paper)}
 .b .frame-sec > .cover{position:relative;height:auto;aspect-ratio:4/5}
 .b .frame-sec .shade{display:none}
-.b .frame-in{text-align:center;max-width:var(--col-narrow);margin:0 auto;padding-top:var(--s4)}
+.b .frame-in{text-align:left;max-width:var(--col-narrow);margin:0 auto;padding-top:var(--s5)}
+.b .frame-in .h-l{text-align:left}
+.b .frame-in .pill{width:auto;height:auto;padding:0 0 var(--s1);border:0;border-bottom:1px solid var(--c-b-link);border-radius:0;color:var(--c-b-link);background:transparent}
 .b .frame-p{color:var(--c-ink-soft);opacity:1}
 
 /* вопросы и приложение */
@@ -329,21 +334,17 @@ ul,ol{list-style:none}
 .b .qa summary::after{color:var(--c-ink)}
 .b [data-block=app] .card{max-width:var(--col-narrow);margin:0 auto}
 
-/* подвал: светлый, по центру */
-.b .footer{background:var(--c-mist);color:var(--c-ink);text-align:center}
-.b .f-grid{grid-template-columns:1fr}
-.b .f-h,.b .f-small{color:var(--c-ink-soft)}
-.b .f-bottom{justify-content:center;border-color:var(--c-line)}
-.b .f-sk{background:transparent}
-.b .logo-xl{max-width:var(--col-narrow);margin-left:auto;margin-right:auto}
+/* подвал: родной черный, как в нынешнем варианте */
+.b .footer{background:var(--c-night);color:var(--c-on-night)}
+.b .footer .logo-on-dark{display:block}
+.b .footer .logo-on-light{display:none}
 
 @media(min-width:900px){
   .b .rail{grid-template-columns:repeat(3,1fr);gap:var(--s3)}
   .b .model{grid-template-columns:1fr}
-  .b .why{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
+  .b .why{grid-template-columns:repeat(4,1fr);max-width:var(--wrap)}
   .b .num-list{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
   .b .frame-sec > .cover{aspect-ratio:21/9}
-  .b .f-grid{grid-template-columns:repeat(4,1fr);text-align:left}
 }
 </style>
 <script type="application/ld+json">{
@@ -441,7 +442,7 @@ ul,ol{list-style:none}
 </section>
 <section class="sec" data-block="why">
   <div class="box head"><h2 class="h-l">Почему клиенты выбирают PRIME RIDE</h2></div>
-  <ol class="box why"><li class="why-c"><h3 class="h-s">Собственный учебный центр</h3><p class="muted-p">Единый стандарт качества, без случайных водителей из агрегатора</p></li><li class="why-c"><h3 class="h-s">NDA с каждым водителем</h3><p class="muted-p">Юридическая гарантия конфиденциальности</p></li><li class="why-c"><h3 class="h-s">Предсказуемая стоимость</h3><p class="muted-p">никаких сюрпризов с коэффициентами и «повышенным спросом»</p></li><li class="why-c"><h3 class="h-s">Надежный<br>автопарк</h3><p class="muted-p">Каждая машина проходит ежедневный контроль</p></li></ol>
+  <ol class="box why"><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19 24 11l18 8-18 8z"/><path d="M14 23v9c0 2 4.5 4.5 10 4.5s10-2.5 10-4.5v-9"/><path d="M42 19v10"/></svg><h3 class="h-s">Собственный учебный центр</h3><p class="muted-p">Единый стандарт качества, без случайных водителей из агрегатора</p></li><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h15l7 7v14"/><path d="M29 6v7h7"/><path d="M14 6v30h9"/><path d="M33 29l7 3v5c0 4-3 6.5-7 8-4-1.5-7-4-7-8v-5z"/></svg><h3 class="h-s">NDA с каждым водителем</h3><p class="muted-p">Юридическая гарантия конфиденциальности</p></li><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M25 7h14v14L22 38 8 24z"/><circle cx="32" cy="14" r="2.2"/><path d="M17 25l6 6"/></svg><h3 class="h-s">Предсказуемая стоимость</h3><p class="muted-p">никаких сюрпризов с коэффициентами и «повышенным спросом»</p></li><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 30v-6l4-8h22l6 8h3v6z"/><circle cx="14" cy="31" r="3.5"/><circle cx="34" cy="31" r="3.5"/><path d="M19 9l3 3 6-6"/></svg><h3 class="h-s">Надежный<br>автопарк</h3><p class="muted-p">Каждая машина проходит ежедневный контроль</p></li></ol>
 </section>
 <section class="sec" data-block="faq"><div class="box">
   <h2 class="h-l head">Вопросы и ответы</h2>
