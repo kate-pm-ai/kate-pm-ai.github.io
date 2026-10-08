@@ -232,6 +232,119 @@ ul,ol{list-style:none}
   .pause{height:100vh}
   .f-grid{grid-template-columns:repeat(4,1fr)}
 }
+/* Вариант B «по принципам Wheely» в айдентике PRIME: белая основа, узкая колонка по центру, заголовки заглавными,
+   один тонкий вес, миниатюры вместо каруселей, одна черная кнопка. Поверх page.css, только var(--...). */
+.b{background:var(--c-paper);color:var(--c-ink);font-weight:var(--w-regular)}
+.b .logo-on-dark{display:none}
+.b .logo-on-light{display:block}
+.b .hero .logo-on-light{display:none}
+.b .nav{color:var(--c-ink)}
+.b .nav:not(.solid):not(.open) .logo-on-dark{display:block}
+.b .nav:not(.solid):not(.open) .logo-on-light{display:none}
+.b .nav:not(.solid):not(.open) .burger span{border-color:var(--c-on-night)}
+.b .nav.solid,.b .nav.open{background:var(--c-paper)}
+.b .burger span{border-color:var(--c-ink)}
+.b .nav-links a{color:var(--c-ink)}
+
+/* кнопки: черная таблетка бренда, остальное контур */
+.b .pill-white{background:var(--c-ink);color:var(--c-paper)}
+.b .pill-white:hover{background:var(--c-ink-strong)}
+.b .hero .pill-white{background:var(--c-paper);color:var(--c-ink)}
+.b .pill-line{color:var(--c-ink);border-color:var(--c-ink)}
+.b .pill-line:hover{background:var(--c-ink);color:var(--c-paper)}
+.b .link,.b .fold-btn{color:var(--c-b-link);border-color:var(--c-b-link)}
+
+/* типографика: заглавные по центру, некрупно, тонко */
+.b .h-xl{font-size:var(--t-b-h1);line-height:var(--lh-b-h1);font-weight:var(--w-light);text-transform:uppercase;letter-spacing:var(--tracking-caps)}
+.b .h-l{font-size:var(--t-b-h2);line-height:var(--lh-b-h2);font-weight:var(--w-regular);text-transform:uppercase;letter-spacing:var(--tracking-caps);text-align:center}
+.b .h-s,.b .h-m,.b .why-h{font-size:var(--t-b-body);line-height:var(--lh-b-body);font-weight:var(--w-semi);text-transform:uppercase;letter-spacing:var(--tracking-label)}
+.b .muted-p,.b .quiet,.b .fold-text,.b .why-p,.b .std-p,.b .qa .muted-p{color:var(--c-ink-soft)}
+.b .lead,.b .statement{font-size:var(--t-lead);line-height:var(--lh-lead);font-weight:var(--w-light);text-align:center}
+.b .head{text-align:center;max-width:var(--col-narrow)}
+.b .head .muted-p{margin-left:auto;margin-right:auto}
+.b .sec{padding-top:var(--s6)}
+
+/* первый экран: кадр, текст по центру */
+.b .hero{color:var(--c-on-night)}
+.b .link{align-self:center}
+.b .model-body .stack{align-items:center}
+.b .hero-in,.b .crumbs-top{text-align:center;justify-content:center}
+.b .hero-sub{margin-left:auto;margin-right:auto}
+.b .hero-cta{justify-content:center}
+
+/* вступление узкой колонкой по центру */
+.b .intro{max-width:var(--col-narrow);text-align:center}
+.b .intro .fold,.b .intro .quiet{text-align:center}
+
+/* модели */
+.b .model-switch button{color:var(--c-ink);border-color:var(--c-ink)}
+.b .model-switch button[aria-selected=true]{background:var(--c-ink);color:var(--c-paper)}
+.b .model-name{text-align:center}
+.b .latin-s{color:var(--c-b-link)}
+.b .latin-xl{color:var(--c-ink)}
+.b .model-body{max-width:var(--col-narrow)}
+.b .specs,.b .specs li{border-color:var(--c-line);color:var(--c-ink-soft);text-align:center}
+
+/* карточки исчезают: текст прямо на белом */
+.b .card{background:transparent;border-radius:0;overflow:visible}
+.b .calc,.b .card-in{text-align:center;align-items:center}
+.b .row2{margin-left:auto;margin-right:auto}
+
+/* карусели становятся списком с миниатюрами по центру */
+.b .rail{display:grid;grid-template-columns:1fr;gap:var(--s5);overflow:visible;max-width:var(--col-narrow);margin:0 auto}
+.b .slide{flex:none}
+.b .slide-ph,.b .std-ph{width:var(--thumb);aspect-ratio:3/2;margin:0 auto;border-radius:var(--r-card);overflow:hidden}
+.b .std-cap{align-items:center;text-align:center}
+.b .rail-dots{display:none}
+.b .sec-light{background:var(--c-mist);color:var(--c-ink)}
+
+/* форма на теплой полосе */
+.b [data-block=form]{background:var(--c-mist);padding-bottom:var(--s6)}
+.b .form-card{max-width:var(--col-narrow);margin:0 auto}
+.b .form-ph{border-radius:var(--r-card);overflow:hidden}
+.b .field{border-color:var(--c-line)}
+.b .field input,.b .field textarea,.b .field-code{color:var(--c-ink)}
+.b .field-label{color:var(--c-ink-soft)}
+.b .form-ok{color:var(--c-b-link)}
+
+/* качество и «почему»: по центру, без колонок */
+.b .num-list{max-width:var(--col-narrow);text-align:center}
+.b .num-item{border-color:var(--c-line)}
+.b .num-item::before{color:var(--c-b-link)}
+.b .why{max-width:var(--col-narrow);text-align:center}
+.b .why-c{border-color:var(--c-line)}
+.b .why .h-s{color:var(--c-ink)}
+
+/* корпоративный блок: кадр, под ним текст, без надписей на фото */
+.b .frame-sec{display:block;min-height:0;background:var(--c-paper)}
+.b .frame-sec > .cover{position:relative;height:auto;aspect-ratio:4/5}
+.b .frame-sec .shade{display:none}
+.b .frame-in{text-align:center;max-width:var(--col-narrow);margin:0 auto;padding-top:var(--s4)}
+.b .frame-p{color:var(--c-ink-soft);opacity:1}
+
+/* вопросы и приложение */
+.b .qa-list{padding:0;max-width:var(--col-narrow);margin:0 auto;border-top:1px solid var(--c-line)}
+.b .qa{border-color:var(--c-line)}
+.b .qa:last-child{border-bottom:1px solid var(--c-line)}
+.b .qa summary::after{color:var(--c-ink)}
+.b [data-block=app] .card{max-width:var(--col-narrow);margin:0 auto}
+
+/* подвал: светлый, по центру */
+.b .footer{background:var(--c-mist);color:var(--c-ink);text-align:center}
+.b .f-grid{grid-template-columns:1fr}
+.b .f-h,.b .f-small{color:var(--c-ink-soft)}
+.b .f-bottom{justify-content:center;border-color:var(--c-line)}
+.b .f-sk{background:transparent}
+.b .logo-xl{max-width:var(--col-narrow);margin-left:auto;margin-right:auto}
+
+@media(min-width:900px){
+  .b .rail{grid-template-columns:repeat(3,1fr);max-width:var(--wrap)}
+  .b .model{grid-template-columns:1fr}
+  .b .why{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
+  .b .num-list{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
+  .b .frame-sec > .cover{aspect-ratio:21/9}
+  .b .f-grid{grid-template-columns:repeat(4,1fr);text-align:left}
+}
 </style>
 <script type="application/ld+json">{
   "@context": "https://schema.org",
@@ -250,7 +363,7 @@ ul,ol{list-style:none}
   "serviceType": "Maybach Rental",
   "url": "https://prime-ride.ru/mersedes/majbah"
 }</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://prime-ride.ru"},{"@type":"ListItem","position":2,"name":"Mercedes-Benz","item":"https://prime-ride.ru/mersedes"},{"@type":"ListItem","position":3,"name":"Maybach","item":"https://prime-ride.ru/mersedes/majbah"}]}</script>
-</head><body>
+</head><body class="b">
 <header class="nav" data-block="nav">
   <a class="logo" href="/"><img class="logo-img logo-on-dark" src="img/logo-white.svg?v=c6e825f1" alt="PRIME RIDE"><img class="logo-img logo-on-light" src="img/logo-black.svg?v=17954f8d" alt="PRIME RIDE"></a>
   <nav aria-label="Навигационное меню"><ul class="nav-links"><li><a class="" href="/services">Сервис PRIME</a></li><li><a class="" href="/about">Наша философия</a></li><li><a class="" href="/classes">Классы</a></li><li><a class="" href="/private">Статус Private</a></li><li><a class="" href="/driver">Академия</a></li><li><a class="" href="/companies">Для бизнеса</a></li><li><a class="" href="/contacts">Контакты</a></li></ul></nav>
