@@ -245,6 +245,16 @@
       .lx-why{padding:92px 0}.lx-why-grid{grid-template-columns:1fr}.lx-ask,.lx-faq{padding:92px 0}
       .footer-top{grid-template-columns:1fr}
     }
+
+    @media (max-width:900px){
+      .scenario-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--pad) * -1);padding:0 var(--pad);scroll-padding:0 var(--pad);scrollbar-width:none}
+      .scenario-grid::-webkit-scrollbar{display:none}
+      .scenario-grid .scenario{flex:0 0 82%;scroll-snap-align:start}
+      .scenario .pic,.scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:auto;min-height:0;aspect-ratio:4/5}
+      .lx-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
+      .lx-dots i{display:block;width:6px;height:6px;border-radius:100px;background:rgba(244,241,233,.28);transition:width .25s,background .25s}
+      .lx-dots i.on{width:20px;background:#f4f1e9}
+    }
     @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}.reveal-img{clip-path:none}}
   </style>
 <script type="application/ld+json">{
@@ -409,6 +419,7 @@
           <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/st3.jpg?v=016f1667" alt="Водитель помогает с багажом" loading="lazy" /></div><h3>Водитель на день</h3><p>Маршрут с паузами и ожиданиями. Автомобиль рядом именно тогда, когда нужен.</p></article>
           <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/form.jpg?v=05185d4f" alt="Пассажир и водитель PRIME RIDE" loading="lazy" /></div><h3>Мероприятия</h3><p>Подача, внешний вид и деликатность. Впечатление начинается до входа.</p></article>
         </div>
+        <div class="lx-dots" aria-hidden="true"></div>
       </div>
     </section>
 
@@ -522,6 +533,12 @@
         }
       }, {passive:true});
     }
+
+    const sg = document.querySelector('.scenario-grid'), dots = document.querySelector('.lx-dots');
+    if (sg && dots) { const n = sg.children.length; for (let k = 0; k < n; k++) dots.appendChild(document.createElement('i'));
+      const upd = () => { const w = sg.children[0].getBoundingClientRect().width + 12; const i = Math.min(n - 1, Math.round(sg.scrollLeft / w));
+        [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
+      sg.addEventListener('scroll', upd, { passive: true }); upd(); }
 
     const lxf = document.querySelector('.lx-form');
     lxf.addEventListener('submit', ev => { ev.preventDefault(); lxf.querySelector('.lx-ok').hidden = false; });
