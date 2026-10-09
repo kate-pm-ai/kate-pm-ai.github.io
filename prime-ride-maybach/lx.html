@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="robots" content="noindex,nofollow" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Аренда Майбаха с водителем в Москве | Заказать Maybach в PRIME RIDE</title>
+  <meta name="description" content="Аренда Майбаха с водителем в Москве ☑️Деловые поездки, VIP-трансферы ☑️Свадьбы и мероприятия ☑️Почасовая и аренда на день ☑️Заказ через приложение PRIME RIDE" />
+  <style>
+    :root{
+      --paper:#f3f2ee;
+      --paper-2:#ebe9e2;
+      --ink:#131313;
+      --muted:#6f6d67;
+      --line:rgba(19,19,19,.14);
+      --gold:#a18b5f;
+      --gold-dark:#7f6a42;
+      --white:#fff;
+      --header:82px;
+      --pad:clamp(20px,4vw,64px);
+      --max:1480px;
+      --ease:cubic-bezier(.22,.61,.36,1);
+    }
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth;background:var(--paper)}
+    body{margin:0;background:var(--paper);color:var(--ink);font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+    body.menu-open{overflow:hidden}
+    a{color:inherit;text-decoration:none}
+    button{font:inherit}
+    img{display:block;width:100%;height:100%;object-fit:cover}
+    .shell{width:min(100%,var(--max));margin-inline:auto;padding-inline:var(--pad)}
+    .eyebrow{font-size:11px;line-height:1;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);font-weight:600}
+    .display{font-size:clamp(44px,7vw,108px);line-height:.92;letter-spacing:-.055em;font-weight:400;margin:0}
+    .h2{font-size:clamp(36px,5.1vw,76px);line-height:.98;letter-spacing:-.045em;font-weight:400;margin:0}
+    .h3{font-size:clamp(26px,3vw,42px);line-height:1.04;letter-spacing:-.032em;font-weight:400;margin:0}
+    .body-lg{font-size:clamp(19px,2vw,29px);line-height:1.32;letter-spacing:-.02em}
+    .body{font-size:17px;line-height:1.48;letter-spacing:-.01em}
+    .small{font-size:13px;line-height:1.45;color:var(--muted)}
+    .link{display:inline-flex;align-items:center;gap:10px;font-size:14px;border-bottom:1px solid var(--gold);padding-bottom:5px;transition:color .25s,border-color .25s}
+    .link:hover{color:var(--gold-dark);border-color:var(--ink)}
+
+    /* Header */
+    header{height:var(--header);position:sticky;top:0;z-index:50;background:rgba(243,242,238,.94);backdrop-filter:blur(14px);border-bottom:1px solid transparent;transition:border-color .25s,background .25s}
+    header.scrolled{border-color:var(--line);background:rgba(243,242,238,.98)}
+    .nav{height:100%;display:grid;grid-template-columns:160px 1fr auto;align-items:center;gap:32px}
+    .logo-wrap{display:inline-flex;align-items:center;width:132px;height:26px}
+    .logo{object-fit:contain;object-position:left center;filter:invert(1) brightness(.2);height:22px;width:auto;max-width:132px}
+    .nav-links{display:flex;justify-content:center;gap:clamp(14px,1.5vw,26px);white-space:nowrap}
+    .nav-links a{font-size:13px;position:relative;padding:10px 0}
+    .nav-links a::after{content:"";position:absolute;left:0;right:100%;bottom:5px;height:1px;background:var(--gold);transition:right .28s var(--ease)}
+    .nav-links a:hover::after{right:0}
+    .nav-cta{font-size:13px;border-bottom:1px solid var(--gold);padding:8px 0 5px}
+    .burger{display:none;width:42px;height:42px;border:0;background:transparent;position:relative;cursor:pointer;padding:0}
+    .burger::before,.burger::after{content:"";position:absolute;width:22px;height:1px;background:var(--ink);left:10px;transition:transform .32s var(--ease),top .32s var(--ease)}
+    .burger::before{top:16px}.burger::after{top:25px}
+    body.menu-open .burger::before{top:21px;transform:rotate(45deg)}
+    body.menu-open .burger::after{top:21px;transform:rotate(-45deg)}
+
+    /* Full menu */
+    .menu-panel{position:fixed;inset:0;z-index:45;background:var(--paper);visibility:hidden;opacity:0;transform:translateY(-10px);transition:opacity .35s var(--ease),transform .35s var(--ease),visibility .35s;padding:calc(var(--header) + 38px) var(--pad) 28px}
+    body.menu-open .menu-panel{visibility:visible;opacity:1;transform:none}
+    .menu-inner{height:100%;display:flex;flex-direction:column;justify-content:space-between;max-width:920px;margin:0 auto}
+    .menu-list{display:flex;flex-direction:column}
+    .menu-list a{font-size:clamp(34px,7vw,66px);line-height:1.05;letter-spacing:-.045em;padding:8px 0;border-bottom:1px solid var(--line);transition:color .2s,padding-left .25s var(--ease)}
+    .menu-list a:hover{color:var(--gold-dark);padding-left:8px}
+    .menu-meta{display:flex;justify-content:space-between;gap:20px;padding-top:28px;font-size:13px;color:var(--muted)}
+
+    /* Hero */
+    .hero{min-height:calc(100svh - var(--header));display:grid;grid-template-columns:minmax(360px,.88fr) 1.12fr;border-bottom:1px solid var(--line)}
+    .hero-copy{padding:clamp(74px,10vw,140px) var(--pad) 56px;display:flex;flex-direction:column;justify-content:space-between;min-height:760px}
+    .hero-title{max-width:740px}
+    .hero-title .eyebrow{margin-bottom:28px}
+    .hero-title p{max-width:490px;margin:34px 0 0;color:#363531}
+    .hero-bottom{display:flex;justify-content:space-between;gap:24px;align-items:flex-end;margin-top:52px}
+    .hero-note{max-width:290px;color:var(--muted);font-size:13px;line-height:1.45}
+    .hero-media{overflow:hidden;min-height:760px;background:#ddd}
+    .hero-media img{transition:transform 1.4s var(--ease);transform:scale(1.025)}
+    .hero-media:hover img{transform:scale(1)}
+
+    /* Intro */
+    .intro{padding:clamp(90px,12vw,180px) 0}
+    .intro-grid{display:grid;grid-template-columns:1fr 1.7fr;gap:clamp(40px,8vw,150px)}
+    .intro-copy{max-width:860px}
+    .intro-copy p{margin:0 0 34px}
+    .intro-copy .small{max-width:700px}
+
+    /* Full image */
+    .full-image{height:min(78vw,920px);min-height:540px;margin:0 var(--pad);overflow:hidden;background:#d7d3cc}
+    .full-image img{will-change:transform;transform:scale(1.045)}
+
+    /* Vehicles */
+    .vehicles{padding:clamp(110px,12vw,190px) 0}
+    .section-head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:58px}
+    .section-head p{margin:0;max-width:560px;color:#4d4b47}
+    .vehicle-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:16px}
+    .vehicle-card{position:relative;background:var(--paper-2);overflow:hidden}
+    .vehicle-card.large .vehicle-image{aspect-ratio:1.08/1}.vehicle-card.small .vehicle-image{aspect-ratio:.88/1}
+    .vehicle-image{overflow:hidden;background:#d4d0c8}
+    .vehicle-image img{transition:transform .8s var(--ease)}
+    .vehicle-card:hover .vehicle-image img{transform:scale(1.025)}
+    .vehicle-meta{padding:26px 0 10px;display:grid;grid-template-columns:1fr auto;gap:20px;align-items:start}
+    .vehicle-meta p{margin:7px 0 0;color:var(--muted);font-size:14px}
+    .vehicle-tag{font-size:11px;text-transform:uppercase;letter-spacing:.14em;color:var(--gold-dark);padding-top:4px}
+
+    /* Experience */
+    .experience{padding:clamp(110px,13vw,200px) 0;background:#e9e6de}
+    .experience-title{max-width:980px;margin-bottom:74px}
+    .experience-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(18px,3vw,44px)}
+    .experience-feature{display:grid;grid-template-columns:1fr 1fr;gap:0;background:var(--paper)}
+    .experience-feature .pic{min-height:520px;overflow:hidden}
+    .experience-feature .copy{padding:clamp(30px,4.2vw,62px);display:flex;flex-direction:column;justify-content:space-between;gap:60px}
+    .experience-feature p{margin:18px 0 0;color:#4d4b47}
+    .experience-side{display:grid;grid-template-columns:1fr;gap:20px}
+    .side-image{height:410px;overflow:hidden}
+    .side-copy{padding:20px 0 0;max-width:580px}
+    .side-copy p{color:#4d4b47}
+
+    /* Standards */
+    .standards{padding:clamp(110px,13vw,200px) 0}
+    .standards-grid{display:grid;grid-template-columns:1.12fr .88fr;gap:clamp(40px,8vw,130px);align-items:start}
+    .standards-photo{height:min(74vw,900px);min-height:620px;overflow:hidden;position:sticky;top:calc(var(--header) + 22px)}
+    .standards-copy{padding-top:26px}
+    .standards-copy .h2{margin:16px 0 42px}
+    .standard-row{display:grid;grid-template-columns:32px 1fr;gap:22px;padding:24px 0;border-top:1px solid var(--line)}
+    .standard-row:last-child{border-bottom:1px solid var(--line)}
+    .num{font-size:12px;color:var(--gold-dark);padding-top:4px}
+    .standard-row h3{margin:0 0 8px;font-size:20px;font-weight:400;letter-spacing:-.02em}
+    .standard-row p{margin:0;color:var(--muted);font-size:15px;line-height:1.5}
+
+    /* Scenarios */
+    .scenarios{padding:clamp(110px,13vw,200px) 0;background:#111;color:#f4f1e9}
+    .scenarios .eyebrow{color:#c2ae84}
+    .scenarios-head{display:grid;grid-template-columns:1.3fr .7fr;gap:40px;align-items:end;margin-bottom:58px}
+    .scenarios-head p{margin:0;color:#b7b3aa;max-width:470px}
+    .scenario-grid{display:grid;grid-template-columns:repeat(12,1fr);gap:16px}
+    .scenario{overflow:hidden}
+    .scenario:nth-child(1){grid-column:span 7}.scenario:nth-child(2){grid-column:span 5}.scenario:nth-child(3){grid-column:2/span 5}.scenario:nth-child(4){grid-column:span 6}
+    .scenario .pic{height:clamp(360px,48vw,690px);overflow:hidden;background:#252525}
+    .scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:clamp(320px,39vw,560px)}
+    .scenario img{transition:transform .85s var(--ease)}
+    .scenario:hover img{transform:scale(1.025)}
+    .scenario h3{font-size:22px;font-weight:400;letter-spacing:-.02em;margin:18px 0 7px}
+    .scenario p{margin:0;color:#aaa59a;font-size:14px;max-width:520px}
+
+    /* Corporate */
+    .corporate{padding:clamp(110px,13vw,190px) 0}
+    .corp-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(38px,7vw,110px);align-items:center}
+    .corp-copy{max-width:560px}
+    .corp-copy .h2{margin:17px 0 30px}
+    .corp-copy p{color:#4b4944;margin:0 0 28px}
+    .corp-image{height:min(58vw,780px);min-height:520px;overflow:hidden}
+
+    /* App */
+    .app-section{background:#ded8cd;padding:clamp(90px,10vw,150px) 0}
+    .app-grid{display:grid;grid-template-columns:1fr 1fr;gap:clamp(40px,8vw,130px);align-items:center}
+    .app-image{aspect-ratio:1.45/1;overflow:hidden}
+    .app-copy{max-width:580px}
+    .app-copy .h2{margin:17px 0 30px}
+    .app-copy p{margin:0 0 32px;color:#47443f}
+    .store-links{display:flex;gap:26px;flex-wrap:wrap}
+
+    /* Footer */
+    footer{background:#111;color:#f0eee7;padding:70px 0 32px}
+    .footer-top{display:grid;grid-template-columns:1.3fr repeat(3,1fr);gap:44px;padding-bottom:72px;border-bottom:1px solid rgba(255,255,255,.18)}
+    .footer-brand .logo{filter:none;height:23px;width:auto}
+    .footer-brand p{color:#9e9a91;max-width:330px;margin:24px 0 0;font-size:13px;line-height:1.55}
+    .footer-col h4{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#b7aa8d;margin:0 0 20px;font-weight:500}
+    .footer-col a,.footer-col span{display:block;color:#d5d2ca;font-size:14px;margin:0 0 11px}
+    .footer-bottom{display:flex;justify-content:space-between;gap:30px;padding-top:24px;color:#88847c;font-size:11px;line-height:1.45}
+
+    /* Reveal */
+    .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
+    .reveal.visible{opacity:1;transform:none}
+    .reveal-img{clip-path:inset(0 0 10% 0);transition:clip-path 1.05s var(--ease)}
+    .reveal-img.visible{clip-path:inset(0)}
+
+    @media (max-width:1180px){
+      .nav{grid-template-columns:150px 1fr auto}.nav-links{display:none}.burger{display:block}.nav-cta{display:none}
+    }
+    @media (max-width:900px){
+      :root{--header:70px;--pad:20px}
+      .nav{grid-template-columns:1fr auto}.logo-wrap{width:118px}.logo{height:20px}
+      .hero{display:block;min-height:auto}.hero-copy{min-height:auto;padding:72px var(--pad) 44px}.hero-media{min-height:0;height:78svh;max-height:820px}.hero-bottom{margin-top:54px}
+      .intro-grid,.section-head,.experience-grid,.standards-grid,.scenarios-head,.corp-grid,.app-grid{grid-template-columns:1fr}
+      .intro-grid{gap:34px}.section-head{gap:20px}.vehicle-grid{grid-template-columns:1fr}.vehicle-card.large .vehicle-image,.vehicle-card.small .vehicle-image{aspect-ratio:1.15/1}
+      .experience-feature{grid-template-columns:1fr}.experience-feature .pic{min-height:520px}.experience-feature .copy{min-height:380px}.side-image{height:56vw;min-height:390px}
+      .standards-photo{position:relative;top:auto;height:80svh;min-height:620px}.standards-copy{padding-top:0}
+      .scenario:nth-child(n){grid-column:span 12}.scenario .pic,.scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:67vw;min-height:420px}
+      .corp-image{grid-row:1;height:72vw;min-height:500px}.app-image{aspect-ratio:1.1/1}
+      .footer-top{grid-template-columns:1fr 1fr}.footer-brand{grid-column:span 2}.footer-bottom{flex-direction:column}
+    }
+    @media (max-width:560px){
+      .display{font-size:clamp(50px,15vw,72px)}.h2{font-size:clamp(38px,12vw,56px)}
+      .hero-copy{padding-top:58px}.hero-title p{font-size:18px;margin-top:24px}.hero-bottom{align-items:flex-start;flex-direction:column}
+      .hero-media{height:68svh}.intro{padding:90px 0}.intro-copy p{font-size:25px}
+      .full-image{margin:0;height:72svh;min-height:560px}.vehicle-meta{grid-template-columns:1fr}.vehicle-tag{grid-row:1}
+      .experience{padding:92px 0}.experience-feature .pic{min-height:470px}.experience-feature .copy{min-height:350px;padding:32px 26px}.side-image{height:72svh;min-height:520px}
+      .standards{padding:92px 0}.standards-photo{height:72svh;min-height:560px}.standard-row{grid-template-columns:28px 1fr;gap:14px}
+      .scenarios{padding:92px 0}.scenario .pic,.scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:68svh;min-height:470px}
+      .corporate{padding:92px 0}.corp-image{height:68svh;min-height:500px}.app-section{padding:86px 0}.app-image{aspect-ratio:.92/1}
+      .footer-top{grid-template-columns:1fr;gap:30px}.footer-brand{grid-column:auto}.menu-meta{flex-direction:column}.menu-list a{padding:10px 0}
+    }
+
+    /* проход 1: блоки, которых у Лёхи нет, - его переменными и приемами */
+    .lx-why{padding:clamp(110px,13vw,200px) 0;background:#111;color:#f4f1e9}
+    .lx-why .h2{max-width:900px;margin-bottom:58px}
+    .lx-why-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(18px,3vw,44px)}
+    .lx-why-item{border-top:1px solid rgba(255,255,255,.18);padding-top:24px}
+    .lx-why-item .num{font-size:12px;color:#c2ae84;margin-bottom:18px}
+    .lx-why-item h3{margin:0 0 8px;font-size:20px;font-weight:400;letter-spacing:-.02em}
+    .lx-why-item p{margin:0;color:#aaa59a;font-size:15px;line-height:1.5}
+    .lx-ask{padding:clamp(110px,13vw,190px) 0;background:var(--paper-2)}
+    .lx-ask-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(38px,7vw,110px);align-items:start}
+    .lx-ask-lead{color:#4d4b47;margin:30px 0 0;max-width:460px}
+    .lx-form{display:flex;flex-direction:column;gap:22px}
+    .lx-form label{display:flex;flex-direction:column;gap:8px;border-bottom:1px solid var(--line);padding-bottom:10px}
+    .lx-form label span{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark);font-weight:600}
+    .lx-form .lx-tel{flex-direction:row;align-items:center;gap:14px}
+    .lx-form .lx-tel span{font-size:17px;letter-spacing:-.01em;text-transform:none;color:var(--ink);font-weight:400}
+    .lx-form input,.lx-form textarea{border:0;background:transparent;outline:0;font:inherit;font-size:17px;color:var(--ink);resize:none;width:100%}
+    .lx-form label:focus-within{border-color:var(--gold)}
+    .lx-send{align-self:flex-start;background:transparent;border:0;border-bottom:1px solid var(--gold);cursor:pointer;color:var(--ink);padding:0 0 5px;margin-top:10px}
+    .lx-faq{padding:clamp(110px,13vw,190px) 0}
+    .lx-faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(38px,7vw,110px);align-items:start}
+    .lx-faq-list{border-top:1px solid var(--line)}
+    .lx-qa{border-bottom:1px solid var(--line)}
+    .lx-qa summary{list-style:none;cursor:pointer;padding:24px 40px 24px 0;position:relative;font-size:20px;letter-spacing:-.02em}
+    .lx-qa summary::-webkit-details-marker{display:none}
+    .lx-qa summary::after{content:"+";position:absolute;right:0;top:22px;color:var(--gold-dark);font-size:22px;transition:transform .25s var(--ease)}
+    .lx-qa[open] summary::after{transform:rotate(45deg)}
+    .lx-qa p{margin:0 0 24px;color:var(--muted);font-size:15px;line-height:1.5;max-width:680px}
+    .footer-top{grid-template-columns:1.3fr repeat(4,1fr)}
+    .footer-col .lx-f-label{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#b7aa8d;margin:14px 0 6px}
+    .footer-col .lx-f-label:first-child{margin-top:0}
+    .lx-f-legal{padding:28px 0;border-bottom:1px solid rgba(255,255,255,.18);display:flex;flex-direction:column;gap:8px}
+    .lx-f-legal .lx-f-label{font-size:11px;text-transform:uppercase;letter-spacing:.13em;color:#b7aa8d}
+    .lx-f-legal p{margin:0;color:#9e9a91;font-size:13px;line-height:1.55;max-width:760px}
+    .lx-sk img{width:120px;height:auto;margin-top:8px;background:#f0eee7;padding:6px 10px;border-radius:6px}
+    .footer-bottom a{color:#88847c}
+    @media (max-width:900px){
+      .lx-why-grid{grid-template-columns:1fr 1fr}.lx-ask-grid,.lx-faq-grid{grid-template-columns:1fr}
+      .footer-top{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:560px){
+      .lx-why{padding:92px 0}.lx-why-grid{grid-template-columns:1fr}.lx-ask,.lx-faq{padding:92px 0}
+      .footer-top{grid-template-columns:1fr}
+    }
+    @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}.reveal-img{clip-path:none}}
+  </style>
+<script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Service",
+  "name": "Аренда Maybach с водителем в Москве — свадьба, трансферы",
+  "description": "Maybach с водителем в Москве: VIP-трансферы, свадьбы и мероприятия. Почасовая аренда и на день, премиальный сервис, подача к точному времени.",
+  "provider": {
+    "@type": "Organization",
+    "name": "Prime Ride",
+    "url": "https://prime-ride.ru/"
+  },
+  "areaServed": {
+    "@type": "Place",
+    "name": "Москва"
+  },
+  "serviceType": "Maybach Rental",
+  "url": "https://prime-ride.ru/mersedes/majbah"
+}</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://prime-ride.ru"},{"@type":"ListItem","position":2,"name":"Mercedes-Benz","item":"https://prime-ride.ru/mersedes"},{"@type":"ListItem","position":3,"name":"Maybach","item":"https://prime-ride.ru/mersedes/majbah"}]}</script>
+</head>
+<body>
+  <header id="header">
+    <div class="shell nav">
+      <a class="logo-wrap" href="#top" aria-label="PRIME RIDE">
+        <img class="logo" src="https://kate-pm-ai.github.io/prime-ride-maybach/img/logo-white.svg?v=c6e825f1" alt="PRIME RIDE" />
+      </a>
+      <nav class="nav-links" aria-label="Основная навигация">
+        <a href="/services">Сервис PRIME</a>
+        <a href="/about">Наша философия</a>
+        <a href="/classes">Классы</a>
+        <a href="/private">Статус Private</a>
+        <a href="/driver">Академия</a>
+        <a href="/companies">Для бизнеса</a>
+        <a href="/contacts">Контакты</a>
+      </nav>
+      <a class="nav-cta" href="/goapp">Заказать в приложении</a>
+      <button class="burger" id="burger" aria-label="Открыть меню" aria-expanded="false"></button>
+    </div>
+  </header>
+
+  <div class="menu-panel" id="menuPanel" aria-hidden="true">
+    <div class="menu-inner">
+      <nav class="menu-list" aria-label="Полноэкранное меню">
+        <a href="/services">Сервис PRIME</a>
+        <a href="/about">Наша философия</a>
+        <a href="/classes">Классы</a>
+        <a href="/private">Статус Private</a>
+        <a href="/driver">Академия</a>
+        <a href="/companies">Для бизнеса</a>
+        <a href="/contacts">Контакты</a>
+      </nav>
+      <div class="menu-meta"><span>+7 (495) 532-78-78</span><span>support@prime-ride.ru</span></div>
+    </div>
+  </div>
+
+  <main id="top">
+    <section class="hero" id="service">
+      <div class="hero-copy">
+        <div class="hero-title reveal">
+          <div class="eyebrow">Mercedes-Maybach · Москва</div>
+          <h1 class="display">Сервис, не требующий внимания.</h1>
+          <p class="body-lg">Подача вовремя, тишина в салоне, деликатная коммуникация.</p>
+        </div>
+        <div class="hero-bottom reveal">
+          <a class="link" href="#app">Заказать Maybach в приложении</a>
+          <div class="hero-note">Круглосуточно. Профессиональный водитель. Конфиденциальность по умолчанию.</div>
+        </div>
+      </div>
+      <div class="hero-media reveal-img">
+        <img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/hero.jpg?v=ab703b86" alt="Mercedes-Maybach PRIME RIDE с водителем" fetchpriority="high" />
+      </div>
+    </section>
+
+    <section class="intro" id="philosophy">
+      <div class="shell intro-grid">
+        <div class="eyebrow reveal">Maybach by PRIME RIDE</div>
+        <div class="intro-copy reveal">
+          <p class="body-lg">Mercedes-Benz Maybach S-Class — абсолют роскоши и технологий. Автомобиль, в котором каждая деталь существует ровно для одного: чтобы вы ни на секунду не отвлекались от главного.</p>
+          <p class="small">Аренда Майбаха в Москве — это выбор пространства для важных решений, а не просто автомобиля. Удлинённая база, тишина, изолирующая от города, и атмосфера, в которой переговоры ведутся естественно. Подача вовремя, сервис по умолчанию.</p>
+        </div>
+      </div>
+    </section>
+
+    <div class="full-image reveal-img" id="private">
+      <img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/emblem.jpg?v=a693248d" alt="Деталь салона Mercedes-Maybach" loading="lazy" />
+    </div>
+
+    <section class="vehicles" id="classes">
+      <div class="shell">
+        <div class="section-head">
+          <div class="reveal"><div class="eyebrow">Классы</div><h2 class="h2" style="margin-top:16px">Два уровня Maybach.<br>Один стандарт сервиса.</h2></div>
+          <p class="body reveal">Выбирайте современный Maybach S-Class Z223 или проверенный временем W222. В обоих случаях поездка строится вокруг тишины, пространства и незаметного профессионализма.</p>
+        </div>
+        <div class="vehicle-grid">
+          <article class="vehicle-card large reveal">
+            <div class="vehicle-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/lux.jpg?v=54f634cc" alt="Mercedes-Benz Maybach S Z223" loading="lazy" /></div>
+            <div class="vehicle-meta">
+              <div><h3 class="h3">Mercedes-Benz Maybach S (Z223)</h3><p>До 3 пассажиров · 4-зонный климат · складные столики · задние кресла до 43,5°</p></div>
+              <div class="vehicle-tag">Luxury</div>
+            </div>
+          </article>
+          <article class="vehicle-card small reveal">
+            <div class="vehicle-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/prem.jpg?v=01790826" alt="Mercedes-Benz Maybach W222" loading="lazy" /></div>
+            <div class="vehicle-meta">
+              <div><h3 class="h3">Mercedes-Benz Maybach (W222)</h3><p>До 3 пассажиров · термо-подстаканники · 4-зонный климат · багаж до 500 литров</p></div>
+              <div class="vehicle-tag">Premium</div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="experience" id="academy">
+      <div class="shell">
+        <div class="experience-title reveal">
+          <div class="eyebrow">Высокий стандарт — в деталях</div>
+          <h2 class="h2" style="margin-top:16px">Пространство власти и тишины.</h2>
+        </div>
+        <div class="experience-grid">
+          <article class="experience-feature reveal">
+            <div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/sc1.jpg?v=abb5b974" alt="Пассажир в салоне Maybach" loading="lazy" /></div>
+            <div class="copy">
+              <div>
+                <div class="eyebrow">Конфиденциальность</div>
+                <h3 class="h3" style="margin-top:14px">Внешнего мира не существует.</h3>
+                <p class="body">Переговоры в пути, звонки, тишина перед важным решением. Вы сосредоточены на важном — всё остальное уже решено.</p>
+              </div>
+              <a class="link" href="#standards">Стандарты сервиса</a>
+            </div>
+          </article>
+          <div class="experience-side reveal">
+            <div class="side-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/q4.jpg?v=537fecb4" alt="Салон Maybach с раскладными столиками" loading="lazy" /></div>
+            <div class="side-copy"><h3 class="h3">Комфорт, который не приходится просить.</h3><p class="body">Просторный задний ряд, индивидуальный климат и рабочая зона превращают поездку в продолжение личного пространства.</p></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="standards" id="standards">
+      <div class="shell standards-grid">
+        <div class="standards-photo reveal-img"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/st1.jpg?v=c442a0c7" alt="Водитель PRIME RIDE" loading="lazy" /></div>
+        <div class="standards-copy reveal">
+          <div class="eyebrow">Академия PRIME RIDE</div>
+          <h2 class="h2">Водители высшей категории.</h2>
+          <div class="standard-row"><div class="num">01</div><div><h3>Закрытый отбор</h3><p>Только после сертификации и подписания NDA водитель получает допуск к работе.</p></div></div>
+          <div class="standard-row"><div class="num">02</div><div><h3>Безупречные манеры</h3><p>Внешний вид, коммуникация и поведение соответствуют стандартам премиального сервиса PRIME RIDE.</p></div></div>
+          <div class="standard-row"><div class="num">03</div><div><h3>Знание города</h3><p>Оптимальный маршрут, точность и предсказуемость — без необходимости контролировать детали.</p></div></div>
+          <div class="standard-row"><div class="num">04</div><div><h3>Регулярная аттестация</h3><p>Обучение продолжается после допуска: навыки и сервисный стандарт подтверждаются постоянно.</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="scenarios">
+      <div class="shell">
+        <div class="scenarios-head reveal">
+          <div><div class="eyebrow">Один класс, разные сценарии</div><h2 class="h2" style="margin-top:16px">Вы выбираете задачу.<br>Остальное — за нами.</h2></div>
+          <p class="body">Подача, маршрут, ожидание и сервис подстраиваются под контекст поездки — деловой или частный.</p>
+        </div>
+        <div class="scenario-grid">
+          <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/sc4.jpg?v=55014861" alt="Деловая поездка PRIME RIDE" loading="lazy" /></div><h3>Деловые поездки по городу</h3><p>Тишина для звонков и мыслей. Сервис — чтобы не отвлекаться.</p></article>
+          <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/sc5.jpg?v=686c0a84" alt="Встреча пассажира PRIME RIDE" loading="lazy" /></div><h3>Трансфер аэропорт / вокзал</h3><p>Встреча по времени и комфортная дорога. Спокойный старт или финал поездки.</p></article>
+          <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/st3.jpg?v=016f1667" alt="Водитель помогает с багажом" loading="lazy" /></div><h3>Водитель на день</h3><p>Маршрут с паузами и ожиданиями. Автомобиль рядом именно тогда, когда нужен.</p></article>
+          <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/form.jpg?v=05185d4f" alt="Пассажир и водитель PRIME RIDE" loading="lazy" /></div><h3>Мероприятия</h3><p>Подача, внешний вид и деликатность. Впечатление начинается до входа.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="corporate" id="business">
+      <div class="shell corp-grid">
+        <div class="corp-copy reveal">
+          <div class="eyebrow">Для бизнеса</div>
+          <h2 class="h2">Консьерж-сервис для корпоративных клиентов.</h2>
+          <p class="body">Аэропортные трансферы, поездки на встречи и сопровождение в течение дня. PRIME RIDE объединяет технологичность, комфорт и гибкость для срочных и запланированных поездок.</p>
+          <a class="link" href="#contacts">Узнать об условиях</a>
+        </div>
+        <div class="corp-image reveal-img"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/corp.jpg?v=f4923f7c" alt="Корпоративный сервис PRIME RIDE" loading="lazy" /></div>
+      </div>
+    </section>
+
+
+    <section class="lx-why">
+      <div class="shell">
+        <h2 class="h2 reveal">Почему клиенты выбирают PRIME RIDE</h2>
+        <div class="lx-why-grid">
+          <div class="lx-why-item reveal"><div class="num">01</div><h3>Собственный учебный центр</h3><p>Единый стандарт качества, без случайных водителей из агрегатора</p></div><div class="lx-why-item reveal"><div class="num">02</div><h3>NDA с каждым водителем</h3><p>Юридическая гарантия конфиденциальности</p></div><div class="lx-why-item reveal"><div class="num">03</div><h3>Предсказуемая стоимость</h3><p>никаких сюрпризов с коэффициентами и «повышенным спросом»</p></div><div class="lx-why-item reveal"><div class="num">04</div><h3>Надежный<br>автопарк</h3><p>Каждая машина проходит ежедневный контроль</p></div>
+        </div>
+      </div>
+    </section>
+    <section class="lx-ask" id="ask">
+      <div class="shell lx-ask-grid">
+        <div class="reveal"><h2 class="h2">Задать вопрос</h2><p class="body lx-ask-lead">Наши менеджеры проконсультируют вас, просто оставьте свои контактные данные:</p></div>
+        <form class="lx-form reveal" novalidate>
+          <label><span>Ваше имя</span><input type="text" name="name" aria-label="name" autocomplete="name"></label>
+          <label class="lx-tel"><span>+7</span><input type="tel" name="phone" placeholder="(000) 000-00-00" autocomplete="tel-national"></label>
+          <label><span>Email</span><input type="email" name="email" aria-label="email" autocomplete="email"></label>
+          <label><span>Ваше сообщение</span><textarea name="message" rows="3" aria-label="textarea"></textarea></label>
+          <button type="submit" class="link lx-send">ОТПРАВИТЬ</button>
+          <p class="small lx-ok" hidden>Спасибо, ваше сообщение успешно отправлено, скоро мы с вами свяжемся!</p>
+        </form>
+      </div>
+    </section>
+    <section class="lx-faq">
+      <div class="shell lx-faq-grid">
+        <h2 class="h2 reveal">Вопросы и ответы</h2>
+        <div class="lx-faq-list reveal">
+          <details class="lx-qa" open><summary>Как заказать Maybach?</summary><p>Приложение PRIME RIDE для iOS и Android, звонок или форма на сайте. Укажите дату, время, адрес подачи. Заказать Майбах с водителем — в несколько касаний. Сервис работает круглосуточно. Детали маршрута согласовываются при бронировании.</p></details><details class="lx-qa"><summary>Какова стоимость?</summary><p>Зависит от продолжительности и маршрута. Аренда Майбах Z223 на часы, день или сутки тарифицируется по-разному. Точная стоимость уточняется при бронировании через приложение или по телефону. Для корпоративных клиентов — индивидуальные условия.</p></details><details class="lx-qa"><summary>Что входит в стоимость?</summary><p>Трансфер Майбах включает время водителя и автомобиля в рамках заказанного периода. Выезд за МКАД и дополнительные опции рассчитываются отдельно. Полный состав тарифа уточняется при бронировании — никаких неожиданных доплат.</p></details><details class="lx-qa"><summary>Для каких событий подходит Maybach?</summary><p>Аренда Mercedes Maybach — для важных встреч, деловых переговоров, закрытых мероприятий. VIP-трансфер Майбах — в аэропорт и междугородние поездки. Когда статус автомобиля и уровень сервиса имеют значение — это Maybach в PRIME RIDE.</p></details>
+        </div>
+      </div>
+    </section>
+    <section class="app-section" id="app">
+      <div class="shell app-grid">
+        <div class="app-image reveal-img"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/app.jpg?v=5faad605" alt="Приложение PRIME RIDE" loading="lazy" /></div>
+        <div class="app-copy reveal">
+          <div class="eyebrow">PRIME RIDE App</div>
+          <h2 class="h2">Рассчитайте стоимость поездки в приложении.</h2>
+          <p class="body">От выбора модели до времени подачи, маршрута и температуры в салоне — заказ оформляется в несколько касаний.</p>
+          <div class="store-links"><a class="link" href="/goapp">App Store</a><a class="link" href="/goapp">Google Play</a></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="contacts">
+    <div class="shell">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img class="logo" src="https://kate-pm-ai.github.io/prime-ride-maybach/img/logo-white.svg?v=c6e825f1" alt="PRIME RIDE" />
+          <p>Сервис премиальных автомобилей с профессиональным водителем. Москва. Круглосуточно.</p>
+        </div>
+        <div class="footer-col"><h4>Классы</h4><a href="/classes/aurus">Aurus</a><a href="/classes/luxury">Luxury</a><a href="/classes/premium">Premium</a><a href="/classes/business">Business</a><a href="/classes/travel">Travel</a></div>
+        <div class="footer-col"><h4>Дополнительно</h4><a href="/private">Статус PRIVATE</a><a href="/driver">Академия водителей</a><a href="/about">О компании</a><a href="/services">Сервис PRIME</a><a href="/companies">Для бизнеса</a><a href="/career">Карьера</a><a href="/contacts">Контакты</a></div>
+        <div class="footer-col"><h4>&nbsp;</h4><a href="/transfer/airport-transfer">Встреча в аэропорту</a><a href="/services/driver-for-a-day">Водитель на день</a><a href="/services/concierge">Консьерж-сервис</a><a href="/services/station-transfer">Трансфер на вокзал</a><a href="/services/wedding">Авто с водителем на свадьбу</a></div>
+        <div class="footer-col"><span class="lx-f-label">Телефон:</span><a href="tel:+74955327878">+7 (495) 532-78-78</a><span class="lx-f-label">Поддержка клиентов:</span><a href="mailto:support@prime-ride.ru">support@prime-ride.ru</a><span class="lx-f-label">Канал в TG:</span><a href="https://telegram.me/Primerideone">@Primerideone</a></div>
+      </div>
+      <div class="lx-f-legal">
+        <a class="lx-f-label" href="#additionalmenu">Дополнительно</a>
+        <span class="lx-f-label">Реквизиты:</span><p>ООО «Прайм Райд», ИНН 9714083961, ОГРН 1257700508482. Информация предоставленная на сайте не является публичной офертой.</p>
+        <a class="lx-sk" href="https://sk.ru/"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img/sk.png" alt="" /></a>
+      </div>
+      <div class="footer-bottom"><a href="/sitemap">Карта сайта</a><span>© ООО «‎ПРАЙМ РАЙД», 2025-2026</span><a href="/about/legal/privacy">Политика конфиденциальности</a><span>127015, Россия, город Москва, Бумажный пр.,19, стр. 3, помещение 7/6</span></div>
+    </div>
+  </footer>
+
+  <script>
+    const body = document.body;
+    const burger = document.getElementById('burger');
+    const menu = document.getElementById('menuPanel');
+    const header = document.getElementById('header');
+
+    burger.addEventListener('click', () => {
+      const open = body.classList.toggle('menu-open');
+      burger.setAttribute('aria-expanded', String(open));
+      burger.setAttribute('aria-label', open ? 'Закрыть меню' : 'Открыть меню');
+      menu.setAttribute('aria-hidden', String(!open));
+    });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+      body.classList.remove('menu-open');
+      burger.setAttribute('aria-expanded','false');
+      menu.setAttribute('aria-hidden','true');
+    }));
+    addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8), {passive:true});
+
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); io.unobserve(e.target); } });
+    }, {threshold:.12, rootMargin:'0px 0px -4% 0px'});
+    document.querySelectorAll('.reveal,.reveal-img').forEach(el => io.observe(el));
+
+    const parallax = document.querySelector('.full-image img');
+    if (parallax && !matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      addEventListener('scroll', () => {
+        const r = parallax.parentElement.getBoundingClientRect();
+        if (r.bottom > 0 && r.top < innerHeight) {
+          const p = (innerHeight - r.top) / (innerHeight + r.height);
+          parallax.style.transform = `scale(1.045) translateY(${(p-.5)*18}px)`;
+        }
+      }, {passive:true});
+    }
+
+    const lxf = document.querySelector('.lx-form');
+    lxf.addEventListener('submit', ev => { ev.preventDefault(); lxf.querySelector('.lx-ok').hidden = false; });
+    document.addEventListener('click', ev => { const a = ev.target.closest('a[href^="/"]');
+      if (a && location.hostname !== 'prime-ride.ru') { ev.preventDefault(); window.open('https://prime-ride.ru' + a.getAttribute('href'), '_blank'); } });
+  </script>
+</body>
+</html>
