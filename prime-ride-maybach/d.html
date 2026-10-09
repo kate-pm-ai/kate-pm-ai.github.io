@@ -234,118 +234,161 @@ ul,ol{list-style:none}
   .pause{height:100vh}
   .f-grid{grid-template-columns:repeat(4,1fr)}
 }
-/* Вариант B «по принципам Wheely» в айдентике PRIME: белая основа, узкая колонка по центру, заголовки заглавными,
-   один тонкий вес, миниатюры вместо каруселей, одна черная кнопка. Поверх page.css, только var(--...). */
-.b{background:var(--c-paper);color:var(--c-ink);font-weight:var(--w-regular)}
-.b .logo-on-dark{display:none}
-.b .logo-on-light{display:block}
-.b .hero .logo-on-light{display:none}
-.b .nav{color:var(--c-ink)}
-.b .nav:not(.solid):not(.open) .logo-on-dark{display:block}
-.b .nav:not(.solid):not(.open) .logo-on-light{display:none}
-.b .nav:not(.solid):not(.open) .burger span{border-color:var(--c-on-night)}
-.b .nav.solid,.b .nav.open{background:var(--c-paper)}
-.b .burger span{border-color:var(--c-ink)}
-.b .nav-links a{color:var(--c-ink)}
+/* Вариант D «по Лёхе» (Кейт 09.10.2026): подача концепта Лёхи - теплая бумага, крупные тонкие заголовки обычными буквами
+   по левому краю, мозаика сценариев на темном, стандарты с одним большим фото и списком 01-04, меню на весь экран,
+   тихая SEO-глава внизу. Шрифт Manrope (Helvetica Лёхи на Android и Windows превращается в Arial). Поверх page.css, только var(--...). */
+.d{background:var(--c-d-paper);color:var(--c-d-ink)}
+.d .sec{padding-top:var(--s7)}
 
-/* кнопки: черная таблетка бренда, остальное контур */
-.b .pill-white{background:var(--c-ink);color:var(--c-paper)}
-.b .pill-white:hover{background:var(--c-ink-strong)}
-.b .hero .pill-white{background:var(--c-paper);color:var(--c-ink)}
-.b .pill-line{color:var(--c-ink);border-color:var(--c-ink)}
-.b .pill-line:hover{background:var(--c-ink);color:var(--c-paper)}
-.b .link,.b .fold-btn{color:var(--c-b-link);border-color:var(--c-b-link)}
+/* логотип и шапка: светлая бумага, на кадре - белый логотип */
+.d .logo-on-dark{display:none}
+.d .logo-on-light{display:block}
+.d .nav:not(.solid):not(.open) .logo-on-dark{display:block}
+.d .nav:not(.solid):not(.open) .logo-on-light{display:none}
+.d .nav.solid,.d .nav.open{background:var(--c-d-paper);border-bottom:1px solid var(--c-d-line)}
+.d .burger span{border-color:var(--c-d-ink)}
+.d .nav:not(.solid):not(.open) .burger span{border-color:var(--c-d-on-dark)}
+.d .nav-links a{color:var(--c-d-ink)}
 
-/* типографика: заглавные по центру, некрупно, тонко */
-.b .h-xl{font-size:var(--t-b-h1);line-height:var(--lh-b-h1);font-weight:var(--w-light);text-transform:uppercase;letter-spacing:var(--tracking-caps)}
-.b .h-l{font-size:var(--t-b-h2);line-height:var(--lh-b-h2);font-weight:var(--w-regular);text-transform:uppercase;letter-spacing:var(--tracking-caps);text-align:center}
-.b .h-s,.b .h-m,.b .why-h{font-size:var(--t-b-body);line-height:var(--lh-b-body);font-weight:var(--w-semi);text-transform:uppercase;letter-spacing:var(--tracking-label)}
-.b .muted-p,.b .quiet,.b .fold-text,.b .why-p,.b .std-p,.b .qa .muted-p{color:var(--c-ink-soft)}
-.b .lead,.b .statement{font-size:var(--t-lead);line-height:var(--lh-lead);font-weight:var(--w-light);text-align:center}
-.b .head{text-align:center;max-width:var(--col-narrow)}
-.b .head .muted-p{margin-left:auto;margin-right:auto}
-.b .sec{padding-top:var(--s6)}
+/* меню на весь экран: крупные пункты на линиях */
+.d .nav.open .nav-links{gap:0}
+.d .nav.open .nav-links a{display:block;font-size:var(--t-d-h3);line-height:var(--lh-d-h3);font-weight:var(--w-regular);text-transform:none;letter-spacing:var(--tracking-d);padding:var(--s2) 0;border-bottom:1px solid var(--c-d-line)}
 
-/* первый экран: кадр, текст по центру */
-.b .hero{color:var(--c-on-night)}
-.b .link{align-self:center}
-.b .model-body .stack{align-items:center}
-.b .hero-in,.b .crumbs-top{text-align:center;justify-content:center}
-.b .hero-sub{margin-left:auto;margin-right:auto}
-.b .hero-cta{justify-content:center}
+/* типографика Лёхи: крупно, тонко, обычными буквами, по левому краю */
+.d .h-xl{font-size:var(--t-d-h1);line-height:var(--lh-d-h1);font-weight:var(--w-regular);text-transform:none;letter-spacing:var(--tracking-d)}
+.d .h-l{font-size:var(--t-d-h2);line-height:var(--lh-d-h2);font-weight:var(--w-regular);text-transform:none;letter-spacing:var(--tracking-d)}
+.d .h-s,.d .h-m{font-size:var(--t-d-h3);line-height:var(--lh-d-h3);font-weight:var(--w-regular);text-transform:none;letter-spacing:var(--tracking-d)}
+.d .muted-p,.d .quiet,.d .fold-text{color:var(--c-d-muted)}
+.d .head{margin-bottom:var(--s5)}
+.d .head .muted-p{margin-top:var(--s3);max-width:var(--measure)}
 
-/* вступление узкой колонкой по центру */
-.b .intro{max-width:var(--col-narrow);text-align:center}
-.b .intro .fold,.b .intro .quiet{text-align:center}
+/* ссылки и кнопки: тонкая линия цвета золота, кнопки-таблетки бренда остаются для заказа */
+.d .link,.d .fold-btn{color:var(--c-d-ink);border-bottom:1px solid var(--c-d-gold);font-weight:var(--w-semi)}
+.d .pill-white{background:var(--c-d-ink);color:var(--c-d-paper)}
+.d .pill-line{background:transparent;color:var(--c-d-ink);border-color:var(--c-d-ink)}
+.d .pill-line:hover{background:var(--c-d-ink);color:var(--c-d-paper)}
+.d .nav-cta.on-dark{background:var(--c-d-on-dark);color:var(--c-d-ink)}
 
-/* модели */
-.b .model-switch button{color:var(--c-ink);border-color:var(--c-ink)}
-.b .model-switch button[aria-selected=true]{background:var(--c-ink);color:var(--c-paper)}
-.b .model-name{text-align:center}
-.b .latin-s{color:var(--c-b-link)}
-.b .latin-xl{color:var(--c-ink)}
-.b .model-body{max-width:var(--col-narrow)}
-.b .specs,.b .specs li{border-color:var(--c-line);color:var(--c-ink-soft);text-align:center}
+/* первый экран: главное - кадр; H1 сдержанно внизу */
+.d .hero{color:var(--c-d-on-dark)}
+.d .hero .pill-white{background:var(--c-d-on-dark);color:var(--c-d-ink)}
+.d .crumbs{color:var(--c-d-on-dark)}
+.d .hero-sub{opacity:.9}
 
-/* карточки исчезают: текст прямо на белом */
-.b .card{background:transparent;border-radius:0;overflow:visible}
-.b .calc,.b .card-in{text-align:center;align-items:center}
-.b .row2{margin-left:auto;margin-right:auto}
+/* вступление: одна фраза крупно, SEO-абзац мелко серым */
+.d .intro{display:grid;gap:var(--s4)}
+.d .statement{font-size:var(--t-d-lead);line-height:var(--lh-d-lead);font-weight:var(--w-regular);letter-spacing:var(--tracking-tight)}
+.d .intro .fold-text,.d .intro .quiet{font-size:var(--t-d-quiet);line-height:var(--lh-d-quiet)}
+.d .bleed-tall{margin-top:var(--s6)}
 
-/* карусели: крупные карточки, фото во всю ширину карточки, текст по центру под кадром, точки */
-.b .slide-ph,.b .std-ph{border-radius:var(--r-card);overflow:hidden}
-.b .std-ph{aspect-ratio:4/5}
-.b .std-cap{align-items:center;text-align:center}
-.b .rail-dots i{background:var(--c-line)}
-.b .rail-dots i.on{background:var(--c-ink)}
-.b .sec-light{background:var(--c-mist);color:var(--c-ink)}
+/* модели: кадр, название, характеристики на линиях */
+.d .model-switch button{color:var(--c-d-ink);border-color:var(--c-d-ink)}
+.d .model-switch button[aria-selected=true]{background:var(--c-d-ink);color:var(--c-d-paper)}
+.d .latin-s{color:var(--c-d-gold-dark)}
+.d .latin-xl{color:var(--c-d-ink)}
+.d .specs,.d .specs li{border-color:var(--c-d-line);color:var(--c-d-muted)}
 
-/* форма на теплой полосе */
-.b [data-block=form]{background:var(--c-mist);padding-bottom:var(--s6)}
-.b .form-card{max-width:var(--col-narrow);margin:0 auto}
-.b .form-ph{border-radius:var(--r-card);overflow:hidden}
-.b .field{border-color:var(--c-line)}
-.b .field input,.b .field textarea,.b .field-code{color:var(--c-ink)}
-.b .field-label{color:var(--c-ink-soft)}
-.b .form-ok{color:var(--c-b-link)}
+/* карточки исчезают: текст прямо на бумаге */
+.d .card{background:transparent;border-radius:0}
+.d .card-in{padding:var(--s3) 0}
+.d .calc{padding:0}
+.d .calc-ph{display:block;position:relative;aspect-ratio:4/3;overflow:hidden;margin-bottom:var(--s4)}
+.d [data-block=calc]{background:var(--c-d-paper-2);padding-bottom:var(--s6)}
+.d [data-block=calc] .muted-p{color:var(--c-d-muted-2)}
+.d [data-block=calc] .h-l{margin-bottom:var(--s3)}
 
-/* качество и «почему»: по центру, без колонок */
-.b .num-list{max-width:var(--col-narrow);text-align:center}
-.b .num-item{border-color:var(--c-line)}
-.b .num-item::before{color:var(--c-b-link)}
-.b .why{max-width:var(--col-narrow);grid-template-columns:1fr 1fr;gap:var(--s5) var(--s3);text-align:center}
-.b .why-c{border-top:0;padding-top:0;display:flex;flex-direction:column;align-items:center}
-.b .pict{display:block;width:var(--s5);height:var(--s5);color:var(--c-b-link);margin-bottom:var(--s2)}
-.b .why .h-s{color:var(--c-ink);font-size:var(--t-small);line-height:var(--lh-small)}
-.b .why .muted-p{font-size:var(--t-small);line-height:var(--lh-small)}
+/* сценарии: мозаика кадров на темном, без карусели */
+.d [data-block=scenarios]{background:var(--c-d-dark);color:var(--c-d-on-dark);padding-bottom:var(--s7)}
+.d [data-block=scenarios] .muted-p{color:var(--c-d-dark-muted)}
+.d [data-block=scenarios] .link{color:var(--c-d-on-dark);border-color:var(--c-d-dark-gold)}
+.d [data-block=scenarios] .rail{display:grid;grid-template-columns:1fr;gap:var(--s5);overflow:visible;max-width:calc(var(--wrap) + var(--gutter) * 2);margin:0 auto}
+.d [data-block=scenarios] .slide-ph{aspect-ratio:4/5}
+.d [data-block=scenarios] .slide:nth-child(2) .slide-ph,.d [data-block=scenarios] .slide:nth-child(4) .slide-ph{aspect-ratio:1/1}
+.d .rail-dots{display:none}
 
-/* корпоративный блок: кадр, под ним текст, без надписей на фото */
-.b .frame-sec{display:block;min-height:0;background:var(--c-paper)}
-.b .frame-sec > .cover{position:relative;height:auto;aspect-ratio:4/5}
-.b .frame-sec .shade{display:none}
-.b .frame-in{text-align:left;max-width:var(--col-narrow);margin:0 auto;padding-top:var(--s5)}
-.b .frame-in .h-l{text-align:left}
-.b .frame-in .pill{width:auto;height:auto;padding:0 0 var(--s1);border:0;border-bottom:1px solid var(--c-b-link);border-radius:0;color:var(--c-b-link);background:transparent}
-.b .frame-p{color:var(--c-ink-soft);opacity:1}
+/* форма на второй бумаге */
+.d [data-block=form]{background:var(--c-d-paper-2);padding-bottom:var(--s6)}
+.d [data-block=form] .muted-p{color:var(--c-d-muted-2)}
+.d .form-ph{aspect-ratio:4/5}
+.d .field{border-color:var(--c-d-line)}
+.d .field-label{color:var(--c-d-muted-2)}
+.d .field input,.d .field textarea,.d .field-code{color:var(--c-d-ink)}
+.d .field input::placeholder{color:var(--c-d-muted-2)}
+.d .ask-form .pill{width:auto;align-self:flex-start;padding:0 var(--s5)}
+.d .form-ok{color:var(--c-d-gold-dark)}
 
-/* вопросы и приложение */
-.b .qa-list{padding:0;max-width:var(--col-narrow);margin:0 auto;border-top:1px solid var(--c-line)}
-.b .qa{border-color:var(--c-line)}
-.b .qa:last-child{border-bottom:1px solid var(--c-line)}
-.b .qa summary::after{color:var(--c-ink)}
-.b [data-block=app] .card{max-width:var(--col-narrow);margin:0 auto}
+/* стандарты: одно большое фото + нумерованный список 01-04 */
+.d [data-block=standards] .rail{display:grid;grid-template-columns:1fr;overflow:visible;padding:0 var(--gutter);counter-reset:s;max-width:calc(var(--wrap) + var(--gutter) * 2);margin:0 auto}
+.d .std{display:contents}
+.d .std-ph{display:none}
+.d .std:first-child .std-ph{display:block;position:relative;aspect-ratio:4/5;margin-bottom:var(--s4)}
+.d .std-cap{counter-increment:s;padding:var(--s3) 0;border-top:1px solid var(--c-d-line);display:grid;grid-template-columns:var(--s4) 1fr;column-gap:var(--s2)}
+.d .std:last-child .std-cap{border-bottom:1px solid var(--c-d-line)}
+.d .std-cap::before{content:counter(s,decimal-leading-zero);grid-row:span 2;font-size:var(--t-label);line-height:var(--lh-d-h3);color:var(--c-d-gold-dark);font-weight:var(--w-semi)}
+.d .std-cap .h-s{font-size:var(--t-h3);line-height:var(--lh-h3)}
+.d .std-p{color:var(--c-d-muted);font-size:var(--t-body);line-height:var(--lh-body)}
 
-/* подвал: родной черный, как в нынешнем варианте */
-.b .footer{background:var(--c-night);color:var(--c-on-night)}
-.b .footer .logo-on-dark{display:block}
-.b .footer .logo-on-light{display:none}
+/* корпоративный: кадр и колонка текста на бумаге */
+.d .frame-sec{display:block;min-height:0;margin-top:var(--s7);background:var(--c-d-paper);color:var(--c-d-ink)}
+.d .frame-sec > .cover{position:relative;height:auto;aspect-ratio:4/5}
+.d .frame-sec .shade{display:none}
+.d .frame-in{padding-top:var(--s4);padding-bottom:0}
+.d .frame-p{color:var(--c-d-muted);opacity:1}
+.d .frame-in .pill{width:auto;height:auto;padding:0 0 var(--s1);border:0;border-bottom:1px solid var(--c-d-gold);border-radius:0;background:transparent;color:var(--c-d-ink)}
+
+/* «почему выбирают»: темная глава, тезисы на золотых линиях */
+.d [data-block=why]{background:var(--c-d-dark);color:var(--c-d-on-dark);padding-bottom:var(--s7);margin-top:var(--s7)}
+.d .why{display:grid;grid-template-columns:1fr;gap:0}
+.d .why-c{border-top:1px solid var(--c-d-dark-gold);padding:var(--s3) 0}
+.d .why .h-s{color:var(--c-d-on-dark)}
+.d .why .muted-p{color:var(--c-d-dark-muted)}
+
+/* тихая SEO-глава: мелкий серый текст, открыт целиком, без кнопок */
+.d [data-block=quality]{background:var(--c-d-paper-2);padding-bottom:var(--s6)}
+.d [data-block=quality] .h-l{font-size:var(--t-d-h3);line-height:var(--lh-d-h3)}
+.d .num-list{display:grid;grid-template-columns:1fr;gap:var(--s3)}
+.d .num-item{border-top:1px solid var(--c-d-line);padding-top:var(--s2)}
+.d .num-item::before{display:none}
+.d .num-item .h-m{font-size:var(--t-body);line-height:var(--lh-body);font-weight:var(--w-semi);letter-spacing:normal}
+.d [data-block=quality] .fold-text{display:block;-webkit-line-clamp:unset;font-size:var(--t-d-quiet);line-height:var(--lh-d-quiet);color:var(--c-d-muted-2)}
+.d [data-block=quality] .fold-btn{display:none}
+.d .pause{margin-top:0}
+
+/* вопросы */
+.d .qa-list{padding:0;border-top:1px solid var(--c-d-ink)}
+.d .qa{border-color:var(--c-d-line)}
+.d .qa summary{font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-regular)}
+.d .qa summary::after{color:var(--c-d-gold-dark)}
+.d [data-block=faq]{padding-bottom:var(--s6)}
+
+/* приложение на теплом фоне */
+.d [data-block=app]{background:var(--c-d-app);padding-bottom:var(--s6)}
+.d [data-block=app] .muted-p{color:var(--c-d-muted-2)}
+.d [data-block=app] .app-ph{aspect-ratio:1/1}
+
+/* подвал - родной черный */
+.d .footer{background:var(--c-d-dark);color:var(--c-d-on-dark)}
+.d .footer .logo-on-dark{display:block}
+.d .footer .logo-on-light{display:none}
 
 @media(min-width:900px){
-  .b .rail{grid-template-columns:repeat(3,1fr);gap:var(--s3)}
-  .b .model{grid-template-columns:1fr}
-  .b .why{grid-template-columns:repeat(4,1fr);max-width:var(--wrap)}
-  .b .num-list{grid-template-columns:1fr 1fr;max-width:var(--wrap)}
-  .b .frame-sec > .cover{aspect-ratio:21/9}
+  .d .intro{grid-template-columns:7fr 5fr;align-items:end;gap:var(--s6)}
+  .d [data-block=scenarios] .rail{grid-template-columns:repeat(12,1fr);gap:var(--s2)}
+  .d [data-block=scenarios] .slide:nth-child(1){grid-column:span 7}
+  .d [data-block=scenarios] .slide:nth-child(2){grid-column:span 5}
+  .d [data-block=scenarios] .slide:nth-child(3){grid-column:2 / span 5}
+  .d [data-block=scenarios] .slide:nth-child(4){grid-column:span 6}
+  .d [data-block=scenarios] .slide:nth-child(5){grid-column:4 / span 6}
+  .d [data-block=standards] .rail{grid-template-columns:7fr 5fr;column-gap:var(--s6)}
+  .d .std:first-child .std-ph{grid-column:1;grid-row:1 / span 4;position:sticky;top:calc(var(--nav-h) + var(--s3));margin:0;aspect-ratio:auto;min-height:var(--model-h)}
+  .d .std-cap{grid-column:2}
+  .d .frame-sec{display:grid;grid-template-columns:5fr 7fr;align-items:center;gap:var(--s6);padding:0 var(--gutter)}
+  .d .frame-sec > .cover{grid-column:2;grid-row:1;aspect-ratio:4/3}
+  .d .frame-in{grid-column:1;grid-row:1;padding:0}
+  .d .why{grid-template-columns:repeat(4,1fr);column-gap:var(--s4)}
+  .d .num-list{grid-template-columns:1fr 1fr;column-gap:var(--s6)}
+  .d .form-card,.d [data-block=app] .card{display:grid;grid-template-columns:1fr 1fr;gap:var(--s6);align-items:center}
+  .d .form-ph,.d [data-block=app] .app-ph{aspect-ratio:4/5;min-height:0}
 }
 </style>
 <script type="application/ld+json">{
@@ -365,7 +408,7 @@ ul,ol{list-style:none}
   "serviceType": "Maybach Rental",
   "url": "https://prime-ride.ru/mersedes/majbah"
 }</script><script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Главная","item":"https://prime-ride.ru"},{"@type":"ListItem","position":2,"name":"Mercedes-Benz","item":"https://prime-ride.ru/mersedes"},{"@type":"ListItem","position":3,"name":"Maybach","item":"https://prime-ride.ru/mersedes/majbah"}]}</script>
-</head><body class="b">
+</head><body class="d">
 <header class="nav" data-block="nav">
   <a class="logo" href="/"><img class="logo-img logo-on-dark" src="img/logo-white.svg?v=c6e825f1" alt="PRIME RIDE"><img class="logo-img logo-on-light" src="img/logo-black.svg?v=17954f8d" alt="PRIME RIDE"></a>
   <nav aria-label="Навигационное меню"><ul class="nav-links"><li><a class="" href="/services">Сервис PRIME</a></li><li><a class="" href="/about">Наша философия</a></li><li><a class="" href="/classes">Классы</a></li><li><a class="" href="/private">Статус Private</a></li><li><a class="" href="/driver">Академия</a></li><li><a class="" href="/companies">Для бизнеса</a></li><li><a class="" href="/contacts">Контакты</a></li></ul></nav>
@@ -430,11 +473,6 @@ ul,ol{list-style:none}
     <p class="form-ok" hidden>Спасибо, ваше сообщение успешно отправлено, скоро мы с вами свяжемся!</p>
   </form></div>
 </div></div></section>
-<section class="pause" data-block="pause"><img class="cover" src="img2/pause.jpg?v=1eef3dfd" alt=""></section>
-<section class="sec" data-block="quality">
-  <div class="box head"><h2 class="h-l">PRIME RIDE это качество сервиса, которое вы ожидаете:</h2></div>
-  <ol class="box num-list"><li class="num-item"><h3 class="h-m">Флагман Mercedes-Benz</h3><div class="fold"><p class="fold-text" id="fold-2">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-2">Читать полностью</button></div></li><li class="num-item"><h3 class="h-m">Водители высшей категории</h3><div class="fold"><p class="fold-text" id="fold-3">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-3">Читать полностью</button></div></li><li class="num-item"><h3 class="h-m">Для любых<br>сценариев</h3><div class="fold"><p class="fold-text" id="fold-4">Майбах в аренду с водителем для деловых встреч, частных мероприятий, междугородних поездок. Межгород — маршрут согласовывается заранее. Для мероприятий — появление, которое создает атмосферу до того, как вы вошли. Бронирование круглосуточно.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-4">Читать полностью</button></div></li><li class="num-item"><h3 class="h-m">Пространство власти и тишины</h3><div class="fold"><p class="fold-text" id="fold-5">Мерседес Майбах с водителем от PRIME RIDE — среда, в которой внешнего мира не существует. Переговоры в пути, звонки, тишина перед важным решением. Аренда Maybach с водителем: вы сосредоточены на важном — все остальное уже решено.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-5">Читать полностью</button></div></li></ol>
-</section>
 <section class="sec sec-light" data-block="standards">
   <div class="box head"><h2 class="h-l">Стандарты наших водителей</h2><p class="muted-p">Наши пассажиры ожидают безупречного сервиса и внимательного отношения к деталям. Эти ожидания лежат в основе стандартов PRIME RIDE и обязательны для каждого водителя без исключений.</p></div>
   <div class="rail"><figure class="slide card std"><div class="std-ph"><img class="cover" src="img2/st1.jpg?v=c442a0c7" alt=""></div><figcaption class="std-cap"><span class="h-s">Статус</span><span class="std-p">Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</span></figcaption></figure><figure class="slide card std"><div class="std-ph"><img class="cover" src="img2/st2.jpg?v=5c259117" alt=""></div><figcaption class="std-cap"><span class="h-s">Знания</span><span class="std-p">Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</span></figcaption></figure><figure class="slide card std"><div class="std-ph"><img class="cover" src="img2/st3.jpg?v=016f1667" alt=""></div><figcaption class="std-cap"><span class="h-s">Сервис</span><span class="std-p">Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</span></figcaption></figure><figure class="slide card std"><div class="std-ph"><img class="cover" src="img2/st4.jpg?v=5c259117" alt=""></div><figcaption class="std-cap"><span class="h-s">Навыки</span><span class="std-p">Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</span></figcaption></figure></div><div class="box rail-dots" aria-hidden="true"></div>
@@ -445,6 +483,11 @@ ul,ol{list-style:none}
 <section class="sec" data-block="why">
   <div class="box head"><h2 class="h-l">Почему клиенты выбирают PRIME RIDE</h2></div>
   <ol class="box why"><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 19 24 11l18 8-18 8z"/><path d="M14 23v9c0 2 4.5 4.5 10 4.5s10-2.5 10-4.5v-9"/><path d="M42 19v10"/></svg><h3 class="h-s">Собственный учебный центр</h3><p class="muted-p">Единый стандарт качества, без случайных водителей из агрегатора</p></li><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 6h15l7 7v14"/><path d="M29 6v7h7"/><path d="M14 6v30h9"/><path d="M33 29l7 3v5c0 4-3 6.5-7 8-4-1.5-7-4-7-8v-5z"/></svg><h3 class="h-s">NDA с каждым водителем</h3><p class="muted-p">Юридическая гарантия конфиденциальности</p></li><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M25 7h14v14L22 38 8 24z"/><circle cx="32" cy="14" r="2.2"/><path d="M17 25l6 6"/></svg><h3 class="h-s">Предсказуемая стоимость</h3><p class="muted-p">никаких сюрпризов с коэффициентами и «повышенным спросом»</p></li><li class="why-c"><svg class="pict" viewBox="0 0 48 48" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 30v-6l4-8h22l6 8h3v6z"/><circle cx="14" cy="31" r="3.5"/><circle cx="34" cy="31" r="3.5"/><path d="M19 9l3 3 6-6"/></svg><h3 class="h-s">Надежный<br>автопарк</h3><p class="muted-p">Каждая машина проходит ежедневный контроль</p></li></ol>
+</section>
+<section class="pause" data-block="pause"><img class="cover" src="img2/pause.jpg?v=1eef3dfd" alt=""></section>
+<section class="sec" data-block="quality">
+  <div class="box head"><h2 class="h-l">PRIME RIDE это качество сервиса, которое вы ожидаете:</h2></div>
+  <ol class="box num-list"><li class="num-item"><h3 class="h-m">Флагман Mercedes-Benz</h3><div class="fold"><p class="fold-text" id="fold-2">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-2">Читать полностью</button></div></li><li class="num-item"><h3 class="h-m">Водители высшей категории</h3><div class="fold"><p class="fold-text" id="fold-3">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-3">Читать полностью</button></div></li><li class="num-item"><h3 class="h-m">Для любых<br>сценариев</h3><div class="fold"><p class="fold-text" id="fold-4">Майбах в аренду с водителем для деловых встреч, частных мероприятий, междугородних поездок. Межгород — маршрут согласовывается заранее. Для мероприятий — появление, которое создает атмосферу до того, как вы вошли. Бронирование круглосуточно.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-4">Читать полностью</button></div></li><li class="num-item"><h3 class="h-m">Пространство власти и тишины</h3><div class="fold"><p class="fold-text" id="fold-5">Мерседес Майбах с водителем от PRIME RIDE — среда, в которой внешнего мира не существует. Переговоры в пути, звонки, тишина перед важным решением. Аренда Maybach с водителем: вы сосредоточены на важном — все остальное уже решено.</p><button type="button" class="fold-btn" aria-expanded="false" aria-controls="fold-5">Читать полностью</button></div></li></ol>
 </section>
 <section class="sec" data-block="faq"><div class="box">
   <h2 class="h-l head">Вопросы и ответы</h2>
