@@ -266,6 +266,24 @@
     .lx-lead{color:#4d4b47;margin:0 0 34px}
     .lx-scen-h{font-size:20px;letter-spacing:-.02em;margin:0 0 10px;color:#f4f1e9}
     .lx-scen-link{margin-top:14px;color:#f4f1e9;font-size:13px}
+    .lx-cut-vis{position:relative;padding-right:34px}
+    .lx-cut-vis > *:first-child{margin-top:0}
+    .lx-cut .lx-arrow{position:absolute;right:0;top:4px;bottom:auto;width:26px;height:26px}
+    .lx-cut .lx-arrow svg{width:18px;height:18px}
+    .lx-cut-body{display:none;margin-top:18px}
+    .lx-cut-body p{margin:0 0 14px}
+    .lx-cut.open .lx-cut-body{display:block}
+    .lx-cut.open .lx-arrow{display:none}
+    .scenarios .lx-cut-body p{color:#b7b3aa}
+    .section-head .lx-cut-body p,.standards-copy .lx-cut-body p,.experience-feature .lx-cut-body p{color:#4d4b47}
+    .lx-lead{margin:0}
+    .standards-copy .lx-cut{margin-bottom:34px}
+    .lx-specs{list-style:none;padding:0;margin:12px 0 0;border-top:1px solid var(--line)}
+    .lx-specs li{padding:9px 0;border-bottom:1px solid var(--line);color:var(--muted);font-size:14px;line-height:1.45}
+    .lx-switch{display:none;gap:8px;margin-bottom:24px}
+    .lx-switch button{flex:1;height:42px;border-radius:100px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
+    .lx-switch button[aria-selected=true]{background:var(--ink);color:var(--paper)}
+    @media (max-width:900px){.lx-switch{display:flex}.vehicle-card.lx-off{display:none}}
     .lx-card-links{margin-top:16px}
     .lx-narrow{display:none}
     .scenario-grid .scenario:nth-child(5){grid-column:4/span 6}
@@ -359,9 +377,7 @@
       <div class="shell intro-grid">
         <div class="eyebrow reveal">Maybach by PRIME RIDE</div>
         <div class="intro-copy reveal">
-          <p class="body-lg">Mercedes-Benz Maybach S-Class — абсолют роскоши и технологий. Автомобиль, в котором каждая деталь существует ровно для одного: чтобы вы ни на секунду не отвлекались от главного.</p>
-          <div class="lx-fold"><p class="small lx-fold-text" id="lxf1">Аренда Майбаха в Москве — это выбор пространства для важных решений, а не просто автомобиля. Удлиненная база, тишина, изолирующая от города, атмосфера, в которой переговоры ведутся естественно. Аренда Мерседес Майбах с водителем PRIME RIDE — подача вовремя, сервис по умолчанию.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxf1" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div>
-          <p class="small lx-line">Заказать Майбах с водителем — через приложение PRIME RIDE, круглосуточно.</p>
+          <div class="lx-cut"><div class="lx-cut-vis"><p class="body-lg">Mercedes-Benz Maybach S-Class — абсолют роскоши и технологий. Автомобиль, в котором каждая деталь существует ровно для одного: чтобы вы ни на секунду не отвлекались от главного.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxc1" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div><div class="lx-cut-body" id="lxc1"><p class="small">Аренда Майбаха в Москве — это выбор пространства для важных решений, а не просто автомобиля. Удлиненная база, тишина, изолирующая от города, атмосфера, в которой переговоры ведутся естественно. Аренда Мерседес Майбах с водителем PRIME RIDE — подача вовремя, сервис по умолчанию.</p><p class="small">Заказать Майбах с водителем — через приложение PRIME RIDE, круглосуточно.</p></div></div>
         </div>
       </div>
     </section>
@@ -373,22 +389,22 @@
     <section class="vehicles" id="classes">
       <div class="shell">
         <div class="section-head">
-          <div class="reveal"><div class="eyebrow">PRIME RIDE это качество сервиса, которое вы ожидаете:</div><h2 class="h2" style="margin-top:16px">Флагман Mercedes-Benz</h2></div>
-          <div class="body reveal"><div class="lx-fold"><p class="body lx-fold-text" id="lxf2">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxf2" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div></div>
+          <div class="reveal"><div class="eyebrow">PRIME RIDE это качество сервиса, которое вы ожидаете:</div><div class="lx-cut"><div class="lx-cut-vis"><h2 class="h2" style="margin-top:16px">Флагман Mercedes-Benz</h2><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxc2" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div><div class="lx-cut-body" id="lxc2"><p class="body">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p></div></div></div>
         </div>
+        <div class="lx-switch" role="tablist"><button type="button" role="tab" data-m="0" aria-selected="true">Luxury</button><button type="button" role="tab" data-m="1" aria-selected="false">Premium</button></div>
         <div class="vehicle-grid">
-          <article class="vehicle-card large reveal">
+          <article class="vehicle-card large reveal" data-m="0">
             <div class="vehicle-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/lux.jpg?v=54f634cc" alt="Mercedes-Benz Maybach S (Z223)" loading="lazy" /></div>
             <div class="vehicle-meta">
-              <div><h3 class="h3">Mercedes-Benz Maybach S (Z223)</h3><p>Вершина комфорта и технологий · До 3 пассажиров · Багаж до 500 литров (3 чемодана) · Задние кресла с отклонением спинки до 43,5° · Складные столики на задних сиденьях · 4-зонный климат-контроль</p>
+              <div><h3 class="h3">Mercedes-Benz Maybach S (Z223)</h3><ul class="lx-specs"><li>Вершина комфорта и технологий</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Задние кресла с отклонением спинки до 43,5°</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
                 <div class="store-links lx-card-links"><a class="link" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/majbah/z223">Подробнее</a></div></div>
               <div class="vehicle-tag">Luxury</div>
             </div>
           </article>
-          <article class="vehicle-card small reveal">
+          <article class="vehicle-card small reveal lx-off" data-m="1">
             <div class="vehicle-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/prem.jpg?v=01790826" alt="Mercedes-Benz Maybach (W222)" loading="lazy" /></div>
             <div class="vehicle-meta">
-              <div><h3 class="h3">Mercedes-Benz Maybach (W222)</h3><p>Проверенный временем престиж · До 3 пассажиров · Багаж до 500 литров (3 чемодана) · Термо-подстаканники с нагревом и охлаждением · Складные столики на задних сиденьях · 4-зонный климат-контроль</p>
+              <div><h3 class="h3">Mercedes-Benz Maybach (W222)</h3><ul class="lx-specs"><li>Проверенный временем престиж</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Термо-подстаканники с нагревом и охлаждением</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
                 <div class="store-links lx-card-links"><a class="link" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div>
               <div class="vehicle-tag">Premium</div>
             </div>
@@ -409,8 +425,7 @@
             <div class="copy">
               <div>
                 <div class="eyebrow">Конфиденциальность</div>
-                <h3 class="h3" style="margin-top:14px">Внешнего мира не существует.</h3>
-                <p class="body">Мерседес Майбах с водителем от PRIME RIDE — среда, в которой внешнего мира не существует. Переговоры в пути, звонки, тишина перед важным решением. Аренда Maybach с водителем: вы сосредоточены на важном — все остальное уже решено.</p>
+                <div class="lx-cut"><div class="lx-cut-vis"><h3 class="h3" style="margin-top:14px">Внешнего мира не существует.</h3><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxc3" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div><div class="lx-cut-body" id="lxc3"><p class="body">Мерседес Майбах с водителем от PRIME RIDE — среда, в которой внешнего мира не существует. Переговоры в пути, звонки, тишина перед важным решением. Аренда Maybach с водителем: вы сосредоточены на важном — все остальное уже решено.</p></div></div>
               </div>
               <a class="link" href="#standards">Стандарты сервиса</a>
             </div>
@@ -430,8 +445,7 @@
         <div class="standards-copy reveal">
           <div class="eyebrow">Стандарты наших водителей</div>
           <h2 class="h2">Водители высшей категории</h2>
-          <div class="lx-fold"><p class="body lx-fold-text" id="lxf3">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxf3" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div>
-          <p class="body lx-lead">Наши пассажиры ожидают безупречного сервиса и внимательного отношения к деталям. Эти ожидания лежат в основе стандартов PRIME RIDE и обязательны для каждого водителя без исключений.</p>
+          <div class="lx-cut"><div class="lx-cut-vis"><p class="body lx-lead">Наши пассажиры ожидают безупречного сервиса и внимательного отношения к деталям. Эти ожидания лежат в основе стандартов PRIME RIDE и обязательны для каждого водителя без исключений.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxc4" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div><div class="lx-cut-body" id="lxc4"><p class="body">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p></div></div>
           <div class="standard-row"><div class="num">01</div><div><h3>Статус</h3><p>Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</p></div></div><div class="standard-row"><div class="num">02</div><div><h3>Знания</h3><p>Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</p></div></div><div class="standard-row"><div class="num">03</div><div><h3>Сервис</h3><p>Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</p></div></div><div class="standard-row"><div class="num">04</div><div><h3>Навыки</h3><p>Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</p></div></div>
         </div>
       </div>
@@ -441,7 +455,7 @@
       <div class="shell">
         <div class="scenarios-head reveal">
           <div><div class="eyebrow">Один класс, разные сценарии</div><h2 class="h2" style="margin-top:16px">Вы выбираете задачу. Остальное — за нами: подача, маршрут, сервис.</h2></div>
-          <div class="body"><p class="lx-scen-h">Для любых<br> сценариев</p><div class="lx-fold"><p class="body lx-fold-text" id="lxf4">Майбах в аренду с водителем для деловых встреч, частных мероприятий, междугородних поездок. Межгород — маршрут согласовывается заранее. Для мероприятий — появление, которое создает атмосферу до того, как вы вошли. Бронирование круглосуточно.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxf4" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.3"/></svg></button></div></div>
+          <div class="body"><div class="lx-cut"><div class="lx-cut-vis"><p class="lx-scen-h">Для любых<br> сценариев</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxc5" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div><div class="lx-cut-body" id="lxc5"><p class="body">Майбах в аренду с водителем для деловых встреч, частных мероприятий, междугородних поездок. Межгород — маршрут согласовывается заранее. Для мероприятий — появление, которое создает атмосферу до того, как вы вошли. Бронирование круглосуточно.</p></div></div></div>
         </div>
         <div class="scenario-grid">
           <article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/sc4.jpg?v=55014861" alt="Деловые поездки по городу" loading="lazy" /></div><h3>Деловые поездки по городу</h3><p>Тишина для звонков и мыслей. Сервис — чтобы не отвлекаться.</p><a class="link lx-scen-link" href="/goapp">Заказать в приложении</a></article><article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/sc5.jpg?v=686c0a84" alt="Трансфер аэропорт / вокзал" loading="lazy" /></div><h3>Трансфер аэропорт / вокзал</h3><p>Встреча по времени и комфортная дорога. Спокойный старт или финал поездки.</p><a class="link lx-scen-link" href="/goapp">Заказать в приложении</a></article><article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/st3.jpg?v=016f1667" alt="Водитель на день" loading="lazy" /></div><h3>Водитель на день</h3><p>Маршрут с паузами и ожиданиями. Машина рядом — когда нужно.</p><a class="link lx-scen-link" href="/goapp">Заказать в приложении</a></article><article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/form.jpg?v=05185d4f" alt="Мероприятия" loading="lazy" /></div><h3>Мероприятия</h3><p>Подача и внешний вид. Впечатление начинается до входа.</p><a class="link lx-scen-link" href="/goapp">Заказать в приложении</a></article><article class="scenario reveal"><div class="pic"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/q2.jpg" alt="Поездки для бизнеса" loading="lazy" /></div><h3>Поездки для бизнеса</h3><p>Гибкие условия оплаты и прозрачная отчетность, поездки с особыми корпоративными привилегиями</p><a class="link lx-scen-link" href="/companies">Подробнее</a></article>
@@ -567,7 +581,10 @@
         [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
       sg.addEventListener('scroll', upd, { passive: true }); upd(); }
 
-    document.querySelectorAll('.lx-arrow').forEach(b => b.addEventListener('click', () => { const f = b.closest('.lx-fold'); const o = f.classList.toggle('open'); b.setAttribute('aria-expanded', String(o)); b.setAttribute('aria-label', o ? 'Свернуть' : 'Развернуть'); }));
+    document.querySelectorAll('.lx-cut .lx-arrow').forEach(b => b.addEventListener('click', () => { b.closest('.lx-cut').classList.add('open'); b.setAttribute('aria-expanded', 'true'); }));
+    document.querySelectorAll('.lx-switch button').forEach(b => b.addEventListener('click', () => {
+      document.querySelectorAll('.lx-switch button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
+      document.querySelectorAll('.vehicle-card[data-m]').forEach(c => c.classList.toggle('lx-off', c.dataset.m !== b.dataset.m)); }));
 
     const lxf = document.querySelector('.lx-form');
     lxf.addEventListener('submit', ev => { ev.preventDefault(); lxf.querySelector('.lx-ok').hidden = false; });
