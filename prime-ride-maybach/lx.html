@@ -247,10 +247,10 @@
     }
 
     @media (max-width:900px){
-      .scenario-grid{display:flex;gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;margin:0 calc(var(--pad) * -1);padding:0 var(--pad);scroll-padding:0 var(--pad);scrollbar-width:none}
+      .scenario-grid{display:flex;gap:var(--pad);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
       .scenario-grid::-webkit-scrollbar{display:none}
-      .scenario-grid .scenario{flex:0 0 82%;scroll-snap-align:start}
-      .scenario .pic,.scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:auto;min-height:0;aspect-ratio:4/5}
+      .scenario-grid .scenario{flex:0 0 100%;scroll-snap-align:start}
+      .scenario .pic,.scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:68svh;min-height:470px}
       .lx-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
       .lx-dots i{display:block;width:6px;height:6px;border-radius:100px;background:rgba(244,241,233,.28);transition:width .25s,background .25s}
       .lx-dots i.on{width:20px;background:#f4f1e9}
@@ -536,7 +536,7 @@
 
     const sg = document.querySelector('.scenario-grid'), dots = document.querySelector('.lx-dots');
     if (sg && dots) { const n = sg.children.length; for (let k = 0; k < n; k++) dots.appendChild(document.createElement('i'));
-      const upd = () => { const w = sg.children[0].getBoundingClientRect().width + 12; const i = Math.min(n - 1, Math.round(sg.scrollLeft / w));
+      const upd = () => { const w = sg.clientWidth; const i = Math.min(n - 1, Math.round(sg.scrollLeft / w));
         [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
       sg.addEventListener('scroll', upd, { passive: true }); upd(); }
 

@@ -8,8 +8,8 @@ iframe{border:0;border-radius:38px;display:block;width:100%;height:100%;backgrou
 @media(max-width:500px){.wrap{padding:0}.phone{width:100vw;height:100vh;border-radius:0;padding:0}iframe{border-radius:0}}</style></head>
 <body><div class="wrap">
 <div class="sw"><button type="button" data-src="index.html" aria-pressed="true">Нынешний</button><button type="button" data-src="b.html" aria-pressed="false">Как Wheely</button><button type="button" data-src="c.html" aria-pressed="false">Лучшее из двух</button><button type="button" data-src="d.html" aria-pressed="false">По Лёхе</button><button type="button" data-src="lyokha.html" aria-pressed="false">Оригинал Лёхи</button><button type="button" data-src="lx.html" aria-pressed="false">Лёха + наши тексты</button></div>
-<div class="phone"><iframe id="f" src="index.html?v=m24" title="Мобильная версия"></iframe></div></div>
-<script>var V='m24';document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){
+<div class="phone"><iframe id="f" src="index.html?v=m25" title="Мобильная версия"></iframe></div></div>
+<script>var V='m25';document.querySelectorAll('.sw button').forEach(function(b){b.addEventListener('click',function(){
 document.querySelectorAll('.sw button').forEach(function(x){x.setAttribute('aria-pressed',String(x===b));});
 document.getElementById('f').src=b.dataset.src+'?v='+V;try{history.replaceState(null,'','#'+b.dataset.src.replace('.html','').replace('index','a'));}catch(e){}});});
 var H={'#b':1,'#c':2,'#d':3,'#lyokha':4,'#lx':5};if(H[location.hash]){document.querySelectorAll('.sw button')[H[location.hash]].click();}</script>
