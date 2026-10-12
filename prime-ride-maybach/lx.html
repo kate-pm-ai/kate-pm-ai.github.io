@@ -323,6 +323,17 @@
       .lx-why-grid .lx-why-item{flex:0 0 86%;scroll-snap-align:start}
       /* карточки в каруселях видны сразу: анимация появления не видит краешек следующей, он оставался прозрачным */
       .scenario-grid > .reveal,.lx-why-grid > .reveal{opacity:1;transform:none}
+      /* Кейт 12.10: четыре стандарта водителей горизонтальной прокруткой, портрет остается */
+      .standards-copy{min-width:0}
+      .lx-std-rail{display:flex;max-width:100%;gap:var(--pad);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+      .lx-std-rail::-webkit-scrollbar{display:none}
+      .lx-std-rail .standard-row{flex:0 0 86%;scroll-snap-align:start;border-bottom:1px solid var(--line)}
+      .standards .lx-dots i{background:rgba(19,19,19,.22)}.standards .lx-dots i.on{background:var(--ink)}
+    }
+    @media (min-width:901px){.lx-std-dots{display:none}}
+    /* Кейт 12.10: на телефоне отступы между блоками плотнее (было 86-110), воздух остается */
+    @media (max-width:560px){
+      .intro,.vehicles,.experience,.standards,.scenarios,.corporate,.lx-why,.lx-ask,.lx-faq,.app-section{padding-top:64px;padding-bottom:64px}
     }
     @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}.reveal-img{clip-path:none}}
   </style>
@@ -471,7 +482,8 @@
           <div class="eyebrow">Стандарты наших водителей</div>
           <h2 class="h2">Водители высшей категории</h2>
           <div class="lx-cut"><div class="lx-cut-vis"><p class="body lx-lead">Наши пассажиры ожидают безупречного сервиса и внимательного отношения к деталям. Эти ожидания лежат в основе стандартов PRIME RIDE и обязательны для каждого водителя без исключений.</p><button type="button" class="lx-arrow" aria-expanded="false" aria-controls="lxc3" aria-label="Развернуть"><svg viewBox="0 0 16 16" aria-hidden="true"><path d="M3 6l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.2"/></svg></button></div><div class="lx-cut-body" id="lxc3"><p class="body">Майбах с водителем — это закрытый отбор и обучение в Академии сервиса PRIME RIDE. Только после сертификации и подписания NDA — допуск к работе. Деловой костюм. Безупречные манеры. Аренда Майбаха с водителем — профессионализм, ставший незаметным.</p></div></div>
-          <div class="standard-row"><div class="num">01</div><div><h3>Статус</h3><p>Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</p></div></div><div class="standard-row"><div class="num">02</div><div><h3>Знания</h3><p>Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</p></div></div><div class="standard-row"><div class="num">03</div><div><h3>Сервис</h3><p>Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</p></div></div><div class="standard-row"><div class="num">04</div><div><h3>Навыки</h3><p>Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</p></div></div>
+          <div class="lx-std-rail"><div class="standard-row"><div class="num">01</div><div><h3>Статус</h3><p>Водители имеют все действующие разрешения и документы, необходимые для работы, и соответствуют юридическим требованиям сервиса.</p></div></div><div class="standard-row"><div class="num">02</div><div><h3>Знания</h3><p>Отличное знание города и умение выстраивать оптимальные маршруты обеспечивают точность, спокойствие и предсказуемость каждой поездки.</p></div></div><div class="standard-row"><div class="num">03</div><div><h3>Сервис</h3><p>Внешний вид, манера общения и поведение водителей соответствуют высоким стандартам премиального сервиса PRIME RIDE.</p></div></div><div class="standard-row"><div class="num">04</div><div><h3>Навыки</h3><p>Все водители проходят обучение и регулярную аттестацию, подтверждая свой уровень и соответствие философии сервиса.</p></div></div></div>
+          <div class="lx-dots lx-std-dots" aria-hidden="true"></div>
         </div>
       </div>
     </section>
@@ -601,7 +613,7 @@
       }, {passive:true});
     }
 
-    [['.scenario-grid', '.scenarios .lx-dots'], ['.lx-why-grid', '.lx-why-dots']].forEach(([gq, dq]) => { const sg = document.querySelector(gq), dots = document.querySelector(dq);
+    [['.scenario-grid', '.scenarios .lx-dots'], ['.lx-why-grid', '.lx-why-dots'], ['.lx-std-rail', '.lx-std-dots']].forEach(([gq, dq]) => { const sg = document.querySelector(gq), dots = document.querySelector(dq);
     if (sg && dots) { const n = sg.children.length; for (let k = 0; k < n; k++) dots.appendChild(document.createElement('i'));
       const upd = () => { const c = sg.children; const w = c.length > 1 ? c[1].offsetLeft - c[0].offsetLeft : sg.clientWidth;
         const i = sg.scrollLeft >= sg.scrollWidth - sg.clientWidth - 2 ? n - 1 : Math.min(n - 1, Math.round(sg.scrollLeft / w));
