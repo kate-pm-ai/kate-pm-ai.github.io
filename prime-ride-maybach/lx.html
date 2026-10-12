@@ -336,12 +336,6 @@
       .lx-std-grid::-webkit-scrollbar{display:none}
       .lx-std-card{flex:0 0 86%;scroll-snap-align:start}
       .lx-std-card .pic{height:68svh;min-height:470px;aspect-ratio:auto}
-      /* Кейт 12.10: корпоративный блок - фото фоном, текст на затемнении снизу (проба) */
-      .corporate{position:relative;overflow:hidden}
-      .corporate .corp-image{position:absolute;inset:0;height:auto;min-height:0;grid-row:auto}
-      .corporate .corp-image::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(17,17,17,.15) 0%,rgba(17,17,17,.78) 42%,rgba(17,17,17,.92) 100%)}
-      .corporate .corp-copy{position:relative;z-index:1;padding-top:34svh}
-      .corporate .corp-copy .eyebrow{color:#c2ae84}.corporate .corp-copy .h2{color:#f4f1e9}.corporate .corp-copy p{color:#d6d1c6}.corporate .corp-copy .link{color:#f4f1e9}
       .standards .lx-dots i{background:rgba(19,19,19,.22)}.standards .lx-dots i.on{background:var(--ink)}
     }
     @media (min-width:901px){.lx-std-dots{display:none}}
