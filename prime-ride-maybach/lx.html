@@ -219,7 +219,9 @@
     .lx-form .lx-tel span{font-size:17px;letter-spacing:-.01em;text-transform:none;color:var(--ink);font-weight:400}
     .lx-form input,.lx-form textarea{border:0;background:transparent;outline:0;font:inherit;font-size:17px;color:var(--ink);resize:none;width:100%}
     .lx-form label:focus-within{border-color:var(--gold)}
-    .lx-send{align-self:flex-start;background:transparent;border:0;border-bottom:1px solid var(--gold);cursor:pointer;color:var(--ink);padding:0 0 5px;margin-top:10px}
+    .lx-send{align-self:flex-start;margin-top:14px}
+    .lx-req{font-style:normal;color:var(--gold-dark);font-size:17px;margin-left:auto}
+    .lx-form .lx-tel.lx-err{border-color:#9b3b2e}.lx-form .lx-tel.lx-err .lx-req{color:#9b3b2e}
     .lx-faq{padding:clamp(110px,13vw,190px) 0}
     .lx-faq-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:clamp(38px,7vw,110px);align-items:start}
     .lx-faq-list{border-top:1px solid var(--line)}
@@ -284,17 +286,24 @@
     .lx-switch{display:none;gap:8px;margin-bottom:24px}
     .lx-switch button{flex:1;height:42px;border-radius:100px;border:1px solid var(--ink);background:transparent;color:var(--ink);font:inherit;font-size:11px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer}
     .lx-switch button[aria-selected=true]{background:var(--ink);color:var(--paper)}
-    @media (max-width:900px){.lx-switch{display:flex}.vehicle-card.lx-off{display:none}}
-    .lx-card-links{margin-top:16px}
+    .lx-card-links{margin-top:22px;align-items:center}
+    /* главные действия: черная кнопка с тонкой золотой чертой (Кейт 12.10: «премиальные, красивые») */
+    .lx-btn{display:inline-flex;align-items:center;justify-content:space-between;gap:22px;min-height:56px;padding:0 26px 0 28px;border-radius:100px;background:var(--ink);color:var(--paper);border:1px solid var(--ink);font:inherit;font-size:11px;font-weight:500;letter-spacing:.16em;text-transform:uppercase;cursor:pointer;transition:background .3s var(--ease),color .3s var(--ease)}
+    .lx-btn::after{content:"";flex:none;width:26px;height:1px;background:var(--gold);transition:width .3s var(--ease)}
+    .lx-btn:hover{background:#26241f}.lx-btn:hover::after{width:38px}
+    .vehicle-card .vehicle-meta{padding:24px 22px 26px}
+    .vehicle-card.small{font-size:inherit;line-height:inherit;color:var(--ink)} /* класс карточки совпал с текстовым .small - Premium серел */
+    .link{position:relative}.link::before{content:"";position:absolute;inset:-12px -4px}
+    .lx-arrow::before{content:"";position:absolute;inset:-10px}
     .lx-narrow{display:none}
     .scenario-grid .scenario:nth-child(5){grid-column:4/span 6}
     @media (max-width:900px){.scenario-grid .scenario:nth-child(5){grid-column:auto}}
-    @media (max-width:560px){.lx-wide{display:none}.lx-narrow{display:inline-flex}}
+    @media (max-width:560px){.lx-wide{display:none}.lx-narrow{display:inline-flex}.hero-bottom .store-links{width:100%}.hero-bottom .lx-btn{flex:1 1 100%}.lx-send{width:100%;align-self:stretch}}
 
     @media (max-width:900px){
       .scenario-grid{display:flex;gap:var(--pad);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
       .scenario-grid::-webkit-scrollbar{display:none}
-      .scenario-grid .scenario{flex:0 0 100%;scroll-snap-align:start}
+      .scenario-grid .scenario{flex:0 0 86%;scroll-snap-align:start}
       .scenario .pic,.scenario:nth-child(2) .pic,.scenario:nth-child(3) .pic{height:68svh;min-height:470px}
       .lx-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
       .lx-dots i{display:block;width:6px;height:6px;border-radius:100px;background:rgba(244,241,233,.28);transition:width .25s,background .25s}
@@ -365,7 +374,7 @@
           <p class="body-lg">Подача вовремя, тишина в салоне, деликатная коммуникация.</p>
         </div>
         <div class="hero-bottom reveal">
-          <div class="store-links"><a class="link lx-wide" href="/goapp">Скачать в AppStore</a><a class="link lx-wide" href="/goapp">Скачать в Google Play</a><a class="link lx-narrow" href="/goapp">Скачать приложение</a></div>
+          <div class="store-links"><a class="link lx-wide" href="/goapp">Скачать в AppStore</a><a class="link lx-wide" href="/goapp">Скачать в Google Play</a><a class="lx-btn lx-narrow" href="/goapp">Скачать приложение</a></div>
           <div class="hero-note">Круглосуточно. Профессиональный водитель. Конфиденциальность по умолчанию.</div>
         </div>
       </div>
@@ -393,21 +402,20 @@
           <div class="reveal"><div class="eyebrow">PRIME RIDE это качество сервиса, которое вы ожидаете:</div><h2 class="h2" style="margin-top:16px">Флагман Mercedes-Benz</h2></div>
           <p class="body reveal">Аренда Maybach в PRIME RIDE — доступ к S-Class в исполнении Maybach Z223. Удлиненная база для максимального пространства в салоне. Автомобиль, созданный для тех, чье присутствие само по себе является событием. Без аналогов и компромиссов.</p>
         </div>
-        <div class="lx-switch" role="tablist"><button type="button" role="tab" data-m="0" aria-selected="true">Luxury</button><button type="button" role="tab" data-m="1" aria-selected="false">Premium</button></div>
         <div class="vehicle-grid">
           <article class="vehicle-card large reveal" data-m="0">
             <div class="vehicle-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/lux.jpg?v=54f634cc" alt="Mercedes-Benz Maybach S (Z223)" loading="lazy" /></div>
             <div class="vehicle-meta">
               <div><h3 class="h3">Mercedes-Benz Maybach S (Z223)</h3><ul class="lx-specs"><li>Вершина комфорта и технологий</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Задние кресла с отклонением спинки до 43,5°</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
-                <div class="store-links lx-card-links"><a class="link" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/majbah/z223">Подробнее</a></div></div>
+                <div class="store-links lx-card-links"><a class="lx-btn" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/majbah/z223">Подробнее</a></div></div>
               <div class="vehicle-tag">Luxury</div>
             </div>
           </article>
-          <article class="vehicle-card small reveal lx-off" data-m="1">
+          <article class="vehicle-card small reveal" data-m="1">
             <div class="vehicle-image"><img src="https://kate-pm-ai.github.io/prime-ride-maybach/img2/prem.jpg?v=01790826" alt="Mercedes-Benz Maybach (W222)" loading="lazy" /></div>
             <div class="vehicle-meta">
               <div><h3 class="h3">Mercedes-Benz Maybach (W222)</h3><ul class="lx-specs"><li>Проверенный временем престиж</li><li>До 3 пассажиров</li><li>Багаж до 500 литров (3 чемодана)</li><li>Термо-подстаканники с нагревом и охлаждением</li><li>Складные столики на задних сиденьях</li><li>4-зонный климат-контроль</li></ul>
-                <div class="store-links lx-card-links"><a class="link" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div>
+                <div class="store-links lx-card-links"><a class="lx-btn" href="/goapp">Заказать в приложении</a><a class="link" href="/mersedes/s-class/w-222">‎Подробнее</a></div></div>
               <div class="vehicle-tag">Premium</div>
             </div>
           </article>
@@ -491,11 +499,11 @@
       <div class="shell lx-ask-grid">
         <div class="reveal"><h2 class="h2">Задать вопрос</h2><p class="body lx-ask-lead">Наши менеджеры проконсультируют вас, просто оставьте свои контактные данные:</p></div>
         <form class="lx-form reveal" novalidate>
-          <label><span>Ваше имя</span><input type="text" name="name" aria-label="name" autocomplete="name"></label>
-          <label class="lx-tel"><span>+7</span><input type="tel" name="phone" placeholder="(000) 000-00-00" autocomplete="tel-national"></label>
-          <label><span>Email</span><input type="email" name="email" aria-label="email" autocomplete="email"></label>
-          <label><span>Ваше сообщение</span><textarea name="message" rows="3" aria-label="textarea"></textarea></label>
-          <button type="submit" class="link lx-send">ОТПРАВИТЬ</button>
+          <label><span>Ваше имя</span><input type="text" name="name" autocomplete="name"></label>
+          <label class="lx-tel"><span>+7</span><input type="tel" name="phone" placeholder="(000) 000-00-00" autocomplete="tel-national" required aria-required="true" aria-label="Телефон"><i class="lx-req" aria-hidden="true">*</i></label>
+          <label><span>Email</span><input type="email" name="email" autocomplete="email"></label>
+          <label><span>Ваше сообщение</span><textarea name="message" rows="3"></textarea></label>
+          <button type="submit" class="lx-btn lx-send">ОТПРАВИТЬ</button>
           <p class="small lx-ok" hidden>Спасибо, ваше сообщение успешно отправлено, скоро мы с вами свяжемся!</p>
         </form>
       </div>
@@ -579,17 +587,18 @@
 
     const sg = document.querySelector('.scenario-grid'), dots = document.querySelector('.lx-dots');
     if (sg && dots) { const n = sg.children.length; for (let k = 0; k < n; k++) dots.appendChild(document.createElement('i'));
-      const upd = () => { const w = sg.clientWidth; const i = Math.min(n - 1, Math.round(sg.scrollLeft / w));
+      const upd = () => { const c = sg.children; const w = c.length > 1 ? c[1].offsetLeft - c[0].offsetLeft : sg.clientWidth;
+        const i = sg.scrollLeft >= sg.scrollWidth - sg.clientWidth - 2 ? n - 1 : Math.min(n - 1, Math.round(sg.scrollLeft / w));
         [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
       sg.addEventListener('scroll', upd, { passive: true }); upd(); }
 
     document.querySelectorAll('.lx-cut .lx-arrow').forEach(b => b.addEventListener('click', () => { b.closest('.lx-cut').classList.add('open'); b.setAttribute('aria-expanded', 'true'); }));
-    document.querySelectorAll('.lx-switch button').forEach(b => b.addEventListener('click', () => {
-      document.querySelectorAll('.lx-switch button').forEach(x => x.setAttribute('aria-selected', String(x === b)));
-      document.querySelectorAll('.vehicle-card[data-m]').forEach(c => c.classList.toggle('lx-off', c.dataset.m !== b.dataset.m)); }));
 
     const lxf = document.querySelector('.lx-form');
-    lxf.addEventListener('submit', ev => { ev.preventDefault(); lxf.querySelector('.lx-ok').hidden = false; });
+    lxf.addEventListener('submit', ev => { ev.preventDefault(); const t = lxf.querySelector('input[name=phone]'), lb = t.closest('label');
+      if (t.value.replace(/\D/g, '').length < 10) { lb.classList.add('lx-err'); t.focus(); return; }
+      lb.classList.remove('lx-err'); lxf.querySelector('.lx-ok').hidden = false; });
+    lxf.querySelector('input[name=phone]').addEventListener('input', ev => ev.target.closest('label').classList.remove('lx-err'));
     document.addEventListener('click', ev => { const a = ev.target.closest('a[href^="/"]');
       if (a && location.hostname !== 'prime-ride.ru') { ev.preventDefault(); window.open('https://prime-ride.ru' + a.getAttribute('href'), '_blank'); } });
   </script>
