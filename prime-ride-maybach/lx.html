@@ -316,6 +316,13 @@
       .lx-dots{display:flex;justify-content:center;gap:8px;margin-top:28px}
       .lx-dots i{display:block;width:6px;height:6px;border-radius:100px;background:rgba(244,241,233,.28);transition:width .25s,background .25s}
       .lx-dots i.on{width:20px;background:#f4f1e9}
+      /* Кейт 12.10: «Почему выбирают» горизонтальной прокруткой, как сценарии */
+      .lx-why .h2{margin-bottom:40px}
+      .lx-why-grid{display:flex;gap:var(--pad);overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
+      .lx-why-grid::-webkit-scrollbar{display:none}
+      .lx-why-grid .lx-why-item{flex:0 0 86%;scroll-snap-align:start}
+      /* карточки в каруселях видны сразу: анимация появления не видит краешек следующей, он оставался прозрачным */
+      .scenario-grid > .reveal,.lx-why-grid > .reveal{opacity:1;transform:none}
     }
     @media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important;transition:none!important;animation:none!important}.reveal{opacity:1;transform:none}.reveal-img{clip-path:none}}
   </style>
@@ -501,6 +508,7 @@
         <div class="lx-why-grid">
           <div class="lx-why-item reveal"><div class="num">01</div><h3>Собственный учебный центр</h3><p>Единый стандарт качества, без случайных водителей из агрегатора</p></div><div class="lx-why-item reveal"><div class="num">02</div><h3>NDA с каждым водителем</h3><p>Юридическая гарантия конфиденциальности</p></div><div class="lx-why-item reveal"><div class="num">03</div><h3>Предсказуемая стоимость</h3><p>никаких сюрпризов с коэффициентами и «повышенным спросом»</p></div><div class="lx-why-item reveal"><div class="num">04</div><h3>Надежный<br>автопарк</h3><p>Каждая машина проходит ежедневный контроль</p></div>
         </div>
+        <div class="lx-dots lx-why-dots" aria-hidden="true"></div>
       </div>
     </section>
     <section class="lx-ask" id="ask">
@@ -593,12 +601,12 @@
       }, {passive:true});
     }
 
-    const sg = document.querySelector('.scenario-grid'), dots = document.querySelector('.lx-dots');
+    [['.scenario-grid', '.scenarios .lx-dots'], ['.lx-why-grid', '.lx-why-dots']].forEach(([gq, dq]) => { const sg = document.querySelector(gq), dots = document.querySelector(dq);
     if (sg && dots) { const n = sg.children.length; for (let k = 0; k < n; k++) dots.appendChild(document.createElement('i'));
       const upd = () => { const c = sg.children; const w = c.length > 1 ? c[1].offsetLeft - c[0].offsetLeft : sg.clientWidth;
         const i = sg.scrollLeft >= sg.scrollWidth - sg.clientWidth - 2 ? n - 1 : Math.min(n - 1, Math.round(sg.scrollLeft / w));
         [...dots.children].forEach((d, j) => d.classList.toggle('on', j === i)); };
-      sg.addEventListener('scroll', upd, { passive: true }); upd(); }
+      sg.addEventListener('scroll', upd, { passive: true }); upd(); } });
 
     document.querySelectorAll('.lx-inl-arrow').forEach(b => b.addEventListener('click', () => { b.closest('.lx-inl').classList.add('open'); b.setAttribute('aria-expanded', 'true'); }));
     document.querySelectorAll('.lx-cut .lx-arrow').forEach(b => b.addEventListener('click', () => { b.closest('.lx-cut').classList.add('open'); b.setAttribute('aria-expanded', 'true'); }));
