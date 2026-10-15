@@ -413,6 +413,95 @@ button:disabled{cursor:default}
 /* Keep the original display type; give the longer service title enough vertical room. */
 @media(min-width:641px){.hero{min-height:calc(var(--text) + var(--s4) * 3)}}
 .logo span,.rev-count{text-transform:uppercase}
+
+/* Service content adaptation: preserve the homepage palette, type and components. */
+.sec{padding:var(--s4) 0}
+.sec-head{max-width:1100px;margin-bottom:var(--s3)}
+.sec-head h2{text-wrap:balance}
+.sec-head .sec-lead{max-width:var(--text)}
+.hero h1{max-width:1100px;text-wrap:balance}
+.hero .sub{max-width:var(--text)}
+.hero-inner{padding-top:140px;padding-bottom:140px}
+@media(min-width:641px){.hero{height:auto;min-height:900px}.hero h1{font-size:68px;line-height:1.12}}
+.service-stats{padding:var(--s2) 0}
+.service-steps{gap:var(--s3) var(--s2)}
+.service-steps .step>img{filter:grayscale(1)}
+.service-steps .step .t{font-family:var(--font-serif);font-size:var(--t-h3);line-height:var(--lh-h3);letter-spacing:normal;text-transform:none;margin-bottom:var(--s1)}
+.stage-copy{padding:0}
+.service-steps .n{font-size:var(--t-title);line-height:var(--lh-title);margin-bottom:var(--s1)}
+.expert-rows{gap:var(--s3)}
+.about .expert-row .photos img{aspect-ratio:1/1;object-fit:cover}
+.expert-row:nth-child(2) .photos img{object-position:35% 30%}
+.service-costs{display:block;overflow:visible}
+.service-costs .svc{display:grid;grid-template-columns:40px minmax(240px,1fr) minmax(0,1.65fr);column-gap:var(--s2);padding:var(--s3) 0;border-top:1px solid var(--c-hair);transform:none!important}
+.service-costs .svc>*{grid-column:3}
+.service-costs .svc> .num{grid-column:1;grid-row:1}
+.service-costs .svc>h2{grid-column:2;grid-row:1;min-height:0;margin:0 0 var(--s2)}
+.service-costs .svc>.stat-n{grid-column:2;grid-row:2;white-space:normal}
+.service-costs ul{padding-left:20px;margin-top:var(--s2)}
+.service-costs li+li{margin-top:var(--s1)}
+.contract{margin-top:var(--s2)}
+.center-cta{margin-top:var(--s3)}
+.calc-grid{align-items:start}
+.calc-intro,.calc-lines{min-height:0}
+.calc-total{margin:var(--s2) 0 0}
+.calc-result .btn{margin-top:var(--s2);white-space:normal;height:auto;min-height:var(--button-h);padding:18px 24px}
+.calc-package{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-stone-ink);margin-bottom:var(--s2)}
+.rooms{gap:var(--s3)}
+.adv-grid{row-gap:var(--s3)}
+.adv .t{margin-bottom:var(--s2)}
+.vid-row{gap:var(--s2)}
+.proj:nth-last-child(-n+2) .cap{padding-right:var(--s2)}
+.notes-toggle{display:none!important}
+body.review-notes .notes-toggle{display:block!important}
+.f-form .field-label{margin-bottom:var(--s1)}
+.contact-hint{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s2);color:var(--c-stone-ink)}
+@media(max-width:640px){
+ .sec{padding:var(--s3) 0}
+ .sec-head{margin-bottom:var(--s2)}
+ .hd{display:grid;grid-template-columns:1fr auto;gap:var(--s1);padding-top:14px;padding-bottom:14px}
+ .hd>.btn{display:none}
+ .hd .burger{min-height:44px;padding:0 14px}
+ .hero-inner{padding-top:120px;padding-bottom:140px}
+ .hero h1{font-size:var(--t-display);line-height:var(--lh-display);text-wrap:balance}
+ .hero .sub{margin-top:var(--s2)}
+ .hero .slide img{object-position:60% center}
+ .service-stats{gap:var(--s2);padding:var(--s2) 0}
+ .fact{display:flex;flex-direction:column;gap:14px}
+ .fact .stat-n{font-size:22px;line-height:30px}
+ .fact .stat-t{margin:0}
+ .fact .link-caps{margin-top:auto;letter-spacing:1.2px}
+ .service-steps,.rooms{grid-template-columns:1fr;grid-auto-flow:row;grid-auto-columns:auto;overflow:visible;gap:var(--s3)}
+ .service-steps .step>img{aspect-ratio:4/3}
+ .service-costs .svc{display:block;padding:var(--s2) 0}
+ .service-costs .svc>h2{margin-bottom:var(--s1)}
+ .service-costs .svc>.stat-n{margin-bottom:var(--s2)}
+ .expert-row .btn,.center-cta .btn{white-space:normal;height:auto;padding:18px 20px;line-height:20px}
+ .calc-grid{gap:var(--s3)}
+ .calc-result>p:not(.calc-total){margin-top:var(--s2)}
+ .adv-grid{gap:var(--s2)}
+ .adv .t{margin-bottom:var(--s1)}
+ .room{gap:var(--s2)}
+ .vid-row{gap:var(--s2)}
+ .form-sec .in{gap:var(--s2)}
+ .form-sec .lead h2{font-size:var(--t-h2);line-height:var(--lh-h2)}
+}
+@media(min-width:641px){
+ .service-costs .svc>.body{display:contents}
+ .service-costs .svc::before{grid-column:1;grid-row:1}
+ .service-costs .body>h2{grid-column:2;grid-row:1;min-height:0}
+ .service-costs .body>.stat-n{grid-column:2;grid-row:2}
+ .service-costs .body>p{grid-column:3;grid-row:1}
+ .service-costs .body>ul{grid-column:3;grid-row:2 / span 2;margin-top:0}
+ .service-costs .body>.note{grid-column:2;grid-row:auto}
+}
+@media(max-width:640px){
+ .hd{display:flex;justify-content:space-between;gap:8px}
+ .hd .logo{font-size:16px;letter-spacing:2px}
+ .hd .logo span{font-size:9px;letter-spacing:.1px;text-transform:uppercase}
+ .hd-actions{gap:6px;min-width:0}
+ .hd-actions .btn,.hd-actions .burger{font-size:10px;padding:0 8px;min-height:44px;text-transform:uppercase}
+}
 </style><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Background Studio","url":"https://background-studio.ru/dizain-interera-dvuhkomnatnoi-kvartiry","telephone":["+7-925-642-50-03","+7-931-257-20-02"],"areaServed":["Москва","Санкт-Петербург"],"serviceType":"Дизайн интерьера двухкомнатной квартиры"}</script></head><body><header>
   <div class="wrap hd">
     <a class="logo" href="https://background-studio.ru/">background<span>интерьер и архитектура</span></a>
@@ -470,7 +559,7 @@ button:disabled{cursor:default}
 </div></section><section class="sec about" data-block="5" id="experts"><div class="wrap"><div class="sec-head"><div class="label">Команда</div><h2>Архитекторы-дизайнеры нашей студии</h2></div><div class="expert-rows"><article class="expert-row"><div class="photos"><figure><img class="pos-l" src="img/expert-ekaterina.jpg" alt="Екатерина Игнатова, дизайнер-архитектор"></figure></div><div class="founder-caption"><div class="founder-name">Екатерина Игнатова</div><div class="stat-t">Дизайнер-архитектор</div><div class="quote-slot"><p class="note" data-note-block="5">От вас нужно: цитата Екатерины Игнатовой об особенностях дизайна двухкомнатных квартир</p></div><div class="expert-meta"><p>Опыт работы: 18 лет</p><p>НОУВПО «Институт декоративно-прикладного искусства» (2007)</p><p>ФГБОУВПО «Санкт-Петербургский государственный архитектурно-строительный университет» (2013)</p></div><a class="link-caps" href="tel:+79213839667">+7 (921) 383-96-67</a><button class="btn open-modal" type="button" aria-label="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button></div></article><article class="expert-row"><div class="photos"><figure><img class="" src="img/expert-nana.jpg" alt="Нана Кобахидзе, дизайнер-архитектор"></figure></div><div class="founder-caption"><div class="founder-name">Нана Кобахидзе</div><div class="stat-t">Дизайнер-архитектор</div><div class="quote-slot"><p class="note" data-note-block="5">От вас нужно: цитата Наны Кобахидзе об особенностях дизайна двухкомнатных квартир</p></div><div class="expert-meta"><p>Опыт работы: 18 лет</p><p>НОУВПО «Институт декоративно-прикладного искусства» (2007)</p><p>ФГБОУВПО «Санкт-Петербургский государственный архитектурно-строительный университет» (2013)</p></div><a class="link-caps" href="tel:+79362622611">+7 (936) 262-26-11</a><button class="btn open-modal" type="button" aria-label="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button></div></article></div></div></section><section class="sec" data-block="5.1" id="videos"><div class="wrap"><div class="sec-head"><div class="label">Живой процесс</div><h2>Наши дизайнеры на стройплощадке</h2></div><div class="vid-row"><div class="vid" data-yt="3-DJ29n4IFM" role="button" tabindex="0" aria-label="Видео: самый стильный интерьер 2024 года от Background"><img src="img/main-17.jpg" alt="Видео: самый стильный интерьер 2024 года от Background"><div class="play"></div><div class="cap">Самый стильный интерьер 2024 года</div></div>
 <div class="vid" data-yt="UoxAk4bBek4" role="button" tabindex="0" aria-label="Видео: премиальный интерьер в ЖК Крестовский De Luxe"><img src="img/main-18.jpg" alt="Видео: премиальный интерьер квартиры в ЖК Крестовский De Luxe"><div class="play"></div><div class="cap">Видеообзор квартиры в ЖК «Крестовский De Luxe»</div></div>
 <div class="vid" data-yt="ikhujSs2KBk" role="button" tabindex="0" aria-label="Видео: заказчик студии в эфире НТВ"><img src="img/main-19.jpg" alt="Видео: дизайнер Background с заказчиком в эфире НТВ"><div class="play"></div><div class="cap">Заказчик студии — в эфире НТВ</div></div></div><p class="note" data-note-block="5.1">От вас нужно: вертикальные видео дизайнеров на стройплощадке в файлах для собственного хостинга</p></div></section><section class="sec" id="cost" data-block="6"><div class="wrap"><div class="sec-head"><div class="label">Стоимость</div><h2>Что входит в стоимость проектирования интерьера двухкомнатной квартиры</h2></div><div class="svc-grid service-costs"><article class="svc"><div class="body"><h2>Дизайн-проект двухкомнатной квартиры</h2><div class="stat-n">От 10 000 ₽/м²</div><p class="note" data-note-block="6">От вас нужно: реальный срок разработки дизайн-проекта двухкомнатной квартиры</p><p>Полная документация по проекту будущего ремонта в двухкомнатной квартире. Защищает вас от непредвиденных переделок, позволяет рассчитать смету и заранее увидеть, как будет выглядеть финальный интерьер.</p><ul><li>обмерный план</li><li>согласование с регламентами ЖК</li><li>планировка и перепланировка</li><li>перенос мокрых зон</li><li>интеграция общедомовых инженерных систем</li><li>план звукоизоляции (полы, стены, потолки)</li><li>строительные чертежи</li><li>ведомость материалов</li><li>предварительная комплектация</li><li>3D-визуализация двухкомнатной квартиры</li></ul></div></article><article class="svc"><div class="body"><h2>Комплектация</h2><div class="stat-n">От 100 000 ₽/месяц</div><p class="note" data-note-block="6">От вас нужно: подтвердить цену комплектации 100 000 ₽ в месяц и объяснить, как она формируется</p><p class="note" data-note-block="6">От вас нужно: реальный срок комплектации двухкомнатной квартиры</p><p>Подбор мебели, техники и комплектующих для двухкомнатной квартиры, в том числе на заказ. Работаем с надежными партнерами и поставщиками, проверяем качество и бережем ваш бюджет.</p><ul><li>Подбор материалов для ремонта и отделки</li><li>Подбор сложного интерьерного света</li><li>Подбор сантехники и инженерного оборудования</li><li>Подбор отдельно стоящей мебели</li><li>Формирование чертежей и ТЗ для мебели на заказ</li><li>Комплектация климатических систем</li><li>Заказ реальных выкрасов, образцов дерева, камня и тканей на объект</li><li>Подбор текстиля, настенных панелей и интерьерного декора</li><li>Выезды с дизайнером в салоны</li><li>Проверка коммерческих предложений</li></ul></div></article><article class="svc"><div class="body"><h2>Авторский надзор</h2><div class="stat-n">От 100 000 ₽/месяц</div><p class="note" data-note-block="6">От вас нужно: реальный срок авторского надзора для двухкомнатной квартиры</p><p>Контроль за ремонтом и работой строителей, монтажников: гарантия безупречной реализации замысла без вашего участия на стройке. Архитектор лично добивается совпадения с 3D-визуализацией 1 к 1.</p><ul><li>Выезд архитектора на объект 1-2 раз в неделю</li><li>Контроль за всеми проводимыми работами</li><li>Согласование и контроль утвержденных выкрасов стен и раскладки шпона при реальном освещении квартиры</li><li>Оперативное внесение правок в рабочие чертежи</li><li>Постоянная координация строителей, монтажников вентиляции, электриков и мебельщиков в рабочем чате</li><li>Предоставление фото- и видеоотчетов о ходе реализации объекта заказчику</li><li>Решение вопросов, возникающих у прораба и субподрядных организаций, в онлайне или по телефону</li></ul></div></article></div><div class="contract"><p class="note" data-note-block="6">От вас нужно: средний срок формирования и реализации дизайн-проекта двухкомнатной квартиры под ключ</p><h3>Пример договора на предоставление услуг</h3><button class="link-caps" disabled>Посмотреть PDF</button><p class="note" data-note-block="6">От вас нужно: реальный договор на услуги в PDF с затертыми личными данными</p></div><div class="center-cta"><button class="btn open-modal" type="button" aria-label="Бесплатная консультация архитектора">Бесплатная консультация архитектора</button></div></div></section><section class="sec" data-block="6.1" id="calculation"><div class="wrap"><div class="sec-head"><div class="label">Пример расчета</div><h2>Сколько стоит дизайн-проект двухкомнатной квартиры</h2></div><div class="calc-grid">
-<article class="calc"><div class="calc-intro"><h3>Двухкомнатная квартира 70 м²</h3><p>Объект: Двухкомнатная квартира 70 м²</p><p>Срок разработки проекта: 6-7 недель</p><p>Период ремонта под контролем студии: 3 месяца</p></div><div class="calc-result"><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект</span><strong>700 000 ₽</strong></div><div class="calc-line"><span>Авторский надзор</span><strong>300 000 ₽</strong></div><div class="calc-line"><span>Комплектация</span><strong>300 000 ₽</strong></div></div><p class="calc-total">Общая стоимость: <span class="nowrap">1 300 000 ₽</span></p><p>Стоимость строительно-отделочных работ, чистовых материалов, мебели и техники не входит в данную сумму и оплачивается отдельно по сметам поставщиков и подрядчиков.</p><button class="btn open-modal" type="button" aria-label="Рассчитать стоимость для моей двухкомнатной квартиры">Рассчитать стоимость для моей двухкомнатной квартиры</button></div></article>
+<article class="calc"><div class="calc-package">Дизайн-проект</div><div class="calc-package">Проект, авторский надзор и комплектация</div><div class="calc-intro"><h3>Двухкомнатная квартира 70 м²</h3><p>Объект: Двухкомнатная квартира 70 м²</p><p>Срок разработки проекта: 6-7 недель</p><p>Период ремонта под контролем студии: 3 месяца</p></div><div class="calc-result"><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект</span><strong>700 000 ₽</strong></div><div class="calc-line"><span>Авторский надзор</span><strong>300 000 ₽</strong></div><div class="calc-line"><span>Комплектация</span><strong>300 000 ₽</strong></div></div><p class="calc-total">Общая стоимость: <span class="nowrap">1 300 000 ₽</span></p><p>Стоимость строительно-отделочных работ, чистовых материалов, мебели и техники не входит в данную сумму и оплачивается отдельно по сметам поставщиков и подрядчиков.</p><button class="btn open-modal" type="button" aria-label="Рассчитать стоимость для моей двухкомнатной квартиры">Рассчитать стоимость для моей двухкомнатной квартиры</button></div></article>
 <article class="calc"><div class="calc-intro"><h3>Двухкомнатная квартира 50 м²</h3><p>Объект: Двухкомнатная квартира 50 м²</p></div><div class="calc-result"><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект (10 000 ₽/м²)</span><strong>500 000 ₽</strong></div></div><p class="calc-total">500 000 ₽</p><p class="note" data-note-block="6.1">От вас нужно: сроки авторского надзора и комплектации для расчета двухкомнатной квартиры 50 м²</p><p>Стоимость строительно-отделочных работ, чистовых материалов, мебели и техники не входит в данную сумму и оплачивается отдельно по сметам поставщиков и подрядчиков.</p><button class="btn open-modal" type="button" aria-label="Рассчитать стоимость для моей двухкомнатной квартиры">Рассчитать стоимость для моей двухкомнатной квартиры</button></div></article>
 </div></div></section><section class="sec" data-block="7" id="rooms"><div class="wrap"><div class="sec-head"><div class="label">Пространство</div><h2>Планировочные решения в двухкомнатной квартире</h2><p class="sec-lead">Главная задача в квартире любого метража – избавиться от тесноты, темных коридоров и ощущения захламленности. Мы перекраиваем пространство так, чтобы в нем было легко дышать, оставалось много воздуха и естественного света, а у каждого члена семьи появилось свое удобное пространство.</p></div><div class="rooms"><article class="room"><div class="room-image"><img class="" src="img/room-living.jpg" alt="Кухня-гостиная в проекте Background Studio"></div><div><h3>Кухня-гостиная</h3><p>Общее пространство, где хочется быть вместе. Вместо двух тесных изолированных комнат вы получаете просторный, наполненный воздухом и светом центр притяжения всей семьи. Здесь легко готовить, ужинать большой компанией и отдыхать на диване. Пространство воспринимается значительно масштабнее, наполняется естественным светом и дает полную свободу перемещения.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-bedroom.jpg" alt="Спальня в проекте Background Studio"></div><div><h3>Спальня</h3><p>Уединенное тихое пространство в двухкомнатной квартире, полностью отделенное от гостевой суеты. Здесь всегда легко дышится, царит мягкая атмосфера, а звуки мегаполиса, подъезда и соседей остаются снаружи. Сценарии освещения и продуманное до мелочей сочетание цветов создает атмосферу, в которой приятно засыпать и просыпаться.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-kids.jpg" alt="Детская в проекте Background Studio"></div><div><h3>Детская</h3><p>Идеально сбалансированное пространство для игр, учебы и здорового сна, где ребенку действительно интересно и безопасно проводить время. Интерьер создается с прицелом на будущее: он гибко адаптируется под взросление и новые увлечения, избавляя вас от необходимости затевать новый ремонт через три года.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-bath.jpg" alt="Санузел и ванная / душевая в проекте Background Studio"></div><div><h3>Санузел и ванная / душевая</h3><p>Продуманное до мелочей мокрое пространство, где утренние сборы и вечерний душ или ванна приносят тактильное и визуальное удовольствие. Хозяйственная зона со стиркой и сушкой аккуратно скрыта с глаз, освобождая место для легкости, чистоты и расслабления после насыщенного дня.</p></div></article></div><p class="note" data-note-block="7">От вас нужно: фотография реализованной лоджии или балкона для блока планировочных решений</p></div></section><section class="sec" data-block="8" id="advantages"><div class="wrap"><div class="sec-head"><div class="label">Преимущества</div><h2>Почему обращаются к нам</h2></div><div class="adv-grid"><article class="adv"><div class="adv-no">01</div><h3 class="t">Перепланировка двухкомнатной квартиры</h3><p>Проектируем демонтаж, возведение перегородок и границы мокрых зон строго в рамках норм Мосжилинспекции, СНиП и регламентов БТИ. Не рисуем невыполнимых идей. Вы получаете продуманную планировку без риска получить штраф, предписание вернуть стены на место или потерять ликвидность квартиры при будущей продаже.</p></article><article class="adv"><div class="adv-no">02</div><h3 class="t">Эргономика полезного пространства</h3><p>Избавляемся от темных бесполезных коридоров и узких тупиковых зон, раскрывая потенциал каждого метра двухкомнатной квартиры. Организуем естественное освещение и продуманные сценарии жизни так, чтобы в квартире дышалось свободно, а скрытые системы хранения вмещали все вещи без визуального шума.</p></article><article class="adv"><div class="adv-no">03</div><h3 class="t">Акустический комфорт</h3><p>Создаем бескомпромиссную тишину внутри квартиры за счет комплексных архитектурных решений звукоизоляции. Фоновый шум лифтовых холлов, приточной вентиляции и жизнь за стенами дома остаются снаружи: вы получаете приватное пространство, в котором можно полностью восстановиться после ритма мегаполиса.</p></article><article class="adv"><div class="adv-no">04</div><h3 class="t">Сценарии освещения</h3><p>Проектируем свет не просто ради освещенности, а как инструмент управления пространством двухкомнатной квартиры. Рассчитываем многоуровневые сценарии: от заливающего дневного до мягкого вечернего и фоновой подсветки арт-объектов. Интерьер легко меняет настроение от домашнего уюта до атмосферы закрытого лаунж-бара.</p></article><article class="adv"><div class="adv-no">05</div><h3 class="t">Архитектурная чистота линий и скрытые решения</h3><p>Интерьер воспринимается единым монолитным объемом: двери скрытого монтажа в потолок, теневые примыкания и заказная мебель, интегрированная в геометрию стен без видимых зазоров. Никакого визуального шума и случайных деталей – только чистые пропорции, благородные фактуры и безупречная эстетика.</p></article><article class="adv"><div class="adv-no">06</div><h3 class="t">Фиксированная цена</h3><p>Окончательная стоимость, список работ и спецификации материалов закрепляются в официальном документе до начала проектирования. Цена не меняется «на ходу» и во время ремонта. Мы создаем и реализуем дизайн-проекты двухкомнатной квартиры без «сюрпризов».</p></article></div></div></section><section class="sec alt" data-block="9" id="reviews">
   <div class="wrap">
@@ -496,9 +585,9 @@ button:disabled{cursor:default}
     <form class="f-form" onsubmit="return fakeSubmit(event)">
       <div class="ft">Оставьте заявку</div>
       <div class="fs">Наши дизайнеры-архитекторы перезвонят</div>
-      <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
-      <label class="field-label">Удобный способ связи<select name="contact_method" aria-label="Удобный способ связи"><option>Звонок</option><option>WhatsApp</option><option>Telegram</option></select></label><input type="tel" name="phone" class="phone-mask" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required>
-      <textarea name="message" placeholder="Сообщение (необязательно)" aria-label="Сообщение (необязательно)" rows="3"></textarea><label class="chk"><input type="checkbox" required><span>Я согласен на <a class="u" href="https://background-studio.ru/politika-konfidentsialnosti" rel="nofollow">обработку персональных данных</a></span></label>
+      <label class="field-label">Ваше имя<input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+      </label><label class="field-label">Удобный способ связи<select name="contact_method" aria-label="Удобный способ связи"><option>Звонок</option><option>WhatsApp</option><option>Telegram</option></select></label><label class="field-label">Телефон<input type="tel" name="phone" class="phone-mask" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required>
+      </label><textarea name="message" placeholder="Сообщение (необязательно)" aria-label="Сообщение (необязательно)" rows="3"></textarea><label class="chk"><input type="checkbox" required><span>Я согласен на <a class="u" href="https://background-studio.ru/politika-konfidentsialnosti" rel="nofollow">обработку персональных данных</a></span></label>
       <button class="btn btn--block" type="submit">Заказать звонок</button>
       <div class="form-note">Перезвоним в рабочее время — ежедневно с 10:00 до 20:00.</div>
     </form>
@@ -539,9 +628,9 @@ button:disabled{cursor:default}
 </footer><button class="notes-toggle" type="button" aria-label="Показать запросы клиенту" aria-pressed="false">Показать пометки</button><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button class="x modal-close" type="button" aria-label="Закрыть форму">×</button><div class="mt" id="modal-title">Обсудить ваш объект</div><div class="ms">Оставьте свои контактные данные: номер телефона, удобный способ связи. Дизайнер-архитектор свяжется с вами, обсудит ваш проект, пригласит на бесплатную консультацию в Москве или Санкт-Петербурге.</div><form  onsubmit="return fakeSubmit(event)">
       <div class="ft">Оставьте заявку</div>
       <div class="fs">Наши дизайнеры-архитекторы перезвонят</div>
-      <input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
-      <label class="field-label">Удобный способ связи<select name="contact_method" aria-label="Удобный способ связи"><option>Звонок</option><option>WhatsApp</option><option>Telegram</option></select></label><input type="tel" name="phone" class="phone-mask" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required>
-      <textarea name="message" placeholder="Сообщение (необязательно)" aria-label="Сообщение (необязательно)" rows="3"></textarea><label class="chk"><input type="checkbox" required><span>Я согласен на <a class="u" href="https://background-studio.ru/politika-konfidentsialnosti" rel="nofollow">обработку персональных данных</a></span></label>
+      <label class="field-label">Ваше имя<input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required>
+      </label><label class="field-label">Удобный способ связи<select name="contact_method" aria-label="Удобный способ связи"><option>Звонок</option><option>WhatsApp</option><option>Telegram</option></select></label><label class="field-label">Телефон<input type="tel" name="phone" class="phone-mask" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required>
+      </label><textarea name="message" placeholder="Сообщение (необязательно)" aria-label="Сообщение (необязательно)" rows="3"></textarea><label class="chk"><input type="checkbox" required><span>Я согласен на <a class="u" href="https://background-studio.ru/politika-konfidentsialnosti" rel="nofollow">обработку персональных данных</a></span></label>
       <button class="btn btn--block" type="submit">Заказать звонок</button>
       <div class="form-note">Перезвоним в рабочее время — ежедневно с 10:00 до 20:00.</div>
     </form></div></div><script>
@@ -552,9 +641,11 @@ document.querySelectorAll('.open-modal').forEach(b=>b.addEventListener('click',o
 document.querySelector('.modal-close').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.querySelectorAll('form').forEach(form=>{const select=form.querySelector('[name="contact_method"]');if(!select)return;const submit=form.querySelector('[type="submit"]');const subtitle=form.querySelector('.fs');const originalButton=submit.textContent;const originalSubtitle=subtitle?.textContent;const note=form.querySelector('.form-note');const originalNote=note?.textContent;select.addEventListener('change',()=>{const call=select.value==='Звонок';submit.textContent=call?originalButton:'Отправить заявку';if(subtitle)subtitle.textContent=call?originalSubtitle:'Связь через '+select.value;if(note)note.textContent=call?originalNote:'Укажите в сообщении контакт для '+select.value;});});
 const notesButton=document.querySelector('.notes-toggle');
 function setNotes(on){document.body.classList.toggle('notes-off',!on);notesButton.textContent=on?'Скрыть пометки':'Показать пометки';notesButton.setAttribute('aria-pressed',String(on))}
 notesButton.addEventListener('click',()=>setNotes(document.body.classList.contains('notes-off')));
+document.body.classList.toggle('review-notes',new URLSearchParams(location.search).has('notes'));
 setNotes(new URLSearchParams(location.search).has('notes'));
 const hd=document.querySelector('header'),heroEl=document.querySelector('.hero');
 function onScroll(){hd.classList.toggle('scrolled',window.scrollY>40);document.body.classList.toggle('past-hero',window.scrollY>heroEl.offsetHeight-hd.offsetHeight)}
