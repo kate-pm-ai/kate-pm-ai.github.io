@@ -146,9 +146,11 @@ nav.menu a:hover{color:var(--c-ink)}
 .about .proof .ps{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small)}
 
 /* 5 проекты: журнальная сетка, фото встык и крупно, подпись под фото */
-.wrap:has(> .proj-grid){max-width:var(--photo-max)}
+.wrap:has(> .proj-grid){max-width:calc(var(--photo-max) + var(--s3) + var(--s3))}
 .proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4) var(--s3)}
 .proj{display:flex;flex-direction:column}
+.proj:nth-child(-n+4){grid-column:1/-1}
+.proj:nth-child(-n+4) img{height:var(--proj-h);aspect-ratio:auto}
 .proj img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer}
 .proj .cap{padding-top:var(--s3);display:grid;grid-template-columns:1fr auto;column-gap:var(--s3);align-items:end}
 .proj .cap>*{grid-column:1}
@@ -343,6 +345,8 @@ body.past-hero .notes-toggle{opacity:1;pointer-events:auto}
  .logo-xl{font-size:var(--t-h2);line-height:var(--lh-h2)}
  .f-form{padding:var(--s2)}
  .proj{grid-column:1/-1}
+ .proj img{width:var(--full);max-width:none;margin-left:var(--bleed)}
+ .proj:nth-child(-n+4) img{height:var(--proj-h-mobile)}
  .pause{height:var(--pause-h-mobile);max-height:none;aspect-ratio:auto}
  .proj .cap{grid-template-columns:1fr}
  .proj .cap a.more{grid-column:1;grid-row:auto;justify-self:start}
