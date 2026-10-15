@@ -1,191 +1,512 @@
 <!doctype html><html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="robots" content="noindex,nofollow,noarchive"><title>Дизайн интерьера двухкомнатной квартиры в Москве и СПб | Background Studio</title><meta name="description" content="Дизайн-проект двухкомнатной квартиры от Background Studio: планировка, 3D-визуализация, комплектация и авторский надзор в Москве и Санкт-Петербурге."><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;1,400&family=Ubuntu:wght@300;400;500&display=swap" rel="stylesheet"><style>:root{--c-ground:#FCF8F4;--c-ground-alt:#F4F0E4;--c-paper:#FFFFFF;--c-ink:#000000;--c-night:#111111;--c-graphite:#464553;--c-fog:#A9A9A9;--c-stone:#A49C90;--c-stone-ink:#6E675D;--c-hair:#DCD8CC;--c-on-night:#FCF8F4;--c-shade-top:rgba(0,0,0,0.04);--c-shade:rgba(0,0,0,0.21);--c-shade-deep:rgba(0,0,0,0.55);--c-note-bg:#FFFBE2;--c-note-ink:#6B5A12;--c-star:#C9A227;--font-serif:'Playfair Display',Arial,sans-serif;--font-sans:'Ubuntu',Arial,sans-serif;--w-light:300;--w-regular:400;--w-medium:500;--caps-tracking:2.4px;--wide-tracking:3.6px;--display-tracking:-1px;--t-display:80px;--lh-display:88px;--t-h2:60px;--lh-h2:70px;--t-h3:26px;--lh-h3:32px;--t-stat:64px;--lh-stat:64px;--t-lead:22px;--lh-lead:34px;--t-body:18px;--lh-body:30px;--t-small:15px;--lh-small:24px;--t-caps:12px;--lh-caps:18px;--t-quote:32px;--lh-quote:50px;--t-title:34px;--lh-title:44px;--r-none:0px;--r-round:50%;--s1:10px;--s2:28px;--s3:60px;--s4:96px;--section:168px;--section-mobile:84px;--gutter:4px;--wrap:1320px;--text:720px;--button-h:56px;--line:1px;--full:100vw;--bleed:calc(50% - 50vw);--proj-h:76vh;--proj-h-mobile:70vh;--pause-h:72vh;--pause-h-mobile:64vh;--stagger:180px;--call:44px;--notes-btn:40px;--quote-w:1000px;--hero-h:90vh;--portrait-h:80vh;--svc-card-mobile:82%;--photo-max:1600px;}
 @media(max-width:640px){:root{--t-display:34px;--lh-display:38px;--t-h2:32px;--lh-h2:37px;--t-h3:22px;--lh-h3:28px;--t-lead:18px;--lh-lead:29px;--t-quote:22px;--lh-quote:34px;--t-title:24px;--lh-title:32px;--section:var(--section-mobile);--t-stat:44px;--lh-stat:44px;}}
-*{box-sizing:border-box}
+/* Главная Background · премиальная сборка. Значения - ТОЛЬКО var(--...) из tokens.css (machine/lint_css.py).
+   Композиция - по паттернам state/patterns.json: теплый фон, фото встык и крупно, подписи под фото, воздух, волосяные линии. */
+*{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;background:var(--c-ground);color:var(--c-graphite);font-family:var(--font-sans);font-size:var(--t-body);line-height:var(--lh-body)}
-body.modal-open{overflow:hidden}
+body{font-family:var(--font-serif);font-size:var(--t-body);line-height:var(--lh-body);color:var(--c-graphite);background:var(--c-ground);-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-button,input,select,textarea{font:inherit}
-img{display:block;max-width:100%}
+figure{margin:0}
 .wrap{max-width:var(--wrap);margin:0 auto;padding:0 var(--s3)}
-.section{padding:var(--section) 0}
-.section-alt{background:var(--c-ground-alt)}
-.section-night{background:var(--c-night);color:var(--c-on-night)}
-.label{font-family:var(--font-serif);font-style:italic;font-size:var(--t-lead);line-height:var(--lh-lead);color:var(--c-stone-ink);margin:0 0 var(--s2)}
-.section-night .label{color:var(--c-fog)}
-h1,h2,h3,p{margin-top:0}
-h1,h2,h3{font-family:var(--font-serif);font-weight:var(--w-regular);color:var(--c-ink)}
-h2{font-size:var(--t-h2);line-height:var(--lh-h2);margin-bottom:var(--s3);max-width:var(--quote-w)}
-h3{font-size:var(--t-h3);line-height:var(--lh-h3)}
-.section-night h2,.section-night h3{color:var(--c-on-night)}
-.lead{font-size:var(--t-lead);line-height:var(--lh-lead);max-width:var(--text);margin-bottom:var(--s3)}
-.btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--button-h);padding:0 var(--s3);border:1px solid var(--c-night);background:var(--c-night);color:var(--c-on-night);font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase;cursor:pointer}
-.btn:hover,.btn:focus-visible{background:transparent;color:var(--c-night)}
-.btn-light{background:var(--c-on-night);color:var(--c-night);border-color:var(--c-on-night)}
-.btn-light:hover,.btn-light:focus-visible{background:transparent;color:var(--c-on-night)}
-.btn-ghost{background:transparent;color:var(--c-on-night);border-color:var(--c-on-night)}
-.btn-ghost:hover,.btn-ghost:focus-visible{background:var(--c-on-night);color:var(--c-night)}
-.btn:focus-visible,a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid var(--c-star);outline-offset:var(--gutter)}
-.ctas{display:flex;flex-wrap:wrap;gap:var(--s2)}
-.header{position:absolute;top:0;left:0;right:0;z-index:20;color:var(--c-on-night);border-bottom:1px solid var(--c-shade)}
-.header-in{min-height:var(--s4);display:flex;align-items:center;justify-content:space-between;gap:var(--s2)}
-.logo{font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-light);letter-spacing:var(--wide-tracking)}
-.logo span{display:block;font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase}
-.header-links{display:flex;align-items:center;gap:var(--s2);font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase}
-.hero{position:relative;min-height:100vh;background:var(--c-night);color:var(--c-on-night);overflow:hidden}
-.hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
-.hero-shade{position:absolute;inset:0;background:linear-gradient(180deg,var(--c-shade) 0%,var(--c-shade-top) 30%,var(--c-shade-deep) 100%)}
-.hero-content{position:relative;z-index:2;min-height:100vh;display:flex;flex-direction:column;justify-content:flex-end;padding-top:var(--section);padding-bottom:var(--s3)}
-.hero h1{font-size:var(--t-display);line-height:var(--lh-display);letter-spacing:var(--display-tracking);color:var(--c-on-night);max-width:var(--quote-w);margin-bottom:var(--s2)}
-.hero-copy{font-size:var(--t-lead);line-height:var(--lh-lead);max-width:var(--text);margin-bottom:var(--s2)}
-.hero-phones{display:flex;gap:var(--s3);margin-bottom:var(--s2);font-size:var(--t-small);line-height:var(--lh-small)}
-.hero-phones small{display:block;color:var(--c-fog);font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase}
+.sec{padding:var(--section) 0}
+.pt0{padding-top:0}
+.alt{background:transparent}
+.center{text-align:center}
+.u{border-bottom:1px solid var(--c-hair)}
+
+/* заголовки секций: надстрочник заглавными + крупный serif */
+.label{font-family:var(--font-serif);font-style:italic;font-size:var(--t-lead);line-height:var(--lh-lead);font-weight:var(--w-regular);color:var(--c-stone-ink);margin-bottom:var(--s2)}
+h2{font-family:var(--font-serif);font-weight:var(--w-regular);font-size:var(--t-h2);line-height:var(--lh-h2);color:var(--c-ink)}
+.sec-head{margin-bottom:var(--s4);max-width:var(--text)}
+.sec-head.center{margin-left:auto;margin-right:auto}
+.sec-lead{font-size:var(--t-lead);line-height:var(--lh-lead);margin-top:var(--s2)}
+
+/* кнопки: прямые углы, заглавные с разрядкой */
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:var(--button-h);padding:0 var(--s3);background:var(--c-night);color:var(--c-on-night);font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;border:1px solid var(--c-night);border-radius:var(--r-none);cursor:pointer;transition:background .3s,color .3s}
+.btn:hover{background:transparent;color:var(--c-night)}
+.btn--ghost{background:transparent;color:var(--c-on-night);border-color:var(--c-on-night)}
+.btn--ghost:hover{background:var(--c-on-night);color:var(--c-night)}
+.btn--light{background:transparent;color:var(--c-night)}
+.btn--light:hover{background:var(--c-night);color:var(--c-on-night)}
+.btn--block{width:100%}
+.link-caps,.svc a.more,.proj .cap a.more,.hero-case a.watch{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;border-bottom:1px solid currentColor;padding-bottom:var(--gutter)}
+.center-cta{text-align:center;margin-top:var(--s4);display:flex;gap:var(--s2);justify-content:center;flex-wrap:wrap}
+.cta-sub{margin-top:var(--s2)}
+.note{display:inline-block;font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);font-style:italic;color:var(--c-note-ink);background:var(--c-note-bg);padding:var(--s1);margin-top:var(--s2)}
+.note-row{padding-top:var(--s1)}
+
+/* шапка */
+header{position:fixed;top:0;left:0;right:0;z-index:50;background:transparent;border-bottom:1px solid transparent;transition:background .5s,border-color .5s}
+header.scrolled,header:has(nav.menu.open){background:var(--c-ground);border-bottom-color:var(--c-hair)}
+header:not(.scrolled):not(:has(nav.menu.open)) :is(.logo,.logo span,nav.menu a,.burger,.hd .btn){color:var(--c-on-night);border-color:var(--c-on-night)}
+.hd{display:flex;align-items:center;justify-content:space-between;min-height:var(--s4)}
+.logo{font-family:var(--font-sans);font-weight:var(--w-light);font-size:var(--t-h3);line-height:var(--lh-h3);letter-spacing:var(--wide-tracking);color:var(--c-ink)}
+.logo span{display:block;font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);color:var(--c-stone-ink)}
+nav.menu{display:flex;gap:var(--s2)}
+nav.menu a{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-graphite)}
+nav.menu a:hover{color:var(--c-ink)}
+.hd-actions{display:flex;gap:var(--s1);align-items:center}
+.hd .btn{min-height:var(--button-h);background:transparent;color:var(--c-ink);border-color:currentColor}
+.hd .btn:hover{background:var(--c-ink);color:var(--c-on-night)}
+.burger{display:none;font-family:var(--font-sans);font-size:var(--t-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;background:none;border:1px solid var(--c-hair);padding:var(--s1);cursor:pointer;color:var(--c-ink)}
+
+/* 1 первый экран: на всю высоту, заголовок крупным serif */
+.hero{position:relative;height:var(--hero-h);min-height:var(--text);overflow:hidden;background:var(--c-night)}
+.slide{position:absolute;inset:0;opacity:0;transition:opacity 1.6s}
+.slide.on{opacity:1}
+.slide img{width:100%;height:100%;object-fit:cover}
+.hero .shade{position:absolute;inset:0;background:linear-gradient(180deg,var(--c-shade) 0%,var(--c-shade-top) 35%,var(--c-shade-deep) 100%)}
+.hero-inner{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:calc(var(--s4) + var(--s3))}
+.nowrap{white-space:nowrap}
+.hero h1{text-wrap:balance;font-family:var(--font-serif);font-weight:var(--w-regular);color:var(--c-on-night);font-size:var(--t-display);line-height:var(--lh-display);letter-spacing:var(--display-tracking);max-width:80%}
+.hero h1 .brand{display:block;font-family:var(--font-sans);font-weight:var(--w-light);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--wide-tracking);text-transform:uppercase;margin-top:var(--s2)}
+.hero .sub{font-family:var(--font-sans);font-weight:var(--w-light);color:var(--c-on-night);font-size:var(--t-lead);line-height:var(--lh-lead);max-width:var(--text);margin:var(--s2) 0 var(--s3)}
+.hero-cta{display:flex;align-items:center;gap:var(--s2);flex-wrap:wrap}
+.ico-round{width:var(--button-h);height:var(--button-h);border:1px solid var(--c-on-night);border-radius:var(--r-round);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.ico-round:hover{background:var(--c-on-night)}
+.ico-round svg{stroke:var(--c-on-night);fill:none;stroke-width:1.4}
+.ico-round:hover svg{stroke:var(--c-night)}
+.hero-note{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-on-night);margin-top:var(--s2)}
+.hero-case{position:absolute;left:0;right:0;bottom:var(--s3)}
+.hero-case .row{display:flex;align-items:center;justify-content:space-between;gap:var(--s2);border-top:1px solid var(--c-shade);padding-top:var(--s2)}
+.hero-case .name{color:var(--c-on-night);font-size:var(--t-body);line-height:var(--lh-body)}
+.hero-case a.watch{color:var(--c-on-night)}
+.dots{position:absolute;right:var(--s3);top:50%;transform:translateY(-50%);display:flex;flex-direction:column;gap:var(--s1)}
+.dots i{width:var(--s2);height:var(--s1);border-radius:var(--r-none);border:0;background:linear-gradient(var(--c-shade),var(--c-shade)) center/100% 1px no-repeat;cursor:pointer;transition:width .5s}
+.dots i:hover{background-image:linear-gradient(var(--c-on-night),var(--c-on-night))}
+.dots i.on{width:var(--s3);background-image:linear-gradient(var(--c-on-night),var(--c-on-night))}
+
+/* 2 контакты: тихая полоса, телефоны крупным serif */
+.strip{background:transparent;border-bottom:1px solid var(--c-hair)}
+.strip .in{display:flex;align-items:flex-end;justify-content:space-between;gap:var(--s3);padding-top:var(--s3);padding-bottom:var(--s3);flex-wrap:wrap}
+.strip .tel{font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink)}
+.strip .tel small{display:block;font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-stone-ink);margin-top:var(--s1)}
+.strip .meta{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small)}
+
+/* 3 услуги: четыре вертикальных кадра, без рамок, подписи под фото */
+.svc-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s2);counter-reset:svc}
+.svc{display:flex;flex-direction:column;counter-increment:svc}
+.svc .pic{aspect-ratio:3/4;overflow:hidden;background:var(--c-ground)}
+.svc .pic img{width:100%;height:100%;object-fit:cover;transition:transform 1.2s}
+.svc:hover .pic img{transform:scale(1.03)}
+.svc:nth-child(n+3) .pic img{mix-blend-mode:multiply;object-fit:contain;padding:var(--s3)}
+.svc .body{padding-top:var(--s2);display:flex;flex-direction:column;flex:1}
+.svc .body::before{content:counter(svc,decimal-leading-zero);margin-bottom:var(--s1);font-family:var(--font-serif);font-style:italic;font-size:var(--t-lead);line-height:var(--lh-title);color:var(--c-stone-ink)}
+.svc h2{font-size:var(--t-h3);line-height:var(--lh-h3);margin-bottom:var(--s2)}
+.svc .price{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-ink);margin-bottom:var(--s1)}
+.svc .pnote{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-stone-ink);margin-bottom:var(--s1)}
+.svc p{font-size:var(--t-body);line-height:var(--lh-body);margin-bottom:var(--s2);max-width:var(--text)}
+.svc a.more{align-self:flex-start;margin-top:auto;color:var(--c-ink)}
+.svc-hint{display:none}
+.svc-cta{text-align:center;margin-top:var(--section)}
+
+/* 4 преимущества: без коробок, волосяная линия сверху */
+.adv-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4) var(--s3)}
+.adv{border-top:1px solid var(--c-hair);padding-top:var(--s2)}
+.adv svg{width:var(--s2);height:var(--s2);stroke:var(--c-stone);fill:none;stroke-width:1.2;margin-bottom:var(--s2)}
+.adv .t{font-family:var(--font-serif);font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink);margin-bottom:var(--s1)}
+.adv .s{font-size:var(--t-small);line-height:var(--lh-small)}
+
+/* 4.1 о студии: портреты крупно, цифры огромным serif */
+.about .in{display:block}
+.about .in>div:first-child{display:grid;grid-template-columns:5fr 7fr;column-gap:var(--s4)}
+.about .in>div:first-child>*{grid-column:2}
+.about .in>div:first-child>.label{grid-column:1;grid-row:1}
+.about .in>div:first-child>h2{grid-column:1;grid-row:2/span 5}
+.about .photos{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter);width:var(--full);margin-left:var(--bleed);margin-top:var(--section)}
+.about .photos img{width:100%;height:var(--portrait-h);object-fit:cover;object-position:center 25%;filter:grayscale(100%)}
+.about .photos img.pos-l{object-position:22% 25%}
+.about .founder-captions{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3) var(--s4);margin-top:var(--s3);text-align:center}
+.about .founder-name{font-family:var(--font-serif);font-size:var(--t-title);line-height:var(--lh-title);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-ink);margin-bottom:var(--s2)}
+.about .founder-caption p{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-stone-ink);max-width:var(--text);margin:0 auto}
+.about h2{margin-bottom:var(--s3)}
+.about p.seo{font-size:var(--t-lead);line-height:var(--lh-lead);color:var(--c-graphite)}
+.stats{display:flex;gap:var(--s3);margin-top:var(--s3);font-family:var(--font-sans)}
+.stat-n{font-family:var(--font-serif);font-size:var(--t-stat);line-height:var(--lh-stat);color:var(--c-ink)}
+.stat-t{font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-stone-ink);margin-top:var(--s1)}
+.about .proof{margin-top:var(--s3);display:grid;grid-template-columns:1fr 1fr;gap:var(--s2) var(--s3)}
+.about .proof a,.about .proof .pi{display:block;border-top:1px solid var(--c-ink);padding-top:var(--s1)}
+.about .proof .pt{font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink)}
+.about .proof .ps{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small)}
+
+/* 5 проекты: журнальная сетка, фото встык и крупно, подпись под фото */
+.wrap:has(> .proj-grid){max-width:calc(var(--photo-max) + var(--s3) + var(--s3))}
+.proj-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4) var(--s3)}
+.proj{display:flex;flex-direction:column}
+.proj:nth-child(-n+4){grid-column:1/-1}
+.proj:nth-child(-n+4) img{height:var(--proj-h);aspect-ratio:auto}
+.proj img{width:100%;aspect-ratio:4/3;object-fit:cover;cursor:pointer}
+.proj .cap{padding-top:var(--s3);display:grid;grid-template-columns:1fr auto;column-gap:var(--s3);align-items:end}
+.proj .cap>*{grid-column:1}
+.proj .cap a.more{grid-column:2;grid-row:1/span 2;justify-self:end}
+.proj .cap .t{font-size:var(--t-title);line-height:var(--lh-title);color:var(--c-ink);margin-bottom:var(--s1)}
+.proj-sub{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s1)}
+.proj .cap a.more{color:var(--c-ink)}
+
+/* 5.1 до/после */
+.ba-row{display:grid;grid-template-columns:1fr 1fr;gap:var(--gutter)}
+.ba{position:relative;overflow:hidden;background:var(--c-paper)}
+.ba .frame{position:relative;aspect-ratio:4/3}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:contain;background:var(--c-paper)}
+.ba .top{clip-path:inset(0 50% 0 0)}
+.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:var(--line);background:var(--c-ink);z-index:3}
+.ba .bar::after{content:'⇄';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--s4);height:var(--s4);background:var(--c-night);color:var(--c-on-night);border-radius:var(--r-round);display:flex;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:var(--t-body)}
+.ba input[type=range]{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;z-index:4}
+.ba .tag{position:absolute;top:var(--s2);font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;background:var(--c-night);color:var(--c-on-night);padding:var(--gutter) var(--s1);z-index:2}
+.ba .tag.l{left:var(--s2)}.ba .tag.r{right:var(--s2)}
+.ba .cap{padding:var(--s2);font-size:var(--t-small);line-height:var(--lh-small);background:var(--c-ground)}
+
+/* 6 процесс: крупные номера serif, тонкие линии */
+.steps{display:grid;grid-template-columns:repeat(6,1fr);gap:var(--s3) var(--s2)}
+.step{border-top:1px solid var(--c-ink);padding-top:var(--s2)}
+.step .n{font-family:var(--font-serif);font-size:var(--t-stat);line-height:var(--lh-stat);color:var(--c-stone);margin-bottom:var(--s2)}
+.step .t{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-ink);margin-bottom:var(--s1)}
+.step p{font-size:var(--t-small);line-height:var(--lh-small)}
+.step .btn{margin-top:var(--s2);padding:0 var(--s1);white-space:nowrap}
+
+/* 7 видео */
+.vid-row{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter)}
+.vid{position:relative;aspect-ratio:16/9;overflow:hidden;background:var(--c-night);cursor:pointer}
+.vid iframe{position:absolute;inset:0;width:100%;height:100%;border:0;z-index:5}
+.vid.playing img,.vid.playing .play,.vid.playing .cap{display:none}
+.vid img{width:100%;height:100%;object-fit:cover;transition:opacity .4s}
+.vid:hover img{opacity:.8}
+.vid .play{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:var(--s3);height:var(--s3);border-radius:var(--r-round);border:1px solid var(--c-on-night);display:flex;align-items:center;justify-content:center;z-index:2}
+.vid .play::after{content:'';border-style:solid;border-width:var(--s1) 0 var(--s1) calc(var(--s1) * 1.4);border-color:transparent transparent transparent var(--c-on-night);margin-left:var(--gutter)}
+.vid .cap{position:absolute;left:0;right:0;bottom:0;padding:var(--s3) var(--s2) var(--s2);background:linear-gradient(180deg,transparent,var(--c-shade-deep));color:var(--c-on-night);font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);z-index:2}
+
+/* 8 отзывы: без коробок, крупная цитата serif */
+.rating{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-ink);margin:calc(var(--s3) - var(--s4)) 0 var(--s3)}
+.rev-grid{display:grid;grid-auto-flow:column;grid-auto-columns:100%;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;border-top:1px solid var(--c-ink);border-bottom:1px solid var(--c-hair)}
+.rev-grid::-webkit-scrollbar{display:none}
+.rev{scroll-snap-align:start;padding:var(--s4) 0;display:flex;flex-direction:column;align-items:center;text-align:center;gap:var(--s2)}
+.rev>*{max-width:var(--quote-w)}
+.rev .rh{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-ink)}
+.rev .stars{color:var(--c-star);letter-spacing:var(--caps-tracking);font-size:var(--t-small)}
+.rev p{font-family:var(--font-serif);font-size:var(--t-quote);line-height:var(--lh-quote);color:var(--c-ink)}
+.rev .who{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-ink)}
+.rev .src{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-stone-ink)}
+.rev .src a{border-bottom:1px solid var(--c-hair)}
+.rev--hidden{display:none}
+.rev p.rt{display:-webkit-box;-webkit-line-clamp:6;-webkit-box-orient:vertical;overflow:hidden}
+.rev.open p.rt{display:block;-webkit-line-clamp:unset}
+.rmore{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;background:none;border:0;border-bottom:1px solid currentColor;padding:0;cursor:pointer;color:var(--c-ink)}
+
+/* пресса: крупные названия изданий */
+.press{padding:var(--s4) 0;border-top:1px solid var(--c-hair);border-bottom:1px solid var(--c-hair)}
+.press-list{display:flex;flex-wrap:wrap;gap:var(--s2) var(--s3);justify-content:center;align-items:center;font-family:var(--font-sans);font-weight:var(--w-light);letter-spacing:var(--wide-tracking);font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink);text-transform:uppercase}
+.press-list a:hover{color:var(--c-stone-ink)}
+
+/* 9 партнеры и 10 награды: тонкие линии, крупные имена */
+.part-grid,.aw-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s4) var(--s3)}
+.part,.aw{border-top:1px solid var(--c-hair);padding-top:var(--s2)}
+.part .lg{font-family:var(--font-sans);font-weight:var(--w-light);font-size:var(--t-h3);line-height:var(--lh-h3);letter-spacing:var(--wide-tracking);color:var(--c-ink);margin-bottom:var(--s1)}
+.part p,.aw p{font-size:var(--t-small);line-height:var(--lh-small)}
+.aw{display:flex;flex-direction:column}
+.aw .img{height:var(--s4);display:flex;align-items:center;margin-bottom:var(--s2)}
+.aw .img img{max-height:var(--s4);max-width:60%;object-fit:contain;filter:grayscale(100%)}
+.img-text{font-family:var(--font-sans);letter-spacing:var(--caps-tracking);font-size:var(--t-small);color:var(--c-stone-ink)}
+.aw .y{font-family:var(--font-serif);font-size:var(--t-stat);line-height:var(--lh-stat);color:var(--c-ink);margin-bottom:var(--s1)}
+.aw .t{font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-ink);margin-bottom:var(--s1)}
+
+/* 11 вопросы: заголовок слева, ответы справа */
+.wrap:has(> .faq){display:grid;grid-template-columns:5fr 7fr;gap:var(--s4);align-items:start}
+.wrap:has(> .faq) .sec-head{text-align:left;margin:0}
+.faq details{border-top:1px solid var(--c-ink)}
+.faq details:last-of-type{border-bottom:1px solid var(--c-ink)}
+.faq summary{cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:var(--s2);padding:var(--s2) 0;font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary::after{content:'+';font-family:var(--font-sans);font-weight:var(--w-light);color:var(--c-stone-ink)}
+.faq details[open] summary::after{content:'−'}
+.faq .a{padding:0 0 var(--s2);font-size:var(--t-body);line-height:var(--lh-body)}
+
+/* 12 форма: темная секция */
+.form-sec{background:var(--c-night);color:var(--c-on-night)}
+.form-sec .in{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:center}
+.form-sec .lead h2{color:var(--c-on-night);margin-bottom:var(--s2)}
+.form-sec .lead p{color:var(--c-fog);font-size:var(--t-lead);line-height:var(--lh-lead);margin-bottom:var(--s3)}
+.form-sec .tel-big{font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-on-night);display:block;margin-bottom:var(--s1)}
+.city{font-family:var(--font-sans);font-size:var(--t-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-fog)}
+.msgs{display:flex;gap:var(--s1);margin-top:var(--s2)}
+.msgs a{width:var(--button-h);height:var(--button-h);border:1px solid var(--c-fog);border-radius:var(--r-round);display:flex;align-items:center;justify-content:center}
+.msgs svg{stroke:var(--c-on-night);fill:none;stroke-width:1.4}
+.f-form{background:var(--c-paper);padding:var(--s3);color:var(--c-ink)}
+.f-form .ft,.modal-card .mt{font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink);margin-bottom:var(--s1)}
+.f-form .fs,.modal-card .ms{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s2)}
+.f-form input[type=text],.f-form input[type=tel],.modal-card input[type=text],.modal-card input[type=tel]{width:100%;border:0;border-bottom:1px solid var(--c-hair);padding:var(--s1) 0;font-family:var(--font-sans);font-size:var(--t-body);margin-bottom:var(--s2);outline:none;background:transparent;color:var(--c-ink)}
+.f-form input:focus,.modal-card input:focus{border-bottom-color:var(--c-ink)}
+.chk{display:flex;gap:var(--s1);align-items:flex-start;font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s2)}
+.form-note{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-stone-ink);margin-top:var(--s1);text-align:center}
+
+/* подвал: огромный логотип, как у премиальных студий */
+footer{padding:var(--section) 0 var(--s3);font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small)}
+.ft-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:var(--s3)}
+.ft-grid .h{font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-stone-ink);margin-bottom:var(--s2)}
+.ft-grid a{display:block;margin-bottom:var(--s1)}
+.logo-xl{font-size:var(--t-display);line-height:var(--lh-display)}
+.ft-soc{display:flex;gap:var(--s1);margin-top:var(--s2)}
+.ft-soc a{width:var(--button-h);height:var(--button-h);border:1px solid var(--c-hair);border-radius:var(--r-round);display:flex;align-items:center;justify-content:center;margin:0}
+.ft-soc svg{stroke:var(--c-graphite);fill:none;stroke-width:1.4}
+.ft-bottom{margin-top:var(--s4);padding-top:var(--s2);border-top:1px solid var(--c-hair);color:var(--c-stone-ink)}
+
+/* липкий звонок и всплывающее окно */
+.sticky-call{position:fixed;right:var(--s2);bottom:var(--s2);z-index:60;width:var(--call);height:var(--call);border-radius:var(--r-round);background:var(--c-ground);border:1px solid var(--c-hair);display:flex;align-items:center;justify-content:center;opacity:0;pointer-events:none;transition:opacity .6s}
+body.past-hero .sticky-call{opacity:1;pointer-events:auto}
+.sticky-call svg{stroke:var(--c-ink);fill:none;stroke-width:1.4;width:var(--s2);height:var(--s2)}
+.modal{position:fixed;inset:0;background:var(--c-shade-deep);z-index:100;display:none;align-items:center;justify-content:center;padding:var(--s2)}
+.modal.on{display:flex}
+.modal-card{background:var(--c-paper);max-width:var(--text);width:100%;padding:var(--s3);position:relative}
+.modal-card .x{position:absolute;top:var(--s2);right:var(--s2);font-family:var(--font-sans);font-size:var(--t-h3);cursor:pointer;color:var(--c-ink)}
+
+
+/* ===== премиальный слой (прогон 005) ===== */
+/* паузы-кадры: интерьер на весь экран без слов, как у Norm */
+.pause{width:100%;max-width:var(--photo-max);margin:0 auto;aspect-ratio:16/9;max-height:var(--pause-h);overflow:hidden}
+.pause img{width:100%;height:100%;object-fit:cover}
+
+/* отзывы: листание по одной цитате */
+.rev-nav{display:flex;align-items:center;justify-content:center;gap:var(--s3);margin-top:var(--s3);font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);color:var(--c-ink)}
+.rev-nav button{width:var(--button-h);height:var(--button-h);border:1px solid var(--c-hair);border-radius:var(--r-round);background:transparent;color:var(--c-ink);font-family:var(--font-sans);font-size:var(--t-body);cursor:pointer;transition:border-color .3s}
+.rev-nav button:hover{border-color:var(--c-ink)}
+
+/* переключатель желтых пометок «на согласование» */
+.notes-toggle{position:fixed;left:var(--s2);bottom:var(--s2);z-index:60;min-height:var(--notes-btn);padding:0 var(--s2);background:var(--c-note-bg);color:var(--c-note-ink);border:1px solid var(--c-note-ink);font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;cursor:pointer}
+body.notes-off .note{display:none}
+.notes-toggle{opacity:0;pointer-events:none;transition:opacity .6s}
+body.past-hero .notes-toggle{opacity:1;pointer-events:auto}
+
+/* подпись «Смотреть» у курсора над проектами */
+.cursor-tag{position:fixed;left:0;top:0;z-index:70;pointer-events:none;width:var(--s4);height:var(--s4);border-radius:var(--r-round);background:var(--c-ground);color:var(--c-ink);display:flex;align-items:center;justify-content:center;font-family:var(--font-sans);font-size:var(--t-caps);line-height:var(--lh-caps);letter-spacing:var(--caps-tracking);text-transform:uppercase;opacity:0;transform:translate(-50%,-50%) scale(.6);transition:opacity .3s,transform .3s}
+.cursor-tag.on{opacity:1;transform:translate(-50%,-50%) scale(1)}
+
+/* тихое движение - отдельный слой: класс motion на html ставит скрипт, выключается одной строкой MOTION=false */
+.motion .slide.on img{animation:kb 14s ease-out forwards}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+.motion :is(.sec-head,.svc,.adv,.proj,.step,.rev-grid,.aw,.part,.ba,.vid,.faq,.about .photos figure,.stats,.proof):not(.seen){opacity:0;transform:translateY(var(--s3))}
+.motion :is(.sec-head,.svc,.adv,.proj,.step,.rev-grid,.aw,.part,.ba,.vid,.faq,.about .photos figure,.stats,.proof){transition:opacity 1.2s ease,transform 1.2s ease}
+
+@media (max-width:1000px){
+ nav.menu{display:none}
+ .burger{display:block}
+ nav.menu.open{display:flex;position:absolute;top:100%;left:0;right:0;background:var(--c-ground);flex-direction:column;gap:0;border-bottom:1px solid var(--c-hair);z-index:60}
+ nav.menu.open a{padding:var(--s2) var(--s3);border-top:1px solid var(--c-hair)}
+ .svc-grid{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:var(--svc-card-mobile);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s2)}
+ .svc{scroll-snap-align:start}
+ .adv-grid{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:repeat(3,1fr)}
+ .part-grid,.aw-grid{grid-template-columns:1fr 1fr}
+ .about .in,.form-sec .in,.wrap:has(> .faq){grid-template-columns:1fr}
+ .ba-row{grid-template-columns:1fr}
+ .proj-grid{gap:var(--section-mobile) var(--gutter)}
+ .about .in>div:first-child{grid-template-columns:1fr}
+ .about .in>div:first-child>*,.about .in>div:first-child>.label,.about .in>div:first-child>h2{grid-column:1;grid-row:auto}
+}
+@media (max-width:1200px) and (min-width:1001px){
+ .svc-grid{grid-template-columns:1fr 1fr;row-gap:var(--s4)}
+}
+@media (max-width:640px){
+ .wrap{padding:0 var(--s2)}
+ .about .photos img{height:auto;aspect-ratio:3/4}
+ .about .founder-captions{grid-template-columns:1fr;text-align:left}
+ .hd{gap:var(--s1)}
+ .logo{font-size:var(--t-body);line-height:var(--lh-body)}
+ .hd .btn,.burger{padding:0 var(--s1);min-height:var(--s4);letter-spacing:normal;white-space:nowrap}
+ .hd .btn,.burger{min-height:var(--button-h)}
+ .hero .shade{background:linear-gradient(180deg,var(--c-shade-deep) 0%,var(--c-shade) 45%,var(--c-shade-deep) 100%)}
+ .logo span{white-space:nowrap;letter-spacing:normal}
+ .hero{height:auto;min-height:100vh}
+ .hero h1{max-width:none}
+ .hero-inner{position:relative;padding-top:calc(var(--s4) + var(--s3));padding-bottom:calc(var(--section) + var(--s4))}
+ .hero-case .row{padding-right:var(--s4)}
+ .dots{display:none}
+ .strip .in{flex-direction:column;align-items:flex-start;gap:var(--s2)}
+ .adv-grid,.part-grid,.aw-grid,.vid-row,.about .photos{grid-template-columns:1fr}
+ .about .photos{grid-template-columns:1fr 1fr}
+ .steps{grid-template-columns:1fr 1fr}
+ .stats{gap:var(--s2)}
+ .about .proof{grid-template-columns:1fr}
+ .ft-grid{grid-template-columns:1fr}
+ .logo-xl{font-size:var(--t-h2);line-height:var(--lh-h2)}
+ .f-form{padding:var(--s2)}
+ .proj{grid-column:1/-1}
+ .proj img{width:var(--full);max-width:none;margin-left:var(--bleed)}
+ .proj:nth-child(-n+4) img{height:var(--proj-h-mobile)}
+ .pause{height:var(--pause-h-mobile);max-height:none;aspect-ratio:auto}
+ .proj .cap{grid-template-columns:1fr}
+ .proj .cap a.more{grid-column:1;grid-row:auto;justify-self:start}
+ .notes-toggle{bottom:var(--s1);left:var(--s1)}
+ .sticky-call{bottom:var(--s1);right:var(--s1)}
+}
+@media (max-width:1000px){ .motion .svc:nth-child(even).seen{transform:none} }
+@media (prefers-reduced-motion:reduce){ .motion .slide.on img{animation:none} }
+
+/* Страница услуги: новые блоки используют только токены и композиционные принципы premium-главной. */
+body.modal-open{overflow:hidden}
+button,input,select,textarea{font:inherit}
+.hero .note{position:relative;z-index:2}
+.hero-note a{color:inherit}
+.hero h1{max-width:100%}
+@media(min-width:1001px){.hero-inner{padding-bottom:var(--s3)}}
+
+/* Факты продолжают тихую контактную полосу главной. */
 .facts{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);padding:var(--s3) 0;border-bottom:1px solid var(--c-hair)}
 .fact{border-top:1px solid var(--c-ink);padding-top:var(--s2)}
 .fact strong{display:block;font-family:var(--font-serif);font-weight:var(--w-regular);font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink);margin-bottom:var(--s1)}
-.fact span{display:block;min-height:var(--s3);font-size:var(--t-small);line-height:var(--lh-small)}
-.link-caps{font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase;border-bottom:1px solid currentColor}
-.portfolio{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4) var(--s2)}
-.project img{width:100%;height:var(--proj-h-mobile);object-fit:cover}
-.project-copy{padding-top:var(--s2);display:flex;justify-content:space-between;gap:var(--s2)}
-.project h3{margin-bottom:var(--gutter)}
-.project p{font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:0;color:var(--c-stone-ink)}
-.section-actions{display:flex;justify-content:center;gap:var(--s2);flex-wrap:wrap;margin-top:var(--s4)}
-.scroller{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - var(--s2) - var(--s2)) / 3);gap:var(--s2);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s2)}
+.fact span{display:block;min-height:var(--s3);font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small)}
+.fact .link-caps{display:inline-block;margin-top:var(--s1)}
+
+/* Этапы: крупный вертикальный кадр и подпись под ним, как в карточках услуг. */
+.scroller{display:grid;grid-auto-flow:column;grid-auto-columns:calc((100% - var(--s2) - var(--s2)) / 3);gap:var(--s2);overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:var(--s2);scrollbar-width:none}
+.scroller::-webkit-scrollbar{display:none}
 .stage{scroll-snap-align:start}
-.stage img{width:100%;height:var(--portrait-h);object-fit:cover}
+.stage img{width:100%;aspect-ratio:3/4;object-fit:cover}
 .stage-copy{padding-top:var(--s2);border-top:1px solid var(--c-ink);margin-top:var(--s2)}
-.stage-no{font-family:var(--font-serif);font-size:var(--t-stat);line-height:var(--lh-stat);color:var(--c-stone)}
-.stage p{font-size:var(--t-small);line-height:var(--lh-small)}
-.experts{display:grid;gap:var(--section)}
-.expert{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:center}
-.expert:nth-child(even) .expert-photo{order:2}
-.expert-photo img{width:100%;height:var(--portrait-h);object-fit:cover;filter:grayscale(100%)}
-.expert-meta{border-top:1px solid var(--c-ink);padding-top:var(--s2);margin:var(--s2) 0}
+.stage-no{font-family:var(--font-serif);font-style:italic;font-size:var(--t-title);line-height:var(--lh-title);color:var(--c-stone);margin-bottom:var(--s1)}
+.stage h3{font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-regular);color:var(--c-ink);margin-bottom:var(--s2)}
+.stage p{font-size:var(--t-body);line-height:var(--lh-body)}
+
+/* Основательницы: тот же полноширинный портретный модуль, что на главной. */
+.about>.wrap>.sec-head{display:grid;grid-template-columns:5fr 7fr;gap:var(--s4);max-width:none}
+.about>.wrap>.sec-head .label{grid-column:1}
+.about>.wrap>.sec-head h2{grid-column:2}
+.founder-role{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);color:var(--c-stone-ink);margin-bottom:var(--s1)}
+.expert-meta{border-top:1px solid var(--c-hair);padding-top:var(--s2);margin-top:var(--s2)}
 .expert-meta p{margin-bottom:var(--s1)}
-.quote-slot{padding:var(--s2) 0;border-top:1px solid var(--c-hair);border-bottom:1px solid var(--c-hair)}
-.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s2)}
-.video-slot{aspect-ratio:9/16;background:var(--c-ground-alt);display:flex;align-items:center;justify-content:center;text-align:center;padding:var(--s2);border-top:1px solid var(--c-hair);border-bottom:1px solid var(--c-hair)}
-.cost-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s3)}
-.cost-card{border-top:1px solid var(--c-on-night);padding-top:var(--s2)}
-.price{font-family:var(--font-serif);font-size:var(--t-title);line-height:var(--lh-title);margin-bottom:var(--s2)}
-.cost-card p,.cost-card li{font-size:var(--t-small);line-height:var(--lh-small)}
-.cost-card ul{padding-left:var(--s2)}
-.cost-foot{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);margin-top:var(--s4);padding-top:var(--s3);border-top:1px solid var(--c-on-night)}
-.calc-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s3)}
-.calc{border-top:1px solid var(--c-ink);padding-top:var(--s2)}
-.calc-lines{margin:var(--s2) 0}
-.calc-line{display:flex;justify-content:space-between;gap:var(--s2);border-bottom:1px solid var(--c-hair);padding:var(--s1) 0}
-.calc-total{font-family:var(--font-serif);font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink);margin-top:var(--s2)}
-.rooms{display:grid;gap:var(--s4)}
-.room{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:center}
+.quote-slot{margin-bottom:var(--s2)}
+
+/* Видео-запросы: не имитируют готовый контент, в клиентской версии остаются спокойными плейсхолдерами. */
+.videos{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gutter)}
+.video-slot{aspect-ratio:9/16;background:var(--c-ground-alt);display:flex;align-items:flex-end;padding:var(--s2);border-top:1px solid var(--c-hair)}
+.video-slot p{font-size:var(--t-h3);line-height:var(--lh-h3);color:var(--c-ink)}
+
+/* Стоимость: не три текстовые колонки, а три последовательных экрана с раскрываемым составом. */
+.cost-section{background:var(--c-night);color:var(--c-on-night)}
+.cost-section .label,.cost-section .sec-lead{color:var(--c-fog)}
+.cost-section h2,.cost-section h3{color:var(--c-on-night)}
+.cost-section .sec-head{max-width:var(--quote-w)}
+.cost-grid{border-bottom:1px solid var(--c-fog)}
+.cost-card{display:grid;grid-template-columns:5fr 7fr;gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--c-fog)}
+.cost-card h3{font-size:var(--t-title);line-height:var(--lh-title);font-weight:var(--w-regular);margin-bottom:var(--s2)}
+.price{font-family:var(--font-serif);font-size:var(--t-h2);line-height:var(--lh-h2)}
+.cost-body>p{font-size:var(--t-lead);line-height:var(--lh-lead);max-width:var(--text);margin-bottom:var(--s2)}
+.cost-body details{border-top:1px solid var(--c-fog);border-bottom:1px solid var(--c-fog)}
+.cost-body summary{cursor:pointer;list-style:none;padding:var(--s2) 0;font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase;display:flex;justify-content:space-between;gap:var(--s2)}
+.cost-body summary::-webkit-details-marker{display:none}
+.cost-body summary::after{content:'+';font-size:var(--t-h3);line-height:var(--lh-small)}
+.cost-body details[open] summary::after{content:'−'}
+.cost-body ul{columns:2;column-gap:var(--s3);padding:0 0 var(--s2) var(--s2);font-size:var(--t-small);line-height:var(--lh-small)}
+.cost-body li{break-inside:avoid;margin-bottom:var(--s1)}
+.cost-foot{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);padding:var(--s4) 0;border-bottom:1px solid var(--c-fog)}
+.cost-foot>div{border-top:1px solid var(--c-fog);padding-top:var(--s2)}
+.cost-foot h3{font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-regular)}
+body.notes-off .cost-foot{display:none}
+.cost-section .btn--ghost{border-color:var(--c-on-night)}
+
+/* Расчет: две спокойные полноширинные строки вместо таблицы в две тесные колонки. */
+.calc-grid{border-bottom:1px solid var(--c-hair)}
+.calc{display:grid;grid-template-columns:5fr 7fr;gap:var(--s4);padding:var(--s4) 0;border-top:1px solid var(--c-ink)}
+.calc h3{font-size:var(--t-title);line-height:var(--lh-title);font-weight:var(--w-regular);margin-bottom:var(--s2)}
+.calc-intro p{font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s1);color:var(--c-stone-ink)}
+.calc-lines{margin-bottom:var(--s2)}
+.calc-line{display:grid;grid-template-columns:1fr auto;gap:var(--s2);padding:var(--s2) 0;border-bottom:1px solid var(--c-hair);font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small)}
+.calc-total{font-family:var(--font-serif);font-size:var(--t-title);line-height:var(--lh-title);color:var(--c-ink);margin-top:var(--s3)}
+.calc-result>p:not(.calc-total):not(.note){max-width:var(--text)}
+.calc-result>.btn{margin-top:var(--s2)}
+
+/* Планировки: крупный кадр и один текстовый фокус за раз. */
+.rooms{display:grid;gap:var(--section)}
+.room{display:grid;grid-template-columns:7fr 5fr;gap:var(--s4);align-items:center}
+.room:nth-child(even){grid-template-columns:5fr 7fr}
 .room:nth-child(even) .room-image{order:2}
-.room img{width:100%;height:var(--proj-h-mobile);object-fit:cover}
-.advantages{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--s4) var(--s3)}
-.advantage{border-top:1px solid var(--c-ink);padding-top:var(--s2)}
-.advantage p{font-size:var(--t-small);line-height:var(--lh-small)}
-.reviews{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4)}
-.review{border-top:1px solid var(--c-ink);padding-top:var(--s2)}
-.review blockquote{margin:0;font-family:var(--font-serif);font-size:var(--t-quote);line-height:var(--lh-quote);color:var(--c-ink)}
-.review cite{display:block;margin-top:var(--s2);font-style:normal;font-size:var(--t-small);line-height:var(--lh-small);letter-spacing:var(--caps-tracking);text-transform:uppercase}
-.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:var(--s4);align-items:start}
-.form-grid>*{min-width:0}
-.form{background:var(--c-paper);padding:var(--s3);min-width:0}
-.form label{display:block;font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s2)}
-.form input,.form select,.form textarea{width:100%;border:0;border-bottom:1px solid var(--c-hair);background:transparent;color:var(--c-ink);padding:var(--s1) 0}
-.form textarea{min-height:var(--s4);resize:vertical}
-.form .btn{width:100%}
-.note{display:none;background:var(--c-note-bg);color:var(--c-note-ink);font-size:var(--t-small);line-height:var(--lh-small);font-style:italic;padding:var(--s1);margin-top:var(--s1)}
-body.notes-on .note{display:block}
-.notes-toggle{position:fixed;right:var(--s2);bottom:var(--s2);z-index:60;min-height:var(--notes-btn);padding:0 var(--s2);border:1px solid var(--c-note-ink);background:var(--c-note-bg);color:var(--c-note-ink);cursor:pointer;font-size:var(--t-small);line-height:var(--lh-small)}
-.modal{position:fixed;inset:0;z-index:100;background:var(--c-shade-deep);display:none;align-items:center;justify-content:center;padding:var(--s2)}
-.modal.on{display:flex}
-.modal-card{background:var(--c-paper);width:100%;max-width:var(--text);padding:var(--s3);position:relative}
-.modal-close{position:absolute;top:var(--s2);right:var(--s2);background:transparent;border:0;color:var(--c-ink);cursor:pointer;font-size:var(--t-h3);line-height:var(--lh-h3)}
-.footer{padding:var(--s3) 0;background:var(--c-night);color:var(--c-on-night)}
-.footer-in{display:flex;justify-content:space-between;gap:var(--s2);font-size:var(--t-small);line-height:var(--lh-small)}
-@media(max-width:900px){
-  .header-links a:not(.btn){display:none}
-  .portfolio,.advantages{grid-template-columns:1fr 1fr}
-  .cost-grid{grid-template-columns:1fr}
-  .scroller{grid-auto-columns:var(--svc-card-mobile)}
-  .expert,.room{grid-template-columns:1fr;gap:var(--s3)}
-  .expert:nth-child(even) .expert-photo,.room:nth-child(even) .room-image{order:0}
+.room img{width:100%;height:var(--pause-h);object-fit:cover}
+.room h3{font-size:var(--t-title);line-height:var(--lh-title);font-weight:var(--w-regular);margin-bottom:var(--s2)}
+.room p{font-size:var(--t-lead);line-height:var(--lh-lead)}
+
+/* Преимущества: редакционная нумерованная лента, а не шесть одинаковых эссе. */
+.advantages{border-bottom:1px solid var(--c-hair)}
+.advantage{display:grid;grid-template-columns:1fr 4fr 7fr;gap:var(--s3);align-items:start;padding:var(--s3) 0;border-top:1px solid var(--c-hair)}
+.adv-no{font-family:var(--font-serif);font-style:italic;font-size:var(--t-title);line-height:var(--lh-title);color:var(--c-stone)}
+.advantage h3{font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-regular)}
+.advantage p{font-size:var(--t-body);line-height:var(--lh-body);max-width:var(--text)}
+
+/* Отзывы: цитата на всю строку, как на premium-главной. */
+.reviews{border-top:1px solid var(--c-ink);border-bottom:1px solid var(--c-hair)}
+.review{padding:var(--s4) 0;text-align:center}
+.review+.review{border-top:1px solid var(--c-hair)}
+.review blockquote{max-width:var(--quote-w);margin:0 auto;font-family:var(--font-serif);font-size:var(--t-quote);line-height:var(--lh-quote);color:var(--c-ink)}
+.review cite{display:block;margin-top:var(--s2);font-family:var(--font-sans);font-size:var(--t-small);line-height:var(--lh-small);font-style:normal;letter-spacing:var(--caps-tracking);text-transform:uppercase;color:var(--c-stone-ink)}
+
+.form-sec .sec-head{margin-bottom:0}
+.form-sec .sec-head .label{color:var(--c-fog)}
+.form-sec .sec-lead{color:var(--c-fog);margin-bottom:var(--s3)}
+.modal-card .f-form{padding:0}
+.modal-close{background:transparent;border:0}
+
+@media(max-width:1000px){
+ .facts{grid-template-columns:1fr 1fr}
+ .scroller{grid-auto-columns:var(--svc-card-mobile)}
+ .about>.wrap>.sec-head,.cost-card,.calc,.room,.room:nth-child(even),.advantage{grid-template-columns:1fr}
+ .about>.wrap>.sec-head .label,.about>.wrap>.sec-head h2{grid-column:1}
+ .room:nth-child(even) .room-image{order:0}
+ .cost-body ul{columns:1}
+ .videos{grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:var(--svc-card-mobile);overflow-x:auto;scroll-snap-type:x mandatory}
+ .video-slot{scroll-snap-align:start}
 }
 @media(max-width:640px){
-  .wrap{padding:0 var(--s2)}
-  .header-in{min-height:var(--s3)}
-  .header .btn{min-height:var(--call);padding:0 var(--s1)}
-  .hero-content{padding-top:var(--s4);padding-bottom:var(--s2)}
-  .hero h1{margin-bottom:var(--s1)}
-  .hero-copy{font-size:var(--t-small);line-height:var(--lh-small);margin-bottom:var(--s1)}
-  .hero-phones{gap:var(--s2);margin-bottom:var(--s1)}
-  .hero .ctas{gap:var(--s1)}
-  .hero .btn{min-height:var(--call);padding:0 var(--s1)}
-  .facts{grid-template-columns:1fr 1fr;gap:var(--s2)}
-  .fact span{min-height:0}
-  .portfolio,.advantages,.reviews,.calc-grid,.form-grid{grid-template-columns:1fr}
-  .project img,.room img{height:var(--proj-h-mobile)}
-  .expert-photo img,.stage img{height:var(--pause-h-mobile)}
-  .videos,.cost-grid,.rooms{display:grid;grid-template-columns:none;grid-auto-flow:column;grid-auto-columns:var(--svc-card-mobile);overflow-x:auto;scroll-snap-type:x mandatory}
-  .video-slot,.cost-card,.room{scroll-snap-align:start}
-  .cost-foot{grid-template-columns:1fr;gap:var(--s2)}
-  .calc-line{display:block}
-  .section-actions{margin-top:var(--s3)}
-  .footer-in{display:block}
-  .form{padding:var(--s2)}
+ .facts{grid-template-columns:1fr}
+ .fact span{min-height:auto}
+ .hero-note{font-size:var(--t-small);line-height:var(--lh-small)}
+ .cost-card,.calc{padding:var(--s3) 0;gap:var(--s2)}
+ .price{font-size:var(--t-title);line-height:var(--lh-title)}
+ .cost-foot{grid-template-columns:1fr;gap:var(--s2)}
+ .room img{height:var(--pause-h-mobile)}
+ .advantages .advantage{gap:var(--s2)}
+ .advantage p{font-size:var(--t-small);line-height:var(--lh-small)}
 }
-@media(prefers-reduced-motion:reduce){*{scroll-behavior:auto;transition:none}}
-</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Background Studio","url":"https://background-studio.ru/dizain-interera-dvuhkomnatnoi-kvartiry","telephone":["+7-925-642-50-03","+7-931-257-20-02"],"areaServed":["Москва","Санкт-Петербург"],"serviceType":"Дизайн интерьера двухкомнатной квартиры"}</script></head><body><header class="header"><div class="wrap header-in"><a class="logo" href="#top">BACKGROUND</a><nav class="header-links" aria-label="Основная навигация"><a class="" href="#portfolio">Портфолио</a><a class="" href="#cost">Стоимость</a><a class="" href="#experts">Эксперты</a><button class="btn btn-ghost open-modal" type="button" aria-label="Обсудить проект">Обсудить проект</button></nav></div></header><main id="main"><section class="hero" data-block="1" id="top">
-<img class="hero-bg" src="img/hero.jpg" alt="Интерьер двухкомнатной квартиры Background Studio">
-<div class="hero-shade"></div>
-<div class="wrap hero-content">
-  <h1>Дизайн интерьера двухкомнатной квартиры в Москве и СПб</h1>
-  <p class="hero-copy">Создаем интерьер двухкомнатной квартиры под ваш образ жизни: раскрываем пространство, продумываем хранение, свет и приватные зоны. Ведем проект от планировки и визуализаций до комплектации и контроля реализации.</p>
-  <div class="hero-phones">
-    <a href="tel:+79256425003"><small>Москва</small>+7 (925) 642-50-03</a>
-    <a href="tel:+79312572002"><small>Санкт-Петербург</small>+7 (931) 257-20-02</a>
-  </div>
-  <div class="ctas"><button class="btn btn-light open-modal" type="button" aria-label="Обсудить проект">Обсудить проект</button><a class="btn btn-ghost" href="#portfolio">Смотреть портфолио</a></div>
+</style><script type="application/ld+json">{"@context":"https://schema.org","@type":"ProfessionalService","name":"Background Studio","url":"https://background-studio.ru/dizain-interera-dvuhkomnatnoi-kvartiry","telephone":["+7-925-642-50-03","+7-931-257-20-02"],"areaServed":["Москва","Санкт-Петербург"],"serviceType":"Дизайн интерьера двухкомнатной квартиры"}</script></head><body><header><div class="wrap hd"><a class="logo" href="https://background-studio.ru/">background<span>интерьер и архитектура</span></a><nav class="menu" aria-label="Основная навигация"><a class="" href="#portfolio">Портфолио</a><a class="" href="#process">Процесс</a><a class="" href="#cost">Стоимость</a><a class="" href="#experts">Эксперты</a><a class="" href="#reviews">Отзывы</a></nav><div class="hd-actions"><button class="btn open-modal" type="button" aria-label="Заказать звонок">Заказать звонок</button><button class="burger" type="button" aria-label="Меню">Меню</button></div></div></header><main id="main"><section class="hero" data-block="1" id="top">
+<div class="slide on"><img class="" src="img/hero.jpg" alt="Интерьер двухкомнатной квартиры Background Studio"></div>
+<div class="shade"></div>
+<div class="hero-inner"><div class="wrap">
+  <h1>Дизайн интерьера двухкомнатной квартиры в Москве и СПб<span class="brand">Background Studio</span></h1>
+  <p class="sub">Создаем интерьер двухкомнатной квартиры под ваш образ жизни: раскрываем пространство, продумываем хранение, свет и приватные зоны. Ведем проект от планировки и визуализаций до комплектации и контроля реализации.</p>
+  <div class="hero-cta"><button class="btn btn--ghost open-modal" type="button" aria-label="Обсудить проект">Обсудить проект</button><a class="btn btn--ghost" href="#portfolio">Смотреть портфолио</a></div>
+  <div class="hero-note"><a href="tel:+79256425003">Москва · +7 (925) 642-50-03</a> &nbsp; <a href="tel:+79312572002">Санкт-Петербург · +7 (931) 257-20-02</a></div>
   <p class="note" data-note-block="1">От вас нужно: свежая награда студии за 2025-2026 год и ссылка на подтверждение</p>
-</div></section><section data-block="2" id="facts"><div class="wrap"><div class="facts"><article class="fact"><strong>от 10 000 ₽/м²</strong><span>Цена дизайн-проекта</span><a class="link-caps" href="#cost">Что входит в стоимость?</a></article><article class="fact"><strong>от 18 лет</strong><span>Опыт дизайнеров-архитекторов</span><a class="link-caps" href="#experts">Кто создает дизайн-проект?</a></article><article class="fact"><strong>Проекты квартир</strong><span>Реализованные интерьеры</span><a class="link-caps" href="#process">Как мы работаем?</a><p class="note" data-note-block="2">От вас нужно: примерное минимальное число реализованных дизайн-проектов квартир</p></article><article class="fact"><strong>Под ключ</strong><span>От проекта до сдачи квартиры</span><a class="link-caps" href="#advantages">Почему нас выбирают?</a></article></div></div></section><section class="section" data-block="3" id="portfolio"><div class="wrap">
-<p class="label">Портфолио</p><h2>Реализованные дизайн-проекты двухкомнатных квартир</h2>
-<div class="portfolio"><a class="project" href="https://background-studio.ru/kvartira-v-highlife-60m2">
+</div></div></section><section data-block="2" id="facts"><div class="wrap"><div class="facts"><article class="fact"><strong>от 10 000 ₽/м²</strong><span>Цена дизайн-проекта</span><a class="link-caps" href="#cost">Что входит в стоимость?</a></article><article class="fact"><strong>от 18 лет</strong><span>Опыт дизайнеров-архитекторов</span><a class="link-caps" href="#experts">Кто создает дизайн-проект?</a></article><article class="fact"><strong>Проекты квартир</strong><span>Реализованные интерьеры</span><a class="link-caps" href="#process">Как мы работаем?</a><p class="note" data-note-block="2">От вас нужно: примерное минимальное число реализованных дизайн-проектов квартир</p></article><article class="fact"><strong>Под ключ</strong><span>От проекта до сдачи квартиры</span><a class="link-caps" href="#advantages">Почему нас выбирают?</a></article></div></div></section><section class="sec" data-block="3" id="portfolio"><div class="wrap">
+<div class="sec-head"><div class="label">Портфолио</div><h2>Реализованные дизайн-проекты двухкомнатных квартир</h2></div>
+<div class="proj-grid"><a class="proj" href="https://background-studio.ru/kvartira-v-highlife-60m2">
       <img class="" src="img/project-highlife.jpg" alt="Квартира в Highlife, 60 м²">
-      <div class="project-copy"><div><h3>Квартира в Highlife</h3><p>60 м²</p></div><span class="link-caps">Смотреть проект</span></div>
-    </a><a class="project" href="https://background-studio.ru/kvartira-v-neva-rezidens-59m2">
+      <div class="cap"><div class="t">Квартира в Highlife</div><div class="proj-sub">60 м²</div><span class="more">Смотреть проект</span></div>
+    </a><a class="proj" href="https://background-studio.ru/kvartira-v-neva-rezidens-59m2">
       <img class="" src="img/project-neva-residence.jpg" alt="Квартира в «Нева Резиденс», 59 м²">
-      <div class="project-copy"><div><h3>Квартира в «Нева Резиденс»</h3><p>59 м²</p></div><span class="link-caps">Смотреть проект</span></div>
-    </a><a class="project" href="https://background-studio.ru/kvartira-v-sojuz-78m2">
+      <div class="cap"><div class="t">Квартира в «Нева Резиденс»</div><div class="proj-sub">59 м²</div><span class="more">Смотреть проект</span></div>
+    </a><a class="proj" href="https://background-studio.ru/kvartira-v-sojuz-78m2">
       <img class="" src="img/project-soyuz.jpg" alt="Квартира в «Союз», 78 м²">
-      <div class="project-copy"><div><h3>Квартира в «Союз»</h3><p>78 м²</p></div><span class="link-caps">Смотреть проект</span></div>
-    </a><a class="project" href="https://background-studio.ru/kvartira-v-morskaja-rivera-40m2">
+      <div class="cap"><div class="t">Квартира в «Союз»</div><div class="proj-sub">78 м²</div><span class="more">Смотреть проект</span></div>
+    </a><a class="proj" href="https://background-studio.ru/kvartira-v-morskaja-rivera-40m2">
       <img class="" src="img/project-morskaya.jpg" alt="Квартира в «Морская Ривьера», 40 м²">
-      <div class="project-copy"><div><h3>Квартира в «Морская Ривьера»</h3><p>40 м²</p></div><span class="link-caps">Смотреть проект</span></div>
-    </a><a class="project" href="https://background-studio.ru/kvartira-v-neva-haus-50m2">
+      <div class="cap"><div class="t">Квартира в «Морская Ривьера»</div><div class="proj-sub">40 м²</div><span class="more">Смотреть проект</span></div>
+    </a><a class="proj" href="https://background-studio.ru/kvartira-v-neva-haus-50m2">
       <img class="" src="img/project-neva-haus.jpg" alt="Квартира в Neva Haus, 50 м²">
-      <div class="project-copy"><div><h3>Квартира в Neva Haus</h3><p>50 м²</p></div><span class="link-caps">Смотреть проект</span></div>
-    </a><a class="project" href="https://background-studio.ru/kvartira-na-petrovskom-prospekte-50m2">
+      <div class="cap"><div class="t">Квартира в Neva Haus</div><div class="proj-sub">50 м²</div><span class="more">Смотреть проект</span></div>
+    </a><a class="proj" href="https://background-studio.ru/kvartira-na-petrovskom-prospekte-50m2">
       <img class="" src="img/project-familia.jpg" alt="Квартира в ЖК Familia, 50 м²">
-      <div class="project-copy"><div><h3>Квартира в ЖК Familia</h3><p>50 м²</p></div><span class="link-caps">Смотреть проект</span></div>
+      <div class="cap"><div class="t">Квартира в ЖК Familia</div><div class="proj-sub">50 м²</div><span class="more">Смотреть проект</span></div>
     </a></div>
-<div class="section-actions"><a class="btn" href="https://background-studio.ru/portfolio">Посмотреть все проекты</a><button class="btn open-modal" type="button" aria-label="Обсудить проект">Обсудить проект</button></div>
-</div></section><section class="section section-alt" data-block="4" id="process"><div class="wrap">
-<p class="label">Как мы работаем</p><h2>Этапы реализации дизайн-проекта двухкомнатной квартиры</h2><div class="scroller"><article class="stage"><img class="" src="img/stage-audit.jpg" alt="Аудит двухкомнатной квартиры, изучение потребностей заказчика"><div class="stage-copy"><div class="stage-no">01</div><h3>Аудит двухкомнатной квартиры, изучение потребностей заказчика</h3><p>Анализируем исходную планировку, несущие конструкции, расположение стояков, окон и входной группы. Фиксируем состав семьи, привычки, сценарии работы и отдыха, требования к хранению и приватности. Результат этапа - точное задание на интерьер без решений, которые нельзя реализовать на старте.</p></div></article><article class="stage"><img class="" src="img/stage-plan.jpg" alt="Перепланировочное решение и эргономика пространства"><div class="stage-copy"><div class="stage-no">02</div><h3>Перепланировочное решение и эргономика пространства</h3><p>Разрабатываем варианты зонирования двухкомнатной квартиры, проверяем проходы, открывание дверей и расстановку мебели. Отделяем приватную часть от общей, ищем место для хранения и сохраняем естественный свет. Выбираем решение, которое соответствует нормам и реальному образу жизни семьи.</p></div></article><article class="stage"><img class="" src="img/stage-3d.png" alt="3D-визуализация интерьера двухкомнатной квартиры"><div class="stage-copy"><div class="stage-no">03</div><h3>3D-визуализация интерьера двухкомнатной квартиры</h3><p>Собираем согласованную планировку в цельный визуальный образ. Показываем пропорции помещений, материалы, мебель, свет и цвет при реальном масштабе. До начала ремонта вы видите будущую кухню-гостиную, спальню, детскую и санузлы и можете проверить каждое решение до его реализации для каждой комнаты.</p></div></article><article class="stage"><img class="" src="img/stage-drawings.png" alt="Составление рабочих чертежей и документации"><div class="stage-copy"><div class="stage-no">04</div><h3>Составление рабочих чертежей и документации</h3><p>Готовим комплект чертежей для строителей и смежных подрядчиков: демонтаж и монтаж, электрика, освещение, сантехника, потолки, полы и развертки стен. Документация связывает визуальную концепцию с конкретными монтажными решениями и снижает риск переделок на объекте, помогает подготовить точную смету на стройке.</p><button class="link-caps" type="button" disabled>Смотреть комплект рабочих чертежей</button><p class="note" data-note-block="4">От вас нужно: обезличенный PDF с комплектом рабочих чертежей</p></div></article><article class="stage"><img class="" src="img/stage-completion.jpg" alt="Комплектация двухкомнатной квартиры: мебель, материалы, техника"><div class="stage-copy"><div class="stage-no">05</div><h3>Комплектация двухкомнатной квартиры: мебель, материалы, техника</h3><p>Подбираем отделочные материалы, сантехнику, свет, мебель и технику по проекту. Сверяем образцы, размеры, сроки поставки и коммерческие предложения. Заказные позиции сопровождаем чертежами и техническими заданиями, чтобы каждый элемент точно занял предусмотренное проектом место до заказа.</p></div></article><article class="stage"><img class="" src="img/stage-control.jpg" alt="Контроль за ремонтом и реализация под ключ"><div class="stage-copy"><div class="stage-no">06</div><h3>Контроль за ремонтом и реализация под ключ</h3><p>Архитектор регулярно проверяет стройку, отвечает на вопросы прораба и подрядчиков, согласует образцы и при необходимости корректирует рабочие чертежи. Фото- и видеоотчеты дают заказчику понятную картину хода работ, а решения на объекте сохраняют замысел проекта без потери качества реализации.</p></div></article></div>
-</div></section><section class="section" data-block="5" id="experts"><div class="wrap"><p class="label">Команда</p><h2>Архитекторы-дизайнеры нашей студии</h2><div class="experts"><article class="expert"><div class="expert-photo"><img class="" src="img/expert-ekaterina.jpg" alt="Екатерина Игнатова, дизайнер-архитектор"></div><div>
-      <p class="label">Дизайнер-архитектор</p><h3>Екатерина Игнатова</h3><a class="link-caps" href="tel:+79213839667">+7 (921) 383-96-67</a>
-      <div class="expert-meta"><p>Опыт работы: 18 лет</p><p>НОУВПО «Институт декоративно-прикладного искусства» (2007)</p><p>ФГБОУВПО «Санкт-Петербургский государственный архитектурно-строительный университет» (2013)</p></div><div class="quote-slot"><p class="note" data-note-block="5">От вас нужно: цитата Екатерины Игнатовой об особенностях дизайна двухкомнатных квартир</p></div><button class="btn open-modal" type="button" aria-label="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button>
-    </div></article><article class="expert"><div class="expert-photo"><img class="" src="img/expert-nana.jpg" alt="Нана Кобахидзе, дизайнер-архитектор"></div><div>
-      <p class="label">Дизайнер-архитектор</p><h3>Нана Кобахидзе</h3><a class="link-caps" href="tel:+79362622611">+7 (936) 262-26-11</a>
-      <div class="expert-meta"><p>Опыт работы: 18 лет</p><p>НОУВПО «Институт декоративно-прикладного искусства» (2007)</p><p>ФГБОУВПО «Санкт-Петербургский государственный архитектурно-строительный университет» (2013)</p></div><div class="quote-slot"><p class="note" data-note-block="5">От вас нужно: цитата Наны Кобахидзе об особенностях дизайна двухкомнатных квартир</p></div><button class="btn open-modal" type="button" aria-label="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button>
-    </div></article></div></div></section><section class="section section-alt" data-block="5.1" id="videos"><div class="wrap"><p class="label">Живой процесс</p><h2>Наши дизайнеры на стройплощадке</h2><div class="videos"><div class="video-slot"><div><span class="stage-no">01</span><p>Видео со стройплощадки</p><p class="note" data-note-block="5.1">От вас нужно: вертикальные видео дизайнеров на стройплощадке в файлах для собственного хостинга</p></div></div><div class="video-slot"><div><span class="stage-no">02</span><p>Видео со стройплощадки</p></div></div><div class="video-slot"><div><span class="stage-no">03</span><p>Видео со стройплощадки</p></div></div></div></div></section><section class="section section-night" data-block="6" id="cost"><div class="wrap">
-<p class="label">Стоимость</p><h2>Что входит в стоимость проектирования интерьера двухкомнатной квартиры</h2><div class="cost-grid"><article class="cost-card"><h3>Дизайн-проект двухкомнатной квартиры</h3><div class="price">От 10 000 ₽/м²</div><p class="note" data-note-block="6">От вас нужно: реальный срок разработки дизайн-проекта двухкомнатной квартиры</p><p>Полная документация по проекту будущего ремонта в двухкомнатной квартире. Защищает вас от непредвиденных переделок, позволяет рассчитать смету и заранее увидеть, как будет выглядеть финальный интерьер.</p><p>Что входит в стоимость:</p><ul><li>обмерный план</li><li>согласование с регламентами ЖК</li><li>планировка и перепланировка</li><li>перенос мокрых зон</li><li>интеграция общедомовых инженерных систем</li><li>план звукоизоляции (полы, стены, потолки)</li><li>строительные чертежи</li><li>ведомость материалов</li><li>предварительная комплектация</li><li>3D-визуализация двухкомнатной квартиры</li></ul></article><article class="cost-card"><h3>Комплектация</h3><div class="price">От 100 000 ₽/месяц</div><p class="note" data-note-block="6">От вас нужно: подтвердить цену комплектации 100 000 ₽ в месяц и объяснить, как она формируется</p><p class="note" data-note-block="6">От вас нужно: реальный срок комплектации двухкомнатной квартиры</p><p>Подбор мебели, техники и комплектующих для двухкомнатной квартиры, в том числе на заказ. Работаем с надежными партнерами и поставщиками, проверяем качество и бережем ваш бюджет.</p><p>Что входит в стоимость:</p><ul><li>Подбор материалов для ремонта и отделки</li><li>Подбор сложного интерьерного света</li><li>Подбор сантехники и инженерного оборудования</li><li>Подбор отдельно стоящей мебели</li><li>Формирование чертежей и ТЗ для мебели на заказ</li><li>Комплектация климатических систем</li><li>Заказ реальных выкрасов, образцов дерева, камня и тканей на объект</li><li>Подбор текстиля, настенных панелей и интерьерного декора</li><li>Выезды с дизайнером в салоны</li><li>Проверка коммерческих предложений</li></ul></article><article class="cost-card"><h3>Авторский надзор</h3><div class="price">От 100 000 ₽/месяц</div><p class="note" data-note-block="6">От вас нужно: реальный срок авторского надзора для двухкомнатной квартиры</p><p>Контроль за ремонтом и работой строителей, монтажников: гарантия безупречной реализации замысла без вашего участия на стройке. Архитектор лично добивается совпадения с 3D-визуализацией 1 к 1.</p><p>Что входит в стоимость:</p><ul><li>Выезд архитектора на объект 1-2 раз в неделю</li><li>Контроль за всеми проводимыми работами</li><li>Согласование и контроль утвержденных выкрасов стен и раскладки шпона при реальном освещении квартиры</li><li>Оперативное внесение правок в рабочие чертежи</li><li>Постоянная координация строителей, монтажников вентиляции, электриков и мебельщиков в рабочем чате</li><li>Предоставление фото- и видеоотчетов о ходе реализации объекта заказчику</li><li>Решение вопросов, возникающих у прораба и субподрядных организаций, в онлайне или по телефону</li></ul></article></div>
+<div class="center-cta"><a class="btn" href="https://background-studio.ru/portfolio">Посмотреть все проекты</a><button class="btn open-modal" type="button" aria-label="Обсудить проект">Обсудить проект</button></div>
+</div></section><section class="sec" data-block="4" id="process"><div class="wrap">
+<div class="sec-head"><div class="label">Как мы работаем</div><h2>Этапы реализации дизайн-проекта двухкомнатной квартиры</h2></div><div class="scroller"><article class="stage"><img class="" src="img/stage-audit.jpg" alt="Аудит двухкомнатной квартиры, изучение потребностей заказчика"><div class="stage-copy"><div class="stage-no">01</div><h3>Аудит двухкомнатной квартиры, изучение потребностей заказчика</h3><p>Анализируем исходную планировку, несущие конструкции, расположение стояков, окон и входной группы. Фиксируем состав семьи, привычки, сценарии работы и отдыха, требования к хранению и приватности. Результат этапа - точное задание на интерьер без решений, которые нельзя реализовать на старте.</p></div></article><article class="stage"><img class="" src="img/stage-plan.jpg" alt="Перепланировочное решение и эргономика пространства"><div class="stage-copy"><div class="stage-no">02</div><h3>Перепланировочное решение и эргономика пространства</h3><p>Разрабатываем варианты зонирования двухкомнатной квартиры, проверяем проходы, открывание дверей и расстановку мебели. Отделяем приватную часть от общей, ищем место для хранения и сохраняем естественный свет. Выбираем решение, которое соответствует нормам и реальному образу жизни семьи.</p></div></article><article class="stage"><img class="" src="img/stage-3d.png" alt="3D-визуализация интерьера двухкомнатной квартиры"><div class="stage-copy"><div class="stage-no">03</div><h3>3D-визуализация интерьера двухкомнатной квартиры</h3><p>Собираем согласованную планировку в цельный визуальный образ. Показываем пропорции помещений, материалы, мебель, свет и цвет при реальном масштабе. До начала ремонта вы видите будущую кухню-гостиную, спальню, детскую и санузлы и можете проверить каждое решение до его реализации для каждой комнаты.</p></div></article><article class="stage"><img class="" src="img/stage-drawings.png" alt="Составление рабочих чертежей и документации"><div class="stage-copy"><div class="stage-no">04</div><h3>Составление рабочих чертежей и документации</h3><p>Готовим комплект чертежей для строителей и смежных подрядчиков: демонтаж и монтаж, электрика, освещение, сантехника, потолки, полы и развертки стен. Документация связывает визуальную концепцию с конкретными монтажными решениями и снижает риск переделок на объекте, помогает подготовить точную смету на стройке.</p><button class="link-caps" type="button" disabled>Смотреть комплект рабочих чертежей</button><p class="note" data-note-block="4">От вас нужно: обезличенный PDF с комплектом рабочих чертежей</p></div></article><article class="stage"><img class="" src="img/stage-completion.jpg" alt="Комплектация двухкомнатной квартиры: мебель, материалы, техника"><div class="stage-copy"><div class="stage-no">05</div><h3>Комплектация двухкомнатной квартиры: мебель, материалы, техника</h3><p>Подбираем отделочные материалы, сантехнику, свет, мебель и технику по проекту. Сверяем образцы, размеры, сроки поставки и коммерческие предложения. Заказные позиции сопровождаем чертежами и техническими заданиями, чтобы каждый элемент точно занял предусмотренное проектом место до заказа.</p></div></article><article class="stage"><img class="" src="img/stage-control.jpg" alt="Контроль за ремонтом и реализация под ключ"><div class="stage-copy"><div class="stage-no">06</div><h3>Контроль за ремонтом и реализация под ключ</h3><p>Архитектор регулярно проверяет стройку, отвечает на вопросы прораба и подрядчиков, согласует образцы и при необходимости корректирует рабочие чертежи. Фото- и видеоотчеты дают заказчику понятную картину хода работ, а решения на объекте сохраняют замысел проекта без потери качества реализации.</p></div></article></div>
+</div></section><section class="sec about" data-block="5" id="experts"><div class="wrap"><div class="sec-head"><div class="label">Команда</div><h2>Архитекторы-дизайнеры нашей студии</h2></div><div class="photos"><figure><img class="" src="img/expert-ekaterina.jpg" alt="Екатерина Игнатова, дизайнер-архитектор"></figure><figure><img class="" src="img/expert-nana.jpg" alt="Нана Кобахидзе, дизайнер-архитектор"></figure></div><div class="founder-captions"><article class="founder-caption"><div class="founder-name">Екатерина Игнатова</div><div class="founder-role">Дизайнер-архитектор</div><a class="link-caps" href="tel:+79213839667">+7 (921) 383-96-67</a>
+      <div class="expert-meta"><p>Опыт работы: 18 лет</p><p>НОУВПО «Институт декоративно-прикладного искусства» (2007)</p><p>ФГБОУВПО «Санкт-Петербургский государственный архитектурно-строительный университет» (2013)</p></div><div class="quote-slot"><p class="note" data-note-block="5">От вас нужно: цитата Екатерины Игнатовой об особенностях дизайна двухкомнатных квартир</p></div><button class="btn open-modal" type="button" aria-label="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button></article><article class="founder-caption"><div class="founder-name">Нана Кобахидзе</div><div class="founder-role">Дизайнер-архитектор</div><a class="link-caps" href="tel:+79362622611">+7 (936) 262-26-11</a>
+      <div class="expert-meta"><p>Опыт работы: 18 лет</p><p>НОУВПО «Институт декоративно-прикладного искусства» (2007)</p><p>ФГБОУВПО «Санкт-Петербургский государственный архитектурно-строительный университет» (2013)</p></div><div class="quote-slot"><p class="note" data-note-block="5">От вас нужно: цитата Наны Кобахидзе об особенностях дизайна двухкомнатных квартир</p></div><button class="btn open-modal" type="button" aria-label="Заказать бесплатную консультацию">Заказать бесплатную консультацию</button></article></div></div></section><section class="sec" data-block="5.1" id="videos"><div class="wrap"><div class="sec-head"><div class="label">Живой процесс</div><h2>Наши дизайнеры на стройплощадке</h2></div><div class="videos"><div class="video-slot"><div><span class="stage-no">01</span><p>Видео со стройплощадки</p><p class="note" data-note-block="5.1">От вас нужно: вертикальные видео дизайнеров на стройплощадке в файлах для собственного хостинга</p></div></div><div class="video-slot"><div><span class="stage-no">02</span><p>Видео со стройплощадки</p></div></div><div class="video-slot"><div><span class="stage-no">03</span><p>Видео со стройплощадки</p></div></div></div></div></section><section class="sec cost-section" data-block="6" id="cost"><div class="wrap">
+<div class="sec-head"><div class="label">Стоимость</div><h2>Что входит в стоимость проектирования интерьера двухкомнатной квартиры</h2></div><div class="cost-grid"><article class="cost-card"><div class="cost-title"><h3>Дизайн-проект двухкомнатной квартиры</h3><div class="price">От 10 000 ₽/м²</div><p class="note" data-note-block="6">От вас нужно: реальный срок разработки дизайн-проекта двухкомнатной квартиры</p></div><div class="cost-body"><p>Полная документация по проекту будущего ремонта в двухкомнатной квартире. Защищает вас от непредвиденных переделок, позволяет рассчитать смету и заранее увидеть, как будет выглядеть финальный интерьер.</p><details><summary>Что входит в стоимость</summary><ul><li>обмерный план</li><li>согласование с регламентами ЖК</li><li>планировка и перепланировка</li><li>перенос мокрых зон</li><li>интеграция общедомовых инженерных систем</li><li>план звукоизоляции (полы, стены, потолки)</li><li>строительные чертежи</li><li>ведомость материалов</li><li>предварительная комплектация</li><li>3D-визуализация двухкомнатной квартиры</li></ul></details></div></article><article class="cost-card"><div class="cost-title"><h3>Комплектация</h3><div class="price">От 100 000 ₽/месяц</div><p class="note" data-note-block="6">От вас нужно: подтвердить цену комплектации 100 000 ₽ в месяц и объяснить, как она формируется</p><p class="note" data-note-block="6">От вас нужно: реальный срок комплектации двухкомнатной квартиры</p></div><div class="cost-body"><p>Подбор мебели, техники и комплектующих для двухкомнатной квартиры, в том числе на заказ. Работаем с надежными партнерами и поставщиками, проверяем качество и бережем ваш бюджет.</p><details><summary>Что входит в стоимость</summary><ul><li>Подбор материалов для ремонта и отделки</li><li>Подбор сложного интерьерного света</li><li>Подбор сантехники и инженерного оборудования</li><li>Подбор отдельно стоящей мебели</li><li>Формирование чертежей и ТЗ для мебели на заказ</li><li>Комплектация климатических систем</li><li>Заказ реальных выкрасов, образцов дерева, камня и тканей на объект</li><li>Подбор текстиля, настенных панелей и интерьерного декора</li><li>Выезды с дизайнером в салоны</li><li>Проверка коммерческих предложений</li></ul></details></div></article><article class="cost-card"><div class="cost-title"><h3>Авторский надзор</h3><div class="price">От 100 000 ₽/месяц</div><p class="note" data-note-block="6">От вас нужно: реальный срок авторского надзора для двухкомнатной квартиры</p></div><div class="cost-body"><p>Контроль за ремонтом и работой строителей, монтажников: гарантия безупречной реализации замысла без вашего участия на стройке. Архитектор лично добивается совпадения с 3D-визуализацией 1 к 1.</p><details><summary>Что входит в стоимость</summary><ul><li>Выезд архитектора на объект 1-2 раз в неделю</li><li>Контроль за всеми проводимыми работами</li><li>Согласование и контроль утвержденных выкрасов стен и раскладки шпона при реальном освещении квартиры</li><li>Оперативное внесение правок в рабочие чертежи</li><li>Постоянная координация строителей, монтажников вентиляции, электриков и мебельщиков в рабочем чате</li><li>Предоставление фото- и видеоотчетов о ходе реализации объекта заказчику</li><li>Решение вопросов, возникающих у прораба и субподрядных организаций, в онлайне или по телефону</li></ul></details></div></article></div>
 <div class="cost-foot"><div><h3>Средний срок реализации под ключ</h3><p class="note" data-note-block="6">От вас нужно: средний срок формирования и реализации дизайн-проекта двухкомнатной квартиры под ключ</p></div><div><h3>Пример договора на предоставление услуг</h3><button class="link-caps" type="button" disabled>Посмотреть PDF</button><p class="note" data-note-block="6">От вас нужно: реальный договор на услуги в PDF с затертыми личными данными</p></div></div>
-<div class="section-actions"><button class="btn btn-light open-modal" type="button" aria-label="Бесплатная консультация архитектора">Бесплатная консультация архитектора</button></div>
-</div></section><section class="section" data-block="6.1" id="calculation"><div class="wrap"><p class="label">Пример расчета</p><h2>Сколько стоит дизайн-проект двухкомнатной квартиры</h2><div class="calc-grid">
-<article class="calc"><h3>Двухкомнатная квартира 70 м²</h3><p>Объект: Двухкомнатная квартира 70 м²</p><p>Срок разработки проекта: 6-7 недель</p><p>Период ремонта под контролем студии: 3 месяца</p><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект</span><strong>700 000 ₽</strong></div><div class="calc-line"><span>Авторский надзор</span><strong>300 000 ₽</strong></div><div class="calc-line"><span>Комплектация</span><strong>300 000 ₽</strong></div></div><p class="calc-total">Общая стоимость: 1 300 000 ₽</p></article>
-<article class="calc"><h3>Двухкомнатная квартира 50 м²</h3><p>Объект: Двухкомнатная квартира 50 м²</p><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект (10 000 ₽/м²)</span><strong>500 000 ₽</strong></div></div><p class="note" data-note-block="6.1">От вас нужно: сроки авторского надзора и комплектации для расчета двухкомнатной квартиры 50 м²</p><p>Стоимость строительно-отделочных работ, чистовых материалов, мебели и техники не входит в данную сумму и оплачивается отдельно по сметам поставщиков и подрядчиков.</p><button class="btn open-modal" type="button" aria-label="Рассчитать стоимость для моей двухкомнатной квартиры">Рассчитать стоимость для моей двухкомнатной квартиры</button></article>
-</div></div></section><section class="section section-alt" data-block="7" id="rooms"><div class="wrap"><p class="label">Пространство</p><h2>Планировочные решения в двухкомнатной квартире</h2><p class="lead">Главная задача в квартире любого метража – избавиться от тесноты, темных коридоров и ощущения захламленности. Мы перекраиваем пространство так, чтобы в нем было легко дышать, оставалось много воздуха и естественного света, а у каждого члена семьи появилось свое удобное пространство.</p><div class="rooms"><article class="room"><div class="room-image"><img class="" src="img/room-living.jpg" alt="Кухня-гостиная в проекте Background Studio"></div><div><h3>Кухня-гостиная</h3><p>Общее пространство, где хочется быть вместе. Вместо двух тесных изолированных комнат вы получаете просторный, наполненный воздухом и светом центр притяжения всей семьи. Здесь легко готовить, ужинать большой компанией и отдыхать на диване. Пространство воспринимается значительно масштабнее, наполняется естественным светом и дает полную свободу перемещения.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-bedroom.jpg" alt="Спальня в проекте Background Studio"></div><div><h3>Спальня</h3><p>Уединенное тихое пространство в двухкомнатной квартире, полностью отделенное от гостевой суеты. Здесь всегда легко дышится, царит мягкая атмосфера, а звуки мегаполиса, подъезда и соседей остаются снаружи. Сценарии освещения и продуманное до мелочей сочетание цветов создает атмосферу, в которой приятно засыпать и просыпаться.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-kids.jpg" alt="Детская в проекте Background Studio"></div><div><h3>Детская</h3><p>Идеально сбалансированное пространство для игр, учебы и здорового сна, где ребенку действительно интересно и безопасно проводить время. Интерьер создается с прицелом на будущее: он гибко адаптируется под взросление и новые увлечения, избавляя вас от необходимости затевать новый ремонт через три года.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-bath.jpg" alt="Санузел и ванная / душевая в проекте Background Studio"></div><div><h3>Санузел и ванная / душевая</h3><p>Продуманное до мелочей мокрое пространство, где утренние сборы и вечерний душ или ванна приносят тактильное и визуальное удовольствие. Хозяйственная зона со стиркой и сушкой аккуратно скрыта с глаз, освобождая место для легкости, чистоты и расслабления после насыщенного дня.</p></div></article></div><p class="note" data-note-block="7">От вас нужно: фотография реализованной лоджии или балкона для блока планировочных решений</p></div></section><section class="section" data-block="8" id="advantages"><div class="wrap"><p class="label">Преимущества</p><h2>Почему обращаются к нам</h2><div class="advantages"><article class="advantage"><h3>Перепланировка двухкомнатной квартиры</h3><p>Проектируем демонтаж, возведение перегородок и границы мокрых зон строго в рамках норм Мосжилинспекции, СНиП и регламентов БТИ. Не рисуем невыполнимых идей. Вы получаете продуманную планировку без риска получить штраф, предписание вернуть стены на место или потерять ликвидность квартиры при будущей продаже.</p></article><article class="advantage"><h3>Эргономика полезного пространства</h3><p>Избавляемся от темных бесполезных коридоров и узких тупиковых зон, раскрывая потенциал каждого метра двухкомнатной квартиры. Организуем естественное освещение и продуманные сценарии жизни так, чтобы в квартире дышалось свободно, а скрытые системы хранения вмещали все вещи без визуального шума.</p></article><article class="advantage"><h3>Акустический комфорт</h3><p>Создаем бескомпромиссную тишину внутри квартиры за счет комплексных архитектурных решений звукоизоляции. Фоновый шум лифтовых холлов, приточной вентиляции и жизнь за стенами дома остаются снаружи: вы получаете приватное пространство, в котором можно полностью восстановиться после ритма мегаполиса.</p></article><article class="advantage"><h3>Сценарии освещения</h3><p>Проектируем свет не просто ради освещенности, а как инструмент управления пространством двухкомнатной квартиры. Рассчитываем многоуровневые сценарии: от заливающего дневного до мягкого вечернего и фоновой подсветки арт-объектов. Интерьер легко меняет настроение от домашнего уюта до атмосферы закрытого лаунж-бара.</p></article><article class="advantage"><h3>Архитектурная чистота линий и скрытые решения</h3><p>Интерьер воспринимается единым монолитным объемом: двери скрытого монтажа в потолок, теневые примыкания и заказная мебель, интегрированная в геометрию стен без видимых зазоров. Никакого визуального шума и случайных деталей – только чистые пропорции, благородные фактуры и безупречная эстетика.</p></article><article class="advantage"><h3>Фиксированная цена</h3><p>Окончательная стоимость, список работ и спецификации материалов закрепляются в официальном документе до начала проектирования. Цена не меняется «на ходу» и во время ремонта. Мы создаем и реализуем дизайн-проекты двухкомнатной квартиры без «сюрпризов».</p></article></div></div></section><section class="section section-alt" data-block="9" id="reviews"><div class="wrap"><p class="label">Отзывы</p><h2>Отзывы о нашей работе</h2><div class="reviews"><article class="review"><blockquote>Обращалась в студию сначала за планировкой, а потом и полностью заказала проект с последующей реализацией. Нана и Екатерина работают оперативно, профессионально и качественно. Очень рекомендую студию Background.</blockquote><cite>Анна</cite></article><article class="review"><blockquote>Готов подписаться под каждым словом из описания студии на их сайте. Работаю с Екатериной и Наной уже три года, сейчас делаю с ними уже третий объект. Доволен как уровнем профессионализма - дизайн всегда уникальный, супер красивый (оба законченных объекта были опубликованы в престижных журналах по дизайну), так и качеством взаимодействия на всех этапах проекта, включая архитектурный надзор. Дизайнеры всегда на связи, даже в выходные, и оперативно решают все вопросы. Очень рекомендую!</blockquote><cite>Иван</cite></article></div><p class="note" data-note-block="9">От вас нужно: дополнительные отзывы о работе над двухкомнатными квартирами</p></div></section><section class="section section-night" data-block="10" id="contact"><div class="wrap form-grid"><div><p class="label">Обсудить проект</p><h2>Заказать дизайн-проект двухкомнатной квартиры</h2><p class="lead">Оставьте свои контактные данные: номер телефона, удобный способ связи. Дизайнер-архитектор свяжется с вами, обсудит ваш проект, пригласит на бесплатную консультацию в Москве или Санкт-Петербурге.</p></div><form class="form" onsubmit="return fakeSubmit(event)"><label>Удобный способ связи<select aria-label="Удобный способ связи"><option>Звонок</option><option>Whatsapp</option><option>Telegram</option></select></label><label>Телефон<input type="tel" placeholder="+7 (___) ___-__-__" required></label><label>Сообщение необязательно<textarea placeholder="Расскажите о квартире"></textarea></label><button class="btn" type="submit">Отправить заявку</button></form></div></section></main><footer class="footer"><div class="wrap footer-in"><span>BACKGROUND · архитектурная студия</span><span>Москва · Санкт-Петербург</span></div></footer><button class="notes-toggle" type="button" aria-label="Показать запросы клиенту">Запросы клиенту</button><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button class="modal-close" type="button" aria-label="Закрыть форму">×</button><h2 id="modal-title">Обсудить проект</h2><p>Оставьте свои контактные данные: номер телефона, удобный способ связи. Дизайнер-архитектор свяжется с вами, обсудит ваш проект, пригласит на бесплатную консультацию в Москве или Санкт-Петербурге.</p><form class="form modal-form" onsubmit="return fakeSubmit(event)"><label>Удобный способ связи<select aria-label="Удобный способ связи"><option>Звонок</option><option>Whatsapp</option><option>Telegram</option></select></label><label>Телефон<input type="tel" placeholder="+7 (___) ___-__-__" required></label><label>Сообщение необязательно<textarea placeholder="Расскажите о квартире"></textarea></label><button class="btn" type="submit">Отправить заявку</button></form></div></div><script>
+<div class="center-cta"><button class="btn btn--ghost open-modal" type="button" aria-label="Бесплатная консультация архитектора">Бесплатная консультация архитектора</button></div>
+</div></section><section class="sec" data-block="6.1" id="calculation"><div class="wrap"><div class="sec-head"><div class="label">Пример расчета</div><h2>Сколько стоит дизайн-проект двухкомнатной квартиры</h2></div><div class="calc-grid">
+<article class="calc"><div class="calc-intro"><h3>Двухкомнатная квартира 70 м²</h3><p>Объект: Двухкомнатная квартира 70 м²</p><p>Срок разработки проекта: 6-7 недель</p><p>Период ремонта под контролем студии: 3 месяца</p></div><div class="calc-result"><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект</span><strong>700 000 ₽</strong></div><div class="calc-line"><span>Авторский надзор</span><strong>300 000 ₽</strong></div><div class="calc-line"><span>Комплектация</span><strong>300 000 ₽</strong></div></div><p class="calc-total">Общая стоимость: 1 300 000 ₽</p></div></article>
+<article class="calc"><div class="calc-intro"><h3>Двухкомнатная квартира 50 м²</h3><p>Объект: Двухкомнатная квартира 50 м²</p></div><div class="calc-result"><div class="calc-lines"><div class="calc-line"><span>Полный дизайн-проект (10 000 ₽/м²)</span><strong>500 000 ₽</strong></div></div><p class="note" data-note-block="6.1">От вас нужно: сроки авторского надзора и комплектации для расчета двухкомнатной квартиры 50 м²</p><p>Стоимость строительно-отделочных работ, чистовых материалов, мебели и техники не входит в данную сумму и оплачивается отдельно по сметам поставщиков и подрядчиков.</p><button class="btn open-modal" type="button" aria-label="Рассчитать стоимость для моей двухкомнатной квартиры">Рассчитать стоимость для моей двухкомнатной квартиры</button></div></article>
+</div></div></section><section class="sec" data-block="7" id="rooms"><div class="wrap"><div class="sec-head"><div class="label">Пространство</div><h2>Планировочные решения в двухкомнатной квартире</h2><p class="sec-lead">Главная задача в квартире любого метража – избавиться от тесноты, темных коридоров и ощущения захламленности. Мы перекраиваем пространство так, чтобы в нем было легко дышать, оставалось много воздуха и естественного света, а у каждого члена семьи появилось свое удобное пространство.</p></div><div class="rooms"><article class="room"><div class="room-image"><img class="" src="img/room-living.jpg" alt="Кухня-гостиная в проекте Background Studio"></div><div><h3>Кухня-гостиная</h3><p>Общее пространство, где хочется быть вместе. Вместо двух тесных изолированных комнат вы получаете просторный, наполненный воздухом и светом центр притяжения всей семьи. Здесь легко готовить, ужинать большой компанией и отдыхать на диване. Пространство воспринимается значительно масштабнее, наполняется естественным светом и дает полную свободу перемещения.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-bedroom.jpg" alt="Спальня в проекте Background Studio"></div><div><h3>Спальня</h3><p>Уединенное тихое пространство в двухкомнатной квартире, полностью отделенное от гостевой суеты. Здесь всегда легко дышится, царит мягкая атмосфера, а звуки мегаполиса, подъезда и соседей остаются снаружи. Сценарии освещения и продуманное до мелочей сочетание цветов создает атмосферу, в которой приятно засыпать и просыпаться.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-kids.jpg" alt="Детская в проекте Background Studio"></div><div><h3>Детская</h3><p>Идеально сбалансированное пространство для игр, учебы и здорового сна, где ребенку действительно интересно и безопасно проводить время. Интерьер создается с прицелом на будущее: он гибко адаптируется под взросление и новые увлечения, избавляя вас от необходимости затевать новый ремонт через три года.</p></div></article><article class="room"><div class="room-image"><img class="" src="img/room-bath.jpg" alt="Санузел и ванная / душевая в проекте Background Studio"></div><div><h3>Санузел и ванная / душевая</h3><p>Продуманное до мелочей мокрое пространство, где утренние сборы и вечерний душ или ванна приносят тактильное и визуальное удовольствие. Хозяйственная зона со стиркой и сушкой аккуратно скрыта с глаз, освобождая место для легкости, чистоты и расслабления после насыщенного дня.</p></div></article></div><p class="note" data-note-block="7">От вас нужно: фотография реализованной лоджии или балкона для блока планировочных решений</p></div></section><section class="sec" data-block="8" id="advantages"><div class="wrap"><div class="sec-head"><div class="label">Преимущества</div><h2>Почему обращаются к нам</h2></div><div class="advantages"><article class="advantage"><div class="adv-no">01</div><h3>Перепланировка двухкомнатной квартиры</h3><p>Проектируем демонтаж, возведение перегородок и границы мокрых зон строго в рамках норм Мосжилинспекции, СНиП и регламентов БТИ. Не рисуем невыполнимых идей. Вы получаете продуманную планировку без риска получить штраф, предписание вернуть стены на место или потерять ликвидность квартиры при будущей продаже.</p></article><article class="advantage"><div class="adv-no">02</div><h3>Эргономика полезного пространства</h3><p>Избавляемся от темных бесполезных коридоров и узких тупиковых зон, раскрывая потенциал каждого метра двухкомнатной квартиры. Организуем естественное освещение и продуманные сценарии жизни так, чтобы в квартире дышалось свободно, а скрытые системы хранения вмещали все вещи без визуального шума.</p></article><article class="advantage"><div class="adv-no">03</div><h3>Акустический комфорт</h3><p>Создаем бескомпромиссную тишину внутри квартиры за счет комплексных архитектурных решений звукоизоляции. Фоновый шум лифтовых холлов, приточной вентиляции и жизнь за стенами дома остаются снаружи: вы получаете приватное пространство, в котором можно полностью восстановиться после ритма мегаполиса.</p></article><article class="advantage"><div class="adv-no">04</div><h3>Сценарии освещения</h3><p>Проектируем свет не просто ради освещенности, а как инструмент управления пространством двухкомнатной квартиры. Рассчитываем многоуровневые сценарии: от заливающего дневного до мягкого вечернего и фоновой подсветки арт-объектов. Интерьер легко меняет настроение от домашнего уюта до атмосферы закрытого лаунж-бара.</p></article><article class="advantage"><div class="adv-no">05</div><h3>Архитектурная чистота линий и скрытые решения</h3><p>Интерьер воспринимается единым монолитным объемом: двери скрытого монтажа в потолок, теневые примыкания и заказная мебель, интегрированная в геометрию стен без видимых зазоров. Никакого визуального шума и случайных деталей – только чистые пропорции, благородные фактуры и безупречная эстетика.</p></article><article class="advantage"><div class="adv-no">06</div><h3>Фиксированная цена</h3><p>Окончательная стоимость, список работ и спецификации материалов закрепляются в официальном документе до начала проектирования. Цена не меняется «на ходу» и во время ремонта. Мы создаем и реализуем дизайн-проекты двухкомнатной квартиры без «сюрпризов».</p></article></div></div></section><section class="sec" data-block="9" id="reviews"><div class="wrap"><div class="sec-head"><div class="label">Отзывы</div><h2>Отзывы о нашей работе</h2></div><div class="reviews"><article class="review"><blockquote>Обращалась в студию сначала за планировкой, а потом и полностью заказала проект с последующей реализацией. Нана и Екатерина работают оперативно, профессионально и качественно. Очень рекомендую студию Background.</blockquote><cite>Анна</cite></article><article class="review"><blockquote>Готов подписаться под каждым словом из описания студии на их сайте. Работаю с Екатериной и Наной уже три года, сейчас делаю с ними уже третий объект. Доволен как уровнем профессионализма - дизайн всегда уникальный, супер красивый (оба законченных объекта были опубликованы в престижных журналах по дизайну), так и качеством взаимодействия на всех этапах проекта, включая архитектурный надзор. Дизайнеры всегда на связи, даже в выходные, и оперативно решают все вопросы. Очень рекомендую!</blockquote><cite>Иван</cite></article></div><p class="note" data-note-block="9">От вас нужно: дополнительные отзывы о работе над двухкомнатными квартирами</p></div></section><section class="sec form-sec" data-block="10" id="contact"><div class="wrap in"><div class="lead"><div class="sec-head"><div class="label">Обсудить проект</div><h2>Заказать дизайн-проект двухкомнатной квартиры</h2><p class="sec-lead">Оставьте свои контактные данные: номер телефона, удобный способ связи. Дизайнер-архитектор свяжется с вами, обсудит ваш проект, пригласит на бесплатную консультацию в Москве или Санкт-Петербурге.</p></div><a class="tel-big" href="tel:+79256425003">+7 (925) 642-50-03 <span class="city">Москва</span></a><a class="tel-big" href="tel:+79312572002">+7 (931) 257-20-02 <span class="city">Санкт-Петербург</span></a></div><form class="f-form" onsubmit="return fakeSubmit(event)"><div class="ft">Оставьте заявку</div><div class="fs">Наши дизайнеры-архитекторы перезвонят</div><input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required><input class="phone-mask" type="tel" name="phone" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required><label class="chk"><input type="checkbox" required> Я согласен на обработку персональных данных</label><button class="btn btn--block" type="submit">Отправить заявку</button></form></div></section></main><footer><div class="wrap"><div class="ft-grid"><div><div class="logo logo-xl">background<span>интерьер и архитектура</span></div></div><div><div class="h">Разделы</div><a class="" href="https://background-studio.ru/portfolio">Портфолио</a><a class="" href="https://background-studio.ru/uslugi">Услуги</a><a class="" href="https://background-studio.ru/tsenatarify">Цены</a></div><div><div class="h">Москва</div><a href="tel:+79256425003">+7 (925) 642-50-03</a></div><div><div class="h">Санкт-Петербург</div><a href="tel:+79312572002">+7 (931) 257-20-02</a><a href="mailto:info@background-studio.ru">info@background-studio.ru</a></div></div><div class="ft-bottom">© Background Studio. Дизайн интерьеров в Москве и Санкт-Петербурге.</div></div></footer><button class="notes-toggle" type="button" aria-label="Показать запросы клиенту" aria-pressed="false">Показать пометки</button><div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title"><div class="modal-card"><button class="x modal-close" type="button" aria-label="Закрыть форму">×</button><div class="mt" id="modal-title">Обсудить ваш объект</div><div class="ms">Оставьте свои контактные данные: номер телефона, удобный способ связи. Дизайнер-архитектор свяжется с вами, обсудит ваш проект, пригласит на бесплатную консультацию в Москве или Санкт-Петербурге.</div><form  onsubmit="return fakeSubmit(event)"><div class="ft">Оставьте заявку</div><div class="fs">Наши дизайнеры-архитекторы перезвонят</div><input type="text" name="name" placeholder="Ваше имя" aria-label="Ваше имя" required><input class="phone-mask" type="tel" name="phone" placeholder="+7 (___) ___-__-__" aria-label="Телефон" required><label class="chk"><input type="checkbox" required> Я согласен на обработку персональных данных</label><button class="btn btn--block" type="submit">Отправить заявку</button></form></div></div><script>
 const modal=document.getElementById('modal');
 function openModal(){modal.classList.add('on');document.body.classList.add('modal-open');modal.querySelector('input').focus()}
 function closeModal(){modal.classList.remove('on');document.body.classList.remove('modal-open')}
@@ -194,8 +515,13 @@ document.querySelector('.modal-close').addEventListener('click',closeModal);
 modal.addEventListener('click',e=>{if(e.target===modal)closeModal()});
 document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
 const notesButton=document.querySelector('.notes-toggle');
-function setNotes(on){document.body.classList.toggle('notes-on',on);notesButton.textContent=on?'Скрыть запросы':'Запросы клиенту'}
-notesButton.addEventListener('click',()=>setNotes(!document.body.classList.contains('notes-on')));
+function setNotes(on){document.body.classList.toggle('notes-off',!on);notesButton.textContent=on?'Скрыть пометки':'Показать пометки';notesButton.setAttribute('aria-pressed',String(on))}
+notesButton.addEventListener('click',()=>setNotes(document.body.classList.contains('notes-off')));
 setNotes(new URLSearchParams(location.search).has('notes'));
+const hd=document.querySelector('header'),heroEl=document.querySelector('.hero');
+function onScroll(){hd.classList.toggle('scrolled',window.scrollY>40);document.body.classList.toggle('past-hero',window.scrollY>heroEl.offsetHeight-hd.offsetHeight)}
+window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+const burger=document.querySelector('.burger'),menu=document.querySelector('nav.menu');
+burger.addEventListener('click',()=>menu.classList.toggle('open'));
 function fakeSubmit(event){event.preventDefault();alert('Спасибо! Форма макета отправлена.');return false}
 </script></body></html>
