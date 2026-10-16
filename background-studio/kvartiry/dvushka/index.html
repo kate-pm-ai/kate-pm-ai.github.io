@@ -343,10 +343,12 @@ body.past-hero .notes-toggle{opacity:1;pointer-events:auto}
 
 /* Only service-specific compositions absent from the homepage. */
 h3{font-family:var(--font-serif);font-size:var(--t-h3);line-height:var(--lh-h3);font-weight:var(--w-regular);color:var(--c-ink)}
-.service-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s1) var(--s2);padding:var(--s3) 0;margin:0}
+.wrap:has(> .service-stats){max-width:calc(var(--photo-max) + var(--s3) + var(--s3))}
+.service-stats{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:var(--s1) var(--s3);padding:var(--s3) 0;margin:0}
 .fact{display:grid;grid-template-rows:subgrid;grid-row:span 3;min-width:0}
 .fact .stat-n{font-size:var(--t-title);line-height:var(--lh-title)}
 .fact .link-caps{justify-self:start;align-self:start}
+@media(min-width:641px){.fact .stat-n{white-space:nowrap}}
 .service-steps{grid-template-columns:repeat(2,minmax(0,1fr));gap:var(--s3) 0}
 .service-steps .step>img{width:100%;aspect-ratio:4/3;object-fit:cover;margin-bottom:var(--s2)}
 .stage-copy{padding-right:var(--s2)}
