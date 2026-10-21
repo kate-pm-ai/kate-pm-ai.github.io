@@ -123,8 +123,11 @@
       font-size: 18px;
       line-height: 1.6;
     }
-    .hero-text strong, .service-text strong, .meta-value strong { color: var(--ink); font-weight: 800; }
+    .hero-text strong { display: block; color: var(--ink); font-weight: 800; }
+    .hero-text span { display: block; margin-top: 10px; }
     .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 18px 22px; margin-top: 32px; }
+    .free-note { display: inline-flex; align-items: center; gap: 8px; color: #2b2b30; font-size: 13px; font-weight: 800; }
+    .free-note::before { content: ""; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(47, 163, 95, .16); }
     .btn {
       min-height: 56px;
       display: inline-flex;
@@ -359,7 +362,7 @@
     .price-value { font-family: var(--font-display); font-size: 40px; font-weight: 900; line-height: 1; text-transform: uppercase; }
     .price-unit { margin-top: 5px; color: var(--muted); font-size: 12px; font-weight: 600; }
     .price-card--featured .price-unit { color: rgba(255, 255, 255, .68); }
-    .price-bottom .btn { width: 100%; margin-top: 20px; }
+    .price-bottom .btn { width: auto; max-width: 100%; margin-top: 20px; padding-inline: 24px; }
 
     .progress-intro { margin-bottom: 46px; }
     .progress-points { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; padding: 0; margin: 20px 0 0; list-style: none; }
@@ -385,7 +388,7 @@
     .age-body { display: flex; flex-direction: column; padding: 32px; }
     .age-body h3 { margin-bottom: 18px; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; }
     .ticks { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; padding: 0; margin: 10px 0 24px; list-style: none; }
-    .tick { min-height: 82px; display: flex; flex-direction: column; justify-content: flex-start; padding: 12px; border: 1px solid rgba(0, 0, 0, .03); border-radius: 10px; background: var(--surface); font-size: 13px; font-weight: 700; line-height: 1.25; }
+    .tick { min-height: 64px; display: flex; align-items: center; padding: 14px 16px; border: 1px solid rgba(0, 0, 0, .03); border-radius: 10px; background: var(--surface); font-size: 13px; font-weight: 700; line-height: 1.25; }
     .tick-icon {
       flex: 0 0 24px;
       width: 24px;
@@ -422,6 +425,7 @@
     .meta-line { display: grid; grid-template-columns: 132px 1fr; gap: 16px; padding: 18px 0; border-top: 1px solid var(--line); }
     .meta-label { color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .07em; text-transform: uppercase; }
     .meta-value { color: #55555b; font-size: 15px; font-weight: 500; line-height: 1.55; }
+    .meta-value strong { color: var(--ink); font-weight: 800; }
     .meta-value a { color: var(--red); font-weight: 800; text-decoration-thickness: 1px; text-underline-offset: 3px; }
     .branch-body .btn { align-self: flex-start; margin-top: 28px; }
 
@@ -620,10 +624,10 @@
       <div class="container hero-grid">
         <div class="hero-copy">
           <h1>Тренировки по ОФП в футболе</h1>
-          <p class="hero-text">Футбольное ОФП в Zobnin Team — это <strong>специализированная физическая подготовка</strong>, заточенная под реальные игровые сценарии. Тренировки проходят на базе центра: <strong>в оборудованном зале ОФП, на полноразмерном открытом поле и в крытом манеже</strong>. Мы развиваем физические качества футболиста комплексно, <strong>снижая риск травм и выводя уровень игры на новую высоту</strong>.</p>
+          <p class="hero-text"><strong>Футбольное ОФП в Zobnin Team — это специализированная физическая подготовка, заточенная под реальные игровые сценарии.</strong><span>Тренировки проходят на базе центра: в оборудованном зале ОФП, на полноразмерном открытом поле и в крытом манеже. Мы развиваем физические качества футболиста комплексно, снижая риск травм и выводя уровень игры на новую высоту.</span></p>
           <div class="hero-actions">
             <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">ЗАПИСАТЬСЯ НА ОФП →</button>
-            <span class="free-note">Стоимость тренировок в месяц: от 5000 ₽</span>
+            <span class="free-note">Стоимость первой тренировки: от 4 500 ₽</span>
           </div>
         </div>
         <div class="hero-media" aria-label="Тренировка по ОФП в ZOBNIN TEAM">
@@ -668,28 +672,28 @@
             <div class="service-photo"><img src="https://zobninteam.ru/upload/dev2fun.imagecompress/webp/ofp/vzryvnaya_skorost.webp" alt="Повышение взрывной скорости"></div>
             <div class="service-body">
               <h3>Повышение взрывной скорости</h3>
-              <p class="service-text">Развиваем способность <strong>мгновенно ускоряться и совершать резкие рывки с места</strong>. Это дает игроку решающее преимущество: позволяет <strong>первым успеть к мячу, успешно совершить перехват и оставить защитников соперника позади</strong>.</p>
+              <p class="service-text">Развиваем способность мгновенно ускоряться и совершать резкие рывки с места. Это дает игроку решающее преимущество: позволяет первым успеть к мячу, успешно совершить перехват и оставить защитников соперника позади.</p>
             </div>
           </article>
           <article class="service-card">
             <div class="service-photo"><img src="https://zobninteam.ru/upload/dev2fun.imagecompress/webp/ofp/zashchita_ot_travm.webp" alt="Профилактика и укрепление мышц и суставов"></div>
             <div class="service-body">
               <h3>Профилактика и укрепление мышц и суставов</h3>
-              <p class="service-text">Через <strong>укрепление связок, суставов и создание мышечного корсета</strong> подготавливаем тело к нагрузкам. Тренеры по ОФП в футболе подбирают программу <strong>в зависимости от возраста и подготовки</strong>.</p>
+              <p class="service-text">Через укрепление связок, суставов и создание мышечного корсета подготавливаем тело к нагрузкам. Тренеры по ОФП в футболе подбирают программу в зависимости от возраста и подготовки.</p>
             </div>
           </article>
           <article class="service-card">
             <div class="service-photo"><img src="https://avatars.mds.yandex.net/get-altay/19555618/2a0000019dd9b0d5471bc7a7860d926ee443/XXXL" alt="Развитие выносливости"></div>
             <div class="service-body">
               <h3>Развитие выносливости</h3>
-              <p class="service-text">На занятиях по ОФП тренируем сердечно-сосудистую и дыхательную системы, <strong>чтобы сил хватало на весь матч</strong>. Выносливый футболист сохраняет <strong>высокую концентрацию и точность передач</strong> даже на последних минутах самого напряженного игрового отрезка.</p>
+              <p class="service-text">На занятиях по ОФП тренируем сердечно-сосудистую и дыхательную системы, чтобы сил хватало на весь матч. Выносливый футболист сохраняет высокую концентрацию и точность передач даже на последних минутах самого напряженного игрового отрезка.</p>
             </div>
           </article>
           <article class="service-card">
             <div class="service-photo"><img src="https://zobninteam.ru/upload/dev2fun.imagecompress/webp/ofp/koordinaciya.webp" alt="Улучшение координации"></div>
             <div class="service-body">
               <h3>Улучшение координации</h3>
-              <p class="service-text">Отрабатываем <strong>баланс, ловкость и маневренность в динамике</strong>. Это помогает игроку сохранять устойчивость в силовых единоборствах, <strong>быстро менять направление бега</strong> и технично исполнять сложные приемы на высокой скорости.</p>
+              <p class="service-text">Отрабатываем баланс, ловкость и маневренность в динамике. Это помогает игроку сохранять устойчивость в силовых единоборствах, быстро менять направление бега и технично исполнять сложные приемы на высокой скорости.</p>
             </div>
           </article>
         </div>
@@ -808,9 +812,9 @@
             <div class="age-body">
               <h3>Тестирование результатов ОФП — VALD PERFORMANCE</h3>
               <ul class="ticks">
-                <li class="tick"><span class="tick-icon">✓</span><span>Скоростные тесты 10-30 м.</span></li>
-                <li class="tick"><span class="tick-icon">✓</span><span>Прыжковые и тесты взрывной силы</span></li>
-                <li class="tick"><span class="tick-icon">✓</span><span>Замеры силы мышц ног</span></li>
+                <li class="tick">Скоростные тесты 10-30 м.</li>
+                <li class="tick">Прыжковые и тесты взрывной силы</li>
+                <li class="tick">Замеры силы мышц ног</li>
               </ul>
               <p class="age-text">Высокоточная цифровая диагностика физических качеств футболиста: фиксируем стартовую скорость, высоту прыжка и баланс мышц ног. Данные исключают перегрузки, снижают риск травм и наглядно показывают рост результатов по итогам тренировочного цикла.</p>
               <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП-тестирование VALD Performance">ЗАПИСАТЬСЯ НА ОФП-ТЕСТИРОВАНИЕ →</button>
@@ -833,11 +837,11 @@
               <div class="branch-meta">
                 <div class="meta-line">
                   <div class="meta-label">АДРЕС</div>
-                  <div class="meta-value"><strong>Измайловское шоссе 73 В с6</strong>, метро «Партизанская» / МЦК Измайлово</div>
+                  <div class="meta-value">Измайловское шоссе 73 В с6, метро «Партизанская» / МЦК Измайлово</div>
                 </div>
                 <div class="meta-line">
                   <div class="meta-label">ИНФРАСТРУКТУРА</div>
-                  <div class="meta-value"><strong>Зал 100 м2 с искусственным газоном</strong> и оборудование для футбольного ОФП. Тренировки по физической подготовке также проходят <strong>на полноразмерном открытом поле и в крытом манеже центра</strong>.</div>
+                  <div class="meta-value"><strong>Зал 100 м2 с искусственным газоном и оборудование для футбольного ОФП.</strong> Тренировки по физической подготовке также проходят на полноразмерном открытом поле и в крытом манеже центра.</div>
                 </div>
                 <div class="meta-line">
                   <div class="meta-label">ТЕЛЕФОН</div>
