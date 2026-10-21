@@ -152,6 +152,16 @@
     .anchor-pill { display: block; padding: 10px 16px; border-radius: 999px; background: var(--grey); font-size: 13px; font-weight: 800; text-decoration: none; white-space: nowrap; transition: color .2s ease, background .2s ease; }
     .anchor-pill:hover { color: #fff; background: var(--ink); }
 
+    .age-filter-wrap { padding: 28px 0; border-bottom: 1px solid var(--line); background: #fff; }
+    .age-filter-panel { display: flex; align-items: center; gap: 18px 24px; padding: 20px 22px; border: 1px solid var(--line); border-radius: 22px; background: var(--grey); }
+    .age-filter-title { flex: 0 0 auto; margin: 0; font-family: var(--display); font-size: 22px; font-weight: 900; line-height: 1; text-transform: uppercase; }
+    .age-filter-controls { display: flex; flex-wrap: wrap; gap: 10px; }
+    .age-filter-button { min-height: 44px; padding: 11px 18px; border: 1px solid rgba(18,18,18,.1); border-radius: 999px; color: var(--ink); background: #fff; font: 800 14px/1 var(--body); cursor: pointer; transition: color .2s ease, background .2s ease, border-color .2s ease; }
+    .age-filter-button:hover { border-color: var(--ink); }
+    .age-filter-button.is-active { color: #fff; border-color: var(--red); background: var(--red); }
+    .age-filter-status { margin-left: auto; color: var(--muted); font-size: 13px; font-weight: 700; white-space: nowrap; }
+    .service-card[hidden], .service-section[hidden] { display: none; }
+
     .section { padding: 96px 0; scroll-margin-top: 142px; }
     .section--grey { background: var(--grey); }
     .section-head { display: flex; justify-content: space-between; align-items: end; gap: 32px; margin-bottom: 42px; }
@@ -300,6 +310,11 @@
       .hero-badge-item strong { font-size: 15px; }
       .hero-badge-price { font-size: 25px; }
       .anchor-wrap { top: 64px; }
+      .age-filter-wrap { padding: 18px 0; }
+      .age-filter-panel { align-items: flex-start; flex-direction: column; padding: 18px; }
+      .age-filter-controls { width: 100%; }
+      .age-filter-button { flex: 1 1 auto; }
+      .age-filter-status { margin-left: 0; }
       .section, .main-frame { padding: 68px 0; scroll-margin-top: 122px; }
       .section-head { display: block; margin-bottom: 28px; }
       .section-count { display: inline-block; margin-top: 16px; }
@@ -414,31 +429,46 @@
       </div>
     </div>
 
-    <section class="section section--grey" id="abonements" data-block="3-subscriptions">
+    <div class="age-filter-wrap">
+      <div class="container">
+        <div class="age-filter-panel" aria-labelledby="age-filter-title">
+          <p class="age-filter-title" id="age-filter-title">Услуги по возрасту</p>
+          <div class="age-filter-controls" role="group" aria-label="Фильтр услуг по возрасту">
+            <button class="age-filter-button is-active" type="button" data-age-filter="all" aria-pressed="true">Все</button>
+            <button class="age-filter-button" type="button" data-age-filter="preschool" aria-pressed="false">3-5 лет</button>
+            <button class="age-filter-button" type="button" data-age-filter="school" aria-pressed="false">5-13 лет</button>
+            <button class="age-filter-button" type="button" data-age-filter="all-ages" aria-pressed="false">Дети и взрослые</button>
+          </div>
+          <span class="age-filter-status" aria-live="polite">Показано 15 услуг</span>
+        </div>
+      </div>
+    </div>
+
+    <section class="section section--grey service-section" id="abonements" data-block="3-subscriptions" data-age-filter-section>
       <div class="container">
         <div class="section-head"><h2>Абонементы на тренировки для детей</h2></div>
         <div class="cards-grid">
-          <article class="service-card">
+          <article class="service-card" data-age-groups="preschool school">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18135344/2a0000019dd9b08d41ac7c74d5a6777a7030/XXXL" alt="Пробная тренировка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети от 4-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Группы по возрастам</li><li>Вратари и полевые игроки</li><li>Пн-Пт: 16:00-21:00</li><li>Сб: 10:00 - 13:00</li></ul><h3 class="card-title">Пробная тренировка</h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">БЕСПЛАТНО</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Пробная тренировка">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="preschool">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/20116716/2a0000019daf8fbaed8d88ee6f56498ab77f/XXXL" alt="Абонемент Baby-футбол"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 3-5 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Занятие 45 минут</li><li>До 6–8 детей в группе</li><li>Два раза в неделю</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/baby-football-3-6-let/">Абонемент Baby-футбол</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">9000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Абонемент Baby-футбол">Записаться</a></div>
           </article>
-          <article class="service-card service-card--featured">
+          <article class="service-card service-card--featured" data-age-groups="preschool school">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18150755/2a0000019dda98915266cfeb5f103472280f/XXXL" alt="Полный абонемент"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>4 тренировки в неделю</li><li>Хореография для футболистов</li><li>Спортивная психология</li><li>Регулярное тестирование</li></ul><h3 class="card-title">Полный абонемент</h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">16 500 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Полный абонемент">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="preschool school">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/6955494/2a00000182e8754fba7f96648e3702ceeb64/XXXL" alt="Абонемент в филиалах"><div class="card-content"><div class="card-top-meta"><span class="badge-loc blue">Новые Вешки</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>3 тренировки в неделю</li><li>По 60-90 минут</li><li>Филиал в Новых Вешках</li></ul><h3 class="card-title">Абонемент в филиалах</h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">15 000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Абонемент в филиалах">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="preschool school">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/19555618/2a0000019dda98f783d098b5834302e4fdd1/XXXL" alt="Лайт-абонемент"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>2 тренировки в неделю — 11 500 ₽</li><li>3 тренировки в неделю — 13 500 ₽</li></ul><h3 class="card-title">Лайт-абонемент</h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">От 11 500 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Лайт-абонемент">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="preschool school">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/21221165/2a0000019fe66134d8911c7ee69d10ada449/XXXL" alt="Общая физическая подготовка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Малые группы по 4-6 чел.</li><li>ОФП под футбольные навыки</li><li>Занятия по 60 минут</li><li>4, 8 или 12 занятий в месяц</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/ofp-razvitie-igrokov/">Общая физ.подготовка</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val price-val--compact">5000 - 10 800 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Общая физ.подготовка">Записаться</a></div>
           </article>
@@ -447,27 +477,27 @@
       </div>
     </section>
 
-    <section class="section" id="single" data-block="4-single-training">
+    <section class="section service-section" id="single" data-block="4-single-training" data-age-filter-section>
       <div class="container">
         <div class="section-head"><h2>Разовые занятия</h2></div>
         <div class="cards-grid">
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18785127/2a0000019f99d07d0df3b498cd46f69d8ffc/XXXL" alt="Тренировка вратарей"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>В группе из 2-5 чел — 2500 ₽</li><li>Группа по возрасту и уровню</li><li>Индивидуальная — 5000 ₽</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/vratarskaya-trenirovka/">Тренировка вратарей</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">2500 - 5000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Тренировка вратарей">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18135344/2a0000019dd9b08d41ac7c74d5a6777a7030/XXXL" alt="Индивидуальная тренировка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Персональное занятие</li><li>Полевые игроки и вратари</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/individual-training/">Индивидуальная тренировка</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">5000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Индивидуальная тренировка">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/19555618/2a0000019dd9b0d5471bc7a7860d926ee443/XXXL" alt="Групповая тренировка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Группы по возрастам и уровню</li><li>4-6 или 7-9 человек</li><li>Полевые игроки и вратари</li></ul><h3 class="card-title">Групповая тренировка</h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="pending">Уточняется у клиента: стоимость</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Групповая тренировка">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/19766436/2a0000019dda9ea77eca87f118dfa599dae1/XXXL" alt="Общая физическая подготовка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>ОФП под футбольные навыки</li><li>Индивидуально или в малой группе</li><li>Группы по возрасту и уровню</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/ofp-razvitie-igrokov/">Общая физ.подготовка</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="pending">Уточняется у клиента: стоимость</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Общая физ.подготовка">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="preschool school">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18173477/2a0000019dda99f50b1b835b80696d4f0357/XXXL" alt="Футбольная хореография"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Мобильность суставов и растяжка</li><li>Быстрота ног и координация</li><li>Индивидуально и в группах</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/khoreografiya-dlya-futbolistov/">Футбольная хореография</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="pending">Уточняется у клиента: стоимость</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Футбольная хореография">Записаться</a></div>
           </article>
@@ -475,23 +505,23 @@
       </div>
     </section>
 
-    <section class="section section--grey" id="consultations" data-block="5-consultations">
+    <section class="section section--grey service-section" id="consultations" data-block="5-consultations" data-age-filter-section>
       <div class="container">
         <div class="section-head"><h2>Тестирования и консультации</h2></div>
         <div class="cards-grid">
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/20190908/2a000001a07b7adb4472c6b90fbc92ca2edc/XXXL" alt="Спортивное тестирование"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Физические показатели</li><li>Выносливость и гибкость</li><li>Состав массы тела</li><li>Работа с мячом</li><li>Психологический тест</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/futbolnoe-testirovanie/">Спортивное тестирование</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">10 000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Спортивное тестирование">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/19595165/2a0000019dda9b8ba1e154bb03e6fff0b324/XXXL" alt="Консультация спортивного психолога"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Оценка развития психологической подготовленности</li><li>Тестирование на комплексе "Светофон" - когнитивные задачи на скорость</li><li>Определение уровня спорт.самооценки</li><li>Определение уровня удовлетворенности спортом</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/zal-psikhologii/">Консультация спортивного психолога</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">10 000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Консультация спортивного психолога">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/20264228/2a0000019fe66046df2a58202e605400dd25/XXXL" alt="Медиа-сопровождение"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Полная упаковка соцсетей</li><li>Регулярный контент</li><li>Медийная активность</li><li>Динамичные Reels</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/media-soprovozhdenie/">Медиа-сопровождение</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">35 000 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Медиа-сопровождение">Записаться</a></div>
           </article>
-          <article class="service-card">
+          <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/19595165/2a0000019dda9b8ba1e154bb03e6fff0b324/XXXL" alt="Юридическое сопровождение"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Аудит и сопровождение контрактов</li><li>Трансферное консультирование</li><li>Работа с рекламными контрактами</li><li>Правовая помощь при страховании</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/yuridicheskoe-soprovozhdenie/">Юридическое сопровождение</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="pending">Уточняется у клиента: стоимость</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Юридическое сопровождение">Записаться</a></div>
           </article>
@@ -607,6 +637,43 @@
       slider.querySelector('.slider-control--prev').addEventListener('click', () => show(current - 1));
       slider.querySelector('.slider-control--next').addEventListener('click', () => show(current + 1));
       show(0);
+    });
+
+    const ageFilterButtons = [...document.querySelectorAll('[data-age-filter]')];
+    const serviceCards = [...document.querySelectorAll('[data-age-groups]')];
+    const serviceSections = [...document.querySelectorAll('[data-age-filter-section]')];
+    const ageFilterStatus = document.querySelector('.age-filter-status');
+
+    const applyAgeFilter = (filter) => {
+      let visibleCount = 0;
+      serviceCards.forEach((card) => {
+        const groups = card.dataset.ageGroups.split(' ');
+        const isVisible = filter === 'all' || groups.includes(filter);
+        card.hidden = !isVisible;
+        if (isVisible) visibleCount += 1;
+      });
+
+      serviceSections.forEach((section) => {
+        section.hidden = !section.querySelector('.service-card:not([hidden])');
+      });
+
+      ageFilterButtons.forEach((button) => {
+        const isActive = button.dataset.ageFilter === filter;
+        button.classList.toggle('is-active', isActive);
+        button.setAttribute('aria-pressed', String(isActive));
+      });
+      ageFilterStatus.textContent = `Показано ${visibleCount} услуг`;
+    };
+
+    ageFilterButtons.forEach((button) => {
+      button.addEventListener('click', () => applyAgeFilter(button.dataset.ageFilter));
+    });
+
+    document.querySelectorAll('.anchor-pill[href="#abonements"], .anchor-pill[href="#single"], .anchor-pill[href="#consultations"]').forEach((anchor) => {
+      anchor.addEventListener('click', () => {
+        const target = document.querySelector(anchor.getAttribute('href'));
+        if (target?.hidden) applyAgeFilter('all');
+      });
     });
 
     const modal = document.getElementById('service-form');
