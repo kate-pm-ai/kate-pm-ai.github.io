@@ -113,7 +113,8 @@
     .btn:hover { background: var(--red-hover); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(221,44,44,.23); }
     .btn--ghost { color: var(--ink); background: #fff; border: 1px solid var(--line); }
     .btn--ghost:hover { color: var(--red); background: #fff; box-shadow: 0 12px 30px rgba(18,18,18,.08); }
-    .arrow-icon { display: inline-grid; place-items: center; }
+    .arrow-icon { width: 20px; height: 20px; display: inline-grid; place-items: center; border-radius: 50%; background: rgba(255,255,255,.2); transition: transform .2s ease; }
+    .btn:hover .arrow-icon { transform: translateX(3px); }
 
     .hero {
       padding: 56px 0 78px;
