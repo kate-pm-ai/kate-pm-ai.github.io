@@ -131,35 +131,37 @@
     .btn:hover .arrow-icon { transform: translateX(3px); }
 
     .hero {
-      padding: 56px 0 78px;
+      position: relative;
+      padding: 44px 0;
       overflow: hidden;
       background:
-        radial-gradient(circle at 12% 10%, rgba(221,44,44,.08), transparent 28%),
-        linear-gradient(180deg, #fff 0%, #fafafd 100%);
+        linear-gradient(90deg, rgba(10,10,12,.94) 0%, rgba(10,10,12,.84) 41%, rgba(10,10,12,.3) 70%, rgba(10,10,12,.42) 100%),
+        url("https://zobninteam.ru/local/templates/main/img/landings/baby-football/image001.webp") center 58% / cover no-repeat;
     }
-    .hero-grid { display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 54px; }
-    .section-kicker { margin: 0 0 16px; color: var(--red); font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
+    .hero-grid { min-height: 600px; display: grid; grid-template-columns: 1.02fr .98fr; align-items: center; gap: 54px; }
+    .section-kicker { margin: 0 0 16px; color: #ff4a4a; font-weight: 800; font-size: 13px; letter-spacing: .08em; text-transform: uppercase; }
     h1, h2, h3 { margin: 0; font-family: var(--display); overflow-wrap: anywhere; text-transform: uppercase; }
     h1, h2 { font-weight: 800; line-height: 1.16; letter-spacing: -.03em; }
-    h1 { max-width: 780px; font-size: 60px; }
+    h1 { max-width: 780px; color: #fff; font-size: 60px; }
     h2 { font-size: 48px; }
     h3 { font-size: 30px; font-weight: 900; line-height: .94; letter-spacing: -.025em; }
     .accent { color: var(--red); }
-    .hero-text { max-width: 680px; margin: 28px 0 0; color: #424247; font-size: 18px; line-height: 1.58; }
+    .hero-points { max-width: 680px; display: grid; gap: 12px; margin: 28px 0 0; padding: 0; list-style: none; }
+    .hero-points li { display: flex; align-items: flex-start; gap: 12px; color: rgba(255,255,255,.92); font-size: 17px; line-height: 1.45; }
+    .hero-points li::before { content: "✓"; width: 24px; height: 24px; flex: 0 0 24px; display: grid; place-items: center; margin-top: 1px; border-radius: 50%; color: #fff; background: var(--red); font-size: 13px; font-weight: 900; }
     .hero-benefits { max-width: 680px; display: none; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin: 28px 0 0; }
     .hero-benefit { min-width: 0; min-height: 72px; display: flex; align-items: center; gap: 13px; padding: 14px 16px; border: 1px solid var(--line); border-radius: 18px; background: #fff; box-shadow: 0 10px 26px rgba(18,18,18,.05); font-size: 14px; font-weight: 700; line-height: 1.35; }
     .hero-benefit-icon { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 50%; color: var(--red); background: rgba(221,44,44,.1); }
     .hero-benefit-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
     .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 34px; }
-    .hero-media { position: relative; min-height: 600px; border-radius: 28px; overflow: hidden; background: #d9d9df; box-shadow: 0 32px 90px rgba(18,18,18,.18); }
-    .hero-media > img { position: absolute; inset: 0; height: 100%; object-fit: cover; }
-    .hero-media::after { content: ""; position: absolute; inset: 48% 0 0; background: linear-gradient(180deg, transparent, rgba(18,18,18,.62)); pointer-events: none; }
+    .hero-media { position: relative; min-height: 600px; }
+    .hero-media > img { display: none; }
     .yandex-badge-wrapper { position: absolute; z-index: 3; top: 18px; left: 18px; width: 150px; height: 50px; overflow: hidden; border-radius: 12px; box-shadow: 0 8px 25px rgba(0,0,0,.18); background: #fff; }
     .yandex-badge-iframe { width: 150px; height: 50px; border: 0; }
-    .hero-badge { position: absolute; z-index: 3; left: 20px; right: 20px; bottom: 20px; display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 22px; border-radius: 20px; color: #fff; background: rgba(18,18,18,.82); backdrop-filter: blur(12px); }
+    .hero-badge { position: absolute; z-index: 3; left: 20px; right: 20px; bottom: 20px; display: flex; justify-content: space-between; align-items: end; gap: 16px; padding: 18px 20px; border: 1px solid rgba(255,255,255,.8); border-radius: 20px; color: var(--ink); background: rgba(255,255,255,.94); box-shadow: 0 12px 36px rgba(18,18,18,.14); backdrop-filter: blur(14px); }
     .hero-badge-item { display: grid; gap: 4px; }
     .hero-badge-item strong { font-size: 18px; }
-    .hero-badge-item span { color: rgba(255,255,255,.72); font-size: 13px; }
+    .hero-badge-item span { color: var(--muted); font-size: 13px; }
     .hero-badge-price { font-family: var(--display); font-size: 34px; font-weight: 900; white-space: nowrap; }
 
     .anchor-wrap { position: sticky; top: 0; z-index: 40; padding: 10px 0; overflow: hidden; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); }
@@ -310,23 +312,30 @@
 
     @media (max-width: 700px) {
       .container { width: min(calc(100% - 28px), var(--container)); }
-      .hero { padding: 34px 0 54px; }
-      .hero-grid { gap: 34px; }
+      .hero {
+        padding: 26px 0 30px;
+        background:
+          linear-gradient(180deg, rgba(10,10,12,.82) 0%, rgba(10,10,12,.72) 58%, rgba(10,10,12,.86) 100%),
+          url("https://zobninteam.ru/local/templates/main/img/landings/baby-football/image001.webp") 54% center / cover no-repeat;
+      }
+      .hero-grid { min-height: 0; gap: 20px; }
       h1 { font-size: 39px; }
       h2 { font-size: 32px; }
       h3 { font-size: 27px; }
-      .hero-text { display: none; }
+      .hero-points { display: none; }
       .hero-benefits { display: grid; gap: 8px; margin-top: 22px; }
       .hero-benefit { min-height: 88px; align-items: flex-start; flex-direction: column; gap: 9px; padding: 12px; border-radius: 16px; font-size: 12px; line-height: 1.35; }
       .hero-benefit-icon { width: 32px; height: 32px; flex-basis: 32px; }
       .hero-benefit-icon svg { width: 18px; height: 18px; }
       .hero-actions { align-items: stretch; flex-direction: column; gap: 12px; margin-top: 26px; }
       .hero-actions .btn { width: 100%; }
-      .hero-media { min-height: 490px; border-radius: 22px; }
-      .hero-badge { left: 12px; right: 12px; bottom: 12px; align-items: start; padding: 16px; }
+      .hero-media { min-height: 68px; display: grid; grid-template-columns: 150px minmax(0, 1fr); align-items: stretch; gap: 8px; }
+      .hero-media .yandex-badge-wrapper { position: relative; top: auto; left: auto; align-self: center; box-shadow: 0 8px 25px rgba(0,0,0,.14); }
+      .hero-badge { position: relative; left: auto; right: auto; bottom: auto; display: grid; grid-template-columns: 1fr; align-content: center; gap: 2px; padding: 9px 12px; border-radius: 16px; }
       .hero-badge-item { min-width: 0; }
-      .hero-badge-item strong { font-size: 15px; }
-      .hero-badge-price { font-size: 25px; }
+      .hero-badge-item strong { font-size: 12px; line-height: 1.2; }
+      .hero-badge-item span { display: none; }
+      .hero-badge-price { font-size: 21px; line-height: 1; }
       .anchor-wrap { top: 0; padding: 8px 0; }
       .anchors-swiper { overflow: visible; }
       .anchors-swiper .swiper-wrapper {
@@ -455,7 +464,11 @@
         <div class="hero-copy">
           <p class="section-kicker">ТРЕНИРОВКИ ПО ФУТБОЛУ · ИЗМАЙЛОВО · НОВЫЕ ВЕШКИ</p>
           <h1>Услуги и тренировки в Академии <span class="accent">ZOBNIN TEAM</span></h1>
-          <p class="hero-text">Футбольные занятия для детей от 3 до 13 лет по абонементам, профессиональные индивидуальные тренировки и занятия по физподготовке. Комплексная поддержка футболистов: от постановки техники до тестирования и консультации спортивного психолога.</p>
+          <ul class="hero-points">
+            <li>Футбольные занятия для детей от 3 до 13 лет по абонементам</li>
+            <li>Профессиональные индивидуальные тренировки и занятия по физподготовке</li>
+            <li>Комплексная поддержка футболистов: от постановки техники до тестирования и консультации спортивного психолога.</li>
+          </ul>
           <div class="hero-benefits" aria-label="Главное об услугах">
             <div class="hero-benefit"><span class="hero-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="3.5"></circle><path d="M5 20c.5-4 3-6 7-6s6.5 2 7 6"></path></svg></span><span>Дети от 3 до 13 лет</span></div>
             <div class="hero-benefit"><span class="hero-benefit-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="8.5"></circle><circle cx="12" cy="12" r="2.5"></circle><path d="M12 3.5V7m0 10v3.5M3.5 12H7m10 0h3.5"></path></svg></span><span>Индивидуальные тренировки</span></div>
@@ -470,7 +483,7 @@
           <div class="yandex-badge-wrapper">
             <iframe src="https://yandex.ru/sprav/widget/rating-badge/90699831032?type=rating" class="yandex-badge-iframe" title="Рейтинг ZOBNIN TEAM на Яндекс.Картах" loading="lazy"></iframe>
           </div>
-          <img src="https://avatars.mds.yandex.net/get-altay/20274901/2a000001a0f81ac1d38831d3467d92516b14/XXXL" alt="Тренировка в Академии ZOBNIN TEAM">
+          <img src="https://zobninteam.ru/local/templates/main/img/landings/baby-football/image001.webp" alt="Юные футболисты ZOBNIN TEAM на тренировке">
           <div class="hero-badge">
             <div class="hero-badge-item"><strong>Абонемент на тренировки</strong><span>От 8 до 16 занятий в месяц</span></div>
             <div class="hero-badge-price">От 9000 ₽</div>
