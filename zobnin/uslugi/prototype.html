@@ -79,20 +79,32 @@
     .skip-link:focus { top: 12px; }
 
     .site-header {
-      position: sticky;
-      top: 0;
+      position: relative;
       z-index: 50;
-      background: rgba(255,255,255,.94);
-      border-bottom: 1px solid rgba(18,18,18,.08);
-      backdrop-filter: blur(14px);
+      background: #fff;
     }
-    .header-inner { min-height: 76px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .header__logo { display: block; width: 142px; flex: 0 0 auto; }
-    .header__logo img { height: 42px; object-fit: contain; object-position: left center; }
-    .header-meta { display: flex; align-items: center; gap: 20px; }
-    .header-phone { font-weight: 800; text-decoration: none; white-space: nowrap; }
-    .header-rent { color: var(--red); font-size: 12px; font-weight: 850; letter-spacing: .055em; text-decoration: none; white-space: nowrap; }
-    .header-rent:hover { color: var(--red-hover); }
+    .header-inner { min-height: 96px; display: flex; align-items: center; justify-content: space-between; gap: 24px; }
+    .header__logo { display: block; width: 156px; flex: 0 0 auto; }
+    .header__logo img { height: auto; object-fit: contain; object-position: left center; }
+    .site-nav { display: flex; align-items: center; gap: 8px; padding: 12px; border: 1px solid rgba(18,18,18,.07); border-radius: 999px; background: rgba(242,243,245,.65); }
+    .site-nav a { padding: 6px 9px; font-size: 13px; font-weight: 650; line-height: 1; text-decoration: none; white-space: nowrap; }
+    .site-nav a:hover, .site-nav a[aria-current="page"] { color: var(--red); }
+    .header-actions { display: flex; align-items: center; gap: 14px; flex: 0 0 auto; }
+    .header-icon { min-width: 34px; min-height: 34px; display: inline-flex; align-items: center; justify-content: center; gap: 10px; padding: 0; border: 0; color: var(--ink); background: transparent; font: inherit; font-weight: 700; text-decoration: none; cursor: pointer; }
+    .header-icon svg { width: 20px; height: 20px; fill: currentColor; }
+    .header-icon--wa { color: var(--green); }
+    .header-icon--tel { color: var(--ink); white-space: nowrap; }
+    .header-icon--tel svg { color: var(--red); width: 17px; height: 17px; }
+    .header-icon--menu { display: none; border-radius: 50%; background: var(--grey); }
+    .header-icon--menu .icon-close { display: none; }
+    .header-icon--menu[aria-expanded="true"] .icon-menu { display: none; }
+    .header-icon--menu[aria-expanded="true"] .icon-close { display: block; }
+    .mobile-menu { display: none; }
+    .mobile-menu.is-open { display: block; position: fixed; inset: 64px 0 0; z-index: 49; padding: 24px 20px 40px; overflow-y: auto; background: #fff; }
+    .mobile-menu nav { display: grid; }
+    .mobile-menu a { min-height: 48px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid var(--line); font-size: 16px; font-weight: 600; text-decoration: none; }
+    .mobile-menu a::after { content: "↗"; color: var(--muted); font-size: 13px; }
+    body.mobile-menu-open { overflow: hidden; }
 
     .btn {
       min-height: 54px;
@@ -149,7 +161,7 @@
     .hero-badge-item span { color: rgba(255,255,255,.72); font-size: 13px; }
     .hero-badge-price { font-family: var(--display); font-size: 34px; font-weight: 900; white-space: nowrap; }
 
-    .anchor-wrap { position: sticky; top: 76px; z-index: 40; padding: 10px 0; overflow: hidden; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); }
+    .anchor-wrap { position: sticky; top: 0; z-index: 40; padding: 10px 0; overflow: hidden; border-bottom: 1px solid var(--line); background: rgba(255,255,255,.96); backdrop-filter: blur(12px); }
     .anchors-swiper { width: 100%; overflow-x: auto; scrollbar-width: none; }
     .anchors-swiper::-webkit-scrollbar { display: none; }
     .anchors-swiper .swiper-wrapper { display: flex; width: max-content; gap: 10px; }
@@ -282,15 +294,21 @@
       .grid--main-frame-col-4-mob { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     }
 
+    @media (max-width: 1259px) {
+      .header-inner { min-height: 64px; }
+      .header__logo { width: 82px; }
+      .site-nav { display: none; }
+      .header-actions { gap: 10px; }
+      .header-icon { width: 34px; height: 34px; min-width: 34px; min-height: 34px; border-radius: 50%; color: #fff; }
+      .header-icon span { display: none; }
+      .header-icon--wa { background: var(--green); }
+      .header-icon--tel { background: var(--red); }
+      .header-icon--tel svg { color: #fff; }
+      .header-icon--menu { display: inline-flex; color: var(--ink); background: var(--grey); }
+    }
+
     @media (max-width: 700px) {
       .container { width: min(calc(100% - 28px), var(--container)); }
-      .header-inner { min-height: 64px; }
-      .header__logo { width: 112px; }
-      .header__logo img { height: 34px; }
-      .header-phone { display: none; }
-      .header-rent { font-size: 10px; }
-      .site-header .btn { min-height: 42px; padding: 12px 15px; font-size: 11px; }
-      .header-meta { min-width: 0; gap: 9px; }
       .hero { padding: 34px 0 54px; }
       .hero-grid { gap: 34px; }
       h1 { font-size: 39px; }
@@ -307,7 +325,25 @@
       .hero-badge-item { min-width: 0; }
       .hero-badge-item strong { font-size: 15px; }
       .hero-badge-price { font-size: 25px; }
-      .anchor-wrap { top: 64px; }
+      .anchor-wrap { top: 0; padding: 8px 0; }
+      .anchors-swiper { overflow: visible; }
+      .anchors-swiper .swiper-wrapper {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        width: 100%;
+        gap: 6px;
+      }
+      .anchor-slide { min-width: 0; }
+      .anchor-pill {
+        width: 100%;
+        min-height: 44px;
+        justify-content: center;
+        padding: 7px 6px;
+        font-size: 12px;
+        line-height: 1.15;
+        text-align: center;
+        white-space: normal;
+      }
       .section, .main-frame { padding: 68px 0; scroll-margin-top: 122px; }
       .section-head { display: block; margin-bottom: 28px; }
       .section-count { display: inline-block; margin-top: 16px; }
@@ -373,15 +409,43 @@
   <header class="site-header">
     <div class="container header-inner">
       <a class="header__logo" href="https://zobninteam.ru/" aria-label="ZOBNIN TEAM">
-        <img src="https://kate-pm-ai.github.io/zobnin/uslugi/logo.svg" alt="ZOBNIN TEAM">
+        <img src="./logo.svg" alt="ZOBNIN TEAM">
       </a>
-      <div class="header-meta">
-        <a class="header-rent" href="https://zobninteam.ru/arenda-polya-i-zalov/">АРЕНДА ПОЛЯ</a>
-        <a class="header-phone" href="tel:+79031474750">+7 (903) 147-47-50</a>
-        <a class="btn" href="#service-form" data-modal-open data-service="Пробная тренировка">Записаться</a>
+      <nav class="site-nav" aria-label="Основное меню">
+        <a href="https://zobninteam.ru/">Главная</a>
+        <a href="https://zobninteam.ru/services/" aria-current="page">Услуги</a>
+        <a href="https://zobninteam.ru/training-camp/">Сборы</a>
+        <a href="https://zobninteam.ru/branches/">Филиалы</a>
+        <a href="https://zobninteam.ru/coaches/">Тренеры</a>
+        <a href="https://zobninteam.ru/blog/">Блог</a>
+        <a href="https://zobninteam.ru/arenda-polya-i-zalov/">Аренда поля</a>
+      </nav>
+      <div class="header-actions">
+        <a class="header-icon header-icon--wa" href="https://wa.me/79031474750" target="_blank" rel="noopener" aria-label="WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a9.5 9.5 0 0 0-8.1 14.5L2.5 21.6l5.2-1.4A9.5 9.5 0 1 0 12 2Zm0 17.2a7.7 7.7 0 0 1-3.9-1.1l-.3-.2-3.1.8.8-3-.2-.3A7.7 7.7 0 1 1 12 19.2Zm4.2-5.8c-.2-.1-1.4-.7-1.6-.8-.2-.1-.4-.1-.5.1l-.7.9c-.1.2-.3.2-.5.1-1.4-.7-2.3-1.3-3.2-2.9-.2-.3.2-.3.6-1.1.1-.2 0-.4 0-.5l-.7-1.7c-.2-.4-.4-.4-.6-.4h-.5c-.2 0-.5.1-.7.3-.7.7-1 1.5-1 2.5 0 2.9 2.1 5.7 5.9 7.3 2.2.9 3.1 1 4.2.8.7-.1 2.2-.9 2.5-1.8.3-.9.3-1.7.2-1.8-.1-.2-.2-.2-.4-.3Z"/></svg>
+        </a>
+        <a class="header-icon header-icon--tel" href="tel:+79031474750" aria-label="Телефон">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 10.8a15.5 15.5 0 0 0 6.6 6.6l2.2-2.2c.3-.3.7-.4 1.1-.2 1.2.4 2.4.6 3.7.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.7 21 3 13.3 3 3.8c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.7.1.4 0 .8-.2 1.1l-2.3 2.2Z"/></svg>
+          <span>+7 (903) 147-47-50</span>
+        </a>
+        <button class="header-icon header-icon--menu" type="button" aria-expanded="false" aria-controls="mobile-menu" aria-label="Открыть меню">
+          <svg class="icon-menu" viewBox="0 0 24 24" aria-hidden="true"><path d="M4 6h16v2H4V6Zm0 5h16v2H4v-2Zm0 5h16v2H4v-2Z"/></svg>
+          <svg class="icon-close" viewBox="0 0 24 24" aria-hidden="true"><path d="m6.4 5 12.6 12.6-1.4 1.4L5 6.4 6.4 5Zm11.2 0L19 6.4 6.4 19 5 17.6 17.6 5Z"/></svg>
+        </button>
       </div>
     </div>
   </header>
+  <aside class="mobile-menu" id="mobile-menu" aria-hidden="true">
+    <nav aria-label="Мобильное меню">
+      <a href="https://zobninteam.ru/">Главная</a>
+      <a href="https://zobninteam.ru/services/">Услуги</a>
+      <a href="https://zobninteam.ru/training-camp/">Сборы</a>
+      <a href="https://zobninteam.ru/branches/">Филиалы</a>
+      <a href="https://zobninteam.ru/coaches/">Тренеры</a>
+      <a href="https://zobninteam.ru/blog/">Блог</a>
+      <a href="https://zobninteam.ru/arenda-polya-i-zalov/">Аренда поля</a>
+    </nav>
+  </aside>
 
   <main id="main">
     <section class="hero" data-block="1-first-screen">
@@ -639,8 +703,6 @@
         link.classList.toggle('is-active', isActive);
         if (isActive) {
           link.setAttribute('aria-current', 'true');
-          const left = link.parentElement.offsetLeft - (anchorsViewport.clientWidth - link.offsetWidth) / 2;
-          anchorsViewport.scrollTo({ left: Math.max(0, left), behavior: 'smooth' });
         } else {
           link.removeAttribute('aria-current');
         }
@@ -658,7 +720,7 @@
         return;
       }
 
-      const activationLine = 132;
+      const activationLine = document.querySelector('.anchor-wrap').offsetHeight + 8;
       let currentSection = anchorSections[0];
       anchorSections.forEach((section) => {
         if (section.getBoundingClientRect().top <= activationLine) currentSection = section;
@@ -680,6 +742,25 @@
     window.addEventListener('scroll', requestAnchorUpdate, { passive: true });
     window.addEventListener('resize', requestAnchorUpdate);
     requestAnchorUpdate();
+
+    const menuButton = document.querySelector('.header-icon--menu');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMobileMenu = () => {
+      menuButton.setAttribute('aria-expanded', 'false');
+      menuButton.setAttribute('aria-label', 'Открыть меню');
+      mobileMenu.classList.remove('is-open');
+      mobileMenu.setAttribute('aria-hidden', 'true');
+      document.body.classList.remove('mobile-menu-open');
+    };
+    menuButton.addEventListener('click', () => {
+      const shouldOpen = menuButton.getAttribute('aria-expanded') !== 'true';
+      menuButton.setAttribute('aria-expanded', String(shouldOpen));
+      menuButton.setAttribute('aria-label', shouldOpen ? 'Закрыть меню' : 'Открыть меню');
+      mobileMenu.classList.toggle('is-open', shouldOpen);
+      mobileMenu.setAttribute('aria-hidden', String(!shouldOpen));
+      document.body.classList.toggle('mobile-menu-open', shouldOpen);
+    });
+    mobileMenu.querySelectorAll('a').forEach((link) => link.addEventListener('click', closeMobileMenu));
 
     const modal = document.getElementById('service-form');
     const serviceName = document.getElementById('service-name');
