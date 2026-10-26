@@ -102,13 +102,8 @@
       transition: width .24s ease, border-radius .24s ease;
     }
 
-    .preview-stage[data-view="mobile"] .preview-frame {
-      width: 390px;
-      min-height: 720px;
-      border-radius: 22px;
-      border: 1px solid #cfcfd6;
-    }
-
+    .preview-stage[data-view="side-mobile"] .preview-frame,
+    .preview-stage[data-view="background-mobile"] .preview-frame,
     .preview-stage[data-view="accordion"] .preview-frame {
       width: 390px;
       min-height: 720px;
@@ -132,28 +127,32 @@
       }
 
       .preview-title { grid-column: 1 / -1; text-align: center; }
-      .view-switcher { width: 100%; grid-column: 1 / -1; justify-self: stretch; }
-      .view-button { min-width: 0; flex: 1; padding-inline: 8px; font-size: 12px; }
+      .view-switcher { width: 100%; grid-column: 1 / -1; justify-self: stretch; overflow-x: auto; }
+      .view-button { min-width: max-content; flex: 1; padding-inline: 10px; font-size: 12px; }
       .open-page { font-size: 13px; }
       .preview-stage { height: calc(100vh - 112px); padding: 10px; }
-      .preview-stage[data-view="mobile"], .preview-stage[data-view="accordion"] { justify-content: flex-start; }
+      .preview-stage[data-view="side-mobile"],
+      .preview-stage[data-view="background-mobile"],
+      .preview-stage[data-view="accordion"] { justify-content: flex-start; }
     }
   </style>
 </head>
 <body>
   <header class="preview-toolbar">
     <div class="preview-title">Макет страницы «Услуги»</div>
-    <div class="view-switcher" role="group" aria-label="Размер макета">
-      <button class="view-button" type="button" data-view-button="desktop" aria-pressed="true">Десктоп</button>
-      <button class="view-button" type="button" data-view-button="mobile" aria-pressed="false">Мобильная</button>
-      <button class="view-button" type="button" data-view-button="accordion" aria-pressed="false">Моб. раскладушка</button>
+    <div class="view-switcher" role="group" aria-label="Вариант макета">
+      <button class="view-button" type="button" data-view-button="side-desktop" aria-pressed="true">Справа · десктоп</button>
+      <button class="view-button" type="button" data-view-button="side-mobile" aria-pressed="false">Справа · мобила</button>
+      <button class="view-button" type="button" data-view-button="background-desktop" aria-pressed="false">Фон · десктоп</button>
+      <button class="view-button" type="button" data-view-button="background-mobile" aria-pressed="false">Фон · мобила</button>
+      <button class="view-button" type="button" data-view-button="accordion" aria-pressed="false">Раскладушка</button>
     </div>
-    <a class="open-page" href="./prototype.html" target="_blank" rel="noopener">Открыть без рамки ↗</a>
+    <a class="open-page" href="./prototype.html?hero=side" target="_blank" rel="noopener">Открыть без рамки ↗</a>
   </header>
 
-  <main class="preview-stage" data-view="desktop">
+  <main class="preview-stage" data-view="side-desktop">
     <div class="preview-frame">
-      <iframe src="./prototype.html" title="Макет страницы услуг ZOBNIN TEAM"></iframe>
+      <iframe src="./prototype.html?hero=side" title="Макет страницы услуг ZOBNIN TEAM"></iframe>
     </div>
   </main>
 
@@ -165,9 +164,16 @@
     const params = new URLSearchParams(location.search);
 
     const setView = (view, updateUrl = true) => {
-      const nextView = ['mobile', 'accordion'].includes(view) ? view : 'desktop';
+      const aliases = { desktop: 'background-desktop', mobile: 'background-mobile' };
+      const requestedView = aliases[view] || view;
+      const availableViews = ['side-desktop', 'side-mobile', 'background-desktop', 'background-mobile', 'accordion'];
+      const nextView = availableViews.includes(requestedView) ? requestedView : 'side-desktop';
       stage.dataset.view = nextView;
-      const prototypeUrl = nextView === 'accordion' ? './prototype.html?layout=accordion' : './prototype.html';
+      const prototypeUrl = nextView === 'accordion'
+        ? './prototype.html?layout=accordion'
+        : nextView.startsWith('side-')
+          ? './prototype.html?hero=side'
+          : './prototype.html';
       if (frame.getAttribute('src') !== prototypeUrl) frame.src = prototypeUrl;
       openPage.href = prototypeUrl;
       buttons.forEach((button) => {
