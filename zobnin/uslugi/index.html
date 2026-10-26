@@ -109,6 +109,13 @@
       border: 1px solid #cfcfd6;
     }
 
+    .preview-stage[data-view="accordion"] .preview-frame {
+      width: 390px;
+      min-height: 720px;
+      border-radius: 22px;
+      border: 1px solid #cfcfd6;
+    }
+
     iframe {
       display: block;
       width: 100%;
@@ -125,10 +132,11 @@
       }
 
       .preview-title { grid-column: 1 / -1; text-align: center; }
-      .view-switcher { justify-self: start; }
+      .view-switcher { width: 100%; grid-column: 1 / -1; justify-self: stretch; }
+      .view-button { min-width: 0; flex: 1; padding-inline: 8px; font-size: 12px; }
       .open-page { font-size: 13px; }
       .preview-stage { height: calc(100vh - 112px); padding: 10px; }
-      .preview-stage[data-view="mobile"] { justify-content: flex-start; }
+      .preview-stage[data-view="mobile"], .preview-stage[data-view="accordion"] { justify-content: flex-start; }
     }
   </style>
 </head>
@@ -138,6 +146,7 @@
     <div class="view-switcher" role="group" aria-label="Размер макета">
       <button class="view-button" type="button" data-view-button="desktop" aria-pressed="true">Десктоп</button>
       <button class="view-button" type="button" data-view-button="mobile" aria-pressed="false">Мобильная</button>
+      <button class="view-button" type="button" data-view-button="accordion" aria-pressed="false">Моб. раскладушка</button>
     </div>
     <a class="open-page" href="./prototype.html" target="_blank" rel="noopener">Открыть без рамки ↗</a>
   </header>
@@ -150,12 +159,17 @@
 
   <script>
     const stage = document.querySelector('.preview-stage');
+    const frame = document.querySelector('iframe');
+    const openPage = document.querySelector('.open-page');
     const buttons = [...document.querySelectorAll('[data-view-button]')];
     const params = new URLSearchParams(location.search);
 
     const setView = (view, updateUrl = true) => {
-      const nextView = view === 'mobile' ? 'mobile' : 'desktop';
+      const nextView = ['mobile', 'accordion'].includes(view) ? view : 'desktop';
       stage.dataset.view = nextView;
+      const prototypeUrl = nextView === 'accordion' ? './prototype.html?layout=accordion' : './prototype.html';
+      if (frame.getAttribute('src') !== prototypeUrl) frame.src = prototypeUrl;
+      openPage.href = prototypeUrl;
       buttons.forEach((button) => {
         button.setAttribute('aria-pressed', String(button.dataset.viewButton === nextView));
       });
