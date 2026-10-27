@@ -32,11 +32,11 @@
       <div class="views" aria-label="Режим просмотра"><button data-view="desktop" aria-pressed="true">Desktop</button><button data-view="mobile" aria-pressed="false">Mobile</button></div>
       <a class="open" id="open-page" target="_blank" rel="noopener">Открыть страницу отдельно ↗</a>
     </div>
-    <nav class="pages" aria-label="Возрастные страницы"><button data-page="6-8">6-8 лет</button></nav>
+    <nav class="pages" aria-label="Возрастные страницы"><button data-page="6-8">6-8 лет</button><button data-page="9-10">9-10 лет</button><button data-page="11-13">11-13 лет</button></nav>
   </header>
   <main class="stage" id="stage"><iframe id="preview" title="ZOBNIN TEAM preview"></iframe></main>
   <script>
-    const pages={'6-8':{label:'Тренировки 6-8 лет',src:'./6-8/page.html'}};
+    const pages={'6-8':{label:'Тренировки 6-8 лет',src:'./6-8/page.html'},'9-10':{label:'Тренировки 9-10 лет',src:'./9-10/page.html'},'11-13':{label:'Тренировки 11-13 лет',src:'./11-13/page.html'}};
     const stage=document.getElementById('stage'),frame=document.getElementById('preview'),openPage=document.getElementById('open-page');
     let state={page:'6-8',view:'desktop'};
     function readHash(){const p=new URLSearchParams(location.hash.slice(1));state.page=pages[p.get('page')]?p.get('page'):'6-8';state.view=p.get('view')==='mobile'?'mobile':'desktop'}
