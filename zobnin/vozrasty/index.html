@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <title>ZOBNIN TEAM · возрастные страницы</title>
+  <style>
+    *{box-sizing:border-box}
+    :root{--black:#121212;--red:#eb2c2c;--paper:#f3f3f5;--line:#ffffff2e}
+    body{margin:0;background:var(--black);color:#fff;font:14px system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow:hidden}
+    header{min-height:104px;padding:12px 20px;display:grid;gap:10px;border-bottom:1px solid var(--line)}
+    .topbar{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .identity{display:flex;align-items:center;gap:10px}
+    .mark{display:grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--red);font-weight:900}
+    .identity strong{font-size:16px}.identity small{opacity:.68}
+    .views,.pages{display:flex;gap:8px}.pages{overflow-x:auto;padding-bottom:2px}.pages button{white-space:nowrap}
+    button,a{font:inherit;color:inherit}button{cursor:pointer;background:transparent;border:1px solid #ffffff60;border-radius:99px;padding:8px 15px;font-weight:750}
+    button[aria-pressed="true"]{background:var(--red);border-color:var(--red)}
+    button:focus-visible,a:focus-visible{outline:3px solid #fff;outline-offset:3px}
+    .open{font-size:12px;white-space:nowrap}
+    .stage{height:calc(100dvh - 105px);display:flex;justify-content:center;padding:0 12px 12px;overflow:auto;background:#d7d8de}
+    iframe{height:100%;width:100%;border:1px solid #0002;background:var(--paper);border-radius:10px}
+    .stage.mobile iframe{width:390px;min-width:390px;max-width:100%;border-radius:22px;box-shadow:0 18px 55px #0005}
+    @media(max-width:720px){header{min-height:142px;padding:8px 12px}.topbar{align-items:flex-start;flex-wrap:wrap}.identity{width:100%}.stage{height:calc(100dvh - 143px)}button{padding:8px 12px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="topbar">
+      <div class="identity"><span class="mark">ZT</span><div><strong>ZOBNIN TEAM</strong> <small>· возрастные макеты</small></div></div>
+      <div class="views" aria-label="Режим просмотра"><button data-view="desktop" aria-pressed="true">Desktop</button><button data-view="mobile" aria-pressed="false">Mobile</button></div>
+      <a class="open" id="open-page" target="_blank" rel="noopener">Открыть страницу отдельно ↗</a>
+    </div>
+    <nav class="pages" aria-label="Возрастные страницы"><button data-page="6-8">6-8 лет</button></nav>
+  </header>
+  <main class="stage" id="stage"><iframe id="preview" title="ZOBNIN TEAM preview"></iframe></main>
+  <script>
+    const pages={'6-8':{label:'Тренировки 6-8 лет',src:'./6-8/page.html'}};
+    const stage=document.getElementById('stage'),frame=document.getElementById('preview'),openPage=document.getElementById('open-page');
+    let state={page:'6-8',view:'desktop'};
+    function readHash(){const p=new URLSearchParams(location.hash.slice(1));state.page=pages[p.get('page')]?p.get('page'):'6-8';state.view=p.get('view')==='mobile'?'mobile':'desktop'}
+    function render(updateHash=true){const item=pages[state.page];stage.classList.toggle('mobile',state.view==='mobile');frame.src=item.src;frame.title=item.label+' · '+state.view;openPage.href=item.src;document.querySelectorAll('[data-page]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.page===state.page)));document.querySelectorAll('[data-view]').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.view===state.view)));if(updateHash)history.replaceState(null,'','#page='+encodeURIComponent(state.page)+'&view='+state.view)}
+    document.querySelectorAll('[data-page]').forEach(b=>b.addEventListener('click',()=>{state.page=b.dataset.page;render()}));
+    document.querySelectorAll('[data-view]').forEach(b=>b.addEventListener('click',()=>{state.view=b.dataset.view;render()}));
+    addEventListener('hashchange',()=>{readHash();render(false)});readHash();render(false);
+  </script>
+</body>
+</html>
