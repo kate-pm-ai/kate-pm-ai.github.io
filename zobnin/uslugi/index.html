@@ -169,7 +169,7 @@
       const nextView = availableViews.includes(requestedView) ? requestedView : 'side-desktop';
       stage.dataset.view = nextView;
       const prototypeUrl = nextView === 'accordion'
-        ? './prototype.html?layout=accordion'
+        ? './prototype.html?hero=side&layout=accordion'
         : './prototype.html?hero=side';
       if (frame.getAttribute('src') !== prototypeUrl) frame.src = prototypeUrl;
       openPage.href = prototypeUrl;
