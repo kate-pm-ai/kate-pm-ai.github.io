@@ -541,6 +541,166 @@
     .service-modal__legal a { text-decoration: underline; }
     .service-modal__status { min-height: 20px; margin: 0 6px; color: #55555c; font-size: 13px; }
 
+    /* Component parity with the published Individual Training landing. */
+    :root {
+      --red-hover: #b91f1f;
+      --red-light: rgba(221, 44, 44, .08);
+      --line: #e4e4e9;
+      --radius-large: 28px;
+      --radius-medium: 20px;
+      --radius-small: 14px;
+      --shadow-small: 0 4px 14px rgba(18, 18, 18, .05);
+      --shadow: 0 12px 36px rgba(18, 18, 18, .08);
+    }
+
+    .btn {
+      min-height: 54px;
+      gap: 10px;
+      padding: 15px 28px;
+      letter-spacing: .03em;
+      box-shadow: 0 6px 20px rgba(221, 44, 44, .28);
+    }
+    .btn:hover { transform: translateY(-2px); box-shadow: 0 10px 26px rgba(221, 44, 44, .36); }
+
+    .hero-grid { align-items: stretch; }
+    .hero-copy { display: flex; flex-direction: column; justify-content: center; padding: 24px 0; }
+    .hero-text { max-width: 680px; margin-top: 20px; color: #424247; }
+    .hero-actions { gap: 16px 20px; margin-top: 28px; }
+    .free-note { font-size: 13px; font-weight: 800; }
+    .hero-media {
+      width: 100%;
+      background: linear-gradient(145deg, #d8d8dc, #f2f2f7);
+      box-shadow: var(--shadow);
+    }
+    .hero-media::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(180deg, transparent 55%, rgba(18, 18, 18, .65));
+    }
+    .yandex-badge-wrapper {
+      top: 24px;
+      left: 24px;
+      width: 172px;
+      height: 52px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0 10px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #f6f6f6;
+      box-shadow: var(--shadow-small);
+    }
+    .hero-badge {
+      z-index: 2;
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: center;
+      padding: 18px 20px;
+      border: 1px solid rgba(255, 255, 255, .8);
+      color: var(--ink);
+      background: rgba(255, 255, 255, .94);
+      box-shadow: var(--shadow);
+      backdrop-filter: blur(14px);
+    }
+    .hero-badge-item strong { max-width: none; margin-bottom: 2px; color: var(--ink); font-size: 14px; }
+    .hero-badge-item span { color: var(--muted); font-size: 12px; line-height: 1.35; }
+    .hero-badge-price { color: var(--red); font-size: 20px; }
+
+    .anchor-wrap { padding: 10px 0; border-top: 0; }
+    .anchor-list { padding: 0; }
+    .anchor-pill { min-height: 0; padding: 9px 18px; color: #333338; font-weight: 700; }
+    .anchor-pill:hover { color: var(--red); border-color: var(--red); background: var(--red-light); }
+
+    .section-head {
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, .65fr);
+      gap: 42px;
+      margin-bottom: 42px;
+    }
+    .section-kicker { letter-spacing: .12em; }
+
+    .service-grid { gap: 26px; }
+    .service-card {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      border-color: var(--line);
+      box-shadow: var(--shadow-small);
+      transition: transform .28s cubic-bezier(.16, 1, .3, 1), box-shadow .28s cubic-bezier(.16, 1, .3, 1);
+    }
+    .service-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .service-photo { background: #e0e0e5; }
+    .service-body { display: flex; flex: 1; flex-direction: column; padding: 32px; }
+    .service-body h3 { margin-bottom: 18px; font-size: clamp(24px, 2.2vw, 32px); line-height: 1.1; }
+    .service-text { margin: 0; color: #55555b; font-size: 14px; line-height: 1.55; }
+
+    .coaches-row { gap: 22px; }
+    .coach-card {
+      display: flex;
+      height: 100%;
+      flex-direction: column;
+      overflow: hidden;
+      border-color: var(--line);
+      border-radius: var(--radius-medium);
+      box-shadow: var(--shadow-small);
+      transition: transform .28s cubic-bezier(.16, 1, .3, 1), box-shadow .28s cubic-bezier(.16, 1, .3, 1), border-color .28s cubic-bezier(.16, 1, .3, 1);
+    }
+    .coach-card:hover { transform: translateY(-4px); border-color: rgba(221, 44, 44, .3); box-shadow: var(--shadow); }
+    .coach-photo-wrap { height: auto; aspect-ratio: 4 / 4.6; background: var(--surface); }
+    .coach-photo-wrap img { transition: transform .4s ease; }
+    .coach-card:hover .coach-photo-wrap img { transform: scale(1.04); }
+    .coach-body { min-height: 0; flex: 1; padding: 22px 20px; border-top: 0; }
+    .coach-role {
+      order: 0;
+      margin: 8px 0 14px;
+      font-family: var(--font-body);
+      font-size: 12px;
+      line-height: 1.35;
+      letter-spacing: 0;
+      text-transform: none;
+    }
+    .coach-name { margin: 0; font-size: 19px; line-height: 1.15; }
+    .coach-fact { padding: 9px 0; }
+    .coach-fact dt { font-family: var(--font-body); font-size: 10px; letter-spacing: .04em; }
+    .coach-fact dd { font-size: 12px; line-height: 1.4; }
+    .coach-more { padding-top: 16px; font-size: 13px; }
+
+    .price-grid { gap: 22px; }
+    .price-card {
+      min-height: 380px;
+      padding: 30px;
+      border-color: var(--line);
+      box-shadow: var(--shadow-small);
+      transition: transform .28s cubic-bezier(.16, 1, .3, 1), box-shadow .28s cubic-bezier(.16, 1, .3, 1);
+    }
+    .price-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .price-card--featured { box-shadow: var(--shadow); }
+    .price-title { min-height: 0; margin-top: 18px; font-size: 24px; }
+    .price-list { margin: 22px 0 26px; font-size: 14px; }
+    .price-value { font-size: 40px; }
+    .price-bottom .btn { width: 100%; margin-top: 20px; }
+
+    .progress-points { gap: 10px; }
+    .progress-point { border-color: var(--line); border-radius: var(--radius-small); background: var(--surface); }
+    .age-card { border-color: var(--line); box-shadow: var(--shadow-small); }
+    .age-body { padding: 32px; }
+    .tick { border-radius: var(--radius-small); }
+
+    .branch-card { grid-template-columns: minmax(0, 1.15fr) minmax(360px, .85fr); }
+    .branch-image { border-radius: 24px; }
+    .branch-body { border-color: var(--line); border-radius: 24px; }
+    .meta-label { color: var(--muted); letter-spacing: .05em; }
+    .meta-value { color: var(--ink); font-weight: 600; }
+
+    .faq-grid { gap: 14px; margin-top: 38px; }
+    .faq-item { border-color: var(--line); box-shadow: var(--shadow-small); }
+    .faq-item[open] { box-shadow: var(--shadow); }
+    .faq-answer { border-top: 1px solid transparent; }
+    .faq-item[open] .faq-answer { padding-top: 14px; border-top-color: var(--line); }
+
     @media (max-width: 1020px) {
       .site-header__nav-list { gap: 16px; }
       .site-header__nav-link { font-size: 16px; }
@@ -639,6 +799,44 @@
       .service-modal { align-items: end; padding: 12px; }
       .service-modal__card { max-height: calc(100svh - 24px); overflow-y: auto; padding: 28px 20px 22px; border-radius: 20px 20px 0 0; }
       .service-modal h2 { font-size: 34px; }
+    }
+
+    @media (max-width: 720px) {
+      .hero-copy { padding: 12px 0 0; }
+      .hero-text { margin-top: 14px; }
+      .hero-actions { gap: 12px; margin-top: 20px; }
+      .free-note { justify-content: center; }
+      .yandex-badge-wrapper { top: 14px; left: 14px; width: 162px; }
+      .hero-badge {
+        right: 12px;
+        bottom: 12px;
+        left: 12px;
+        grid-template-columns: 1fr auto;
+        gap: 10px;
+        padding: 12px 14px;
+      }
+      .hero-badge-item strong { font-size: 13px; }
+      .hero-badge-price { font-size: 20px; }
+      .anchor-wrap { padding: 10px 0; }
+      .section-head { gap: 14px; margin-bottom: 28px; }
+      .service-grid { gap: 18px; }
+      .service-body { padding: 22px; }
+      .service-body h3 { margin-bottom: 14px; font-size: 27px; }
+      .coaches-row { gap: 14px; }
+      .coach-card { flex-basis: 84vw; border-radius: var(--radius-medium); }
+      .coach-body { padding: 22px 20px; }
+      .coach-role { margin: 8px 0 14px; padding: 0; border: 0; border-radius: 0; background: transparent; color: var(--muted); font-size: 12px; }
+      .coach-name { font-family: var(--font-display); font-size: 19px; text-transform: uppercase; }
+      .coach-fact { padding: 10px 0; }
+      .coach-fact dt { font-size: 10px; text-transform: uppercase; }
+      .coach-fact dd { font-size: 13px; }
+      .price-card { min-height: auto; padding: 24px; }
+      .price-value { font-size: 40px; }
+      .age-body { padding: 22px; }
+      .branch-card { grid-template-columns: 1fr; }
+      .branch-image { border-radius: 22px 22px 0 0; }
+      .branch-body { border-radius: 0 0 22px 22px; }
+      .faq-grid { margin-top: 28px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
