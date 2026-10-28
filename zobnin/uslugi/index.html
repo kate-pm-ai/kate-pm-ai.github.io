@@ -102,8 +102,6 @@
       transition: width .24s ease, border-radius .24s ease;
     }
 
-    .preview-stage[data-view="side-mobile"] .preview-frame,
-    .preview-stage[data-view="background-mobile"] .preview-frame,
     .preview-stage[data-view="accordion"] .preview-frame {
       width: 390px;
       min-height: 720px;
@@ -131,8 +129,6 @@
       .view-button { min-width: max-content; flex: 1; padding-inline: 10px; font-size: 12px; }
       .open-page { font-size: 13px; }
       .preview-stage { height: calc(100vh - 112px); padding: 10px; }
-      .preview-stage[data-view="side-mobile"],
-      .preview-stage[data-view="background-mobile"],
       .preview-stage[data-view="accordion"] { justify-content: flex-start; }
     }
   </style>
@@ -140,12 +136,9 @@
 <body>
   <header class="preview-toolbar">
     <div class="preview-title">Макет страницы «Услуги»</div>
-    <div class="view-switcher" role="group" aria-label="Вариант макета">
-      <button class="view-button" type="button" data-view-button="side-desktop" aria-pressed="true">Справа · десктоп</button>
-      <button class="view-button" type="button" data-view-button="side-mobile" aria-pressed="false">Справа · мобила</button>
-      <button class="view-button" type="button" data-view-button="background-desktop" aria-pressed="false">Фон · десктоп</button>
-      <button class="view-button" type="button" data-view-button="background-mobile" aria-pressed="false">Фон · мобила</button>
-      <button class="view-button" type="button" data-view-button="accordion" aria-pressed="false">Раскладушка</button>
+    <div class="view-switcher" role="group" aria-label="Версия макета">
+      <button class="view-button" type="button" data-view-button="side-desktop" aria-pressed="true">Десктоп</button>
+      <button class="view-button" type="button" data-view-button="accordion" aria-pressed="false">Мобильная</button>
     </div>
     <a class="open-page" href="./prototype.html?hero=side" target="_blank" rel="noopener">Открыть без рамки ↗</a>
   </header>
@@ -164,16 +157,20 @@
     const params = new URLSearchParams(location.search);
 
     const setView = (view, updateUrl = true) => {
-      const aliases = { desktop: 'background-desktop', mobile: 'background-mobile' };
+      const aliases = {
+        desktop: 'side-desktop',
+        mobile: 'accordion',
+        'side-mobile': 'accordion',
+        'background-mobile': 'accordion',
+        'background-desktop': 'side-desktop'
+      };
       const requestedView = aliases[view] || view;
-      const availableViews = ['side-desktop', 'side-mobile', 'background-desktop', 'background-mobile', 'accordion'];
+      const availableViews = ['side-desktop', 'accordion'];
       const nextView = availableViews.includes(requestedView) ? requestedView : 'side-desktop';
       stage.dataset.view = nextView;
       const prototypeUrl = nextView === 'accordion'
         ? './prototype.html?layout=accordion'
-        : nextView.startsWith('side-')
-          ? './prototype.html?hero=side'
-          : './prototype.html';
+        : './prototype.html?hero=side';
       if (frame.getAttribute('src') !== prototypeUrl) frame.src = prototypeUrl;
       openPage.href = prototypeUrl;
       buttons.forEach((button) => {
