@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="robots" content="noindex, nofollow">
   <meta name="description" content="Занятия футбольным ОФП для детей и взрослых ✔️Взрывная скорость✔️Укрепление мышц и суставов✔️Выносливость✔️Координация 📞 Запись: +7 (903) 147-47-50">
-  <title></title><!-- ждем от Миши -->
+  <title>ОФП в футболе - запись к тренеру по физподготовке в ZOBNIN TEAM</title>
   <style>
     @font-face {
       font-family: "ZT Manrope";
@@ -37,16 +37,16 @@
       --red-hover: #c92020;
       --ink: #121212;
       --muted: #66666f;
-      --surface: #f2f2f7;
+      --surface: #f4f4f8;
       --white: #ffffff;
       --green: #2fa35f;
       --line: #e5e5e5;
-      --container: 1240px;
+      --container: 1440px;
       --font-body: "ZT Manrope", Manrope, Arial, sans-serif;
       --font-display: "ZT Martian", "Arial Narrow", Impact, sans-serif;
       --radius-large: 28px;
       --radius-medium: 20px;
-      --shadow: 0 16px 44px rgba(18, 18, 18, .08);
+      --shadow: 0 12px 36px rgba(18, 18, 18, .08);
     }
 
     *, *::before, *::after { box-sizing: border-box; }
@@ -58,46 +58,66 @@
       color: var(--ink);
       background: var(--white);
       font-family: var(--font-body);
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 500;
-      line-height: 1.55;
+      line-height: 1.4;
       text-rendering: optimizeLegibility;
     }
     img { display: block; max-width: 100%; }
     a { color: inherit; }
     button, a { -webkit-tap-highlight-color: transparent; }
     button { font: inherit; }
-    .container { width: min(calc(100% - 48px), var(--container)); margin-inline: auto; }
+    main { font-size: 16px; line-height: 1.55; }
+    .container { width: min(100%, var(--container)); margin-inline: auto; padding-inline: 40px; }
+    .hero .container,
+    .anchor-wrap .container,
+    .section .container { width: min(calc(100% - 48px), 1392px); }
 
     .site-header {
-      position: sticky;
-      top: 0;
+      position: relative;
       z-index: 50;
-      border-bottom: 1px solid rgba(18, 18, 18, .08);
-      background: rgba(255, 255, 255, .95);
-      backdrop-filter: blur(16px);
+      background: var(--white);
     }
     .site-header__inner {
-      min-height: 78px;
+      min-height: 100px;
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 24px;
+      gap: 36px;
     }
-    .site-header__logo { display: inline-flex; align-items: center; width: 122px; }
+    .site-header__logo { display: inline-flex; flex: 0 0 auto; align-items: center; width: 156px; }
     .site-header__logo img { width: 100%; height: auto; }
-    .site-header__phone {
+    .site-header__nav { margin: 0 auto; }
+    .site-header__nav-list { display: flex; align-items: center; gap: 28px; margin: 0; padding: 0; list-style: none; }
+    .site-header__nav-link {
       text-decoration: none;
-      font-size: 15px;
-      font-weight: 800;
+      font-size: 18px;
+      font-weight: 500;
       white-space: nowrap;
     }
+    .site-header__nav-link:hover,
+    .site-header__nav-link[aria-current="page"] { color: var(--red); }
+    .site-header__actions { display: flex; align-items: center; gap: 18px; }
+    .site-header__action {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 0;
+      color: var(--ink);
+      background: transparent;
+      cursor: pointer;
+      text-decoration: none;
+    }
+    .site-header__action svg { width: 24px; height: 24px; fill: none; stroke: currentColor; stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .site-header__action--wa { color: #30a460; }
+    .site-header__action--phone { gap: 12px; font-size: 20px; font-weight: 700; white-space: nowrap; }
+    .site-header__action--phone svg { color: var(--red); }
+    .site-header__action--menu { display: none; }
 
-    .hero { padding: 62px 0 70px; }
+    .hero { padding: 32px 0 20px; }
     .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(480px, 1.08fr);
-      gap: 56px;
+      grid-template-columns: minmax(0, 1.08fr) minmax(480px, .92fr);
+      gap: 42px;
       align-items: center;
     }
     .hero-copy h1,
@@ -114,8 +134,9 @@
     }
     .hero-copy h1 {
       max-width: 720px;
-      font-size: clamp(56px, 6.2vw, 92px);
-      line-height: .93;
+      font-size: 60px;
+      line-height: 1.16;
+      font-weight: 800;
     }
     .hero-text {
       max-width: 690px;
@@ -130,17 +151,17 @@
     .free-note { display: inline-flex; align-items: center; gap: 8px; color: #2b2b30; font-size: 13px; font-weight: 800; }
     .free-note::before { content: ""; flex-shrink: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 5px rgba(47, 163, 95, .16); }
     .btn {
-      min-height: 56px;
+      min-height: 66px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
       gap: 12px;
-      padding: 15px 26px;
+      padding: 15px 28px;
       border: 1px solid var(--red);
       border-radius: 999px;
       color: var(--white);
       background: var(--red);
-      box-shadow: none;
+      box-shadow: 0 6px 20px rgba(221, 44, 44, .28);
       cursor: pointer;
       text-align: center;
       text-decoration: none;
@@ -151,7 +172,7 @@
       transition: background .2s ease, border-color .2s ease, transform .2s ease;
     }
     .btn:hover { background: var(--red-hover); border-color: var(--red-hover); transform: translateY(-1px); }
-    .btn:focus-visible, .anchor-pill:focus-visible, summary:focus-visible, .site-header__phone:focus-visible {
+    .btn:focus-visible, .anchor-pill:focus-visible, summary:focus-visible, .site-header__action:focus-visible, .site-header__nav-link:focus-visible {
       outline: 3px solid rgba(221, 44, 44, .35);
       outline-offset: 3px;
     }
@@ -160,8 +181,8 @@
       display: flex;
       flex-direction: column;
       position: relative;
-      height: 620px;
-      min-height: 590px;
+      height: 520px;
+      min-height: 520px;
       overflow: hidden;
       border-radius: var(--radius-large);
       background: var(--surface);
@@ -212,7 +233,7 @@
     .anchor-wrap {
       position: sticky;
       z-index: 40;
-      top: 78px;
+      top: 0;
       border-block: 1px solid var(--line);
       background: rgba(255, 255, 255, .96);
       backdrop-filter: blur(14px);
@@ -262,7 +283,7 @@
       letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .section-head h2 { max-width: 850px; font-size: clamp(42px, 5.1vw, 68px); line-height: .98; }
+    .section-head h2 { max-width: 850px; font-size: 48px; line-height: 1.16; font-weight: 800; }
     .lead { margin: 0; font-size: 18px; line-height: 1.55; }
 
     .service-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px; }
@@ -472,12 +493,58 @@
     .faq-item[open] .faq-toggle { color: var(--white); background: var(--red); transform: translateY(-50%) rotate(180deg); }
     .faq-answer { padding: 0 24px 24px; color: #55555c; font-size: 14px; line-height: 1.6; }
 
-    .site-footer { padding: 34px 0; color: var(--white); background: var(--ink); }
-    .site-footer__inner { display: flex; align-items: center; justify-content: space-between; gap: 24px; }
-    .site-footer__logo { width: 116px; filter: brightness(0) invert(1); }
-    .site-footer__phone { color: var(--white); font-size: 16px; font-weight: 800; text-decoration: none; }
+    .site-footer { padding: 80px 0; color: var(--white); background: var(--red); }
+    .site-footer a { color: inherit; text-decoration: none; }
+    .site-footer__top { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); align-items: start; padding-bottom: 60px; border-bottom: 1px solid rgba(255, 255, 255, .34); }
+    .site-footer__logo { flex: 0 0 auto; width: 156px; }
+    .site-footer__contacts { display: grid; gap: 4px; margin: 0; padding: 0; list-style: none; }
+    .site-footer__contact { font-size: 40px; font-weight: 700; line-height: 1.375; }
+    .site-footer__top .btn { display: none; }
+    .btn--white { color: var(--ink); border-color: var(--white); background: var(--white); }
+    .btn--white:hover { color: var(--white); border-color: var(--ink); background: var(--ink); }
+    .site-footer__bottom { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 60px 0; }
+    .site-footer__about { display: grid; align-content: start; justify-items: start; gap: 28px; }
+    .site-footer__about p { max-width: 420px; margin: 0; font-size: 18px; line-height: 1.55; }
+    .site-footer__nav { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 34px; }
+    .site-footer__nav-title { margin-bottom: 18px; font-family: "ZT Martian Std", sans-serif; font-size: 16px; font-weight: 700; text-transform: uppercase; }
+    .site-footer__nav-list { display: grid; gap: 12px; margin: 0; padding: 0; list-style: none; }
+    .site-footer__nav-link { font-size: 16px; line-height: 1.4; }
+    .site-footer__socials { display: flex; gap: 10px; margin: 4px 0 0; padding: 0; list-style: none; }
+    .site-footer__social-link { width: 42px; height: 42px; display: grid; place-items: center; border: 1px solid rgba(255, 255, 255, .65); border-radius: 50%; font-size: 11px; font-weight: 800; }
+    .site-footer__copyright { display: flex; justify-content: space-between; gap: 32px; padding-top: 26px; border-top: 1px solid rgba(255, 255, 255, .34); font-size: 13px; line-height: 1.5; }
+    .site-footer__legal { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 14px 24px; }
+
+    .service-modal {
+      position: fixed;
+      inset: 0;
+      z-index: 100;
+      display: grid;
+      place-items: center;
+      padding: 20px;
+      color: var(--ink);
+      background: rgba(18, 18, 18, .72);
+      opacity: 0;
+      visibility: hidden;
+      transition: opacity .2s ease, visibility .2s ease;
+    }
+    .service-modal.is-open { opacity: 1; visibility: visible; }
+    .service-modal__card { position: relative; width: min(520px, 100%); padding: 36px; border-radius: 28px; background: var(--white); box-shadow: 0 28px 90px rgba(0, 0, 0, .32); }
+    .service-modal__close { position: absolute; top: 18px; right: 18px; width: 42px; height: 42px; display: grid; place-items: center; padding: 0; border: 0; border-radius: 50%; background: var(--surface); cursor: pointer; font-size: 28px; line-height: 1; }
+    .service-modal__context { margin: 0 52px 10px 0; color: var(--red); font-size: 12px; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; }
+    .service-modal h2 { margin: 0 52px 14px 0; font-family: var(--font-display); font-size: 42px; font-weight: 800; line-height: 1; text-transform: uppercase; }
+    .service-modal__note { margin: 0 0 24px; color: var(--muted); font-size: 15px; line-height: 1.55; }
+    .service-modal__form { display: grid; gap: 12px; }
+    .service-modal__input { width: 100%; min-height: 56px; padding: 13px 18px; border: 1px solid #dcdce2; border-radius: 999px; color: var(--ink); background: var(--white); font: inherit; outline: none; }
+    .service-modal__input:focus { border-color: var(--red); box-shadow: 0 0 0 4px rgba(221, 44, 44, .08); }
+    .service-modal__form .btn { width: 100%; }
+    .service-modal__legal { margin: 0 6px; color: #77777e; font-size: 11px; line-height: 1.45; }
+    .service-modal__legal a { text-decoration: underline; }
+    .service-modal__status { min-height: 20px; margin: 0 6px; color: #55555c; font-size: 13px; }
 
     @media (max-width: 1020px) {
+      .site-header__nav-list { gap: 16px; }
+      .site-header__nav-link { font-size: 16px; }
+      .site-header__action--phone .site-header__phone-text { display: none; }
       .hero-grid { grid-template-columns: 1fr; }
       .hero-copy { max-width: 760px; }
       .hero-media { height: 640px; min-height: 640px; }
@@ -487,27 +554,42 @@
     }
 
     @media (max-width: 720px) {
-      .container { width: min(calc(100% - 30px), var(--container)); }
-      .site-header__inner { min-height: 64px; }
-      .site-header__logo { width: 104px; }
-      .site-header__phone { font-size: 13px; }
-      .hero { padding: 40px 0 46px; }
-      .hero-grid { gap: 32px; }
-      .hero-copy h1 { font-size: clamp(44px, 14vw, 58px); line-height: .94; }
-      .hero-text { margin-top: 22px; font-size: 15px; line-height: 1.55; }
+      .container { width: 100%; padding-inline: 20px; }
+      .hero .container,
+      .anchor-wrap .container,
+      .section .container { width: calc(100% - 32px); }
+      .site-header__inner { min-height: 82px; gap: 14px; }
+      .site-header__logo { width: 82px; }
+      .site-header__nav { position: absolute; top: 72px; right: 15px; left: 15px; display: none; padding: 12px; border: 1px solid #e4e4e8; background: var(--white); box-shadow: 0 18px 40px rgba(18, 18, 18, .12); }
+      .site-header__nav.is-open { display: block; }
+      .site-header__nav-list { display: grid; gap: 0; }
+      .site-header__nav-link { display: block; padding: 11px 8px; border-bottom: 1px solid #e4e4e8; }
+      .site-header__nav-item:last-child .site-header__nav-link { border-bottom: 0; }
+      .site-header__actions { margin-left: auto; gap: 10px; }
+      .site-header__action { width: 34px; height: 34px; border-radius: 50%; }
+      .site-header__action svg { width: 18px; height: 18px; }
+      .site-header__action--wa { color: var(--white); background: #30a460; }
+      .site-header__action--phone { color: var(--white); background: var(--red); }
+      .site-header__action--phone svg { color: inherit; }
+      .site-header__action--menu { display: inline-flex; color: var(--ink); background: var(--surface); }
+      .hero { padding: 16px 0 20px; }
+      .hero-grid { gap: 22px; }
+      .hero-copy h1 { font-size: 39px; line-height: 1.16; }
+      .hero-text { margin-top: 22px; font-size: 15px; line-height: 1.5; }
       .hero-actions { display: grid; align-items: stretch; margin-top: 26px; }
       .hero-actions .btn { width: 100%; }
+      .btn { min-height: 54px; padding-inline: 18px; font-size: 12px; }
       .free-note { text-align: center; }
-      .hero-media { height: 480px; min-height: 480px; }
+      .hero-media { height: 300px; min-height: 300px; }
       .hero-media > img { object-position: center 56%; }
       .hero-badge { right: 14px; bottom: 14px; left: 14px; display: grid; padding: 17px; }
       .hero-badge-item strong { font-size: 16px; }
       .hero-badge-price { font-size: 30px; }
       .yandex-badge-wrapper { top: 14px; left: 14px; }
-      .anchor-wrap { top: 64px; }
-      .section { padding: 68px 0; scroll-margin-top: 130px; }
+      .anchor-wrap { top: 0; }
+      .section { padding: 64px 0; scroll-margin-top: 66px; }
       .section-head { margin-bottom: 30px; }
-      .section-head h2 { font-size: clamp(38px, 11vw, 50px); }
+      .section-head h2 { font-size: 32px; line-height: 1.16; }
       .lead { font-size: 16px; }
       .progress-points { grid-template-columns: 1fr; }
       .progress-point { min-height: 0; }
@@ -542,7 +624,21 @@
       .branch-body h3 { font-size: 30px; }
       .meta-line { grid-template-columns: 1fr; gap: 4px; }
       .branch-body .btn { width: 100%; }
-      .site-footer__inner { flex-direction: column; align-items: flex-start; }
+      .site-footer { padding: 30px 0; }
+      .site-footer__top { display: grid; gap: 24px; padding-bottom: 34px; }
+      .site-footer__logo { width: 128px; }
+      .site-footer__contacts { display: grid; gap: 10px; }
+      .site-footer__contact { font-size: 18px; line-height: 1.4; }
+      .site-footer__top .btn { width: 100%; display: inline-flex; margin-left: 0; }
+      .site-footer__bottom { grid-template-columns: 1fr; gap: 40px; padding: 40px 0; }
+      .site-footer__about { display: none; }
+      .site-footer__nav { grid-template-columns: 1fr 1fr; gap: 32px 18px; }
+      .site-footer__nav-block:last-child { grid-column: 1 / -1; }
+      .site-footer__copyright { display: grid; gap: 18px; }
+      .site-footer__legal { justify-content: flex-start; }
+      .service-modal { align-items: end; padding: 12px; }
+      .service-modal__card { max-height: calc(100svh - 24px); overflow-y: auto; padding: 28px 20px 22px; border-radius: 20px 20px 0 0; }
+      .service-modal h2 { font-size: 34px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -616,7 +712,28 @@
       <a class="site-header__logo" href="https://zobninteam.ru/" aria-label="ZOBNIN TEAM">
         <img src="https://zobninteam.ru/local/templates/main/img/bg/logo.svg" alt="ZOBNIN TEAM">
       </a>
-      <a class="site-header__phone" href="tel:+79031474750">+7 (903) 147-47-50</a>
+      <nav class="site-header__nav" aria-label="Основное меню">
+        <ul class="site-header__nav-list">
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="https://zobninteam.ru/">Главная</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="https://zobninteam.ru/services/" aria-current="page">Услуги</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="https://zobninteam.ru/training-camp/">Сборы</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="https://zobninteam.ru/branches/">Филиалы</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="https://zobninteam.ru/coaches/">Тренеры</a></li>
+          <li class="site-header__nav-item"><a class="site-header__nav-link" href="https://zobninteam.ru/blog/">Блог</a></li>
+        </ul>
+      </nav>
+      <div class="site-header__actions">
+        <a class="site-header__action site-header__action--wa" href="https://wa.me/79031474750" target="_blank" rel="noopener" aria-label="Написать в WhatsApp">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8 8 0 0 1-11.8 7l-4.2 1.4 1.4-4.1A8 8 0 1 1 20 11.5Z"></path><path d="M8.5 8.2c.4 3 2.1 4.7 5.1 5.2l1.2-1.2c.2-.2.5-.3.8-.2l2 .8"></path></svg>
+        </a>
+        <a class="site-header__action site-header__action--phone" href="tel:+79031474750" aria-label="Позвонить +7 (903) 147-47-50">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.6 3.8 9 3.2l2 4.6-1.8 1.5a14 14 0 0 0 5.5 5.5l1.5-1.8 4.6 2-.6 2.4c-.3 1.3-1.5 2.2-2.8 2.1C10.5 19 5 13.5 4.5 6.6c-.1-1.3.8-2.5 2.1-2.8Z"></path></svg>
+          <span class="site-header__phone-text">+7 (903) 147-47-50</span>
+        </a>
+        <button class="site-header__action site-header__action--menu" type="button" aria-label="Открыть меню" aria-expanded="false">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 12h16M4 17h16"></path></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -627,7 +744,7 @@
           <h1>Тренировки по ОФП в футболе</h1>
           <p class="hero-text"><strong>Футбольное ОФП в Zobnin Team — это специализированная физическая подготовка, заточенная под реальные игровые сценарии.</strong><span>Тренировки проходят на базе центра: в оборудованном зале ОФП, на полноразмерном открытом поле и в крытом манеже. Мы развиваем физические качества футболиста комплексно, снижая риск травм и выводя уровень игры на новую высоту.</span></p>
           <div class="hero-actions">
-            <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">ЗАПИСАТЬСЯ НА ОФП →</button>
+            <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">ЗАПИСАТЬСЯ НА ОФП</button>
             <span class="free-note">Стоимость первой тренировки: от 4 500 ₽</span>
           </div>
         </div>
@@ -699,7 +816,7 @@
           </article>
         </div>
         <div class="section-action">
-          <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">ЗАПИСАТЬСЯ НА ТРЕНИРОВКУ →</button>
+          <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">ЗАПИСАТЬСЯ НА ТРЕНИРОВКУ</button>
         </div>
       </div>
     </section>
@@ -817,7 +934,7 @@
                 <li class="tick">Замеры силы мышц ног</li>
               </ul>
               <p class="age-text">Высокоточная цифровая диагностика физических качеств футболиста: фиксируем стартовую скорость, высоту прыжка и баланс мышц ног. Данные исключают перегрузки, снижают риск травм и наглядно показывают рост результатов по итогам тренировочного цикла.</p>
-              <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП-тестирование VALD Performance">ЗАПИСАТЬСЯ НА ОФП-ТЕСТИРОВАНИЕ →</button>
+              <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП-тестирование VALD Performance">ЗАПИСАТЬСЯ НА ОФП-ТЕСТИРОВАНИЕ</button>
             </div>
           </article>
         </div>
@@ -848,7 +965,7 @@
                   <div class="meta-value"><a href="tel:+79031474750">+7 (903) 147-47-50</a></div>
                 </div>
               </div>
-              <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">Записаться на тренировку →</button>
+              <button class="btn" type="button" data-fancybox data-src="#modal-service-form" data-service="ОФП">Записаться на тренировку</button>
             </div>
           </article>
         </div>
@@ -902,11 +1019,81 @@
   </main>
 
   <footer class="site-footer">
-    <div class="container site-footer__inner">
-      <img class="site-footer__logo" src="https://zobninteam.ru/local/templates/main/img/bg/logo.svg" alt="ZOBNIN TEAM">
-      <a class="site-footer__phone" href="tel:+79031474750">+7 (903) 147-47-50</a>
+    <div class="container">
+      <div class="site-footer__top">
+        <a href="https://zobninteam.ru/" aria-label="ZOBNIN TEAM">
+          <img class="site-footer__logo" src="https://zobninteam.ru/local/templates/main/img/bg/logo-white.svg" alt="ZOBNIN TEAM">
+        </a>
+        <ul class="site-footer__contacts">
+          <li><a class="site-footer__contact" href="tel:+79031474750">+7 (903) 147-47-50</a></li>
+          <li><a class="site-footer__contact" href="mailto:zobninteam.akademi@gmail.com">zobninteam.akademi@gmail.com</a></li>
+        </ul>
+        <button class="btn btn--white" type="button" data-modal-open data-service="ОФП">Записаться</button>
+      </div>
+      <div class="site-footer__bottom">
+        <div class="site-footer__about">
+          <p>Zobnin Team - профессиональные тренировки для футболистов любого уровня. Развивай свои навыки вместе с опытными тренерами!</p>
+          <button class="btn btn--white" type="button" data-modal-open data-service="ОФП">Записаться</button>
+        </div>
+        <nav class="site-footer__nav" aria-label="Навигация в подвале">
+          <div class="site-footer__nav-block">
+            <div class="site-footer__nav-title">Навигация</div>
+            <ul class="site-footer__nav-list">
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/">Главная</a></li>
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/services/">Услуги</a></li>
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/training-camp/">Сборы</a></li>
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/branches/">Филиалы</a></li>
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/coaches/">Тренеры</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__nav-block">
+            <div class="site-footer__nav-title">Информация</div>
+            <ul class="site-footer__nav-list">
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/blog/">Блог</a></li>
+              <li><a class="site-footer__nav-link" href="https://zobninteam.ru/shop/">Магазин</a></li>
+            </ul>
+          </div>
+          <div class="site-footer__nav-block">
+            <div class="site-footer__nav-title">Контакты</div>
+            <ul class="site-footer__nav-list">
+              <li><a class="site-footer__nav-link" href="tel:+79031474750">+7 (903) 147-47-50</a></li>
+              <li><a class="site-footer__nav-link" href="mailto:zobninteam.akademi@gmail.com">zobninteam.akademi@gmail.com</a></li>
+              <li>
+                <ul class="site-footer__socials" aria-label="Социальные сети">
+                  <li><a class="site-footer__social-link" href="https://t.me/zobninteam" target="_blank" rel="noopener" aria-label="Telegram">TG</a></li>
+                  <li><a class="site-footer__social-link" href="https://youtube.com/@ZOBNINTEAM" target="_blank" rel="noopener" aria-label="YouTube">YT</a></li>
+                  <li><a class="site-footer__social-link" href="https://vk.com/zobninteam" target="_blank" rel="noopener" aria-label="ВКонтакте">VK</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+      <div class="site-footer__copyright">
+        <span>2026 © Zobnin Team. Все права защищены</span>
+        <div class="site-footer__legal">
+          <a href="https://zobninteam.ru/upload/price-list.pdf" target="_blank" rel="noopener">Прайс-лист</a>
+          <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">Политика конфиденциальности</a>
+          <a href="https://zobninteam.ru/upload/oferta.pdf" target="_blank" rel="noopener">Оферта</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <div class="service-modal" id="modal-service-form" role="dialog" aria-modal="true" aria-labelledby="service-modal-title" aria-hidden="true">
+    <div class="service-modal__card">
+      <button class="service-modal__close" type="button" aria-label="Закрыть форму">×</button>
+      <p class="service-modal__context">Тренировки по ОФП</p>
+      <h2 id="service-modal-title">Запись на тренировку</h2>
+      <p class="service-modal__note">Оставьте телефон. Администратор уточнит задачу и подберет удобное время.</p>
+      <form class="service-modal__form" action="#">
+        <input class="service-modal__input" type="tel" name="phone" autocomplete="tel" inputmode="tel" placeholder="Номер телефона" aria-label="Номер телефона" required>
+        <button class="btn" type="submit">Оставить телефон для записи</button>
+        <p class="service-modal__legal">Нажимая кнопку, вы даете согласие на <a href="https://zobninteam.ru/upload/politic.pdf" target="_blank" rel="noopener">обработку персональных данных</a>.</p>
+        <p class="service-modal__status" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </div>
   <script>
     (() => {
       const row = document.querySelector('.coaches-row');
@@ -925,6 +1112,63 @@
       });
       row?.addEventListener('scroll', () => requestAnimationFrame(update), { passive: true });
       update();
+    })();
+  </script>
+  <script>
+    (() => {
+      const menuButton = document.querySelector('.site-header__action--menu');
+      const menu = document.querySelector('.site-header__nav');
+      const closeMenu = () => {
+        menu?.classList.remove('is-open');
+        menuButton?.setAttribute('aria-expanded', 'false');
+        menuButton?.setAttribute('aria-label', 'Открыть меню');
+      };
+      menuButton?.addEventListener('click', () => {
+        const isOpen = menu?.classList.toggle('is-open');
+        menuButton.setAttribute('aria-expanded', String(Boolean(isOpen)));
+        menuButton.setAttribute('aria-label', isOpen ? 'Закрыть меню' : 'Открыть меню');
+      });
+      menu?.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+
+      const modal = document.getElementById('modal-service-form');
+      const modalContext = modal?.querySelector('.service-modal__context');
+      const modalInput = modal?.querySelector('input');
+      const modalStatus = modal?.querySelector('.service-modal__status');
+      let previousFocus = null;
+
+      const openModal = event => {
+        event.preventDefault();
+        const trigger = event.currentTarget;
+        const service = trigger.dataset.service || 'ОФП';
+        if (modalContext) modalContext.textContent = service;
+        if (modalStatus) modalStatus.textContent = '';
+        previousFocus = document.activeElement;
+        modal?.classList.add('is-open');
+        modal?.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        setTimeout(() => modalInput?.focus(), 220);
+      };
+      const closeModal = () => {
+        modal?.classList.remove('is-open');
+        modal?.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        previousFocus?.focus();
+      };
+
+      document.querySelectorAll('[data-src="#modal-service-form"], [data-modal-open]').forEach(trigger => {
+        trigger.addEventListener('click', openModal);
+      });
+      modal?.querySelector('.service-modal__close')?.addEventListener('click', closeModal);
+      modal?.addEventListener('click', event => {
+        if (event.target === modal) closeModal();
+      });
+      modal?.querySelector('form')?.addEventListener('submit', event => {
+        event.preventDefault();
+        if (modalStatus) modalStatus.textContent = 'Это демонстрация формы. Заявка не отправлена.';
+      });
+      document.addEventListener('keydown', event => {
+        if (event.key === 'Escape' && modal?.classList.contains('is-open')) closeModal();
+      });
     })();
   </script>
 </body>
