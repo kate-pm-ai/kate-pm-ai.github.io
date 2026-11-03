@@ -248,6 +248,7 @@
     .card-action-bar .btn-order-link { grid-column: 1 / -1; min-height: 60px; display: flex; justify-content: center; align-items: center; padding: 16px 22px; border-radius: 999px; color: #fff; background: var(--red); box-shadow: 0 8px 24px rgba(221,44,44,.26); font-size: 14px; font-weight: 800; letter-spacing: .03em; text-decoration: none; text-transform: uppercase; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
     .card-action-bar .btn-order-link:hover { background: var(--red-hover); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(221,44,44,.3); }
     .service-accordion-trigger { display: none; }
+    @media (min-width: 701px) { html[data-mobile-cards="accordion"] .service-accordion-panel { display: contents; } }
     .pending { display: inline-block; padding: 5px 8px; border-radius: 8px; color: #634f00; background: var(--yellow); font: italic 700 12px/1.25 var(--body); text-transform: none; }
     .wide-faq-link { width: 100%; min-height: 76px; display: flex; align-items: center; justify-content: space-between; margin-top: 24px; padding: 18px 24px; border-radius: 20px; color: #fff; background: var(--ink); font-family: var(--display); font-size: 24px; font-weight: 900; text-decoration: none; text-transform: uppercase; transition: background .2s ease; }
     .wide-faq-link:hover { background: var(--red); }
