@@ -488,6 +488,7 @@
         line-height: 1.25;
       }
       html[data-mobile-cards="accordion"] .service-accordion-eyebrow span + span::before { content: "·"; margin-right: 10px; color: #a0a0a7; }
+      html[data-adults="draft"][data-mobile-cards="accordion"] .service-accordion-age--adults { padding: 3px 8px; border-radius: 999px; color: #fff; background: var(--ink); }
       html[data-mobile-cards="accordion"] .service-accordion-title {
         font-family: var(--display);
         font-size: 25px;
@@ -848,6 +849,7 @@
         const title = card.querySelector('.card-title')?.textContent.trim() || 'Услуга';
         const location = card.querySelector('.badge-loc')?.textContent.trim() || '';
         const age = card.querySelector('.badge-age')?.textContent.trim() || '';
+        const isAdults = card.querySelector('.badge-age')?.classList.contains('badge-age--adults');
         const priceNode = card.querySelector('.price-val, .pending');
         const durationNode = card.querySelector('.dur-val');
         const price = priceNode?.textContent.trim() || '';
@@ -861,7 +863,7 @@
         trigger.setAttribute('aria-controls', panelId);
         trigger.innerHTML = `
           <span class="service-accordion-copy">
-            <span class="service-accordion-eyebrow"><span>${age}</span><span>${location}</span></span>
+            <span class="service-accordion-eyebrow"><span${isAdults ? ' class="service-accordion-age--adults"' : ''}>${age}</span><span>${location}</span></span>
             <span class="service-accordion-title">${title}</span>
             <span class="service-accordion-facts">
               <span class="service-accordion-fact${priceNode?.classList.contains('pending') ? ' service-accordion-fact--pending' : ''}"><small>Стоимость</small><strong>${price}</strong></span>
