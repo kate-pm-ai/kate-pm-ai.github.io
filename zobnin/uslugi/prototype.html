@@ -14,8 +14,8 @@
     if (prototypeParams.get('hero') === 'side') {
       document.documentElement.dataset.heroLayout = 'side';
     }
-    if (prototypeParams.get('adults') === 'draft') {
-      document.documentElement.dataset.adults = 'draft';
+    if (['draft', 'draft2'].includes(prototypeParams.get('adults'))) {
+      document.documentElement.dataset.adults = prototypeParams.get('adults');
     }
   </script>
   <style>
@@ -168,17 +168,20 @@
     .hero-benefit-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
     .hero-adults { max-width: 680px; margin: 20px 0 0; color: rgba(255,255,255,.96); font-size: 15px; line-height: 1.45; text-shadow: 0 1px 10px rgba(0,0,0,.38); }
     .adults-cta { display: none; }
-    html[data-adults="draft"] .hero-adults { display: none; }
-    html[data-adults="draft"] .adults-cta { max-width: 680px; display: flex; align-items: center; gap: 13px; margin: 14px 0 0; padding: 14px 16px; border: 1.5px solid var(--red); border-radius: 18px; color: var(--ink); background: #fff; box-shadow: 0 10px 26px rgba(221,44,44,.1); text-decoration: none; transition: transform .2s, box-shadow .2s; }
-    html[data-adults="draft"] .adults-cta:hover { box-shadow: 0 12px 30px rgba(221,44,44,.18); }
-    html[data-adults="draft"] .adults-cta:hover { transform: translateY(-2px); }
-    .adults-cta-icon { width: 38px; height: 38px; flex: 0 0 38px; display: grid; place-items: center; border-radius: 50%; color: var(--red); background: rgba(221,44,44,.1); }
-    .adults-cta-icon svg { width: 22px; height: 22px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
-    .adults-cta-text { min-width: 0; flex: 1; display: grid; gap: 3px; }
+    html[data-adults] .hero-adults { display: none; }
+    html[data-adults] .adults-cta { max-width: 680px; align-items: center; gap: 14px; margin: 20px 0 0; padding: 14px 16px; border-radius: 18px; text-decoration: none; transition: transform .2s; }
+    html[data-adults="draft"] .adults-cta:not(.adults-cta--dark) { display: flex; border: 1.5px solid var(--ink); color: var(--ink); background: #fff; }
+    html[data-adults="draft2"] .adults-cta--dark { display: flex; color: #fff; background: var(--ink); box-shadow: 0 10px 26px rgba(18,18,18,.16); }
+    html[data-adults] .adults-cta:hover { transform: translateY(-2px); }
+    .adults-cta-icon { width: 40px; height: 40px; flex: 0 0 40px; display: grid; place-items: center; border-radius: 50%; color: #fff; background: var(--red); }
+    .adults-cta-icon svg { width: 21px; height: 21px; fill: none; stroke: currentColor; stroke-width: 1.9; stroke-linecap: round; stroke-linejoin: round; }
+    .adults-cta-text { min-width: 0; flex: 1; display: grid; gap: 4px; }
     .adults-cta-text strong { font-size: 16px; font-weight: 800; line-height: 1.2; }
     .adults-cta-text span { font-size: 14px; font-weight: 600; line-height: 1.35; color: #424247; }
+    .adults-cta--dark .adults-cta-text strong { font: 900 18px/1 var(--display); text-transform: uppercase; }
+    .adults-cta--dark .adults-cta-text span { color: rgba(255,255,255,.85); }
     .adults-cta .round-arrow { width: 36px; height: 36px; color: #fff; background: var(--red); }
-    html[data-adults="draft"] .badge-age--adults { color: #fff; background: var(--ink); }
+    html[data-adults] .badge-age--adults { color: #fff; background: var(--ink); }
     .hero-actions { display: flex; align-items: center; gap: 20px; margin-top: 34px; }
     .hero-media { position: relative; min-height: 600px; }
     .hero-media > img { display: none; }
@@ -490,7 +493,7 @@
         line-height: 1.25;
       }
       html[data-mobile-cards="accordion"] .service-accordion-eyebrow span + span::before { content: "·"; margin-right: 10px; color: #a0a0a7; }
-      html[data-adults="draft"][data-mobile-cards="accordion"] .service-accordion-age--adults { padding: 3px 8px; border-radius: 999px; color: #fff; background: var(--ink); }
+      html[data-adults][data-mobile-cards="accordion"] .service-accordion-age--adults { padding: 3px 8px; border-radius: 999px; color: #fff; background: var(--ink); }
       html[data-mobile-cards="accordion"] .service-accordion-title {
         font-family: var(--display);
         font-size: 25px;
@@ -640,6 +643,7 @@
           <div class="hero-actions">
             <a class="btn" href="#service-form" data-modal-open data-service="Пробная тренировка">Записаться на бесплатную тренировку <span class="arrow-icon" aria-hidden="true">→</span></a>
           </div>
+          <a class="adults-cta adults-cta--dark" href="#single"><span class="adults-cta-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6.5 7.5v9M17.5 7.5v9M3.5 10v4M20.5 10v4M6.5 12h11"></path></svg></span><span class="adults-cta-text"><strong>Для взрослых</strong><span>Индивидуальные и вратарские тренировки, ОФП, тестирование, прием врача и консультации спортивного психолога</span></span><span class="round-arrow" aria-hidden="true">→</span></a>
         </div>
         <div class="hero-media" aria-label="Тренировки по футболу в Академии ZOBNIN TEAM">
           <div class="yandex-badge-wrapper">

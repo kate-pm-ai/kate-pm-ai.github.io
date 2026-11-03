@@ -168,7 +168,7 @@
       const availableViews = ['side-desktop', 'accordion'];
       const nextView = availableViews.includes(requestedView) ? requestedView : 'side-desktop';
       stage.dataset.view = nextView;
-      const draftSuffix = params.get('adults') === 'draft' ? '&adults=draft' : '';
+      const draftSuffix = ['draft', 'draft2'].includes(params.get('adults')) ? `&adults=${params.get('adults')}` : '';
       const prototypeUrl = (nextView === 'accordion'
         ? './prototype.html?hero=side&layout=accordion'
         : './prototype.html?hero=side') + draftSuffix;
