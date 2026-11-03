@@ -235,6 +235,7 @@
     .meta-caption { display: block; margin-bottom: 3px; color: var(--muted); font-size: 10px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .price-val, .dur-val { display: block; font: 900 22px/1 var(--display); text-transform: uppercase; }
     .price-val--compact { font-size: 19px; white-space: nowrap; }
+    .price-val--note { font-size: 19px; line-height: 1.05; white-space: normal; }
     .card-action-bar .btn-order-link { grid-column: 1 / -1; min-height: 60px; display: flex; justify-content: center; align-items: center; padding: 16px 22px; border-radius: 999px; color: #fff; background: var(--red); box-shadow: 0 8px 24px rgba(221,44,44,.26); font-size: 14px; font-weight: 800; letter-spacing: .03em; text-decoration: none; text-transform: uppercase; transition: background .2s ease, transform .2s ease, box-shadow .2s ease; }
     .card-action-bar .btn-order-link:hover { background: var(--red-hover); transform: translateY(-2px); box-shadow: 0 10px 24px rgba(221,44,44,.3); }
     .service-accordion-trigger { display: none; }
@@ -551,7 +552,7 @@
       {"@type":"Question","name":"Можно ли заморозить абонемент?","acceptedAnswer":{"@type":"Answer","text":"Нет, отдельная заморозка абонемента не предусмотрена. При пропусках по болезни действует перерасчет на тарифах «со страховкой»."}},
       {"@type":"Question","name":"Что будет, если пропустить занятие не по болезни?","acceptedAnswer":{"@type":"Answer","text":"Такие занятия не переносятся."}},
       {"@type":"Question","name":"Входит ли форма в стоимость абонемента?","acceptedAnswer":{"@type":"Answer","text":"Нет, форма в стоимость абонемента не входит. Комплект формы стоит 4 900 ₽. Покупка обязательна, если ребенок планирует участвовать в турнирах."}},
-      {"@type":"Question","name":"Можно ли оплачивать занятия поштучно или обязательно брать абонемент?","acceptedAnswer":{"@type":"Answer","text":"Для регулярного прогресса ребенка мы рекомендуем помесячные абонементы. Однако вы всегда можете выбрать разовый формат посещения групповых занятий, узкопрофильных направлений (ОФП, хореография) или взять индивидуальные тренировки с наставником."}}
+      {"@type":"Question","name":"Можно ли оплачивать занятия поштучно или обязательно брать абонемент?","acceptedAnswer":{"@type":"Answer","text":"Для регулярного прогресса ребенка мы рекомендуем помесячные абонементы. Однако вы всегда можете выбрать разовый формат посещения групповых занятий, ОФП или взять индивидуальные тренировки с наставником. Футбольная хореография проводится только в рамках полного абонемента."}}
     ]
   }
   </script>
@@ -676,6 +677,10 @@
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/21221165/2a0000019fe66134d8911c7ee69d10ada449/XXXL" alt="Общая физическая подготовка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Малые группы по 4-6 чел.</li><li>ОФП под футбольные навыки</li><li>Занятия по 60 минут</li><li>4, 8 или 12 занятий в месяц</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/ofp-razvitie-igrokov/">Общая физ.подготовка</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val price-val--compact">5000 - 10 800 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">Месяц</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Общая физ.подготовка">Записаться</a></div>
           </article>
+          <article class="service-card" data-age-groups="preschool school">
+            <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18173477/2a0000019dda99f50b1b835b80696d4f0357/XXXL" alt="Футбольная хореография"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Мобильность суставов и растяжка</li><li>Быстрота ног и координация</li><li>Индивидуально и в группах</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/khoreografiya-dlya-futbolistov/">Футбольная хореография</a></h3></div></div></div>
+            <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val price-val--note">Входит в полный абонемент</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Футбольная хореография">Записаться</a></div>
+          </article>
         </div>
         <a class="wide-faq-link" href="#faq">Частые вопросы родителей →</a>
       </div>
@@ -700,10 +705,6 @@
           <article class="service-card" data-age-groups="all-ages">
             <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/19766436/2a0000019dda9ea77eca87f118dfa599dae1/XXXL" alt="Общая физическая подготовка"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети и взрослые</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>ОФП под футбольные навыки</li><li>Индивидуальное занятие</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/ofp-razvitie-igrokov/">Общая физ.подготовка</a></h3></div></div></div>
             <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="price-val">3 500 ₽</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Общая физ.подготовка">Записаться</a></div>
-          </article>
-          <article class="service-card" data-age-groups="preschool school">
-            <div class="card-photo-zone"><img src="https://avatars.mds.yandex.net/get-altay/18173477/2a0000019dda99f50b1b835b80696d4f0357/XXXL" alt="Футбольная хореография"><div class="card-content"><div class="card-top-meta"><span class="badge-loc">Измайлово</span><span class="badge-age">Дети 5-13 лет</span></div><div class="card-bottom-meta"><ul class="card-details-list"><li>Мобильность суставов и растяжка</li><li>Быстрота ног и координация</li><li>Индивидуально и в группах</li></ul><h3 class="card-title"><a href="https://zobninteam.ru/services/khoreografiya-dlya-futbolistov/">Футбольная хореография</a></h3></div></div></div>
-            <div class="card-action-bar"><div class="price-dur-group"><span class="meta-caption">Стоимость</span><span class="pending">Уточняется у клиента: стоимость</span></div><div class="price-dur-group"><span class="meta-caption">Длительность</span><span class="dur-val">60-90 минут</span></div><a class="btn-order-link" href="#service-form" data-modal-open data-service="Футбольная хореография">Записаться</a></div>
           </article>
         </div>
       </div>
@@ -734,10 +735,10 @@
         <div class="main-frame__block main-frame__book">
           <div class="main-frame__book-head"><span class="main-frame__book-head-icon" aria-hidden="true">▦</span><h2 class="main-frame__book-title">Аренда площадок</h2></div>
           <div class="grid grid--main-frame-col-4-mob">
-            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5533"><img src="https://zobninteam.ru/upload/resize_cache/iblock/957/812_492_1/05m3wttdjszpxondcjow0exqy494vf5h.jpg" alt="Манеж"><span class="main-frame__book-link-info"><span class="text">Манеж</span><span class="round-arrow">→</span></span></a>
-            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5414"><img src="https://zobninteam.ru/upload/resize_cache/iblock/3d2/812_492_1/nmlgi9su1dnjfbwk6lt7notp7w59nmrb.jpg" alt="Поле"><span class="main-frame__book-link-info"><span class="text">Поле</span><span class="round-arrow">→</span></span></a>
-            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5281"><img src="https://zobninteam.ru/upload/dev2fun.imagecompress/webp/iblock/50c/w8x2f9evk7oa8hlnxwqka520iq5lozv7.webp" alt="Зал хореографии"><span class="main-frame__book-link-info"><span class="text">Зал хореографии</span><span class="round-arrow">→</span></span></a>
-            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5447"><img src="https://zobninteam.ru/upload/resize_cache/iblock/294/812_492_1/jgfpd76q2xi4j1zbtzuk7ga2am1k7yki.jpg" alt="Зал ОФП"><span class="main-frame__book-link-info"><span class="text">Зал ОФП</span><span class="round-arrow">→</span></span></a>
+            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5533"><img src="./img/rent-manezh.jpg" alt="Манеж"><span class="main-frame__book-link-info"><span class="text">Манеж</span><span class="round-arrow">→</span></span></a>
+            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5414"><img src="./img/rent-pole.jpg" alt="Поле"><span class="main-frame__book-link-info"><span class="text">Поле</span><span class="round-arrow">→</span></span></a>
+            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5281"><img src="./img/rent-horeo.jpg" alt="Зал хореографии"><span class="main-frame__book-link-info"><span class="text">Зал хореографии</span><span class="round-arrow">→</span></span></a>
+            <a class="grid__block main-frame__book-link" data-toggle="fs-booking" data-playground="5447"><img src="./img/rent-ofp.jpg" alt="Зал ОФП"><span class="main-frame__book-link-info"><span class="text">Зал ОФП</span><span class="round-arrow">→</span></span></a>
           </div>
         </div>
       </div>
@@ -791,7 +792,7 @@
           <details class="faq-item"><summary>Можно ли заморозить абонемент?<span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="faq-answer">Нет, отдельная заморозка абонемента не предусмотрена. При пропусках по болезни действует перерасчет на тарифах «со страховкой».</div></details>
           <details class="faq-item"><summary>Что будет, если пропустить занятие не по болезни?<span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="faq-answer">Такие занятия не переносятся.</div></details>
           <details class="faq-item"><summary>Входит ли форма в стоимость абонемента?<span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="faq-answer">Нет, форма в стоимость абонемента не входит. Комплект формы стоит 4 900 ₽. Покупка обязательна, если ребенок планирует участвовать в турнирах.</div></details>
-          <details class="faq-item"><summary>Можно ли оплачивать занятия поштучно или обязательно брать абонемент?<span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="faq-answer">Для регулярного прогресса ребенка мы рекомендуем помесячные абонементы. Однако вы всегда можете выбрать разовый формат посещения групповых занятий, узкопрофильных направлений (ОФП, хореография) или взять индивидуальные тренировки с наставником.</div></details>
+          <details class="faq-item"><summary>Можно ли оплачивать занятия поштучно или обязательно брать абонемент?<span class="faq-toggle" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg></span></summary><div class="faq-answer">Для регулярного прогресса ребенка мы рекомендуем помесячные абонементы. Однако вы всегда можете выбрать разовый формат посещения групповых занятий, ОФП или взять индивидуальные тренировки с наставником. Футбольная хореография проводится только в рамках полного абонемента.</div></details>
         </div>
       </div>
     </section>
