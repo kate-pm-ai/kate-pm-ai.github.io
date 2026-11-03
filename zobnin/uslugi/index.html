@@ -168,10 +168,9 @@
       const availableViews = ['side-desktop', 'accordion'];
       const nextView = availableViews.includes(requestedView) ? requestedView : 'side-desktop';
       stage.dataset.view = nextView;
-      const draftSuffix = ['draft', 'draft2'].includes(params.get('adults')) ? `&adults=${params.get('adults')}` : '';
-      const prototypeUrl = (nextView === 'accordion'
+      const prototypeUrl = nextView === 'accordion'
         ? './prototype.html?hero=side&layout=accordion'
-        : './prototype.html?hero=side') + draftSuffix;
+        : './prototype.html?hero=side';
       if (frame.getAttribute('src') !== prototypeUrl) frame.src = prototypeUrl;
       openPage.href = prototypeUrl;
       buttons.forEach((button) => {
