@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="ru">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Свой стиль — квиз про гардероб</title>
+<style>
+:root{--paper:#f7f3e9;--ink:#27352b;--muted:#565d52;--line:#d4cebd;--accent:#75433f}*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font:16px/1.45 system-ui,sans-serif}button,input{font:inherit}button{cursor:pointer}button:focus-visible,input:focus-visible{outline:3px solid var(--accent);outline-offset:3px}header{border-bottom:1px solid var(--line);padding:19px 0}.bar,main{width:min(100% - 36px,970px);margin:auto}.bar{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand,h1{font-family:Georgia,serif;font-weight:normal}.brand{font-size:26px}.badge,.intro,.hint{color:var(--muted)}.badge{font-size:13px}main{padding:32px 0 50px}h1{font-size:clamp(34px,6.5vw,65px);line-height:1.04;margin:0 0 15px;letter-spacing:-.035em}p{margin:0 0 16px}.intro{max-width:55ch}.layout{display:grid;grid-template-columns:1.04fr 1fr;gap:clamp(20px,5vw,62px);align-items:center}.cover{display:flex;gap:6px}.cover img{width:calc((100% - 12px)/3);aspect-ratio: .48;object-fit:cover}.actions,.choices{display:flex;flex-wrap:wrap;gap:10px;margin:17px 0}.primary,.action,.option{padding:11px 16px;border-radius:4px;border:1px solid var(--line);color:var(--ink);background:transparent;min-height:46px}.primary{background:var(--ink);color:white;border-color:var(--ink)}.option:hover,.action:hover,.look:hover{background:#eee7d8}.option.selected,.look.selected{border-color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink)}.progress{margin:0 0 19px;height:3px;background:var(--line)}.progress span{display:block;height:100%;background:var(--accent)}.step{font-size:13px;margin-bottom:12px;color:var(--muted)}.pair,.looks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:605px;margin:16px 0}.looks{grid-template-columns:repeat(3,minmax(0,1fr));max-width:780px}.look{padding:0;border:1px solid var(--line);border-radius:4px;background:#fffaf0;color:var(--ink);text-align:left;overflow:hidden}.look img{width:100%;height:clamp(205px,43vh,384px);object-fit:contain;display:block;background:#e7ddce}.look span{display:block;padding:8px 10px;font-size:14px}.hint{font-size:14px}.entry{display:grid;gap:12px;max-width:490px}.entry input:not([type=file]){width:100%;padding:10px;border:1px solid var(--line);background:#fffaf0}.preview{max-height:135px;max-width:180px}.card{padding:20px;border:1px solid var(--line);background:#fffaf0;margin:15px 0}.eyebrow{color:var(--accent);font-size:14px;margin-bottom:8px}.row{margin:8px 0}.error{color:#923328}.back{margin-top:12px}@media(max-width:580px){main{padding-top:24px}.layout{grid-template-columns:1fr}.cover img{aspect-ratio:.78}.look img{height:clamp(178px,31vh,285px)}.looks{gap:7px}.looks .look span{font-size:12px;padding:6px}.badge{max-width:130px;text-align:right}}
+.styles{display:grid;grid-template-columns:repeat(auto-fit,minmax(130px,1fr));gap:10px;margin:18px 0}.styles img{height:clamp(175px,29vh,255px)}.styles small{display:block;color:var(--muted);margin-top:3px}.cover img{object-position:center}.look span{min-height:42px}</style>
+<header><div class="bar"><span class="brand">Свой стиль</span><span class="badge">Пробная версия</span></div></header>
+<main id="app"></main>
+<script>
+const styles={
+ classic:{name:'Классика и преппи',tags:'Жакеты, твид, лоферы',looks:[
+ ['Собранная классика','Приталенный жакет|Светлая блузка|Брюки со стрелками|Лоферы|Жесткая сумка'],
+ ['Расслабленная классика','Свободный жакет|Белый трикотаж|Прямые джинсы|Кроссовки|Мягкая сумка'],
+ ['Городской тейлоринг','Графитовое пальто|Черная водолазка|Шерстяные брюки|Дерби'],
+ ['Загородная классика','Вощеная куртка|Свитер с косами|Табачный вельвет|Кожаные ботинки'],
+ ['Спокойная классика','Темный жакет|Однотонный джемпер|Темная юбка|Высокие сапоги'],
+ ['Клетка и ромбы','Клетчатый жакет|Жилет с ромбами|Голубая рубашка|Темная юбка|Высокие сапоги']]},
+ romantic:{name:'Романтика',tags:'Шёлк, рюши, жемчуг',looks:[
+ ['Шелк и четкий силуэт','Сиреневая блузка|Брюки прямого кроя|Туфли с ремешком|Сумка с жемчугом'],
+ ['Мягкие линии','Пудровая свободная блузка|Молочные брюки|Балетки|Замшевая сумка'],
+ ['Струящийся шелк','Розовая шелковая блузка|Молочные брюки|Туфли с острым носом|Золотые серьги'],
+ ['Рюши и жемчуг','Блузка с рюшами и бантом|Розовая юбка|Жемчуг|Туфли с ремешком'],
+ ['Спокойная романтика','Пудровый трикотаж|Сливовая юбка миди|Балетки'],
+ ['Цветы и цвет','Сиреневая блузка в цветочек|Цветочная юбка миди|Пояс|Сиреневые балетки']]},
+ boho:{name:'Бохо и винтаж',tags:'Замша, бахрома, вышивка',looks:[
+ ['Замша и прямой крой','Песочная замшевая куртка|Светлая блузка|Прямые брюки|Кожаные ботинки'],
+ ['Свободные слои','Накидка с бахромой|Песочная туника|Светлые широкие брюки|Мягкие ботинки'],
+ ['Спокойные фактуры','Оливковая замшевая куртка|Бежевый трикотаж|Светлые брюки|Коричневые ботинки'],
+ ['Вышивка и пэчворк','Лоскутный жилет|Блузка с вышивкой|Джинсы клеш|Сумка с бахромой'],
+ ['Однотонные ткани','Терракотовая блузка|Шоколадная юбка макси|Коричневые ботинки'],
+ ['Пейсли и цветы','Блузка с пейсли|Цветочная юбка макси|Коричневые ботинки']]},
+ sport:{name:'Спорт и стрит',tags:'Кроссовки, бомберы, прямые джинсы',looks:[
+ ['Спортивная классика','Темно-синий жакет|Белая футболка|Прямые брюки|Белые ретрокроссовки'],
+ ['Спорт с объемом','Спортивная куртка|Широкие спортивные брюки|Беговые кроссовки|Кепка'],
+ ['Технический минимализм','Черная куртка на молнии|Прямые черные брюки|Серые кроссовки|Серая сумка'],
+ ['Университетский спорт','Синий бомбер|Широкие бордовые брюки|Ретрокроссовки|Тканевая сумка'],
+ ['Монохромный спорт','Черная ветровка|Графитовые джоггеры|Белые кроссовки'],
+ ['Цветовые блоки','Красная ветровка|Синие брюки с лампасами|Цветные кроссовки']]},
+ minimal:{name:'Минимализм',tags:'Чистые линии, монохром, простые формы',looks:[
+ ['Четкий крой','Графитовый жакет|Прямые графитовые брюки|Дерби|Жесткая сумка'],
+ ['Мягкий объем','Свободная рубашка-жакет|Широкие черные брюки|Туфли без каблука|Мягкая сумка'],
+ ['Теплый монохром','Песочное пальто|Молочный джемпер|Бежевые брюки|Туфли'],
+ ['Графичный контраст','Черное пальто|Черный верх|Белые широкие брюки|Черные туфли'],
+ ['Гладкие фактуры','Темно-синий жакет|Темно-синяя рубашка|Темно-синие брюки|Темная обувь'],
+ ['Скульптурные фактуры','Темно-синий жакет со складками|Ребристая водолазка|Юбка плиссе|Темная обувь']]}
+};
+const axes={
+ classic:['степень формальности','город или загород','рисунок'],
+ romantic:['силуэт','выразительность деталей','рисунок'],
+ boho:['силуэт','декоративность','рисунок'],
+ sport:['степень формальности','характер спортивных деталей','контраст цвета'],
+ minimal:['силуэт','контраст цвета','фактура'],
+ mix:['эстетика','эстетика','эстетика','эстетика']
+};
+const styleKeys=Object.keys(styles);
+function outfit(key,index){
+ const [title,list]=styles[key].looks[index];
+ return {key,index,title,parts:list.split('|')};
+}
+function styleCover(key){
+ const index={classic:5,romantic:3,boho:3,sport:3,minimal:2}[key];
+ return outfit(key,index);
+}
+function pairAt(n){
+ if(state.style==='mix'){
+   const classicPair=['classic','romantic'];
+   const casualPair=['boho','sport'];
+   const finalists=[classicPair[Math.max(0,state.picks[0]??0)],casualPair[Math.max(0,state.picks[1]??0)]];
+   const options=[classicPair,casualPair,finalists,[finalists[Math.max(0,state.picks[2]??0)],'minimal']][n];
+   return options.map(styleCover);
+ }
+ return [outfit(state.style,n*2),outfit(state.style,n*2+1)];
+}
+function results(){
+ if(state.style==='mix'){
+   const picked=state.picks.flatMap((v,i)=>v<0?[]:[pairAt(i)[v].key]);
+   const order=[...new Set([...(picked.length?[picked[picked.length-1],...picked]:[]),...styleKeys])];
+   return order.slice(0,3).map(styleCover);
+ }
+ return state.picks.map((v,i)=>pairAt(i)[v<0?0:v]);
+}
+let state=fresh();
+function fresh(){return {screen:'start',scenario:null,code:null,picks:[],style:null,look:null,item:null,kind:'описание',photo:null,events:[]}}
+let draft={name:'',url:'',picture:null,part:0,source:'описание'};
+const app=document.querySelector('#app');
+const scenario=()=>state.scenario===0?'офис':'город';
+const art=(group,i)=>'<img src="'+group+'-'+i+'.webp" alt="">';
+const heading=(title,sub='')=>'<h1 tabindex="-1">'+title+'</h1>'+(sub?'<p class="intro">'+sub+'</p>':'');
+const pairCount=()=>state.style==='mix'?4:3;
+const progress=n=>'<div class="progress" aria-hidden="true"><span style="width:'+n/(3+pairCount())*100+'%"></span></div>';
+const button=(label,action,value='',style='action')=>'<button type="button" class="'+style+'" data-go="'+action+'" data-value="'+value+'">'+label+'</button>';
+const back=()=>'<div class="back">'+button('Назад','back')+'</div>';
+const tile=(group,i,label,action,index)=>'<button type="button" class="look" data-go="'+action+'" data-value="'+index+'">'+art(group,i)+'<span>'+label+'</span></button>';
+function track(event,detail={}){state.events.push({event,...detail});try{localStorage.setItem('wardrobe-quiz-events',JSON.stringify(state.events))}catch{}}
+function render(){
+ const n=state.picks.length;
+ const group=state.scenario??0;
+ const pool=results();
+ let html='';
+ if(state.screen==='start') html='<section class="layout"><div>'+heading('Что бы ты надела?','Выбери образы для своей жизни и найди сочетание, которое захочешь повторить из своего шкафа.')+button('Начать квиз','start','','primary')+'</div><div class="cover">'+['romantic','classic','sport'].map(key=>{const look=styleCover(key);return art(look.key,look.index)}).join('')+'</div></section>';
+ if(state.screen==='scenario')html=progress(2)+heading('Куда ты хочешь одеваться интереснее?')+'<div class="choices">'+button('В офис','scenario',0,'option')+button('По делам и на прогулки','scenario',1,'option')+'</div>'+back();
+ if(state.screen==='code')html=progress(3)+heading(state.scenario===0?'Какой у тебя дресс-код?':'Как ты обычно одеваешься в городе?')+'<div class="choices">'+(state.scenario===0?['Свободный деловой','Почти без ограничений']:['Люблю собранный вид','Предпочитаю расслабленный']).map((v,i)=>button(v,'code',i,'option')).join('')+'</div>'+back();
+ if(state.screen==='style'){
+   html=progress(1)+heading('В чем тебе хочется себя увидеть?','Выбери то, что сейчас цепляет. Можно сравнить разные направления.')+'<div class="styles">'+styleKeys.map(key=>{const look=styleCover(key);return tile(look.key,look.index,styles[key].name+'<small>'+styles[key].tags+'</small>','style',key)}).join('')+'</div>'+button('Хочу сравнить разные','style','mix','primary')+back();
+ }
+ if(state.screen==='pair'){
+   const prompt=group===0?'Представь обычный день в своем офисе.':'Представь обычный день в городе.';
+   html=progress(n+4)+heading('Какой образ ты бы надела?',prompt)+'<div class="pair">'+pairAt(n).map((look,i)=>tile(look.key,look.index,state.style==='mix'?styles[look.key].name:look.title,'pick',i)).join('')+'</div>'+button('Ни один','pick',-1)+back();
+ }
+ if(state.screen==='reason'){
+   html=heading('Что повлияло на выбор?','Так мы поймем, насколько хорошо образы передают разницу.')+'<div class="choices">'+(state.style==='mix'?['Эстетика в целом','Силуэт и посадка','Конкретная вещь или цвет','Подходит для моего дня','Пропустить']:['Собранность или свобода образа','Нравится весь комплект','Конкретная вещь или цвет','Подходит для моего дня','Пропустить']).map(label=>button(label,'reason',label,'option')).join('')+'</div>'+back();
+ }
+ if(state.screen==='result'){
+   const chose=state.picks.some(v=>v>=0);
+   const title=state.style==='mix'?(chose?'Начни с направления «'+styles[pool[0].key].name+'»':'Три направления на пробу'):styles[state.style].name;
+   const why=chose?'Вот сочетания, с которых можно начать.':'Вот несколько отправных точек. Любой комплект можно адаптировать под себя.';
+   const note=group===0&&state.code===0?'Для офиса со свободным деловым кодом джинсы можно заменить шерстяными брюками, а кроссовки — лоферами.':group===1&&state.code===1?'Для длинной прогулки выбирай обувь, в которой уже удобно ходить.':'';
+   html='<p class="eyebrow">Твой сценарий · '+scenario()+'</p>'+heading(title,why)+'<div class="looks">'+pool.map((look,i)=>tile(look.key,look.index,look.title,'look',i)).join('')+'</div>'+(note?'<p class="hint">'+note+'</p>':'')+'<p class="hint">Выбери образ, в который хочешь подставить свою вещь.</p>'+back();
+ }
+ if(state.screen==='item'){
+   const look=pool[state.look];
+   html=heading('Добавь свою вещь','Выбери, что заменить в образе «'+look.title+'». Название вещи поможет собрать комплект.')+'<div class="entry"><label>Что заменяем<br><select id="part">'+look.parts.map((l,i)=>'<option value="'+i+'">'+l+'</option>').join('')+'</select></label><div class="choices">'+['описание','ссылка','фото'].map(t=>button(t[0].toUpperCase()+t.slice(1),'source',t,'option'+(draft.source===t?' selected':''))).join('')+'</div><form id="item-form"><label>Что у тебя есть<input id="name" maxlength="100" placeholder="Например, серый пиджак"></label><div id="source-field"></div><p id="error" class="error" role="alert"></p><button class="primary">Подставить в образ</button></form></div>'+back();
+ }
+ if(state.screen==='done'){
+   const look=pool[state.look];
+   html=heading('Твоя версия образа',look.title+' · '+scenario())+'<div class="layout"><div class="look">'+art(look.key,look.index)+'<span>Исходный референс</span></div><div class="card" id="wardrobe"><div id="outfit-parts"></div><p class="hint">Проверь, есть ли остальные вещи или похожие.</p><div class="actions">'+button('Я бы это надела','save','','primary')+button('Попробовать другую вещь','again')+button('Другой образ','results')+button('Скачать ответы теста','export')+'</div><p id="saved" role="status"></p></div></div>';
+ }
+ app.innerHTML=html;
+ if(state.screen==='item')setupItem();
+ if(state.screen==='done')setupOutfit();
+ app.querySelector('h1')?.focus({preventScroll:true}); window.scrollTo(0,0);
+}
+function setupItem(){
+ const field=document.querySelector('#source-field');
+ if(draft.source==='ссылка')field.innerHTML='<label>Ссылка на товар<input id="url" type="url" placeholder="https://…" required></label><p class="hint">Сохраним ссылку вместе с названием. Карточку магазина автоматически не загружаем.</p>';
+ if(draft.source==='фото')field.innerHTML='<label>Фото вещи<input id="photo" type="file" accept="image/*"></label><p class="hint">Фото останется на этой странице до перезагрузки.</p>';
+ const name=document.querySelector('#name');
+ name.value=draft.name;
+ name.oninput=()=>draft.name=name.value;
+ const part=document.querySelector('#part');
+ part.value=draft.part;
+ part.onchange=()=>draft.part=Number(part.value);
+ const url=document.querySelector('#url');
+ if(url){url.value=draft.url;url.oninput=()=>draft.url=url.value}
+ const photo=document.querySelector('#photo');
+ if(photo)photo.onchange=()=>{draft.picture=photo.files[0]??draft.picture};
+ if(photo&&draft.picture){const note=document.createElement('p');note.className='hint';note.textContent=draft.picture.name;field.append(note)}
+ document.querySelector('#item-form').onsubmit=e=>{
+   e.preventDefault();
+   const error=document.querySelector('#error');
+   if(!draft.name.trim()){error.textContent='Добавь короткое название вещи.';name.focus();return}
+   if(draft.source==='фото'&&!draft.picture){error.textContent='Выбери фото вещи.';return}
+   if(url&&!/^https?:\/\//i.test(url.value)){error.textContent='Вставь ссылку, которая начинается с https://.';return}
+   if(state.photo)URL.revokeObjectURL(state.photo);
+   state.item=draft.name.trim();state.kind=draft.source;
+   state.photo=draft.source==='фото'?URL.createObjectURL(draft.picture):null;
+   track('item_added',{kind:state.kind});state.screen='done';render();
+ };
+}
+function setupOutfit(){
+ const wrap=document.querySelector('#outfit-parts');
+ results()[state.look].parts.forEach((part,i)=>{
+   const line=document.createElement('p');line.className='row';line.textContent=i===draft.part?state.item+' · твоя вещь':part;wrap.append(line);
+ });
+ if(state.photo){const im=document.createElement('img');im.src=state.photo;im.alt=state.item;im.className='preview';wrap.append(im)}
+ if(state.kind==='ссылка'){
+   const link=document.createElement('a');link.href=draft.url;link.textContent='Твоя ссылка на вещь';link.target='_blank';link.rel='noopener noreferrer';wrap.append(link);
+ }
+}
+app.addEventListener('click',e=>{
+ const b=e.target.closest('[data-go]');if(!b)return;
+ const a=b.dataset.go;const v=Number(b.dataset.value);
+ if(a==='start'){state=fresh();track('started');state.screen='style'}
+ if(a==='scenario'){state.scenario=v;track('scenario_selected',{value:v});state.screen='code'}
+ if(a==='code'){state.code=v;track('dress_code_selected',{value:v});state.screen='pair'}
+ if(a==='style'){state.style=b.dataset.value;track('style_selected',{value:state.style});state.screen='scenario'}
+ if(a==='pick'){track('pair_answered',{axis:axes[state.style][state.picks.length],options:pairAt(state.picks.length).map(x=>x.key+'-'+x.index),value:v});state.picks.push(v);if(state.picks.length===1&&v>=0)state.screen='reason';if(state.picks.length===pairCount()){track('quiz_completed',{style:state.style});state.screen='result'}}
+ if(a==='reason'){track('first_choice_reason',{value:b.dataset.value});state.screen='pair'}
+ if(a==='look'){state.look=v;draft={name:'',url:'',picture:null,part:0,source:'описание'};track('look_selected',{value:v});state.screen='item'}
+ if(a==='source')draft.source=b.dataset.value;
+ if(a==='again')state.screen='item';
+ if(a==='results')state.screen='result';
+ if(a==='export'){
+   const file=new Blob([JSON.stringify(state.events,null,2)],{type:'application/json'});
+   const url=URL.createObjectURL(file);
+   const link=document.createElement('a');
+   link.href=url;link.download='wardrobe-quiz-answers.json';link.click();
+   setTimeout(()=>URL.revokeObjectURL(url),2000);return;
+ }
+ if(a==='save'){track('would_wear');document.querySelector('#saved').textContent='Отметка сохранена в этом браузере.';b.disabled=true;return}
+ if(a==='back'){
+   const prev={scenario:'style',code:'scenario',style:'start',reason:'pair',result:'pair',item:'result'};
+   if(state.screen==='pair'){if(!state.picks.length)state.screen='code';else state.picks.pop()}
+   else{if(state.screen==='result'||state.screen==='reason')state.picks.pop();state.screen=prev[state.screen]??'start'}
+ }
+ render();
+});
+render();
+</script>
+</html>
